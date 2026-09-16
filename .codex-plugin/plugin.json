@@ -1,7 +1,7 @@
 {
   "name": "stn-ultradesign",
-  "version": "0.5.1",
-  "description": "Product-wide UI/UX audits, creative direction, complete design systems and concepts, independent review, and verified implementation.",
+  "version": "0.5.2",
+  "description": "AI UI/UX design skill for application audits, distinctive design systems, interactive concepts and implementation guided by your requirements.",
   "author": {
     "name": "Sven Thiermann",
     "url": "https://github.com/sthiermann"
@@ -10,18 +10,19 @@
   "repository": "https://github.com/sthiermann/stn-ultradesign",
   "license": "MIT",
   "keywords": [
-    "ui",
-    "ux",
-    "design",
+    "ui-ux",
+    "design-system",
+    "frontend-design",
     "accessibility",
-    "frontend",
-    "audit"
+    "ui-audit",
+    "responsive-design",
+    "agent-skills"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "STN Ultradesign",
-    "shortDescription": "Shape the system. Review the concept. Verify the experience.",
-    "longDescription": "An original design skill connecting requirements, creative direction, complete component systems, rendered concepts, independent review, scoped human acceptance and verified frontend implementation.",
+    "shortDescription": "Your product. Your design direction. A complete UI/UX workflow.",
+    "longDescription": "Turn product requirements into a coherent experience. Audit existing interfaces, translate your brand into shared components, map features through the redesign, review interactive concepts, and verify implementation against the agreed design.",
     "developerName": "Sven Thiermann",
     "category": "Productivity",
     "capabilities": [],

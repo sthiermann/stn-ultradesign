@@ -7,17 +7,53 @@
 </picture>
 </p>
 
-**A design skill that turns product requirements into a distinctive, complete experience — from creative direction to verified implementation.**
+**AI UI/UX design skill for Codex and Claude Code.**
 
-STN Ultradesign guides coding agents through UI/UX audits, design systems, interactive concepts and frontend implementation. It connects visual craft to real tasks: what people need to understand, what they can do next, and how the product behaves through loading, editing, failure, recovery and completion.
+Turn an application into a coherent product experience. STN Ultradesign gives your coding agent a complete design workflow: understand the product, audit its interface, develop a distinctive interactive concept, and verify implementation against the agreed design.
 
-Use it with an existing application, a new product or one focused workflow. Bring your brand, preferences and constraints. The skill adapts to desktop, tablet and phone, and follows the language of your request.
+Bring your brand. Set the direction. Review the experience before it ships. Use it to redesign existing software, shape a new product or improve one focused workflow across desktop, tablet and mobile.
 
-[**Get started →**](docs/installation.md) · [Workflow](skills/stn-ultradesign/references/delivery-workflow.md) · [Read the skill](skills/stn-ultradesign/SKILL.md) · [Privacy](PRIVACY.md)
+[**Install the skill →**](docs/installation.md) · [Start a redesign](#put-it-to-work) · [Explore the workflow](#a-complete-path-from-requirements-to-delivery) · [Read the skill](skills/stn-ultradesign/SKILL.md)
 
-Release **v0.5.1** · [MIT license](LICENSE) · Codex + Claude Code
+Release **v0.5.2** · [MIT license](LICENSE) · Codex + Claude Code
 
 [![Package checks](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml/badge.svg)](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml)
+
+## What your redesign gains
+
+- **A direction that belongs to your product.** Your brand, preferences and chosen references become shared rules for layout, typography, color, components and motion.
+- **A clear place for existing capabilities.** A feature map connects current actions, role-specific controls and workflows to their proposed destinations. Unresolved coverage stays visible.
+- **An experience you can review.** Interactive concepts expose navigation, editing, menus, data, drilldowns and recovery paths across relevant devices and states.
+- **A design that carries into the code.** Accepted decisions guide frontend implementation; separate review and verification check the result against those decisions.
+
+Built for the complexity of business applications: dashboards, settings, tables, charts, permissions, account flows and more. Apply the workflow to HTML, CSS, React and other frontend stacks while working with the project's existing architecture. The skill follows the language of your request.
+
+## Put it to work
+
+[Install for Codex or Claude Code](docs/installation.md), open your application project and start a new task. Use this prompt for an audit followed by a complete redesign concept:
+
+> $stn-ultradesign Audit the entire frontend of this existing application using its current source code and running interface. Ask me about my requirements and design preferences, preserve existing capabilities, and develop a complete interactive design concept. Clarify which earlier design decisions still apply. Independently review and refine the concept with me. Implement production changes only after my approval.
+
+In Claude Code, replace `$stn-ultradesign` with `/stn-ultradesign:stn-ultradesign` after plugin installation, or `/stn-ultradesign` for an individual skill installation.
+
+<details>
+<summary>More starting points: audit only, concept, or implementation</summary>
+
+**Audit only**
+
+> $stn-ultradesign Audit the entire frontend. Inventory every page, component usage, widget, drilldown, workflow and relevant state. Prioritize findings with evidence and preserve unresolved coverage as gaps.
+
+**Develop a complete design concept**
+
+> $stn-ultradesign Develop a design concept for this application. Clarify requirements and preferences, establish a creative direction, build the system and components, and render the complete concept. Have it independently reviewed, refine it with me, and obtain my acceptance of the specific scope before production implementation.
+
+**Implement an accepted design**
+
+> $stn-ultradesign Implement the accepted concept. Trace the changes to its design decisions and verify behavior, accessibility and visual fidelity.
+
+</details>
+
+Starting fresh? Follow the [new design review instructions](docs/installation.md#start-a-new-design-review). Previous concepts do not need to be deleted. Public package documentation is English.
 
 ## A complete path from requirements to delivery
 
@@ -100,48 +136,6 @@ A full audit covers every discovered page, component usage, widget, dialog, dril
 The package includes templates for requirements, briefs, reference translation, feature maps, task flows, design contracts and audit evidence. Its local Python coverage validator checks the consistency of a declared audit inventory, obligations and evidence. It does not evaluate the requirement register, inspect the application or certify discovery completeness, design quality or security.
 
 Independent review challenges the current artifact against the requirements and design intent. It uses a separate reviewer when the host supports one; otherwise, self-review is identified as such and the limitation remains explicit. Human acceptance records the revision and scope that may proceed. Verification then checks the implementation itself. See [verification](skills/stn-ultradesign/references/verification.md).
-
-## Put it to work
-
-Install the [Codex skill or Claude Code plugin](docs/installation.md), open the application project and start a new task. Choose the example that matches your intended scope. For a fresh review, follow the [new design review instructions](docs/installation.md#start-a-new-design-review); previous concepts do not need to be deleted.
-
-**Audit an existing application and develop its redesign**
-
-```text
-$stn-ultradesign Audit the entire frontend of this existing application
-using its current source code and running interface. Ask me about
-my requirements and design preferences, preserve existing capabilities,
-and develop a complete interactive design concept. Clarify which
-earlier design decisions still apply. Independently review and refine
-the concept with me. Implement production changes only after my approval.
-```
-
-**Audit only**
-
-```text
-$stn-ultradesign Audit the entire frontend. Inventory every page,
-component usage, widget, drilldown, workflow and relevant state.
-Prioritize findings with evidence and preserve unresolved coverage as gaps.
-```
-
-**Develop a complete design concept**
-
-```text
-$stn-ultradesign Develop a design concept for this application.
-Clarify requirements and preferences, establish a creative direction,
-build the system and components, and render the complete concept.
-Have it independently reviewed, refine it with me, and obtain my
-acceptance of the specific scope before production implementation.
-```
-
-**Implement an accepted design**
-
-```text
-$stn-ultradesign Implement the accepted concept. Trace the changes to
-its design decisions and verify behavior, accessibility and visual fidelity.
-```
-
-In Claude Code, use `/stn-ultradesign:stn-ultradesign` after plugin installation, or `/stn-ultradesign` for an individual skill installation. Public package documentation is English.
 
 ## Package and privacy
 

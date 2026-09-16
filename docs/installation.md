@@ -24,10 +24,7 @@ The link assumes that no entry with the same name exists at the destination and 
 
 Reopen Codex if the skill does not appear. In Codex CLI or the IDE, select it through `/skills` or mention `$stn-ultradesign` in your request. Interfaces that offer a skill selector through `@` may also list it there.
 
-```text
-$stn-ultradesign Review the settings area for clarity, consistency,
-error recovery and keyboard operation.
-```
+> $stn-ultradesign Review the settings area for clarity, consistency, error recovery and keyboard operation.
 
 ## Codex: plugin package
 
@@ -46,10 +43,7 @@ Enter these commands inside a Claude Code terminal session:
 
 Choose the intended installation scope when prompted. If Claude Code requests it, run `/reload-plugins` afterward. Invoke the skill with:
 
-```text
-/stn-ultradesign:stn-ultradesign First develop a reviewable design concept
-for this workflow. Implement it after my approval.
-```
+> /stn-ultradesign:stn-ultradesign First develop a reviewable design concept for this workflow. Implement it after my approval.
 
 The marketplace points to the plugin at the repository root. Use the GitHub repository name as the source, rather than a direct URL to its `marketplace.json`.
 
