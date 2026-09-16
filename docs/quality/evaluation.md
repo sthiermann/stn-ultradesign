@@ -22,7 +22,7 @@ python3 scripts/validate_repository.py
 python3 -m unittest discover -s tests -v
 ```
 
-Die GitHub-Actions-Konfiguration führt dieselben beiden Befehle mit Python 3.12 aus. Sie wurde hier erstellt; ein erfolgreicher Lauf auf GitHub wird erst nach einem tatsächlichen Remote-Lauf behauptet. Die offiziellen Codex-Validatoren wurden separat in der Entwicklungsumgebung mit Python 3.12 und PyYAML ausgeführt; deren Quellcode oder Abhängigkeiten werden nicht mitgeliefert.
+Die GitHub-Actions-Konfiguration führt dieselben beiden Befehle mit Python 3.12 aus. Der erste [GitHub-Lauf](https://github.com/sthiermann/stn-ultradesign/actions/runs/35088621779) für Commit `31ed66c026eb0c5a15fc63ab2b23767963348c6a` wurde nach Veröffentlichung erfolgreich abgeschlossen. Die offiziellen Codex-Validatoren wurden separat in der Entwicklungsumgebung mit Python 3.12 und PyYAML ausgeführt; deren Quellcode oder Abhängigkeiten werden nicht mitgeliefert.
 
 ## Unabhängiger synthetischer Auditlauf
 
