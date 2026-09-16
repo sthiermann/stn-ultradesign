@@ -1,0 +1,32 @@
+{
+  "schema_version": 2,
+  "scope": {
+    "product": "",
+    "revision": "",
+    "environment": "",
+    "requested_mode": "full",
+    "audit_mode": "full",
+    "evidence_level": "runtime",
+    "boundary": "",
+    "scope_change_approval": "",
+    "inventory_complete": false,
+    "discovery_gaps": ["Discovery has not started."],
+    "inventory_sources": {
+      "source": {"status": "blocked", "reason": "Not reconciled yet.", "evidence_ids": []},
+      "runtime": {"status": "blocked", "reason": "Not traversed yet.", "evidence_ids": []},
+      "roles-and-flags": {"status": "blocked", "reason": "Roles and configurations not reconciled yet.", "evidence_ids": []},
+      "product-docs": {"status": "blocked", "reason": "Documentation applicability not checked yet.", "evidence_ids": []}
+    }
+  },
+  "entities": [],
+  "contexts": [],
+  "evidence": [],
+  "plan": {
+    "reconciled": false,
+    "reconciliation_evidence_ids": [],
+    "entity_contexts": [],
+    "obligations": []
+  },
+  "checks": [],
+  "findings": []
+}

@@ -1,0 +1,28 @@
+{
+  "name": "stn-ultradesign",
+  "version": "0.1.0",
+  "description": "UI/UX-Audits, überprüfbare Designkonzepte und getreue Umsetzung für Desktop, Tablet und Smartphone.",
+  "author": {
+    "name": "Sven Thiermann",
+    "url": "https://github.com/sthiermann"
+  },
+  "homepage": "https://github.com/sthiermann/stn-ultradesign",
+  "repository": "https://github.com/sthiermann/stn-ultradesign",
+  "license": "MIT",
+  "keywords": ["ui", "ux", "design", "accessibility", "frontend", "audit"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "STN Ultradesign",
+    "shortDescription": "UI/UX prüfen, Konzepte abstimmen, präzise umsetzen.",
+    "longDescription": "Ein Design-Skill für nachvollziehbare Frontend-Audits, vollständige Workflows und abgestimmte Konzepte. Verbindet visuelle Gestaltung, Barrierefreiheit und Web-Engineering mit dokumentierter Prüfung.",
+    "developerName": "Sven Thiermann",
+    "category": "Productivity",
+    "capabilities": [],
+    "websiteURL": "https://github.com/sthiermann/stn-ultradesign",
+    "defaultPrompt": [
+      "Prüfe das gesamte Frontend und dokumentiere Befunde und Abdeckung.",
+      "Entwickle ein Designkonzept und verfeinere es vor der Umsetzung mit mir.",
+      "Setze das freigegebene Konzept um und prüfe die Übereinstimmung."
+    ]
+  }
+}

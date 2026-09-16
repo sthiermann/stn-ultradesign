@@ -1,0 +1,4 @@
+interface:
+  display_name: "STN Ultradesign"
+  short_description: "UI/UX audit, concept refinement and faithful delivery"
+  default_prompt: "Nutze $stn-ultradesign, um mein Frontend zu auditieren und mir ein konkretes Designkonzept zur Verfeinerung vorzulegen; setze das freigegebene Konzept anschließend nachvollziehbar um."

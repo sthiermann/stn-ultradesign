@@ -1,0 +1,15 @@
+{
+  "name": "stn-ultradesign",
+  "description": "Ein Design-Skill für vollständige UI/UX-Audits, abgestimmte Konzepte und überprüfbare Umsetzung.",
+  "owner": {
+    "name": "Sven Thiermann",
+    "url": "https://github.com/sthiermann"
+  },
+  "plugins": [
+    {
+      "name": "stn-ultradesign",
+      "source": "./",
+      "description": "UI/UX-Audits und abgestimmte Designkonzepte mit nachvollziehbarer Umsetzung."
+    }
+  ]
+}

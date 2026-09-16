@@ -1,0 +1,13 @@
+{
+  "name": "stn-ultradesign",
+  "version": "0.1.0",
+  "description": "UI/UX-Audits, überprüfbare Designkonzepte und getreue Umsetzung für Desktop, Tablet und Smartphone.",
+  "author": {
+    "name": "Sven Thiermann",
+    "url": "https://github.com/sthiermann"
+  },
+  "homepage": "https://github.com/sthiermann/stn-ultradesign",
+  "repository": "https://github.com/sthiermann/stn-ultradesign",
+  "license": "MIT",
+  "keywords": ["ui", "ux", "design", "accessibility", "frontend", "audit"]
+}
