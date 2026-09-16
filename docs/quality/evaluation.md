@@ -75,7 +75,7 @@ The analytical-meaning method, analytical surface template and adaptive audit in
 
 ## Not yet demonstrated
 
-There is no controlled comparative study against other skills, no study with representative users, and no recorded installation test across every supported client version. A complete concept-to-code run with actual user approval and subsequent conformance evidence also remains outstanding. The [evaluation procedure](../../skills/stn-ultradesign/references/skill-evaluation.md) describes the next verifiable steps.
+There is no study with representative users or recorded installation test across every supported client version. A complete concept-to-code run with actual user approval and subsequent conformance evidence also remains outstanding. The [evaluation procedure](../../skills/stn-ultradesign/references/skill-evaluation.md) describes the next verifiable steps.
 
 Published evaluation files are synthetic development examples only. They contain no data from a real user's application. Paths in archived tasks and reports were normalized for this repository; the audit fixture itself was left unchanged. Account and access-control sections evaluate the user experience of legitimate product workflows. These runs do not claim penetration testing, collection of credentials or certification of backend security.
 

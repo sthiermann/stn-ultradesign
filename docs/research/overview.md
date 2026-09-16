@@ -8,7 +8,7 @@ A high-quality product helps its actual users complete tasks clearly, efficientl
 
 “Modern” therefore has several dimensions: current technical capabilities, suitable platform conventions, mature workflows, accessibility and a distinctive visual language. The year in which a visual style appeared is not evidence of quality. A new material effect can fit one product and harm readability or attention in another.
 
-This project's ambition is high. Claims such as “the world's best skill,” “100 times better” or “5,000% improvement” would nevertheless require defined comparison tasks and credible results. The [evaluation procedure](../../skills/stn-ultradesign/references/skill-evaluation.md) explains how to test concrete advantages. This version documents actual checks separately from outstanding comparative and user studies.
+Improvement requires defined tasks and credible results. The [evaluation procedure](../../skills/stn-ultradesign/references/skill-evaluation.md) explains how to measure outcomes and regressions across this project's revisions. This version documents actual checks separately from outstanding application evaluations and user studies.
 
 ## 2. Different sources carry different authority
 
@@ -19,7 +19,7 @@ This project's ambition is high. Claims such as “the world's best skill,” �
 | Vendor design systems | Mature components and explicit design reasoning | Adapted to particular products and platforms |
 | Original research and specialist authors | Explanatory models, studies and established heuristics | Not every rule of thumb has universal experimental support |
 | Major providers' product documentation | Concrete roles, lifecycles and administration workflows | Different providers can have different, equally justified models |
-| Public skills and demonstrations | Comparison of described capabilities | Scope, popularity and attractive examples do not establish superiority |
+| Design demonstrations | Observable examples and hypotheses to test | Attractive examples do not establish task performance |
 
 The skill distinguishes these levels. For example, WCAG 2.2 is a W3C Recommendation; ARIA examples support implementation; IBM's grid is a vendor design decision. Our method adds independently authored, verifiable working instructions. [WCAG](https://www.w3.org/TR/WCAG22/), [ARIA APG](https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/), [Carbon Grid](https://carbondesignsystem.com/elements/2x-grid/overview/)
 
@@ -125,11 +125,9 @@ The design contract records fixed decisions and permitted flexibility. It suppor
 
 The specialist module explains concrete decisions and links HTML, React, MDN and testing documentation. It does not presume a new library or framework migration. Native applications additionally require their own platform APIs; web verification alone does not certify a native app. [Web engineering](../../skills/stn-ultradesign/references/web-engineering.md)
 
-## 9. Video, existing skills and independent authorship
+## 9. Video analysis and independent authorship
 
-The linked uxpeak video was examined through its automatically generated English transcript. The interpretation appears in the [video and published-agent-guidance report](video-and-agent-guidance.md). It supplies a concrete starting point, not a universal standard or measured percentage improvement.
-
-Current published material from OpenAI and Anthropic, plus UI UX Pro Max, Impeccable and Vercel Agent Skills on GitHub, was compared factually. Some already offer sophisticated concept and audit processes. It would be inaccurate to claim that all alternatives offer only superficial styling. [GitHub comparison](github-landscape.md)
+The linked uxpeak video was examined through its automatically generated English transcript. The interpretation appears in the [video design review](video-design-review.md). It supplies a concrete starting point, not a universal standard or measured percentage improvement.
 
 No third-party skill files, command collections, templates, datasets, programs, images or logos are incorporated into `stn-ultradesign`. Text, procedures, test material and tools are independently authored. Technical claims use short paraphrases with source attribution. The [provenance notices](../../THIRD_PARTY_NOTICES.md) explain this boundary; they do not claim comprehensive legal review.
 

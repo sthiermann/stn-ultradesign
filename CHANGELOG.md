@@ -3,7 +3,7 @@
 ## 0.2.0 — 2026-09-16
 
 - Make design-language neutrality explicit: research the user-selected reference per project, translate evidence into a rendered direction proof, and keep vendor-specific archives outside universal instructions.
-- Add an original capability review of Anthropic frontend-design, a conditional typography trial, and explicit limits on uncompleted comparative evaluations.
+- Add a conditional typography trial and explicit limits on uncompleted application evaluations.
 - Keep prototype implementation disclosures in an external review frame while preserving product-faithful interface copy.
 
 - Add per-usage propagation of confirmed brand decisions, semantic surface and concentric-corner checks, direct settings navigation choices, and separate concept/content verification passes.

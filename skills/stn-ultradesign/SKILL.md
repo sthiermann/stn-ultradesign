@@ -71,7 +71,7 @@ Read only the branches relevant to the current work. For a whole-product audit, 
 | Charts, dashboards, widgets, tables, network graphs | [data-visualization.md](references/data-visualization.md) |
 | HTML/CSS/React, state, performance, component engineering | [web-engineering.md](references/web-engineering.md) |
 | Behavioral, visual, accessibility and concept-conformance checks | [verification.md](references/verification.md) |
-| Skill evaluation, fair comparison, maintenance | [skill-evaluation.md](references/skill-evaluation.md) |
+| Skill evaluation, regression evidence, maintenance | [skill-evaluation.md](references/skill-evaluation.md) |
 | Source authority, freshness, research provenance | [sources.md](references/sources.md) |
 
 ## Execute with traceability

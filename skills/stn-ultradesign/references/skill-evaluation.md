@@ -1,6 +1,6 @@
-# Evaluate this skill instead of asserting superiority
+# Evaluate and maintain this skill
 
-These are original evaluation procedures. They test a reusable skill's decisions and outcomes, not how impressive its instructions sound. They do not establish market leadership from one run.
+These original procedures test this skill's decisions and outcomes. A convincing instruction document does not establish successful application; retain evidence of both improvements and regressions.
 
 ## Forward tests
 
@@ -23,9 +23,9 @@ These are proposed test scenarios, not completed evaluations. For design-languag
 
 Judge visible behavior: correct routing, scope preservation, useful findings, prioritization, design quality, state coverage, realistic verification and concept fidelity. Record false positives and missed high-impact problems. More reported issues is not automatically better.
 
-## Comparative benchmark
+## Repeatable evaluation across revisions
 
-For comparisons with other skills, use the same brief, initial repository, tools, model/version, available context, time/token budget and acceptance conditions. Preserve each skill's identity and source revision without copying its contents into this repository. Run several tasks and repeats; log variations and cost.
+When evaluating changes to this skill, use the same brief, initial repository, tools, model/version, available context, time/token budget and acceptance conditions. Record the evaluated project revision and changed instructions. Run several tasks and repeats; log variations and cost.
 
 Use independent, preferably blinded assessment for visual quality and task clarity. Separate objective checks from subjective ratings. Include representative users when making claims about ease of use or task performance. Evaluate:
 
@@ -41,7 +41,7 @@ Use independent, preferably blinded assessment for visual quality and task clari
 | Visual craft | Independent assessment against the brief and domain |
 | Efficiency | Agent cost and user review/repair effort |
 
-Do not collapse severe failures into a flattering average. Report distributions, task-specific results, sample size, uncertainty and protocol changes. A documented capability, a successful demo and a benchmarked advantage are three different levels of evidence.
+Do not collapse severe failures into a flattering average. Report distributions, task-specific results, sample size, uncertainty and protocol changes. A documented capability, a successful demo and a repeatably measured improvement are different levels of evidence.
 
 ## Maintain from observed failures
 
@@ -49,4 +49,4 @@ Add a rule only when it would prevent a demonstrated recurring failure or preser
 
 Recheck dated or version-sensitive sources when used. Update research snapshots after meaningful platform/standards changes. Keep project-specific decisions in their projects; don't silently generalize a user's one-off font or layout preference into every future design.
 
-Publish evaluation status accurately: structural validation, automated ledger tests, independent simulated audit, browser verification, and real user/comparative studies should each have their own status and date.
+Publish evaluation status accurately: structural validation, automated ledger tests, independent simulated audit, browser verification, revision evaluations and real user studies should each have their own status and date.

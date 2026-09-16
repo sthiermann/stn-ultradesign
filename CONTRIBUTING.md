@@ -28,7 +28,7 @@ Keep `SKILL.md` concise and place specialist detail in the relevant reference. A
 4. For coverage-validator changes, test both valid and deliberately inconsistent ledgers. Declared coverage must never be presented as proof of actual interface quality.
 5. For visual changes, inspect the rendered output, check readability at normal and compact widths, and provide a concise account of what was verified.
 
-The [evaluation reference](skills/stn-ultradesign/references/skill-evaluation.md) describes controlled comparisons. Use the same tasks and conditions, expose variation, and separate visual preference from task success.
+The [evaluation reference](skills/stn-ultradesign/references/skill-evaluation.md) describes repeatable evaluation across project revisions. Use the same tasks and conditions, expose variation, and separate visual preference from task success.
 
 ## Packaging and rights
 

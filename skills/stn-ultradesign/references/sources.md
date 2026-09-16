@@ -10,7 +10,7 @@ Research snapshot and access date: **2026-09-16**. This is a reference index, no
 - Access date is not publication date. The public documentation can change after this snapshot.
 - WCAG, protocol specifications, vendor conventions, expert heuristics and our own design choices have different authority. Follow the applicable text and its exceptions before claiming conformance.
 - Check current versions for identity policy, API specifications, component releases and browser support when applying them. A fixed older source can remain useful for a clearly identified enduring principle.
-- No foreign skills, scripts, catalogs, mockups or assets are redistributed. Competitor comparisons are separately documented in the repository research reports and do not supply executable instructions.
+- No foreign skills, scripts, catalogs, mockups or assets are redistributed. The operational procedures, templates and test fixtures are independently authored.
 
 ## Sources consulted for the method and research archives
 
