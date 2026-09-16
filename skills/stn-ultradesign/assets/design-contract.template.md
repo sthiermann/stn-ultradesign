@@ -45,6 +45,20 @@ Complete only sections relevant to this project. Remove unused sections with an 
 
 An approved visual reference does not authorize copying its assets. Preserving corporate typography or colors does not automatically preserve a legacy layout. Record those choices separately and retain the real authorization scope.
 
+### Brand decision propagation
+
+Link a larger record when needed. Resolve affected occurrences to the existing audit inventory and planned context IDs, or a bounded affected-usage inventory and finite context plan when no audit ledger is required by the work mode; a family name or representative specimen does not cover every usage. Scope the material and visual treatment to the user's actual decision, including explicit reasoned exceptions rather than a universal glass rule.
+
+| Decision ID / source | Affected usage inventory IDs | Inherited token / primitive | Relevant state / role / input / theme / size and other planned context IDs | Rendered acceptance condition / exception and reason | Artifact revision / evidence / result or gap |
+| --- | --- | --- | --- | --- | --- |
+
+- Mapping reconciliation: discovered affected usages / mapped usages / unresolved usages:
+- Delivery reconciliation: depicted / implemented / rendered-verified / unfinished or blocked usages:
+- Context equivalence rationale and exceptions, linked to the finite audit or bounded usage plan:
+- Changes reopening checks: new usages, changed shared primitives or state rules, changed applicable contexts:
+
+Inspect each affected rendered usage under its relevant planned conditions, including transient states such as hover captions, open menus and focus where applicable. Reuse justified context groupings without an exhaustive global cross-product. Source inheritance is not a rendered pass; stale evidence cannot verify a changed artifact. Keep unfinished concept areas as obligations. Bound any consistency claim to reconciled scope and evidence, with explicit gaps.
+
 ## Agreed visual and structural rules
 
 - Product-specific visual thesis: task, dominant work region, supporting context, density and intended character:
@@ -59,6 +73,8 @@ An approved visual reference does not authorize copying its assets. Preserving c
 Include tokens, typography, icon family, layout regions, hierarchy, density, spacing, shape, elevation, motion and responsive transformation rules where relevant.
 
 ## Journeys and component states
+
+Link the [task-flow record](task-flow.template.md) for critical tasks. Record visible entry, first useful result, object/time scope, meaningful detail, outcome and return. Distinguish an interactive prototype, actual application behavior, a placeholder and an untested branch. List unfinished primary tasks before describing the concept as ready.
 
 | Flow/state ID | Actor and entry | Action and transition | Validation / side effect | Back, cancel, failure and recovery |
 | --- | --- | --- | --- | --- |
@@ -100,8 +116,8 @@ Report mapping completeness, depicted concept scope, implemented scope and verif
 
 ## Refinement log
 
-| Revision | User feedback | Decisions changed | Artifacts updated | Status |
-| --- | --- | --- | --- | --- |
+| Revision | User feedback / affected task | Concrete change | Acceptance condition | Fresh evidence / remaining gap | Owner assessment |
+| --- | --- | --- | --- | --- | --- |
 
 ## Deviations and unresolved decisions
 

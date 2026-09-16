@@ -24,14 +24,36 @@ Make the concept concrete enough that the user can judge it before application c
 | Component/state sheet | Relevant input, focus, selection, validation, loading and error treatments |
 | Interaction prototype | Material behavior that a still image cannot express |
 | Decision summary | Proposed choices, reasons, tradeoffs, unresolved questions, next review decision |
+| Capability-preservation summary | What stays, where moved functions are now reached, what remains undesigned, and which specific changes need a decision; linked to the feature map and applicable roles |
 
 Scale the artifacts to the project. For a single dialog, provide that dialog's small/large layouts and its meaningful states. For a whole product, show representative screen families and explicitly list pages not yet designed. Approval of a sample dashboard does not imply approval of an unseen administration or checkout flow.
 
-Prefer real product content. Label illustrative or synthetic data. Include long labels, empty datasets, an error, and a dense example where these can materially change layout. Do not build the concept around a perfect sample that conceals failures.
+Prefer realistic product terminology and safe, non-sensitive content. Disclose illustrative or synthetic data in the external review context described below. Include long labels, empty datasets, an error, and a dense example where these can materially change layout. Do not build the concept around a perfect sample that conceals failures.
 
 A visual concept should be an inspectable image, rendered HTML/React preview, accessible document, or design-tool artifact, according to available tools. A prose-only description is a specification draft, not a completed visual concept. A rendered prototype is a design artifact; it can use isolated local files and fake data before production implementation is approved. Clearly mark what is simulated. Image mockups cannot prove keyboard behavior, interaction, or production feasibility.
 
+### Keep the product experience realistic and the simulation honest
+
+Use production-appropriate labels, instructions, validation, errors and confirmation copy inside the product canvas. Do not insert implementation commentary such as “this draft creates no real API token” into a token-creation form, or repeat prototype disclaimers in every widget. Keep review status, coverage gaps, missing backend connections and implementation notes in an unmistakable review frame outside the product canvas and in the accompanying documentation. Disclose the simulation clearly once in that context; do not remove the disclosure entirely or present an unimplemented branch as a genuine permission denial, outage or empty product state.
+
+Simulate state changes with inert fixtures. A production-like success screen is appropriate only when the enclosing review context unambiguously establishes that actions and results are simulated. It is not evidence of backend execution. Never use real credentials or private customer content, issue working tokens, send messages or trigger real external effects merely to make a concept convincing. Keep missing interactions in the external coverage record and task map; do not invent working behavior or count a placeholder as complete.
+
+When exporting or sharing a standalone screenshot, recording or prototype, carry its concept identity and simulation status in an outer caption, review frame or accompanying metadata that recipients can actually access. Detached views must not become apparent proof of a real transaction. A watermark on every component is unnecessary.
+
+Retain information the eventual product user needs: units, time ranges, freshness, scope, consequences and genuine workflow explanations. These are product meaning, not engineering leakage. Review every in-scope page, dialog and transient state for leaked implementation notes, repetitive disclaimers and missing product context. This check improves realism without changing the existing approval boundary or hiding unfinished work.
+
 ## Render, critique and refine before presenting a finished concept
+
+Review the scoped concept in distinct passes rather than one undifferentiated visual glance:
+
+1. **Work and preservation:** critical entry/outcome/return paths, direct peer switching, necessary effort, existing capabilities, roles and unfinished branches.
+2. **Composition and propagation:** hierarchy, geometry, actual painted surfaces, materials, states, movement and every affected usage of confirmed decisions. Follow the brand propagation map; a specimen is not all-product evidence.
+3. **Information economy:** repeated or conflicting facts across headings, controls, helpers, badges, summaries and accessible descriptions; use [the content review](workflows.md#information-economy-in-the-actual-task).
+4. **Interaction and adaptation:** relevant input, theme, locale, density and viewport contexts, including open/hover/focus/error states and return after interruption.
+
+Record concrete findings, revise the artifact, then perform a separate verification pass on the affected paths and shared usages. Review the latest rendered revision, not screenshots taken before the correction. An independent reviewer can challenge the result where available, but their source review does not substitute for rendering or user observation. These passes organize scoped work; they do not require a whole-product audit for a focused fix or guarantee flawless outcomes.
+
+First complete the [critical-task walkthrough](task-flow-design.md) for the scope being presented. Use the [task-flow record](../assets/task-flow.template.md) to connect each critical task to a visible entry, meaningful content, outcome and context-preserving return. Populate existing statistics, event history and other decision-bearing detail with safe fixtures identified in the external review context; a generic placeholder or a label in the feature map leaves that branch unfinished. Show proposed actions in the context where people need them, with pointer, touch and keyboard access appropriate to the product. Do not infer discoverability from knowing your own implementation.
 
 For a multi-device concept, inspect actual renders for every target class: desktop, tablet and phone when all three are in scope, plus widths around structural changes. Record the real rendering environment, loaded fonts, content fixture and viewport; preserve reviewable evidence. Check a meaningful dense or difficult state as well as the ideal opening state. A desktop render with CSS breakpoints declared in source is not responsive proof. If rendering is unavailable, deliver a labeled draft with that limitation; do not call the visual concept finished or its craft verified.
 
@@ -55,6 +77,8 @@ Give the concept a stable identifier and revision, such as `billing-workspace/v0
 - `FLOW-04`: Saving closes the editor only after success; failure preserves values.
 
 A revision records what changed, what stayed, and what still needs a decision. Revise the affected views and contracts together. If the user changes direction, mark replaced decisions superseded; do not retain contradictory instructions as active requirements.
+
+For each consequential criticism, record the affected task, a concrete artifact change, an observable acceptance condition and the new evidence. Recheck the underlying cause across affected usages: a confusing settings hierarchy may also affect mobile navigation, deep links, search and return paths. Changing shadow tokens does not resolve a missing event-investigation workflow. Reconcile the source baseline again when development has continued during concept work; newly added destinations and changed role rules reopen the feature map.
 
 Ask for feedback on the most consequential open choices. Resolve routine implementation details yourself within the approved rules. Never convert optional questions into an unnecessary approval gate.
 

@@ -54,11 +54,13 @@ Read only the branches relevant to the current work. For a whole-product audit, 
 | Existing functions, old-to-new mapping, role/theme/locale/density and chart parity | [feature-parity.md](references/feature-parity.md) |
 | Concept, alternatives, refinement, approval, exact implementation | [concept-to-code.md](references/concept-to-code.md) |
 | User goals, information architecture, usability evidence | [product-thinking.md](references/product-thinking.md) |
+| Hidden work, confusing navigation, incomplete primary tasks, live investigation and return | [task-flow-design.md](references/task-flow-design.md) |
 | Layout, hierarchy, color, type, shapes, iconography, motion, tokens | [visual-systems.md](references/visual-systems.md) |
 | Component anatomy, hover/focus/press/selection, selectors, messages, icons and material states | [component-states.md](references/component-states.md) |
 | Navigation hierarchy, overloaded settings, panels, glass/materials, shape and motion | [navigation-and-materials.md](references/navigation-and-materials.md) |
 | Desktop/tablet/phone, input modes, navigation and adaptation | [platform-adaptation.md](references/platform-adaptation.md) |
 | Forms, wizards, settings, search, editing, asynchronous flows | [workflows.md](references/workflows.md) |
+| Redundant facts, repeated labels/help, conflicting summaries and unnecessary reading | [workflows.md](references/workflows.md#information-economy-in-the-actual-task) |
 | Account and access workflows: sign-in, recovery, sessions, role selection and scope | [identity-permissions.md](references/identity-permissions.md) |
 | Personal/org/project settings, invitations, roles, billing and governance | [business-administration.md](references/business-administration.md) |
 | API credentials, service accounts, webhooks and OpenAPI documentation | [developer-platforms.md](references/developer-platforms.md) |
@@ -86,6 +88,8 @@ Delegation can split independent surfaces or specialist passes. Give each worker
 - Adapt to usable space, content, input capability, and user preferences. “Mobile” is not simply a scaled-down desktop screenshot.
 - For every decision-bearing metric, table, chart, widget and drill path in scope, verify meaning, useful exploration/action and cross-surface consistency in distinct passes. Unknown domain definitions remain gaps; proposed filters, comparisons or actions need a stated user benefit and data/permission dependencies. Established patterns are candidates, not mandatory features for every product.
 - Check visual craft and task performance separately. A polished screen can still be confusing; a usable screen can still need typographic and compositional refinement.
+- Propagate confirmed design decisions to every affected usage and relevant context, with rendered evidence or explicit gaps. Review work/preservation, composition, information economy and interaction/adaptation in separate passes, then verify corrections on the latest artifact as specified in [concept-to-code.md](references/concept-to-code.md). A token, specimen or single successful screen is not proof of global consistency.
+- Before presenting a substantial concept as ready, walk its critical tasks from a visible entry through real proposed detail, outcome and return using [task-flow-design.md](references/task-flow-design.md). A feature-map entry, dead button or placeholder does not establish a working journey. Keep the original full scope and unfinished branches visible. Translate feedback into a concrete change and fresh rendered evidence; preserve the owner's rejection until resolved.
 - Accessibility needs semantic implementation and manual checks as well as automated scans. Client-side permission visibility does not establish server-side authorization.
 - Label statements as standards, vendor guidance, research/heuristics, product decisions, or hypotheses when the distinction affects a recommendation. “Latest” and “best for this user” are different claims.
 - Inspect visual changes on their actual delivery surface as described in [verification.md](references/verification.md), including surrounding content, visible name/version consistency, spacing and the selected responsive asset at the inspected revision. Size checks to the actual content column and affected variants. If that surface is unavailable, inspect the strongest available preview and state the limit; code/CI passes do not establish visual acceptance. Never invent screenshots, tests, scores, usage data, or user approval.

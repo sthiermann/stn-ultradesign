@@ -273,3 +273,12 @@ Accessed 2026-09-16. See the [research record](../../../docs/research/analytical
 | [Visual interactions](https://learn.microsoft.com/en-us/power-bi/create-reports/service-reports-visual-interactions) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
 | [Assigning colors to measure values](https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Colors/assigning-colors-to-measure-values.htm) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
 | [Chart anatomy](https://carbondesignsystem.com/data-visualization/chart-anatomy/) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
+
+
+## Task flow, proportion and reference discovery — 2026-09-16
+
+The [task-flow research register](../../../docs/research/task-flow-and-proportion.md) records eleven directly read first-party documentation sources and three empirical abstracts, including retrieval limits. Its primary branches cover Apple search, Microsoft navigation, Android list-detail, Atlassian spacing/grid, Linear search/Peek, Stripe search/Workbench and Grafana contextual exploration. The golden-ratio abstracts do not establish business-UI task superiority.
+
+The [award register](../../../docs/research/award-reference-index.json) records 216 distinct awarded projects with exact organizer evidence, method and inspection depth. The [synthesis](../../../docs/research/award-design-review.md) distinguishes 209 metadata-only entries from seven entries with deeper documentation analysis and two additional industrial examples outside the catalogue. Awards are discovery evidence, not normative standards or verified usability.
+
+Additional geometry/surface sources and their access limits are recorded in [Liquid Glass controls research](../../../docs/research/liquid-glass-controls.md): Apple WWDC25/356 and /323, WWDC26/289, HIG Color/Dark Mode/Materials, SwiftUI ConcentricRectangle, UIKit semantic backgrounds and W3C CSS Backgrounds corner geometry. Native guidance is not evidence of equivalent browser rendering.

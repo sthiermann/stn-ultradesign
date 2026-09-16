@@ -59,10 +59,22 @@ Apple's sidebars can expose collections and shallow hierarchy, support hiding, a
 
 ### Decongest settings without losing features
 
+Choose the entry and switching pattern from actual work, rather than making every device use the same sequence:
+
+| Pattern | Favor when | Avoid or adapt when |
+|---|---|---|
+| Persistent local navigation beside selected content | People repeatedly switch among peer settings and the available width supports readable navigation and forms | Long labels, enlargement or narrow windows leave too little usable content space; collapse or change presentation while retaining location |
+| Landing-page directory | First visits, unfamiliar categories or infrequent setup benefit from descriptions and orientation | Experienced users must repeatedly return to the directory to change a neighboring setting; retain direct peer access or an agreed resume path |
+| Sequential overview → area → detail | Compact space or a genuine parent-child task benefits from one context at a time | The sequence is imposed on a wide workspace despite frequent peer switching; do not add an intermediate page merely for visual consistency |
+
+A global rail and an adjacent settings sidebar are valid candidates when they represent distinct scopes. For example, the global selection is Settings, the local selection is Notifications, and its content is directly visible. Label the scopes, make both selections coherent, and test content width with realistic forms, long translations and text enlargement. There is no one-sidebar limit. Apple documents simultaneous hierarchy in split views and selection in the panes leading to detail; Microsoft documents adaptive navigation forms. These support evaluating multiple panes, not a universal requirement to use two rails. [Apple split views](https://developer.apple.com/design/human-interface-guidelines/split-views), [Microsoft NavigationView](https://learn.microsoft.com/en-us/windows/apps/design/controls/navigationview)
+
+Preserve a working navigation pattern unless a requested change or a demonstrated task benefit justifies replacing it. Before introducing a directory or hiding local navigation, compare task entry to the first meaningful result, then switching from category A to B and C and returning with the relevant draft and position intact. Compare direct peer selection with Back → overview → next category. Minimize unnecessary actions, re-entry and hierarchy travel while checking recognition, content space and correctness. A tidy overview does not compensate automatically for repeated switching costs. Keep an approved compact hierarchy while evaluating the wide layout independently.
+
 1. Map every existing setting to its scope, role, dependency, current value, and proposed location. Retain themes, languages, density choices, chart preferences, technical controls, and conditional features in that map.
 2. Move frequent task-specific controls to the task when this improves access. Keep durable preferences in identifiable categories; put advanced explanations near the relevant choice.
-3. In compact layouts, use a category index with useful summaries, then a focused category page. Search may supplement this structure; it must not become the only path to a feature.
-4. In wider layouts, the same categories may remain visible beside the active group. Keep section names and settings identity stable across sizes.
+3. In compact layouts that need sequential navigation, use a category index with useful summaries, then a focused category page and clear return. Search may supplement this structure; it must not become the only path to a feature.
+4. In wider layouts with frequent peer switching, keep the same categories visible beside the selected content when space allows. A separate directory is optional orientation, not a mandatory stop. Keep section names and settings identity stable across sizes.
 5. Distinguish immediately applied personal preferences from staged changes. Where the approved workflow requires Save, show a coherent change review and dirty state; explain scope before committing.
 6. Test return navigation after editing, validation failure, cancellation, and resize. A cleaner screen must not hide an unsaved change or remove a supported capability.
 
@@ -74,7 +86,7 @@ For each view, outline the content region and every persistent or temporary laye
 
 Use the following review rules:
 
-- One clear primary navigation treatment per active hierarchy level. Deliberate duplicate access for reachability is acceptable; competing selected states are not.
+- One clear primary navigation treatment per active hierarchy level. Global and local sidebars may coexist because they represent different levels; do not mistake their coherent selections for duplication. Deliberate duplicate access for reachability is acceptable; contradictory selected states within the same scope are not.
 - Keep frequent local actions visible; group secondary commands by purpose in a discoverable overflow. Do not bury the task's defining action to make a toolbar symmetric.
 - A supporting panel needs a task reason to occupy space continuously. Otherwise provide a labeled way to open it and a visible way to close it.
 - Classify each overlay as modal or nonmodal. Modal background content must not remain an accidental keyboard destination. A nonmodal inspector must not trap focus or imply that the background is blocked.

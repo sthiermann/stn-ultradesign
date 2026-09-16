@@ -79,6 +79,40 @@ Google's Compose guidance treats press, release, cancellation, hover and focus a
 
 **Motion.** Specify cause, affected layer, cancellation and reduced alternative. Press feedback should acknowledge input immediately; a spring or morph must not delay the action, move a target away or obscure the resulting state. Do not animate every streamed value or every item on ordinary rerender. Apple's Liquid Glass guidance describes responsive material behavior, while its WWDC26 discussion recommends appropriate native button styles instead of applying a raw glass effect indiscriminately. A web approximation still requires independent state and performance verification. [Meet Liquid Glass](https://developer.apple.com/videos/play/wwdc2025/219/), [SwiftUI Group Lab, 7:21](https://developer.apple.com/videos/play/wwdc2026/8120/).
 
+## Relate corners instead of copying one radius
+
+Choose whether each corner is independent, a capsule end, or related to a nearby enclosing corner. A button does not need the same numerical radius as its box. Apple distinguishes fixed, capsule and concentric shapes, including compact rounded rectangles on macOS. Concentricity concerns shared corner centers. [Design system, WWDC25](https://developer.apple.com/videos/play/wwdc2025/356/), [SwiftUI design, WWDC25](https://developer.apple.com/videos/play/wwdc2025/323/)
+
+For **circular corners with a uniform inset**, use the geometric relationship `inner radius = outer radius − inset` while the result is positive. Original example: an outer radius of 24 CSS pixels and an 8-pixel edge-to-edge inset give a 16-pixel inner radius. These are illustrative values, not Apple tokens. At zero or below, exact rounded concentricity is no longer possible; a square corner or deliberate minimum/fallback radius changes the relationship.
+
+- Measure between corresponding rendered edges in the same coordinate system. If the reference is the parent's outer border edge, include its border thickness and all intervening padding/margin in the actual offset to the child's outer border edge. Do not subtract only CSS padding from an outer-border radius by habit.
+- Apply the relationship only to nearby paired corners. A small button centered inside a large dialog does not inherit all four dialog corners. Top and bottom corners may have different roles; Apple's configurable shapes explicitly support per-corner choices and minimum radii. [ConcentricRectangle](https://developer.apple.com/documentation/swiftui/concentricrectangle)
+- With unequal insets, elliptical corners, continuous curves or asymmetric shapes, one scalar subtraction does not prove a constant-width gap. Inspect each corner's horizontal/vertical relationship and silhouette. Record an optical adjustment as intentional rather than calling it exact concentricity.
+- A horizontal capsule relates its end radius to half its own height; an independent control can retain that shape without matching the container. Recheck after wrapping, density changes and text enlargement. Do not force fixed height or truncate a label merely to preserve a preferred silhouette.
+- In CSS, distinguish outer border, padding and content edges. Oversized radii can be proportionally reduced by the browser; the declared value is not always the used geometry. [CSS corner shaping and overlap](https://www.w3.org/TR/css-backgrounds-3/#corners)
+
+Render the full composition and a corner close-up at supported zoom, widths and densities, with long labels and open overlays. Inspect even spacing, pinched/flared corners, clipping, focus-ring clearance and hit areas. CSS circular/elliptical radii approximate an intended relationship; they do not automatically reproduce a native continuous curve or container-shape algorithm. Preserve explicit brand departures and approved shape choices.
+
+## Assign surfaces by role before choosing colors
+
+Apple's semantic colors distinguish system and grouped backgrounds; iOS/iPadOS Dark Mode additionally distinguishes base and elevated presentation. These are different dimensions, not a rule to brighten every nested card. macOS has its own semantic roles. A sampled screenshot color is not a cross-platform palette. [Apple color](https://developer.apple.com/design/human-interface-guidelines/color), [Dark Mode](https://developer.apple.com/design/human-interface-guidelines/dark-mode)
+
+| Surface role | Contract and rendered check |
+| --- | --- |
+| Base workspace/document | Set the reading/media context; inspect large-area tone in both themes without assuming pure black, white or a brand-colored wash |
+| Grouped content | Distinguish related groups through spacing and an appropriate surface relationship; do not simulate elevation for every subdivision |
+| Elevated sheet/popover | Preserve separation from the actual underlying surface; verify foreground contrast, modality and inactive/background context where applicable |
+| Standard material | Supply contextual separation within content with legibility suited to text/detail density |
+| Liquid Glass/chrome | Define the functional layer, actual backdrop and allowed material response; a translucent fill over a flat canvas proves little about moving content |
+| Selected/pressed/semantic state | Keep state and brand accent separate from the base surface; selection must remain recognizable when focus or error coexists |
+| Reduced-effect/contrast fallback | Retain grouping, state, labels and focus when transparency or shadows disappear |
+
+Apple's material guidance separates standard content materials from functional glass. For an Apple-aligned baseline, avoid independent glass effects stacked on each other; controls within a glass group can use state fills rather than another glass sheet. User-approved departures remain product choices. [Materials](https://developer.apple.com/design/human-interface-guidelines/materials)
+
+Specify foreground, fill, backdrop, edge and shadow together. Use an outline or shadow when it supplies necessary recognition or layering, not on every surface automatically. Inspect static and scrolling states over light, dark, saturated and busy content, plus disabled/pending/open states. Record exact CSS values as project approximations with evidence; neither a hex palette nor blur parameters establish native Apple fidelity.
+
+Verify which surface is actually painted. Inspect the rendered primary content region and its ancestor backgrounds, not only a token declaration: a white content token cannot help if transparent content inherits a gray canvas. For an Apple-led light appearance, distinguish ordinary white content from grouped backgrounds; Apple's `systemBackground` explicitly covers white-primary light interfaces, while grouped colors serve a different composition. Do not turn that distinction into an all-white rule for every brand or map a UIKit token literally onto macOS or CSS. Check the relative area and contrast of content, grouping and chrome in the actual light and dark layouts. [System background](https://developer.apple.com/documentation/uikit/uicolor/systembackground), [Grouped background](https://developer.apple.com/documentation/uikit/uicolor/systemgroupedbackground)
+
 ## Separate signals from decoration
 
 Reserve semantic roles for information, success, warning, error and destructive intent independently of brand accent. A red brand does not make every primary action destructive; a green selected filter does not prove an operation succeeded. Verify meaning with labels/icons and actual outcome, not hue alone.

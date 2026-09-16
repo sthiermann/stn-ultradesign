@@ -2,6 +2,13 @@
 
 ## 0.2.0 — 2026-09-16
 
+- Add per-usage propagation of confirmed brand decisions, semantic surface and concentric-corner checks, direct settings navigation choices, and separate concept/content verification passes.
+- Audit semantic information duplication across controls, helpers and summaries while retaining useful context and consequential confirmations.
+
+- Add critical-task walkthroughs, visible entry/detail/return contracts, live investigation semantics and concrete feedback-to-evidence records.
+- Require a user-readable capability-preservation summary with substantial concepts; reconcile source changes during design work.
+- Expand primary-source research on task navigation, award references and the limits of golden-ratio claims; keep metadata discovery separate from observed product behavior.
+- Add a fresh, source-only logistics concept evaluation without providing the reviewer an expected answer.
 - Add a reference-fidelity method: inspect actual device-specific visuals and relevant motion, translate qualities into acceptance conditions, and retain user rejection as an unresolved finding.
 
 - Publish the complete repository documentation in English with original responsive SVG presentation assets.

@@ -85,6 +85,16 @@ Use shape, spacing and material treatments consistently while preserving usable 
 
 Specify motion by trigger, purpose, state transition and reduced-motion behavior. Test translucent or textured surfaces over representative content, not only an ideal background. Preserve critical status, legibility and a usable fallback. Treat any unverified rendering cost as a hypothesis to measure, not evidence that a visual treatment is performant.
 
+### Propagate decisions to every affected usage
+
+For each accepted brand decision, maintain a traceable chain: **decision → affected usage inventory IDs → relevant state and context → rendered acceptance check**. Link the actual page, component usage, widget, overlay and nested control occurrences from the existing [audit plan](audit-method.md), or a bounded affected-usage inventory and finite context plan when no audit ledger is needed for this work mode; naming a shared component family alone does not establish complete coverage. A camera caption, its hover controls and its expanded menu may inherit different rules and each needs an explicit mapping.
+
+Record the governing token or primitive, the observable treatment and any justified exception. Apply the user's chosen material family within its agreed scope; this is not a universal glass requirement. An opaque fallback, independent content surface or safety-critical status may need different treatment, but explain that exception and its acceptance condition instead of silently omitting the brand decision.
+
+Reuse the audit plan's finite, relevant role, state, input, theme, size, locale and density contexts, or define those relevant contexts in the bounded usage plan. This does not require a whole-product audit for a focused concept or implementation. Cover each affected usage and justify any equivalent context treatment; do not create an indiscriminate cross-product or infer universal coverage from representative specimens. Inspect the actual rendered usage, including transient hover, focus, selected, open and error states where applicable. A token change or inherited style in source is not rendered verification.
+
+Newly discovered usages, changed shared primitives or state rules, and changed relevant contexts reopen the affected mappings and checks. Tie evidence to the artifact revision; retain earlier observations as historical evidence. Reconcile mapped, depicted, implemented and rendered-verified usages separately. Unfinished concept areas remain visible obligations, not lost features or implicit exceptions. Claim consistency only within the reconciled scope and tested conditions, with blocked or untested usages disclosed; never promise an unsupported “100%” result.
+
 ## Reference fidelity: inspect, translate and compare
 
 When a user names a visual reference, inspect the actual relevant interface or first-party imagery as well as its written guidance. Record the source, date/version, device family, surface and state observed. If motion matters, inspect an available demonstration or video; distinguish observed frames, observed transitions and transcript-only findings. State any access limitation instead of claiming to have watched a video or verified a behavior. Marketing imagery establishes visible qualities in that example, not runtime accessibility, performance or a universal layout rule.
@@ -109,7 +119,7 @@ Reuse user-provided or existing project materials within the established authori
 
 Add a concise brand section to the project's [design brief](../assets/design-brief.template.md): identity, evidence and authority, confirmed preferences, inheritance matrix, asset register, conflicts and open decisions. Link it from the feature map when a visual change affects a familiar location or interaction.
 
-Show alternatives with the same task, content, role and device conditions. Explain what each inherits, what it changes, and why that helps the work. A mood board alone does not demonstrate the resulting interface. Include representative ordinary and difficult states, theme variants, long localized content and the relevant density choices before calling the direction verified.
+Show alternatives with the same task, content, role and device conditions. Explain what each inherits, what it changes, and why that helps the work. A mood board alone does not demonstrate the resulting interface. Representative ordinary and difficult states, theme variants, long localized content and relevant density choices can support direction exploration. They do not establish consistency across all affected usages; reconcile the propagation map before making a scope-wide claim.
 
 Carry accepted decisions into the [design contract](../assets/design-contract.template.md): token roles, assets, typography, layout boundaries, component exceptions, states and device/theme/locale/density coverage. Distinguish an approved brand direction from an approved complete concept and from authorization to implement it. Follow [concept-to-code.md](concept-to-code.md) for the existing approval and fidelity process.
 

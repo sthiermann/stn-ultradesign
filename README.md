@@ -49,6 +49,12 @@ Three connected passes examine **meaning → exploration and action → consiste
 
 The audit asks you focused questions whenever domain meaning or direction remains uncertain, with no fixed question ceiling. Previously confirmed answers carry forward. See the [analytical meaning method](skills/stn-ultradesign/references/analytical-meaning.md), [surface record](skills/stn-ultradesign/assets/analytical-surface.template.md), and [research](docs/research/analytical-experiences.md).
 
+## Less searching. More useful work.
+
+Minimalism should make work easier to find. Every critical task follows a visible path: **entry → useful action → object and context → evidence → outcome → return**. A camera event should lead to the right camera and moment. A live chart should explain its scope, units and freshness. Closing a detail should restore the work you left.
+
+The skill tests those paths in the rendered concept before calling them ready. It separates product navigation from local views and commands, checks compact layouts without piling up desktop navigation, and keeps required actions discoverable. A missing workflow stays unfinished even when its button looks polished. Feedback becomes a concrete change with an acceptance condition and fresh evidence. See the [task-flow method](skills/stn-ultradesign/references/task-flow-design.md) and [research on navigation and proportion](docs/research/task-flow-and-proportion.md).
+
 ## Craft is part of the method
 
 An attractive component does not make a coherent product. STN Ultradesign asks what deserves attention, which relationships should be visible, and how composition supports the next decision.
@@ -71,7 +77,7 @@ Your brand guides that treatment. Prominent translucent materials, precise techn
 
 Substantial concept work starts with a structured brief of **at least 20 meaningful preference questions** tailored to the product. This is a minimum, not a ceiling: ask more when an unresolved decision materially affects the outcome. Previously confirmed answers carry forward. Establish the intended character, information density, layout priorities, typography, color, shape, motion, device behavior, and what already works for you. The brief makes the difference between established best practice and aesthetic preference clear, so you can make informed choices.
 
-Those answers become design inputs and acceptance criteria. Reviewable alternatives then show their consequences in the actual product. See the [discovery and preference method](skills/stn-ultradesign/references/discovery-and-preferences.md).
+Those answers become design inputs and acceptance criteria. Each accepted rule is traced to its affected component usages and relevant states, with rendered evidence or an explicit gap. Separate review passes examine complete tasks, visual consistency, redundant information and device/input behavior; corrections are checked again on the latest artifact. Reviewable alternatives then show their consequences in the actual product. See the [discovery and preference method](skills/stn-ultradesign/references/discovery-and-preferences.md).
 
 ## Your brand, deliberately carried forward
 
@@ -144,6 +150,8 @@ An audit does not authorize creating or revoking real credentials, changing real
 ## Open method. Honest evidence.
 
 The reference library distinguishes **standards, platform guidance, research, heuristics, and product decisions**. Its primary sources include W3C, Apple, Google, Microsoft, IBM, and influential design researchers. Sources inform the method; their authors do not endorse this project. See the [source index](skills/stn-ultradesign/references/sources.md) and [research notes](docs/research/overview.md).
+
+The [award-reference study](docs/research/award-design-review.md) catalogues **216 awarded projects**, with deeper document analysis of seven selected projects and two additional industrial examples. Award metadata, documented design decisions, visual inspection and live testing are distinct evidence levels. The catalogue is a discovery resource, not a claim that every listed product was audited or that award-winning marketing layouts belong in every business application.
 
 The repository includes original instructions, progressive references, an audit ledger template, a design contract, a local Python validator, and synthetic evaluation fixtures. Package checks and coverage tests are automated. Actual client installation, application behavior, user research, and aesthetic acceptance are reported separately in the [evaluation record](docs/quality/evaluation.md).
 

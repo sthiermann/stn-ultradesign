@@ -1,5 +1,17 @@
 # Workflows: complete journeys, observable states, recoverable actions
 
+## Information economy in the actual task
+
+Read each rendered decision area as one message: heading, label, value, option, helper, badge, tooltip, summary and accessible name. Detect semantic repetition, not only identical strings. Two differently formatted dates may repeat the same fact; repeated titles can consume more attention than the information they introduce.
+
+For each fact, identify its authoritative location and what each additional occurrence contributes. Remove repetition that adds no distinction, action, scope or recovery value. Original example: duration options labelled `7 / 30 / 90 days` can share one selected full expiry date below; repeating that date inside the selected option and immediately below it is usually unnecessary. Conversely, relative duration and an exact timestamp can convey different useful facts. Record the actual timezone/calendar semantics rather than deleting precision to save space.
+
+Retain justified repetition for consequential confirmation, continuity when a heading scrolls away, standalone records/exports, or an accessible alternative. Do not remove a necessary form label, warning or chart value because the same words appear elsewhere. Check accessible names/descriptions for accidentally repeated speech; shortening visible copy must preserve the control's meaning. Keep coupled values derived from the same source so they cannot drift.
+
+Review compact and expanded states, selected and unselected choices, errors, tooltips and supported locales. An explanatory message may be useful on first use but redundant beside a well-understood control; decide from the task, not a blanket ban on help text. Remove duplicated controls only after preserving their discoverable task access and reconciling the feature map.
+
+Apple's [Writing guidance](https://developer.apple.com/design/human-interface-guidelines/writing) emphasizes purposeful words and consistent language; NN/g's [minimalist-design heuristic](https://www.nngroup.com/articles/aesthetic-minimalist-design/) explains competition for attention. These support the review, not an absolute rule that useful information may occur only once.
+
 Load when auditing or designing navigation, forms, onboarding, wizards, settings, dialogs, search, uploads, notifications, checkout, collaboration or AI-assisted tasks. Access date: 2026-09-16. Source paragraphs describe published guidance; the decision rules, contracts and test scenarios below are this skill's operational synthesis. Pattern-library conventions are evidence to evaluate in context, not universal laws.
 
 ## 1. Start with a workflow inventory

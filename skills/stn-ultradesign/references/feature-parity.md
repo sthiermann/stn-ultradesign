@@ -76,6 +76,8 @@ Use synthetic data when evidence would otherwise reveal sensitive operational de
 
 ## Make the comparison understandable
 
+Include a capability-preservation summary with every substantial concept revision, in the user's language: what stays, what moves and its exact new entry, what changes in interaction, what remains undesigned, and what needs an explicit decision. Link each consequential item to its feature ID and role/variant contract. Make the summary available beside the concept, not only in implementation notes. A user should be able to locate a familiar feature without reverse-engineering the mockup. If a capability appears unnecessary or its meaning is unclear, preserve it provisionally and ask about its actual use before proposing removal. General approval of a cleaner aesthetic is never approval of that removal.
+
 Present a short explanation beside the full feature map. Show an old/new navigation map and matched screenshots or annotated wireframes for consequential moves. Describe a concrete journey in ordinary language: where the person starts, what they can still do, what changed, and how they return. Mark prototype-only omissions visibly, with their mapped destination. Screenshots must use safe content and identify whether they show observed, simulated or proposed behavior.
 
 For each major change, state the benefit and cost. “The export action moves beside the chart it exports; the same roles, fields and formats remain available” is reviewable. “Administration is simpler” does not establish that its functions survived. Demonstrate role-specific views when the distinction affects understanding; do not portray one unrestricted view as everyone's application.

@@ -142,3 +142,7 @@ A useful first application is a full audit of a clearly bounded product with aut
 The published version is a developed and tested starting package with a transparent [quality status](../quality/evaluation.md). Actual failures should lead to targeted corrections. Additional rules are not an end in themselves; their value depends on whether the next application produces better, verifiable results.
 
 See [Analytical experiences](analytical-experiences.md) for metric meaning, aggregation, comparison, freshness, thresholds and contextual exploration. These sources inform the analytical method; they do not establish a universal dashboard layout.
+
+See [Task flow and proportion](task-flow-and-proportion.md) for discoverability, scoped search, contextual detail, pause/resume, navigation continuity and the empirical limits of golden-ratio claims. The [operational method](../../skills/stn-ultradesign/references/task-flow-design.md) requires a critical-task walkthrough before calling a concept ready; a label or placeholder cannot establish a completed workflow.
+
+The [award-reference study](award-design-review.md) adds a provenance-labelled catalogue of 216 awarded projects. Seven selected catalogue entries and two additional industrial examples receive deeper document analysis. The report distinguishes award discovery from visual and interaction inspection, records selection bias, and turns reference observations into hypotheses to test rather than styles to copy.
