@@ -1,6 +1,6 @@
 # GitHub landscape for an independently developed design skill
 
-**Access and comparison date: September 16, 2026.** This review concerns published capabilities and evidence, not adoption of other skills. Materials read were repository overviews, README descriptions, license metadata and a linked case study. No third-party skill was installed, executed, cloned or incorporated into this package. Repository instructions were not executed as working instructions. Sources point to changing default branches; a reproducible future comparison must record exact revisions.
+**Access and comparison date: September 16, 2026.** This review concerns published capabilities and evidence, not adoption of other skills. The initial review read repository overviews, README descriptions, license metadata and a linked case study. The later Anthropic comparison also reads its public frontend instruction files at pinned revisions. No third-party skill was installed, executed, cloned or incorporated into this package. External instructions were treated as research data, not working instructions. The initial comparisons use changing default branches; the newer Anthropic review records exact snapshots.
 
 ## What the reviewed projects offer
 
@@ -30,9 +30,13 @@ Its [Neo-Mirai case study](https://impeccable.style/cases/neo-mirai/) illustrate
 
 **License metadata:** the README states MIT. A separately attempted LICENSE address could not be retrieved; no more detailed licensing conclusion follows. No files are incorporated.
 
-### Anthropic as a separate reference
+### Anthropic frontend design: updated source comparison
 
-The official [repository](https://github.com/anthropics/skills) and [frontend directory](https://github.com/anthropics/skills/tree/main/skills/frontend-design) were opened to establish provenance. The substantive primary analysis appears in the broader research report. This subsection adds no unverified claim about current scope or licensing. Names are used for factual attribution only; they do not imply association or endorsement.
+The current verified public name is `frontend-design`; the informal `/design-skill` label alone does not establish a user's installed package. The official [Claude Code plugin manifest](https://github.com/anthropics/claude-code/blob/df52d04a4e65195c1621fe6222e0564bcccb1804/plugins/frontend-design/.claude-plugin/plugin.json) identifies version 1.1.0. A separate official [Design Plugin](https://github.com/anthropics/knowledge-work-plugins/blob/main/design/README.md) has a broader command collection and is not treated as that same frontend skill.
+
+The [detailed capability and gap review](claude-design-gap-review.md) compares pinned public instructions with Ultradesign's actual modules. It records what is already covered and proposes three concrete improvements: a rendered direction proof, a same-content typography/proportion trial when those choices are open, and a fresh completed craft evaluation. These are original development proposals, not copied procedures or demonstrated competitive advantages.
+
+The detailed review includes exact source revisions, retrieval limits and license metadata. No Anthropic instruction file, template, code or asset is reproduced in this package. Names are factual attribution, without implying association or endorsement.
 
 ## Supported conclusion
 

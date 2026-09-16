@@ -1,5 +1,8 @@
 # Liquid Glass, controls, and an independent product identity
 
+**Reference-specific research archive.** This report records one investigated design language and its retrieval date. It is not a default aesthetic, mandatory operational instruction or a substitute for researching the direction selected by the current user. Use the [project-specific reference method](../../skills/stn-ultradesign/references/brand-discovery.md#research-the-selected-language-for-this-project) for any chosen language or company identity.
+
+
 **Research date:** 2026-09-16. **Source type:** official Apple guidance and documentation, published WWDC transcripts, W3C implementation guidance, and MDN documentation. **Purpose:** inform a product-specific brand choice with current evidence. This is not a requirement that every STN Ultradesign project adopt Apple's appearance.
 
 The operational synthesis is in [Navigation and materials](../../skills/stn-ultradesign/references/navigation-and-materials.md). Brand adoption belongs in the project's [selective inheritance matrix](../../skills/stn-ultradesign/references/brand-discovery.md). This public note contains no private application data, copied design assets, or third-party skill content.

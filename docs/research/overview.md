@@ -52,7 +52,7 @@ Our synthesis is:
 
 The skill therefore prescribes no universal font family, single grid, global corner radius or blanket ban on particular colors. It requires a justified direction and checks its execution.
 
-The [control and material research](liquid-glass-controls.md) examines current Apple guidance in more detail. The [component state method](../../skills/stn-ultradesign/references/component-states.md) adds original cross-system acceptance criteria for everyday controls and their interaction states.
+The [control and material research](liquid-glass-controls.md) archives a September 16, 2026 investigation of one requested design language. It is neither a skill default nor an automatically current specification for future projects. The [component state method](../../skills/stn-ultradesign/references/component-states.md) adds original cross-system acceptance criteria for everyday controls and their interaction states.
 
 ## 5. Account, organization, role and developer-interface UX
 

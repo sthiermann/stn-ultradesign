@@ -41,6 +41,7 @@ Complete only sections relevant to this project. Remove unused sections with an 
 - Asset provenance, documented use conditions and unresolved dependencies:
 - Component/surface exceptions and associated acceptance IDs:
 - Reference observations: source/version, device, surface/state, inspected visuals or motion, and access limits:
+- Selected design language and project-specific [research-to-render record](reference-translation.template.md), connecting observed evidence to derived rules and affected usages:
 - Reference qualities translated into rendered acceptance conditions; intentional departures and superseded preferences:
 
 An approved visual reference does not authorize copying its assets. Preserving corporate typography or colors does not automatically preserve a legacy layout. Record those choices separately and retain the real authorization scope.

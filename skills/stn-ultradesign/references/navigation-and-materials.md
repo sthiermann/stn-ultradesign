@@ -2,7 +2,7 @@
 
 Read for app shells, overloaded settings, adaptive navigation, contextual panes, floating controls, translucent materials, or motion that changes perceived hierarchy. Apply this module within the current audit, concept, or implementation scope. An audit diagnoses; it does not authorize a redesign. Follow [discovery-and-preferences.md](discovery-and-preferences.md), [feature-parity.md](feature-parity.md), and [concept-to-code.md](concept-to-code.md) when proposing substantial changes.
 
-Primary sources below were accessed on **2026-09-16**. Apple video evidence means published transcripts were reviewed, not that every video frame was inspected. Several HIG pages required their indexed text because their ordinary page response was a JavaScript shell. The decision tables and review procedures are original operational synthesis, not quotations or universal vendor requirements.
+The decision tables and review procedures are original operational synthesis. Vendor sources provide contextual evidence, not a default design language or universal rules. Research the user's requested system and applicable version before deriving its visual contract; existing citations do not replace that work.
 
 ## 1. Separate the authority of each decision
 
@@ -13,9 +13,9 @@ Primary sources below were accessed on **2026-09-16**. Apple video evidence mean
 | CSS specification | Defined web behavior and syntax, subject to specification status | Uniform browser support or a native rendering equivalent |
 | Product decision | A justified arrangement for this domain, audience, and task | A worldwide standard merely because the result looks current |
 
-Do not freeze the Apple reference at its 2025 launch. Apple's WWDC26 presentation describes further diffusion of complex backgrounds, stronger edge separation, user-controlled tinting, sidebar changes, and scroll-edge treatments. These are refinements to native systems; verify availability against the actual OS and SDK being targeted. Their implication for this skill is to recheck readability and adaptation as materials evolve, not to reproduce a screenshot from one OS release. [Apple, Platforms State of the Union, WWDC26](https://developer.apple.com/videos/play/wwdc2026/102/)
+Establish the requested brand or design language first. Research its current primary guidance, relevant actual interfaces, component states and platform constraints; identify the specific expression the user wants, which may differ from the newest release. Translate observations into testable product rules and intentional departures using [brand-discovery.md](brand-discovery.md). Do not silently inherit a style from this skill's research examples.
 
-For a web application, describe a translucent treatment as the product's own material. CSS blur does not reproduce Apple's complete optical, input, accessibility, and window-management behavior. Choose the product's identity with the user; a platform reference does not override the approved concept.
+For a web application, describe custom materials as the product's implementation. A matching effect does not establish native optical, input, accessibility or window-management equivalence. A platform reference does not override the approved concept.
 
 ## 2. Define the navigation model before the shell
 
@@ -43,7 +43,7 @@ An app destination, an open document, and an action can all look like a tab-shap
 
 These are candidates, not a hierarchy of fashionable components. A long, independently navigable settings section may need a page even when smaller contextual editors use drawers. Do not force every form into a side panel.
 
-Apple's tab bars represent top-level areas, preserve their navigation context, and are distinct from action toolbars. Keep eligible destinations stable across empty/loading states; role-based availability still follows the product's access model. The HIG's June 2026 tab/sidebar guidance also supports adaptation between forms. This does not imply a universal five-destination limit or that every web app needs iOS-style tabs. [Apple tab bars](https://developer.apple.com/design/human-interface-guidelines/tab-bars)
+Distinguish navigation between destinations from action toolbars and local views. Keep eligible destinations stable across empty/loading states; role-based availability still follows the product's access model. Preserve per-destination context when navigation changes form. Neither a universal destination count nor a particular tab silhouette follows from these requirements.
 
 ## 3. Adapt hierarchy, not just component width
 
@@ -55,7 +55,7 @@ Use actual available width and height, text size, input capabilities, window sta
 
 **Compact workspace:** show one main task context with a clear path back. Global destinations and local editing actions must remain distinguishable. Avoid stacking app header, breadcrumbs, section tabs, filter bar, oversized title, and persistent save footer by default. Decide which context must stay visible and which can appear on demand.
 
-Apple's sidebars can expose collections and shallow hierarchy, support hiding, and adapt to available space. Its guidance recommends restrained hierarchy within the sidebar and additional content panes for deeper structures. Its June 2026 update also clarifies meaningful icon colors. On the web, use these as design evidence, not as permission to copy native assets or force a particular icon color. [Apple sidebars](https://developer.apple.com/design/human-interface-guidelines/sidebars)
+A sidebar can expose peer collections while related panes show deeper context. Evaluate discoverability, selection and available space together. Do not import a vendor's icon colors, floating treatment or dimensions merely because its navigation structure is useful.
 
 ### Decongest settings without losing features
 
@@ -78,7 +78,7 @@ Preserve a working navigation pattern unless a requested change or a demonstrate
 5. Distinguish immediately applied personal preferences from staged changes. Where the approved workflow requires Save, show a coherent change review and dirty state; explain scope before committing.
 6. Test return navigation after editing, validation failure, cancellation, and resize. A cleaner screen must not hide an unsaved change or remove a supported capability.
 
-Apple distinguishes task-local options from less frequent app preferences and encourages useful defaults. Treat this as evidence for placement and reduced setup effort, not authorization to delete existing choices. Its macOS settings-window conventions are platform-specific. [Apple settings](https://developer.apple.com/design/human-interface-guidelines/settings)
+Useful defaults and task-local options can reduce setup effort, but do not authorize deleting existing choices or importing another platform's settings-window behavior.
 
 ## 4. Give chrome and overlays a measurable budget
 
@@ -93,7 +93,7 @@ Use the following review rules:
 - Avoid nested modal tasks when the second step can replace the first or become a normal detail page. When nesting is necessary, specify exactly which layer Escape/Back closes and where focus returns.
 - Check the worst combination actually permitted: navigation drawer, inspector, keyboard, validation message, and notification. Remove impossible combinations from the state model rather than hoping their overlap will be rare.
 
-Apple groups toolbar actions by function and frequency. Its WWDC26 SwiftUI guidance describes priorities and overflow when space shrinks. The transferable design decision is an explicit action-priority model; the native API names and runtime behavior do not apply to React automatically. [Apple toolbars](https://developer.apple.com/design/human-interface-guidelines/toolbars), [What's new in SwiftUI, WWDC26](https://developer.apple.com/videos/play/wwdc2026/269/)
+Group actions by function and frequency, and specify which remain visible when space shrinks. Verify the chosen component's actual overflow behavior instead of assuming its visual style supplies an action-priority model.
 
 ## 5. Write a scroll, Back, and focus contract
 
@@ -105,11 +105,11 @@ In a web app, distinguish browser history from a parent-location control and fro
 
 Test sticky chrome with keyboard focus, in-page links, error jumps, text enlargement, a short landscape window, and a visible virtual keyboard. Specify which region scrolls; avoid multiple nested regions without a clear task benefit. When navigation minimizes on scroll, retain a discoverable return and avoid changing controls under a stationary pointer or finger. A collapsing header must not remove a focused control unexpectedly.
 
-Native edge-to-edge backgrounds can continue behind bars while actionable content respects usable areas. Do not infer that every web field or chart label should scroll beneath floating controls. [Apple layout](https://developer.apple.com/design/human-interface-guidelines/layout)
+If the chosen composition extends backgrounds behind chrome, keep actionable content and meaningful labels within usable areas. Decorative continuity does not justify obscuring fields or chart labels.
 
 ## 6. Specify materials by role and failure behavior
 
-Apple places Liquid Glass primarily in the functional layer above content. Its regular variant manages background luminance and is suitable for text-heavy controls; clear glass is intended for rich media contexts. Standard materials serve other content-layer roles. The choice responds to system appearance and accessibility preferences. These distinctions argue against making every panel a translucent card. [Apple materials](https://developer.apple.com/design/human-interface-guidelines/materials)
+Choose flat, filled, elevated, translucent or other surfaces from the approved design language and each region's role. None is this skill's default. Content, controls, navigation and overlays may need different treatments; define their relationships before choosing effect values.
 
 For each proposed product material, document:
 
@@ -124,7 +124,7 @@ For each proposed product material, document:
 | Preferences | Reduced transparency, increased contrast, reduced motion, and product overrides |
 | Cost | Observable scrolling, animation, rendering, and device-performance effect |
 
-Avoid glass stacked on glass and unexplained mixtures of material treatments. Apple's original Liquid Glass presentation explicitly discusses these problems. Use an opaque surface whenever it communicates the same hierarchy more clearly; novelty is not evidence of task benefit. [Meet Liquid Glass, WWDC25](https://developer.apple.com/videos/play/wwdc2025/219/)
+Inspect interacting layers and unexplained mixtures of treatments. If multiple effects weaken separation or legibility, revise the composition or backing within the approved direction. Novelty is not evidence of task benefit, and an opaque alternative should retain the intended hierarchy when effects are unavailable.
 
 For custom web materials, test computed foreground/background combinations and rendered contrast over the darkest, brightest, busiest, and moving backgrounds that can occur. A screenshot over a convenient wallpaper is insufficient. Do not assume blur guarantees contrast or that a single fixed opacity works across both themes.
 
@@ -134,23 +134,23 @@ CSS Media Queries Level 5 defines reduced-motion, reduced-transparency, contrast
 
 ## 7. Make shape, elevation, and motion explain relationships
 
-Choose shapes by role: an enclosing surface, an interactive control, a status marker, and a chart mark should not become indistinguishable capsules. Compare nested corners and spacing as a system. Apple's WWDC26 AppKit presentation introduces container-related corner behavior; it illustrates relational geometry, not a universal web radius formula. [Modernize your AppKit app, WWDC26](https://developer.apple.com/videos/play/wwdc2026/289/)
+Choose shapes by role: an enclosing surface, an interactive control, a status marker, and a chart mark should remain distinguishable. Compare independent, capsule and related corner geometry under the approved shape system; use [component-states.md](component-states.md#relate-corners-instead-of-copying-one-radius) for inset and rendered-edge checks. CSS defines corner behavior, not a preferred brand radius. [CSS corner geometry](https://www.w3.org/TR/css-backgrounds-3/#corners)
 
 Use elevation to identify overlap, temporary context, or active interaction. Do not add a shadow to every section when spacing and typography already explain grouping. Check edges in light, dark, and contrast modes; a soft shadow alone may fail to separate important regions.
 
 For each animation, state the information it conveys: where an inspector came from, what changed, which object remained selected, or whether an action succeeded. Keep the final state understandable without watching the transition. A command must not require waiting through ornamental motion. Gesture-based interaction needs an equivalent discoverable control appropriate to its task.
 
-Apple's motion guidance treats system motion as responsive to platform context and input. Its reduced-motion evaluation specifically addresses movement such as zooming, spinning, parallax, and animated blur. Supply calmer feedback where needed while retaining state communication; simply deleting every animation can remove useful feedback. [Apple motion](https://developer.apple.com/design/human-interface-guidelines/motion), [Reduced Motion evaluation](https://developer.apple.com/help/app-store-connect/manage-app-accessibility/reduced-motion-evaluation-criteria)
+Supply calmer alternatives to movement such as zooming, spinning, parallax and animated blur where needed, while retaining state communication. Removing an effect must not remove meaningful feedback. Use the project's accessibility target and supported preference mechanisms.
 
 ## 8. Translate control behavior without imposing a brand
 
-Read this section when the user chooses an Apple-informed material direction or when auditing controls inspired by it. It is an optional reference, not this skill's default appearance. Record inheritance separately for color, shapes, materials, typography, icons, layout, and motion in [brand-discovery.md](brand-discovery.md). A preference for Liquid Glass does not authorize replacing the product's navigation, removing controls, or copying Apple assets.
+Record inheritance separately for color, shapes, materials, typography, icons, layout and motion in [brand-discovery.md](brand-discovery.md). A visual reference does not authorize replacing navigation, removing controls or copying assets. Apply these behavioral checks regardless of the chosen appearance.
 
 ### Keep material, color, and state separate
 
-Distinguish four decisions: the material's role and variant; a control's semantic accent; the user's appearance/accessibility preference; and its current interaction state. Apple's HIG describes restrained color emphasis on glass, including prominent actions and selected navigation. This is not a rule to tint every surface with the brand color. [Apple color](https://developer.apple.com/design/human-interface-guidelines/color)
+Distinguish four decisions: the material's role and variant; a control's semantic accent; the user's appearance/accessibility preference; and its current interaction state. A brand accent does not determine the fill of every surface.
 
-For a custom control, specify the surface fill or tint, foreground, edge, shadow, shape, focus indicator, and transition independently. Keep measurements reviewable in the project's tokens; do not present invented opacity, blur, radius, or animation values as Apple's specification. Inspect the material in its actual content relationship, including scroll and overlapping panels.
+For a custom control, specify the surface fill or tint, foreground, edge, shadow, shape, focus indicator and transition independently. Keep measurements reviewable in the project's tokens; distinguish verified source values from product-specific choices. Inspect the material in its actual content relationship, including scroll and overlapping panels.
 
 | State | What must be distinguishable | Review failure to catch |
 |---|---|---|
@@ -164,9 +164,9 @@ For a custom control, specify the surface fill or tint, foreground, edge, shadow
 | Unavailable | The action cannot currently run, with context when needed | Dimming makes a relevant setting impossible to discover or understand |
 | Invalid / failed | Which value or action needs attention and how to recover | The error disappears when focus or hover changes |
 
-Specify simultaneous states as well: selected plus focus, invalid plus focus, expanded plus hover, and pending after activation. These are independent facts, not mutually exclusive CSS classes. Native focus and pointing systems vary by platform; their visual effects are not interchangeable with DOM focus. [Apple focus and selection](https://developer.apple.com/design/human-interface-guidelines/focus-and-selection/)
+Specify simultaneous states as well: selected plus focus, invalid plus focus, expanded plus hover, and pending after activation. These are independent facts, not mutually exclusive CSS classes. Native focus and pointing systems vary by platform; their visual effects are not interchangeable with DOM focus.
 
-Apple's iPad pointing guidance considers highlight, lift, and hover effects and warns against scaling elements that crowd adjacent content, such as table rows. For custom web UI, retain the ordinary pointer and a stable hit region unless a supported task requires otherwise. Never make pointer effects a prerequisite for touch or keyboard access. [Apple pointing devices](https://developer.apple.com/design/human-interface-guidelines/pointing-devices)
+Keep pointer effects within a stable hit region and prevent enlargement from crowding adjacent content. Never make pointer effects a prerequisite for touch or keyboard access.
 
 ### Choose the component before its finish
 
@@ -183,19 +183,19 @@ Apple's iPad pointing guidance considers highlight, lift, and hover effects and 
 | Alert | The actual consequence, available recovery or cancellation, and appropriate interruption |
 | Icon control | A consistent visual language, accessible name, identifiable meaning, and all interaction states |
 
-Apple distinguishes action buttons, binary controls, mutually exclusive selections, and menus. Its macOS guidance retains a role for checkboxes and radio buttons; turning every choice into a switch is not modernization. Its pop-up and pull-down terminology also distinguishes choosing a value from issuing a command. Preserve these semantic differences when selecting HTML controls or established accessible components. [Buttons](https://developer.apple.com/design/human-interface-guidelines/buttons), [Toggles](https://developer.apple.com/design/human-interface-guidelines/toggles), [Pop-up buttons](https://developer.apple.com/design/human-interface-guidelines/pop-up-buttons), [Pull-down buttons](https://developer.apple.com/design/human-interface-guidelines/pull-down-buttons)
+Preserve the semantic differences between independent choices, mutually exclusive choices, value selection and commands. Turning every choice into a switch is not modernization. Use [component-states.md](component-states.md) for the full behavior and state contract.
 
-Use selection marks separately from the temporary active menu row. For each menu group, decide whether icons improve recognition; avoid ornamental glyphs that compete with labels. A menu's material must preserve readable labels over its complete allowed backdrop. [Apple menus, updated 2026-06-08](https://developer.apple.com/design/human-interface-guidelines/menus)
+Use selection marks separately from the temporary active menu row. For each menu group, decide whether icons improve recognition; avoid ornamental glyphs that compete with labels. A menu's material must preserve readable labels over its complete allowed backdrop.
 
-An information message does not become an interrupting alert because its container looks polished. Likewise, app-icon notification badging is a platform-specific mechanism, not a universal rule for every in-product status chip. Define the product's count, severity, acknowledgement, and freshness semantics independently. [Apple alerts](https://developer.apple.com/design/human-interface-guidelines/alerts), [Apple notifications](https://developer.apple.com/design/human-interface-guidelines/notifications/)
+An information message does not become an interrupting alert because its container looks polished. App-icon notification badging is a platform-specific mechanism, not a universal rule for every in-product status chip. Define count, severity, acknowledgement and freshness semantics independently.
 
 ### Implement the web contract, not a native screenshot
 
 Start from usable semantic controls. A custom menu requires its complete keyboard, focus, selection, and dismissal behavior; a visually similar collection of links does not automatically need ARIA menu semantics. Use the relevant [WAI-ARIA Authoring Practices pattern](https://www.w3.org/WAI/ARIA/apg/patterns/) when a custom composite widget is necessary, and verify actual assistive-technology behavior. APG is implementation guidance; its examples are not certification or ready-made product code.
 
-Treat `backdrop-filter` as a rendering enhancement over a readable surface. Its backdrop boundary and ancestor effects influence what is filtered. Native Liquid Glass additionally coordinates input response, optical effects, system appearance, and window state. CSS blur alone cannot substantiate a claim of native-equivalent behavior. [MDN backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/backdrop-filter), [Apple custom Liquid Glass views](https://developer.apple.com/documentation/SwiftUI/Applying-Liquid-Glass-to-custom-views)
+When the approved direction uses `backdrop-filter`, treat it as an enhancement over a readable surface. Its backdrop boundary and ancestor effects influence what is filtered. CSS blur alone cannot substantiate native-equivalent behavior. [MDN backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/backdrop-filter)
 
-Before approving this direction, render a compact control specimen in its real layout: buttons, independent and exclusive choices, open menu, selected row, badge, inline message, and alert when the product has them. Include light/dark, dense/comfortable arrangements where supported, keyboard focus, pending/error states, and a nontransparent/reduced-motion variant. Then test the interactions in consuming screens; the specimen supplements the full usage audit rather than replacing it. The detailed source distinctions and a proposed experiment protocol are documented in [Liquid Glass controls research](../../../docs/research/liquid-glass-controls.md).
+Render a compact control specimen in its real layout: buttons, independent and exclusive choices, open menu, selected row, badge, inline message and alert when the product has them. Include supported themes/densities, keyboard focus, pending/error states and applicable reduced-effect alternatives. Then test consuming screens; the specimen supplements the full usage audit rather than replacing it.
 
 ## 9. Evidence required for review
 
@@ -215,4 +215,4 @@ Deliver the navigation map, adaptive transformations, overlay rules, material re
 
 For a reference-led concept, compare both light and dark renderings with the actual reference. Check the distribution of materials across content, navigation and overlays; background chroma; edge direction and intensity; shadow hierarchy; concentric geometry; selection versus hover; and behavior during opening, scrolling and return. A uniform colored wash, strong border on every nested group, generic blur everywhere or identical elevation across all surfaces can preserve the vocabulary while missing the reference's hierarchy. Diagnose those visible mismatches before adding more effects. Retain any explicitly requested departures as product choices.
 
-Separate the reference generation from the latest platform release. For example, the [WWDC26 AppKit design update](https://developer.apple.com/videos/play/wwdc2026/289/?time=864) discusses sidebar and material refinements beyond the 2025 presentation. A user can prefer either expression. Record that choice instead of presenting one year's silhouette as an eternal Apple rule. Neither a reference nor a CSS effect proves native optical equivalence.
+Separate the requested expression from the latest release of its source system. Record the chosen reference and verify current implementation constraints; neither a reference nor a CSS effect proves native equivalence. Only when the user chooses Apple Liquid Glass, consult the [optional historical research](../../../docs/research/liquid-glass-controls.md) as a starting point, then research the requested expression afresh. It is not a default production recipe.

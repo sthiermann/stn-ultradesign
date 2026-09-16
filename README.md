@@ -71,7 +71,7 @@ Existing brand and platform conventions are inputs to a deliberate design decisi
 
 A field is more than its resting outline. The skill defines the anatomy and meaningful states of buttons, selectors, checkboxes, radios, switches, menus, badges, messages, and icons. Hover, keyboard focus, press, selection, pending work, and errors each need a distinct, coherent treatment — including the combinations that occur in real tasks.
 
-Your brand guides that treatment. Prominent translucent materials, precise technical surfaces, or a quieter visual language become explicit component decisions. Apple Liquid Glass is one researched reference, alongside Material, Fluent, Spectrum, and Atlassian; it is never imposed as the default aesthetic. See the [component state method](skills/stn-ultradesign/references/component-states.md) and [Liquid Glass research](docs/research/liquid-glass-controls.md).
+Your brand guides that treatment. Prominent translucent materials, precise technical surfaces, or a quieter visual language become explicit component decisions. The skill researches whichever design language you choose and translates its relationships into your product. Historical vendor studies are optional evidence, not built-in style presets. See the [component state method](skills/stn-ultradesign/references/component-states.md) and [reference translation workflow](skills/stn-ultradesign/references/brand-discovery.md#research-the-selected-language-for-this-project).
 
 ## Your preferences before the first concept
 
@@ -91,14 +91,14 @@ A redesign must account for what the product already does. Build an **old → ne
 
 Preserve existing **light/dark modes, supported languages, density options, and every chart or graph type**. Moving, merging, or changing a feature must preserve its usable capability or follow an explicitly agreed change. Verify affected capabilities and variants against the mapping before calling the redesign complete; a narrow fix does not require redesigning unrelated areas. See the [feature-parity method](skills/stn-ultradesign/references/feature-parity.md).
 
-Modernity is more than an effect. The [navigation and materials guide](skills/stn-ultradesign/references/navigation-and-materials.md) examines current Apple guidance, including WWDC26, alongside Google and Microsoft patterns. It translates references into product-specific decisions with readable fallbacks and explicit web implementation limits.
+Modernity is more than an effect. The [navigation and materials guide](skills/stn-ultradesign/references/navigation-and-materials.md) chooses patterns from task frequency, hierarchy and available space. Visual language is researched for the current project, with readable fallbacks and explicit web implementation limits.
 
 ## Coverage beyond the happy path
 
 | Capability | Decisions the skill makes explicit |
 | --- | --- |
 | **Visual systems** | Layout, hierarchy, type, spacing, color, shape, iconography, motion, and design tokens. |
-| **Navigation & materials** | Adaptive hierarchy, sidebars, navigation stacks, list/detail, contextual drawers, Liquid Glass references, shape, elevation, and purposeful motion. |
+| **Navigation & materials** | Adaptive hierarchy, sidebars, navigation stacks, list/detail, contextual drawers, user-selected materials, shape, elevation, and purposeful motion. |
 | **Adaptive interfaces** | Available space, content, touch, keyboard, pointer, zoom, and user preferences. |
 | **Product workflows** | Navigation, forms, wizards, search, filters, settings, editing, pending actions, and recovery. |
 | **Account & access UX** | Sign-in and recovery screens, session controls, role explanations, permission states, and the placement of personal versus administrative settings. |

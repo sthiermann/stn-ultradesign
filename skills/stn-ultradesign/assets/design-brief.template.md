@@ -34,6 +34,8 @@ Use [brand discovery](../references/brand-discovery.md). Existing instructions a
 - Current guidelines, asset locations, version/date and applicable scope:
 - Binding rules versus legacy implementation versus inspirational reference:
 - Already confirmed degree of change and decisions still needed:
+- Requested design language, applicable platform/version and inherited dimensions:
+- Project-specific research and rendered direction proof: [reference translation record](reference-translation.template.md), linked here after completion; archived research alone does not establish current fidelity:
 
 | Dimension | Source and authority | Current expression | Preserve / evolve / reinterpret / explore | Concrete extent and limits | Proposed expression / affected surfaces | Theme, locale, density or component exceptions | Acceptance and decision status |
 | --- | --- | --- | --- | --- | --- | --- | --- |

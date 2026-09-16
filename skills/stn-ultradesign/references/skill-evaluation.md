@@ -15,6 +15,11 @@ Use a varied set:
 5. Implementation from an explicitly approved concept with a later conflicting suggestion.
 6. A focused component fix in an established brand, to detect scope drift.
 7. Partial access or unavailable browser, to detect invented evidence and coverage claims.
+8. A user-selected Google design direction, requiring research of its relevant current platform guidance without inheriting another project's material or palette decisions.
+9. A supplied company identity with selective inheritance (for example, keep type and colors but reconsider layout), to detect unrequested vendor styling.
+10. A named historical design reference, to distinguish an explicitly requested generation from the latest release and from archived research supplied with the skill.
+
+These are proposed test scenarios, not completed evaluations. For design-language cases, judge source relevance, faithful translation, actual rendered evidence and user-directed scope; the presence or absence of a vendor name is not itself a pass condition.
 
 Judge visible behavior: correct routing, scope preservation, useful findings, prioritization, design quality, state coverage, realistic verification and concept fidelity. Record false positives and missed high-impact problems. More reported issues is not automatically better.
 

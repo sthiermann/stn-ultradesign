@@ -159,9 +159,7 @@ Inspect radius, border weight, shadow, clipping, icon stroke, and nested geometr
 | Blocking dialog | Distinct foreground and background relationship | Visual blocking matches actual focus/interaction |
 | Media overlay | Treatment validated over variable media | Labels remain readable at every relevant frame |
 
-Apple reserves Liquid Glass primarily for navigation and controls, with sparing custom use. A CSS blur is a visual approximation, not the native adaptive material. Review overlapping content and provide robust fallback styling. [Apple materials](https://developer.apple.com/design/human-interface-guidelines/materials)
-
-Fluent assigns different jobs to Solid, Acrylic, Mica, and Smoke. Choose by role and supported runtime rather than collecting fashionable effects. [Fluent material](https://fluent2.microsoft.design/material)
+Research the material system actually selected for this project. Determine how it distinguishes content, controls, navigation and temporary surfaces across the relevant platform, theme and state; record observations in the [reference translation record](../assets/reference-translation.template.md). A native material and a browser approximation may behave differently. Explain applicable limits, inspect variable backdrops, and provide readable fallbacks. No named material system is a default for unrelated projects.
 
 Craft check: inspect nested corners at normal scale, icon/text optical centering, mixed icon families, image crop intent, edge collisions, and visible click boundaries. A mechanically correct bounding box can still look misaligned. Correct a genuine visual imbalance with a documented local adjustment; keep the system understandable afterward.
 

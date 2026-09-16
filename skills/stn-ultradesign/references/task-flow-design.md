@@ -21,7 +21,7 @@ For every step, identify what the user knows, what they need to recognize, the v
 | Work across peers | Retain a list, next/previous control or useful sibling navigation | Repeated return to a distant parent merely to open the next object |
 | Rare secondary command | A labeled, discoverable group or overflow | A frequent or critical command disappears to make the layout cleaner |
 
-Apple's WWDC26 search guidance connects placement to search scope and warns against replacing visible filters with less discoverable query tokens. Treat this as platform guidance, not a mandate for one search position. [Apple search](https://developer.apple.com/videos/play/wwdc2026/292/)
+Make search scope visible at its entry and in results. Advanced query syntax may accelerate repeated work, but should not silently replace discoverable filters. Research the requested product or platform conventions; this skill prescribes no fixed search position or visual language.
 
 Linear distinguishes workspace search from searching a current view; Stripe provides immediate matches and fuller result views. Borrow the explicit retrieval contract, not the vendors' exact shortcuts or ranking. [Linear search](https://linear.app/docs/search), [Stripe search](https://docs.stripe.com/dashboard/search)
 
