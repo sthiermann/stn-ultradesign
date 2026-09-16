@@ -23,25 +23,25 @@ For every step, identify what the user knows, what they need to recognize, the v
 
 Make search scope visible at its entry and in results. Advanced query syntax may accelerate repeated work, but should not silently replace discoverable filters. Research the requested product or platform conventions; this skill prescribes no fixed search position or visual language.
 
-Linear distinguishes workspace search from searching a current view; Stripe provides immediate matches and fuller result views. Borrow the explicit retrieval contract, not the vendors' exact shortcuts or ranking. [Linear search](https://linear.app/docs/search), [Stripe search](https://docs.stripe.com/dashboard/search)
+Separate search within the current collection from workspace-wide retrieval. Explain the searched scope, matching behavior, results and return path; keep keyboard shortcuts supplemental to visible access.
 
-Favor recognition over remembering hidden commands, prior values or object IDs. Shortcuts and command menus can accelerate a visible route. Linear's Peek is documented as keyboard-only; it illustrates rapid inspection, not equivalent access for all inputs. Provide an appropriate pointer/touch route and accessible detail equivalent in the target product. [Linear Peek](https://linear.app/docs/peek)
+Favor recognition over remembering hidden commands, prior values or IDs. Shortcuts can accelerate a visible route, but they do not replace equivalent pointer, touch and accessible detail access.
 
 ## 3. Keep a coherent hierarchy across sizes
 
 Separate product destinations, collections, individual objects, local views and commands. Do not place them at one visual level merely because tabs are convenient. Label the current object and scope near the work. Avoid unrelated global sections appearing inside an object's local tabs.
 
-Choose persistent peers when frequent switching benefits from them; use hierarchy where there is a real parent-child relationship. Do not invent a maximum number of clicks or navigation levels. Microsoft's guidance discusses both structures and avoiding repeated up-and-down travel; its numerical recommendations are contextual Windows guidance. [Microsoft navigation](https://learn.microsoft.com/en-us/windows/apps/design/basics/navigation-basics)
+Choose persistent peers when frequent switching benefits from them; use hierarchy for real parent-child relationships. Measure avoidable travel and uncertainty rather than enforcing an arbitrary maximum click count.
 
 Preserve useful existing navigation unless the requested change or demonstrated task benefit supports replacing it. On a wide workspace, a global rail plus a local settings sidebar can expose distinct scopes and show the selected content directly. Do not replace this with a mandatory overview-and-return loop merely to reduce the number of visible columns. Compare opening a category, switching among peers and returning in both versions, including draft preservation and usable content width. A directory can help first-time orientation without becoming a repeated detour. Use the [settings pattern decision table](navigation-and-materials.md#decongest-settings-without-losing-features) to balance frequency, space and familiarity.
 
-On compact layouts, make collection → object → detail a clear sequence when simultaneous panes no longer fit. Preserve identity and context instead of stacking every desktop navigation bar. Google's list-detail pattern explicitly adapts between simultaneous and sequential views. [Android common layouts](https://developer.android.com/design/ui/mobile/guides/layout-and-content/common-layouts)
+On compact layouts, use a clear collection → object → detail sequence when simultaneous panes no longer fit. Preserve identity and context rather than stacking every desktop navigation region.
 
 Define Back, close, parent navigation and direct-entry behavior separately. Returning should restore relevant selection, filters, sort, time, scroll and focus. A deleted source needs a logical successor. A drawer is suitable only while its content remains readable and its task understandable; a full page may better support extensive work. Preserve the approved brand and device preferences when selecting these forms.
 
 ## 4. Minimize competing structure, not required work
 
-For every persistent region record its task, frequency, consequence of concealment and space cost. Remove repetition and decorative framing before reducing text size or hiding necessary controls. Group strongly related information closely; separate unrelated decisions. Atlassian documents proximity and a consistent grid/spacing system, but its token values are not universal dimensions. [Spacing](https://atlassian.design/foundations/spacing), [Grid](https://atlassian.design/foundations/grid)
+For each persistent region record its task, frequency, concealment risk and space cost. Remove repetition and decorative framing before reducing text size or hiding needed controls. Use proximity to group relationships and a coherent spacing system to separate different decisions.
 
 Progressive disclosure needs a visible invitation and useful content behind it. A compact overview may defer detailed metrics, history or configuration, but the relevant object must visibly offer those paths. Check that reduction has not erased an existing graph, event sequence, export or diagnostic branch. Critical failures remain perceivable when optional chrome is hidden. Focus modes need an available exit and an explicit restoration contract.
 
@@ -51,7 +51,7 @@ For repeated tasks, compare entry to the first meaningful result, peer switching
 
 Use [analytical meaning](analytical-meaning.md) for definitions and [data visualization](data-visualization.md) for interaction/data scope. For each relevant live surface, connect current value or event → affected object → time-aligned detail → supporting evidence → permitted action → return. Existing statistics and events need actual reachable views, not attractive placeholders.
 
-Stripe's Inspector connects objects with related logs and events, while its log view explicitly requires refresh. This demonstrates why contextual linkage and freshness are separate contracts. [Stripe Workbench](https://docs.stripe.com/workbench/overview)
+Keep contextual linkage and freshness as separate contracts. A related-event panel must identify its object and time scope even when its data requires explicit refresh.
 
 Record the following where supported:
 
@@ -65,7 +65,7 @@ Record the following where supported:
 | Investigation | Event selection and chart range remain aligned; changing one filter exposes the affected scope |
 | Return | Restore object, period and selection; do not jump to “now” without a defined user action |
 
-Grafana's log exploration offers pause/resume and contextual detail, and its refresh guidance balances update cadence with actual need. These are candidate behaviors; they do not prove a different application's streaming implementation. [Grafana logs](https://grafana.com/docs/grafana/latest/visualizations/explore/logs-integration/), [Refresh guidance](https://grafana.com/docs/learning-paths/visualization-logs/time-range-refresh/)
+For live investigation, evaluate pause/resume, contextual detail and refresh cadence against the actual operational task. A visual streaming simulation cannot prove production delivery or buffering behavior.
 
 Use safe fixtures to exercise delayed/out-of-order data, empty periods, connection loss, restoration and permission changes where reachable. Do not fabricate metric data, claim native streaming performance from animation, or seek unauthorized records. Keep updates understandable without constantly moving the inspected item or flooding assistive announcements.
 
@@ -73,7 +73,7 @@ Use safe fixtures to exercise delayed/out-of-order data, empty periods, connecti
 
 The golden ratio, approximately 1.618, can generate a candidate division or rhythm. It does not determine the correct sidebar, chart, dialog or media-grid dimensions. A rectangle preference is not evidence of faster navigation, readable labels or useful information capacity.
 
-Russell's experiments report that judgments and context affect preferred rectangle proportions. A 2024 study reports favorable implicit associations but mixed explicit ratings. Neither establishes universal business-interface superiority. [Russell, 2000 abstract](https://pubmed.ncbi.nlm.nih.gov/10742842/), [Salera and colleagues, 2024 abstract](https://iris.uniroma1.it/handle/11573/1721721)
+Proportional systems can help explore composition, but no fixed rectangle ratio proves business-interface quality. Judge the visible content relationships, reading order and task performance under real constraints.
 
 Start with task space, intrinsic content, useful media aspect ratio, reading width and control constraints. Compare a proportion-based candidate with a content-driven alternative using identical content and conditions. Keep a ratio only when the rendered result improves the intended relationship without clipping, excessive wrapping, lost comparisons or unnecessary navigation. Test both themes and relevant intermediate widths. Do not distort data scales or crop meaningful imagery to fit a mathematical motif.
 

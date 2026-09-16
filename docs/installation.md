@@ -4,7 +4,7 @@ As of September 16, 2026. Install either the individual skill or the plugin in y
 
 ## Codex: individual skill
 
-Codex loads project skills from `.agents/skills/` and personal skills from `~/.agents/skills/`. Keep the entire skill directory so that references, templates and scripts remain available. See [OpenAI: Build skills](https://learn.chatgpt.com/docs/build-skills).
+Codex loads project skills from `.agents/skills/` and personal skills from `~/.agents/skills/`. Keep the entire skill directory so that references, templates and scripts remain available.
 
 Download the repository, for example in a terminal:
 
@@ -31,7 +31,7 @@ error recovery and keyboard operation.
 
 ## Codex: plugin package
 
-The repository includes the supported compatibility manifest `.codex-plugin/plugin.json`. The official [plugin guide](https://learn.chatgpt.com/docs/build-plugins) describes a local marketplace workflow with `$plugin-creator`: register the existing repository directory in a local marketplace, refresh the client, then install the plugin from that source. The creator should register this existing package without regenerating its skill contents.
+The repository includes the supported compatibility manifest `.codex-plugin/plugin.json`. For a local marketplace workflow, use `$plugin-creator` to register the existing repository directory in a local marketplace, refresh the client, then install the plugin from that source. The creator should register this existing package without regenerating its skill contents.
 
 Publishing on GitHub does not add the package to the official plugin directory. This repository does not configure a personal Codex marketplace itself. The individual installation above is sufficient for immediate use.
 
@@ -51,7 +51,7 @@ Choose the intended installation scope when prompted. If Claude Code requests it
 for this workflow. Implement it after my approval.
 ```
 
-The marketplace points to the plugin at the repository root. Use the GitHub repository name as the source, rather than a direct URL to its `marketplace.json`. See [Claude Code: Marketplaces](https://code.claude.com/docs/en/plugin-marketplaces) and [Discover and install plugins](https://code.claude.com/docs/en/discover-plugins).
+The marketplace points to the plugin at the repository root. Use the GitHub repository name as the source, rather than a direct URL to its `marketplace.json`.
 
 For a local trial without marketplace installation:
 
@@ -59,11 +59,11 @@ For a local trial without marketplace installation:
 claude --plugin-dir /absolute/path/stn-ultradesign
 ```
 
-Replace `/absolute/path/stn-ultradesign` with the actual repository path. The [plugin reference](https://code.claude.com/docs/en/plugins-reference) documents this development mode.
+Replace `/absolute/path/stn-ultradesign` with the actual repository path. This starts the local development mode.
 
 ## Claude Code: individual skill alternative
 
-Copy the complete `skills/stn-ultradesign` directory to `~/.claude/skills/stn-ultradesign` or `<project>/.claude/skills/stn-ultradesign`. Then use `/stn-ultradesign`. Personal installation applies to local Claude Code sessions; other Claude products have their own loading mechanisms. See [Claude Code: Skills](https://code.claude.com/docs/en/skills).
+Copy the complete `skills/stn-ultradesign` directory to `~/.claude/skills/stn-ultradesign` or `<project>/.claude/skills/stn-ultradesign`. Then use `/stn-ultradesign`. Personal installation applies to local Claude Code sessions; other Claude products have their own loading mechanisms.
 
 ## Verify and update the installation
 

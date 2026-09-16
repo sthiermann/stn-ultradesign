@@ -1,18 +1,10 @@
 # Business administration: settings scope, roles and member lifecycle
 
-Load when auditing or designing a business application with personal accounts, organizations, workspaces, projects, teams, members, roles, policies, billing or administrative settings. Read [identity-permissions.md](identity-permissions.md) for authentication and security boundaries, [workflows.md](workflows.md) for transition contracts, and [developer-platforms.md](developer-platforms.md) for credentials, API settings and webhooks. Sources accessed 2026-09-16.
+Load when auditing or designing a business application with personal accounts, organizations, workspaces, projects, teams, members, roles, policies, billing or administrative settings. Read [identity-permissions.md](identity-permissions.md) for authentication and security boundaries, [workflows.md](workflows.md) for transition contracts, and [developer-platforms.md](developer-platforms.md) for credentials, API settings and webhooks.
 
-Published product behavior is labeled **Evidence**. All proposed structures, decision rules and audit procedures are this skill's original synthesis. Use documented product behavior as evidence, not as a universal menu specification or permission model. Before applying a source, verify the product edition, account type, administrative experience and current documentation.
+These structures, decision rules and audit procedures are original working methods. Verify the actual product edition, account type, administrative experience and governing policies before proposing a menu or permission model.
 
 ## 1. Learn the boundaries, not the menu coordinates
-
-**Evidence.** Google documents personal information and its visibility in Google Account, while Google Cloud organizes resources through organizations, optional folders, projects and service resources. These are different management scopes. [Google Account](https://support.google.com/accounts/answer/15781205?hl=en), [Google Cloud hierarchy](https://docs.cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy)
-
-**Evidence.** Apple separates Apple Account identity/security from App Store Connect's team administration. App Store Connect permits multiple roles but has one Account Holder; enrollment as an individual differs from organization enrollment. [Apple Account](https://support.apple.com/en-gb/105023), [App Store Connect roles](https://developer.apple.com/help/app-store-connect/manage-your-team/overview-of-accounts-and-roles)
-
-**Evidence.** Atlassian distinguishes organization, site, user-access and app administration. Its Centralized and Original user-management experiences assign different powers to similarly named roles. In Centralized management, the organization-admin role itself does not grant app access; additional roles may be assigned automatically and removed independently. [Admin-role guide](https://support.atlassian.com/user-management/docs/what-are-the-different-types-of-admin-roles/), [Site-admin differences](https://support.atlassian.com/atlassian-cloud/kb/site-administrator-role-in-the-centralized-user-management-and-original-user-management-experiences/)
-
-**Evidence.** Stripe distinguishes organization roles from account roles. An organization grant is inherited by its accounts and cannot be narrowed simply by assigning a weaker account role. [Organization access](https://docs.stripe.com/get-started/account/orgs/team)
 
 **Decision rule.** Preserve the real ownership and permission boundaries. Improve scope visibility, explanations and navigation without collapsing them into a single ambiguous “Settings” area. An administrator, owner, billing contact and product user are separate responsibilities unless the actual product deliberately combines them.
 
@@ -47,13 +39,13 @@ Use this proposed placement table as a starting point, then adapt it to the prod
 
 A profile menu can link to personal settings and an explicit administration destination. Organization/project switchers should expose the current context before people enter consequential settings. Use separate headings when personal and organization controls must share a screen. Search results should include a scope label and preserve that scope after navigation.
 
-**Evidence.** Google Cloud Billing separates Cloud Billing IAM permissions from Google payments-profile permissions, with some overlap and additional requirements for full management. [Billing access](https://docs.cloud.google.com/billing/docs/how-to/billing-access) Therefore, audit who can view invoices, change payment methods, manage spending and administer product resources separately; a generic administrator checkbox is insufficient.
+Where billing exists, distinguish viewing invoices, changing payment methods, managing spending and administering product resources. A generic administrator label cannot explain those separate grants.
 
 ## 4. Model permissions as decisions, not role names
 
 Create a permission matrix using `principal + action + resource + scope + conditions + authority source + result`. Role names are a readable projection of that matrix. Separate viewing configuration, changing configuration, using the feature, accessing content and granting access to others.
 
-**Evidence.** Google Cloud combines inherited allow policies; deny policies and principal access boundaries impose separate constraints. Conditional grants also depend on supported attributes and policy types. [IAM overview](https://docs.cloud.google.com/iam/docs/overview), [IAM Conditions](https://docs.cloud.google.com/iam/docs/conditions-overview?hl=en) Do not assume that “most restrictive role wins” or that a lower-level grant can undo a higher-level grant. Implement and explain the product's actual evaluation model.
+Explain the product's actual grant, inheritance, condition and denial rules. Do not assume that the most restrictive role wins or that a weaker local grant can cancel inherited access.
 
 The following is an **illustrative contract**, not a ready-made authorization policy:
 
@@ -87,8 +79,6 @@ For bulk operations, define whether selection means visible rows, the current pa
 
 ## 7. Design the entire membership lifecycle
 
-**Evidence.** In Atlassian Centralized management, suspending access is reversible with roles and groups restored; removal requires a new invitation and new assignments. Neither inherently deletes the person's global Atlassian account. [Suspend or remove](https://support.atlassian.com/user-management/docs/remove-or-suspend-a-user)
-
 Use separate states with explicit transitions:
 
 | Lifecycle step | Required behavior and recovery |
@@ -108,8 +98,6 @@ Test pending invitations that outlive a policy change, account rename or organiz
 
 ## 8. Treat ownership and privilege changes as consequential
 
-**Evidence.** Apple Account Holder transfer requires an eligible employee able to bind the organization legally, with distinct restrictions for individual and Managed Apple Accounts. [Account Holder transfer](https://developer.apple.com/help/account/access/transfer-the-account-holder-role) This is evidence that ownership can carry obligations beyond an ordinary administrator role.
-
 Identify last-owner/last-admin dependencies before removal, demotion or departure. Specify whether the successor must accept and when the previous owner's authority ends. Show impacts on billing, legal agreements, integrations, scheduled work and data ownership using actual product rules. Avoid encouraging credential sharing as a workaround.
 
 A privilege increase should show the added capabilities and affected scopes; a reduction should show critical capabilities lost. Preserve the user's freedom to cancel before commitment. If fresh authentication or another approval is required, state the real policy and return to the original task afterwards. Test the actor demoting themselves, two administrators changing the same member and a successor becoming ineligible during transfer.
@@ -117,8 +105,6 @@ A privilege increase should show the added capabilities and affected scopes; a r
 ## 9. Resolve SSO and SCIM authority explicitly
 
 Authentication answers which identity signed in; authorization determines what that identity may do. Provisioning changes account and membership data. Document their integration separately, even when a single identity provider participates in all three.
-
-**Evidence.** Atlassian SCIM provisioning manages linked user attributes and synced groups from the identity provider; groups become read-only locally, and external-user deactivation has different effects from managed-account deactivation. [User provisioning](https://support.atlassian.com/provisioning-users/docs/understand-user-provisioning) Stripe supports roles assigned through its identity provider or Dashboard. [Stripe SSO](https://docs.stripe.com/get-started/account/sso)
 
 For every synced field or grant, show the authoritative source and an actionable management route. Define manual override behavior, precedence, synchronization delay and conflict resolution. A locally editable control that silently reverts after synchronization is a workflow defect. Do not advise users to disable provisioning casually to make an isolated edit.
 
@@ -128,13 +114,9 @@ Test first SSO login without prior membership, deprovisioning, deleted groups, r
 
 For every change distinguish edited locally, submitted, accepted, persisted and effective. Choose immediate saving for independent reversible preferences when appropriate. Use staged save/cancel for related values needing validation together. Use preview and impact review for policy changes that affect many people. Show the exact scope in the action area.
 
-**Evidence.** Google IAM documents eventual propagation of access changes. [Access propagation](https://docs.cloud.google.com/iam/docs/access-change-propagation) Apple likewise documents a revocation delay in App Store Connect and distinguishes roles that can be limited to selected apps from broader roles/resources. [Add and edit users](https://developer.apple.com/help/app-store-connect/manage-your-team/add-and-edit-users/)
-
 Use observed service guarantees for pending/effective messages; do not claim instant universal revocation after a successful request. Handle concurrent edits, refresh, failed saves and navigation with unsaved input. For inherited settings show the local value, effective value and controlling policy if the actor may inspect it. “Reset” must state whether it restores a factory default, an organization default or inherited behavior.
 
 ## 11. Audit trails and administrative accountability
-
-**Evidence.** Atlassian exposes audit activity with scope, actor and time, while availability and history depend on its documented service conditions. [Audit-log view](https://support.atlassian.com/security-and-access-policies/docs/view-audit-log-activities/) Google Cloud distinguishes categories of audit logs with different access and configuration behavior. [Cloud Audit Logs](https://docs.cloud.google.com/logging/docs/audit)
 
 Define the product's event contract: actor or service identity, action, target, scope, timestamp/time zone, outcome and correlation reference. Include before/after values where safe and relevant; redact secrets. Separate attempted, failed and completed changes. A success toast is not an audit trail.
 

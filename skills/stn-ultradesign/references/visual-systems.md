@@ -21,7 +21,7 @@ Completion: every field has an observation or explicitly labeled assumption. For
 
 After approval, map each implemented token role, layout family, component variant, and relevant state back to that contract. Resolve minor engineering details within its boundaries. If implementation exposes a necessary change to the agreed appearance or interaction, document the reason and revised concrete proposal for approval before applying that deviation. Conformance includes real content, transitions, and responsive states, not merely the initial screenshot.
 
-Choose one coherent base system or the project's established system. Borrow specific solutions with a reason, then reconcile their tokens, terminology, interaction states, and geometry. Microsoft frames its own guidance around familiar platforms and distinctive signature experiences; its brand expression is specific to Microsoft. [Fluent principles](https://fluent2.microsoft.design/design-principles)
+Choose the project’s established system or propose one coherent base. Borrow a solution only with a task reason, then reconcile its tokens, terminology, interaction states and geometry with the product’s own contract.
 
 Treat “luxurious,” “technical,” “calm,” or “playful” as hypotheses until translated into decisions. For example, “calm” may mean fewer competing emphasis areas, stable layouts, and quieter motion. It does not automatically mean pale text, hidden borders, or missing controls. Write the decision and the user consequence together.
 
@@ -61,7 +61,7 @@ The following table generates candidates; it is not a prescribed global template
 | Monitor and act | Prioritized status, exceptions, actionable details | Overview versus unsupported summary | A user can move from signal to relevant action |
 | Explore media | Content-led canvas with restrained controls | Immersion versus discoverability | Controls remain locatable across varied backgrounds |
 
-Cloudscape distinguishes application, page, and section layout responsibilities. Use that distinction to avoid forcing a reading page and an interactive console into one width rule. [Cloudscape layout](https://cloudscape.design/foundation/visual-foundation/layout/)
+Separate application, page and section layout responsibilities. A reading page and an interactive console need not share one width rule.
 
 Give each view an explicit reading order. Identify its subject, current scope, state, decision, and next action. Place necessary context before consequential actions. Use existing task priority to decide emphasis; do not promote every metric, action, and headline equally. In an expert workspace, several persistent actions may be appropriate; resolve their scope and grouping rather than demanding one global primary button everywhere.
 
@@ -71,7 +71,7 @@ Give the composition a clear distribution of emphasis. A dominant working region
 
 ## 4. Make spacing and density intentional
 
-Use the existing spacing system where it is coherent. Otherwise propose a small named scale, map its uses, and test it in representative dense and sparse views. Fluent uses a four-unit base with exceptions; Carbon's grid and Atlassian's spacing use their own eight-unit foundations. These are system choices, not competing universal laws. [Fluent layout](https://fluent2.microsoft.design/layout), [Carbon grid](https://carbondesignsystem.com/elements/2x-grid/overview/), [Atlassian spacing](https://atlassian.design/foundations/spacing)
+Use the existing spacing system where coherent. Otherwise propose a small named scale, map its uses, and test dense and sparse views. A four-unit or eight-unit grid is a system choice, not a universal law.
 
 | Input and work | Candidate density | Protect first | Typical failure to investigate |
 |---|---|---|---|
@@ -81,11 +81,11 @@ Use the existing spacing system where it is coherent. Otherwise propose a small 
 | Mixed input, tablet | Comfortable baseline with contextual efficiency | Touch access plus keyboard functionality | Width incorrectly treated as proof of mouse use |
 | Magnification or large text | Flexible reflow | Content and operation at chosen size | Fixed heights clip or overlap text |
 
-Cloudscape offers comfortable and compact density, with compact treatment scoped to data-intensive surfaces. Its default is a vendor decision; validate the product's own default and retain usable input targets in any density. [Cloudscape density](https://cloudscape.design/foundation/visual-foundation/content-density/)
+Apply density to the surfaces and tasks that need it. A compact data view must still retain readable labels, usable controls and clear group boundaries.
 
 Run a grouping test: inspect the view without borders or shadows, then without color emphasis. Can related items still be recognized through position and proximity? If not, repair grouping before adding decoration. This is an audit technique, not a requirement to remove all containers.
 
-Measure visible placement, actual interaction area, and distance to adjacent targets separately. Compact visuals can coexist with larger hit areas only if those areas remain unambiguous. Record any overlap or unexpected activation. Adobe explicitly distinguishes placement areas from input hit areas. [Spectrum platform scale](https://spectrum.adobe.com/page/platform-scale/)
+Measure visible placement, actual interaction area and distance to adjacent targets separately. Compact visuals can coexist with larger hit areas only when those areas remain unambiguous; record overlap or unexpected activation.
 
 ## 5. Build a semantic token system
 
@@ -104,13 +104,13 @@ Suggested audit vocabulary, adapted to the project:
 
 Document supported theme and density combinations. Resolve hover, pressed, focus-visible, selected, disabled, loading, invalid, and read-only states by role rather than scattered component overrides. For a scoped token change, inspect affected consumers in both content-heavy and interaction-heavy views. In a full audit, inspect every usage and relevant configuration. A token change can make one screen look better while degrading another.
 
-Salesforce's SLDS 2 makes structure and visual customization distinct through styling hooks. The transferable principle is an explicit customization boundary, not adopting Salesforce's CSS into an unrelated product. [SLDS comparison](https://developer.salesforce.com/docs/platform/lwc/guide/create-components-css-slds1-slds2.html)
+Separate component structure from permitted visual customization. Define which tokens and composition slots can vary without breaking behavior, semantics or shared consistency.
 
 ## 6. Audit typography as a working system
 
 List each text role with family, size, weight, line height, tracking, width behavior, and fallback. Inspect actual rendered glyphs, not only CSS values. Include numerals, diacritics, punctuation, currency, dates, long names, identifiers, and required scripts. Confirm asset licensing before adding fonts.
 
-Separate semantic structure from visual styling: a small section heading can still be a heading, and a large metric is not automatically a heading. Atlassian's system bundles typographic properties into tokens and distinguishes application and marketing typography. Carbon separates productive and expressive type sets. [Atlassian typography](https://atlassian.design/foundations/typography), [Carbon typography](https://carbondesignsystem.com/elements/typography/overview/)
+Separate semantic structure from visual styling: a small section title can still be a heading, and a large metric is not automatically a heading. Define type roles as coherent property sets and distinguish product work from promotional display.
 
 Typography acceptance checks:
 
@@ -122,7 +122,7 @@ Typography acceptance checks:
 - Fallback rendering remains legible and does not conceal controls before or after font loading.
 - Code and identifiers remain copyable; their typography matches their need for precise discrimination.
 
-Apple recommends readable weights, limited typeface variety, and layouts that accommodate user text-size settings. Native system support is platform-specific; implement and test the equivalent behavior in the web product. [Apple typography](https://developer.apple.com/design/human-interface-guidelines/typography)
+Test readable weights, a purposeful range of type roles and user text enlargement. Do not assume native system text adaptation carries over to a web layout automatically.
 
 Choose exact sizes through the existing system and rendered validation. There is no universal desktop body size, mathematically optimal scale, or “premium” font that fits every audience and application. Avoid replacing a functioning typography system merely to make a redesign visibly different.
 
@@ -132,7 +132,7 @@ Judge the typographic composition, not just token consistency. Establish deliber
 
 Prepare a role map for each theme before judging the palette. Review actual foreground/background pairs, including translucent surfaces over moving content. Keep action, selection, focus, status, and brand identifiable as separate jobs even when they share a base hue. Test combinations in actual states rather than declaring a palette accessible from isolated swatches.
 
-Apple's color guidance uses semantic roles, supports different appearances, and warns that meaning can vary across cultures. Treat this as a reason to test actual labels and context in target locales. [Apple color](https://developer.apple.com/design/human-interface-guidelines/color)
+Assign colors semantic roles and verify them in each supported appearance. Test labels and context in target locales; a color’s meaning is not universally fixed.
 
 Audit procedure:
 
@@ -173,17 +173,17 @@ For each repeated component, create a compact specification: purpose, inputs, va
 
 Choose a list when items mainly need scanning, a table when aligned attributes support comparison, and cards when distinct content or media benefits from independent grouping. Treat this as a task hypothesis. Review nested cards, repeated badges, unlabeled icons, decorative charts, and redundant separators for whether they add information or merely compete for attention.
 
-For a dashboard widget, identify its decision, time period, units, freshness, source, and path to detail. Check unavailable and stale data separately from zero. Make loading and partial failure legible at widget scope. Configuration is useful only when users have meaningful differences in their work; Cloudscape supplies a vendor example for rearranging and selecting dashboard content. [Configurable dashboard](https://cloudscape.design/patterns/general/service-dashboard/configurable-dashboard/)
+For a dashboard widget, identify its decision, time period, units, freshness, source and path to detail. Keep unavailable or stale data distinct from zero. Show partial failure at the affected scope. Offer layout configuration when work differs meaningfully between users, and preserve existing configuration capabilities.
 
-A library's accessibility support still needs correct composition and content. Shopify's extension guidance explicitly requires author work such as labels, headings, and keyboard testing. Consult the correct host-surface documentation before adopting its components. [Polaris usage](https://shopify.dev/docs/api/polaris/using-polaris-web-components)
+A library’s accessibility support still needs correct composition, labels, headings, content and keyboard behavior. Verify the installed components in their actual host context.
 
 ## 10. Make motion explain change
 
 Assign every animation a job: acknowledge input, connect origin and destination, expose a change, preserve spatial understanding, or communicate progress. If no job can be stated, classify it as decorative and decide whether it earns its visual and performance cost.
 
-Test interruption, reversal, repeated input, slow hardware, async completion, and reduced motion. A transition must not hide the current state or delay access to the next action. Preserve meaningful state changes when reducing motion. Apple's evaluation guidance explicitly examines problematic motion triggers, including depth effects. [Reduced Motion criteria](https://developer.apple.com/help/app-store-connect/manage-app-accessibility/reduced-motion-evaluation-criteria)
+Test interruption, reversal, repeated input, slow hardware, asynchronous completion and reduced motion. A transition must not hide current state or delay the next useful action. Preserve meaningful state changes without requiring depth effects or movement.
 
-Google reports benefits from expressive designs, while also reporting that broken familiar structures and removed labels harmed usability. Use expressive color, shape, scale, and motion as candidates for directing attention; measure their effect in the product. Do not transfer Google's reported multipliers to a new application. [Google research](https://design.google/library/expressive-material-design-google-research)
+Use expressive color, shape, scale and motion to direct attention only when they support the task. Preserve recognizable structure and useful labels; verify the result rather than transferring success claims from another product.
 
 ## 11. Finish with evidence, not a style score
 
@@ -193,4 +193,4 @@ Review at two scales. At page scale, judge hierarchy, balance, information densi
 
 For each changed pattern, retain before/after evidence under matching content and conditions. Verify the affected component states and consuming routes; full audits inspect every documented usage and relevant configuration. Record remaining coverage gaps explicitly. An overall numerical score must never hide a critical unresolved issue.
 
-Completion requires a coherent visual contract, accounted-for audited states, resolved or prioritized defects, regression checks appropriate to the change, and a clear distinction between measured usability outcomes and expert judgment. Ant Design's published values put work goals and predictable interaction at the center; treat that as a useful cross-system perspective rather than a claim that one regional system represents all global users. [Ant values](https://ant.design/docs/spec/values/)
+Completion requires a coherent visual contract, accounted-for states, resolved or prioritized defects, proportional regression checks and an honest separation of measured outcomes from expert judgment.

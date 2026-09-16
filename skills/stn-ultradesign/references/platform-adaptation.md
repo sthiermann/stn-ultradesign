@@ -1,12 +1,12 @@
 # Platform adaptation: desktop, tablet, phone
 
-Read when a UI resizes, changes orientation, supports mixed input, runs on more than one platform, or occupies an embedded container. The tables are this skill's operational synthesis. Linked vendor sources establish platform context; they are not universal web standards. Reviewed 2026-09-16.
+Read when a UI resizes, changes orientation, supports mixed input, runs on more than one platform, or occupies an embedded container. These are operational choices to validate against the project’s tasks, supported platforms and current implementation.
 
 ## 1. Model the available space and interaction
 
 Record viewport and container dimensions, browser zoom, text scale, pointer capabilities, keyboard availability, orientation, host chrome, safe areas, and the task in progress. A tablet may have a pointer; a desktop may accept touch; a large physical screen may expose a narrow app window. Use device names as test labels rather than as complete capability definitions.
 
-Android's adaptive guidance bases app decisions on available window space and component decisions on allocated space. It also explains preserving state during changes. For web projects, implement the equivalent architecture with the project's supported layout tools and state ownership. [Android display sizes](https://developer.android.com/develop/adaptive-apps/guides/support-different-display-sizes)
+Base application layout on available window space and component layout on its allocated container. Preserve task state when either changes.
 
 Define explicit adaptation rules before changing styling:
 
@@ -24,7 +24,7 @@ Completion: each major view has a written transformation and a preservation rule
 
 ## 2. Preserve task continuity across layout changes
 
-List/detail, supporting-pane, and feed arrangements are useful starting points in Android's canonical layout guidance. On narrow surfaces, the corresponding task may become sequential; on wide surfaces, it may retain concurrent context. [Canonical layouts](https://developer.android.com/develop/ui/views/layout/canonical-layouts?hl=en)
+List/detail, supporting-pane and feed arrangements are useful candidates. On narrow surfaces, a task may become sequential; on wide surfaces, it may benefit from concurrent context.
 
 For every transition, record what happens to selected object, sort order, filters, search query, scroll position, draft values, open disclosure, navigation history, and keyboard focus. Specify only what is relevant to that flow, then test it. If a focused pane disappears, transfer focus deliberately to the corresponding visible context. Resizing must not silently submit, discard, duplicate, or restart work.
 
@@ -35,26 +35,25 @@ Avoid equating fewer visible elements with fewer supported capabilities. Seconda
 ## 3. Respect platform conventions without losing product identity
 
 | Environment | Preserve | Validate before adopting |
-|---|---|---|
-| Native Apple | Platform navigation, window behavior, system materials and text behavior | Current OS/framework support and accessibility settings |
-| Native Android | Back behavior, adaptive space, system input conventions | Actual Compose/library release and experimental APIs |
-| Windows or Microsoft host | Familiar window and interaction conventions | Fluent component/runtime compatibility |
-| Cross-platform web | Browser semantics, history, focus, zoom, links | Browser support and input capabilities |
-| Embedded platform | Host navigation, theming, component contracts | Exact extension surface and permitted APIs |
+| --- | --- | --- |
+| Native desktop | Window, navigation, keyboard and text conventions | Current runtime and accessibility behavior |
+| Native mobile/tablet | Back behavior, safe areas, adaptive space and input conventions | Installed framework and device support |
+| Cross-platform web | Browser semantics, history, focus, zoom and links | Supported browsers and input capabilities |
+| Embedded platform | Host navigation, theming and component contracts | Exact extension surface and permitted APIs |
 
-Apple's layout guidance includes safe areas, changing window sizes, orientation, localization, and text-size changes. Apply native conventions within their platform scope; on the web validate the equivalent experience rather than copying point values. [Apple layout](https://developer.apple.com/design/human-interface-guidelines/layout)
+Test safe areas, changing window size, orientation, localization and text enlargement. Translate a selected native reference into web constraints deliberately rather than copying its point values.
 
-Liquid Glass includes system adaptation and accessibility behavior beyond translucent styling. Its WWDC presentation is useful for understanding the functional layer; it does not mandate a glass visual style for a browser application. [Apple WWDC25](https://developer.apple.com/videos/play/wwdc2025/219/)
+A selected material may depend on native adaptation beyond translucent styling. Document what the web implementation can reproduce, what needs a fallback and what remains unverified.
 
-Material's current presentation includes Expressive and adaptive work. Check the target library's release notes because design guidance, native implementation, and React ecosystem libraries do not advance in lockstep. [Material](https://m3.material.io/), [Compose releases](https://developer.android.com/jetpack/androidx/releases/compose-material3)
+Check the installed library and framework versions. Design guidance and native or web implementations do not necessarily advance together.
 
-Shopify's move toward shared Web Components demonstrates why old React examples need contextual review. Verify whether the project targets ordinary DOM, App Home, or a remote-rendered extension before selecting APIs. [Polaris direction](https://www.shopify.com/partners/blog/polaris-unified-and-for-the-web)
+Determine whether the host uses ordinary DOM, embedded content or a remote-rendered extension before selecting APIs or components.
 
 ## 4. Adapt density and input independently
 
 Choose interaction geometry from tasks and capabilities, then adjust content density. Keep visible affordances available without hover where touch or keyboard users need them. A drag operation needs a usable alternative appropriate to the task. Tooltips can supplement labels but cannot be the only path to essential instructions.
 
-React Spectrum V3 describes automatic scale selection from fine and coarse input characteristics. This is a specific implementation example of capability-aware scaling, not a rule to force that library into every product. [React Spectrum theming](https://react-spectrum.adobe.com/v3/theming.html)
+Do not choose touch target size from a device name alone. Verify coarse and fine pointer use, keyboard input and the product’s density choice independently.
 
 Test hybrid behavior deliberately: begin a task with touch, continue with a keyboard, inspect focus after pointer input, and activate contextual actions without hovering. For a compact option, check the actual hit areas and reading comfort. Keep user preference persistent at an appropriate scope; avoid surprising mode changes in the middle of work.
 

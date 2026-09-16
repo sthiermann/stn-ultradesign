@@ -22,6 +22,8 @@ For a full-product redesign, map every discovered capability. For a bounded conc
 
 Map every capability in the requested scope and its affected dependencies, including mapped features outside the current prototype. A full-product redesign includes every discovered capability. Give separate IDs to actions with materially different actors, effects or state behavior. Link the detailed records below rather than forcing every detail into this index.
 
+Use [capability-walkthrough.template.md](capability-walkthrough.template.md) for the control-by-control reconciliation, independent state and supported panel combinations. A parent feature group does not cover its unmapped or unverified child actions.
+
 | Feature ID | Capability / outcome | Current path and evidence | Proposed path | Disposition | Decision status / source | Detail record and acceptance IDs |
 | --- | --- | --- | --- | --- | --- | --- |
 
@@ -31,6 +33,7 @@ Allowed dispositions: `preserved`, `moved`, `redesigned`, `outside-current-proto
 
 - Feature ID / associated audit surface, usage, widget and transition IDs:
 - User outcome and existing entry points, deep links and drilldowns:
+- Existing user-facing label / parent group / individual action IDs:
 - Discovery status: runtime-observed / source-observed / documentation-only / unknown:
 - Baseline evidence, method and limitations:
 - Actor, capability keys, resource scope and conditions:
@@ -40,6 +43,8 @@ Allowed dispositions: `preserved`, `moved`, `redesigned`, `outside-current-proto
 - Relevant loading, empty, partial, stale, error and success states:
 - Supported locale, theme, density, input and layout variants:
 - Preference ownership, persistence and current stored-choice behavior:
+- Independent toggles, supported simultaneous panels and cross-control dependencies:
+- Closing, reopening, resizing, view switching and reload behavior:
 - Proposed entry, destination and behavior delta:
 - Disposition and current approval status:
 - If outside the prototype: retained destination, next stage and owner:
@@ -67,6 +72,7 @@ Use a separate detailed record if needed for thresholds, delayed triggers or res
 - Old/new navigation map:
 - Matched screenshots or annotated views, with observed/proposed/simulated labels:
 - Important moves explained as concrete journeys:
+- Demonstrated retrieval of each moved action, including outcome and return:
 - Role-specific differences shown:
 - Features not yet depicted, with their retained destinations:
 - Specific removal decisions, if any:

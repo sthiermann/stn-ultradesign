@@ -1,33 +1,15 @@
-# Sources and copyright notices
+# Copyright and originality
 
-STN Ultradesign contains independently written skill instructions, review procedures, templates, supporting code, and synthetic examples. It does not distribute another author's design skill, source collection, layout template, product screenshot, logo, or font file. The repository's MIT License covers its original project content; the standard license terms are preserved.
+STN Ultradesign’s skill instructions, review procedures, templates, supporting code and synthetic examples are independently written. The package does not bundle third-party design skills, product screenshots, logos, font files or component-library source. Its MIT License covers original project content; the standard license terms are preserved.
 
-## Original brand artwork
+## Original artwork
 
-The illustrations in `assets/brand/` — the hero, method diagram, and their compact variants — were drawn specifically for this repository from original SVG geometry and text. They contain no embedded photographs, traced artwork, third-party icons, logos, external font files, scripts, or remote asset references. Their system-font declarations select fonts available to the renderer; they do not bundle fonts.
+The hero, method diagram and compact variants in `assets/brand/` were drawn specifically for this repository from original SVG geometry and text. They contain no photographs, traced artwork, bundled fonts, external assets or scripts. System-font declarations use fonts available to the renderer.
 
-Copyright © 2026 Sven Thiermann. These illustrations are released under the repository's MIT License. The live workflow-status badge in the README is served by GitHub; it reports package-validation status and is not a design-quality certification.
+Copyright © 2026 Sven Thiermann. The artwork is released under the repository’s MIT License. The README’s workflow-status badge reports package-validation status, not design quality.
 
-## External knowledge sources
+## Compatibility and contributions
 
-The references link to public primary sources and briefly explain principles in original language. Examples include:
+Client names, manifest fields and installation commands identify supported integration formats. This is an independently published package. Compatibility does not imply endorsement.
 
-- [W3C: Web Content Accessibility Guidelines 2.2](https://www.w3.org/TR/WCAG22/)
-- [Apple: Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
-- [Google: Material Design](https://m3.material.io/)
-- [Microsoft: Fluent 2](https://fluent2.microsoft.design/)
-- [IBM: Carbon Design System](https://carbondesignsystem.com/)
-- [Nielsen Norman Group: Usability Heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/)
-- [Don Norman: Community-Based Human-Centered Design](https://jnd.org/community-based-human-centered-design/)
-- [Vitsœ: Dieter Rams' principles for good design](https://www.vitsoe.com/us/about/good-design)
-- [Tamara Munzner: A Nested Model for Visualization Design and Validation](https://www.cs.ubc.ca/labs/imager/tr/2009/NestedModel/NestedModel.pdf)
-
-The [source index](skills/stn-ultradesign/references/sources.md) and individual references record further sources, scope, and access limitations. Linked documents remain with their respective rights holders and are subject to their own terms. A link does not transfer rights to examples, assets, or trademarks.
-
-Manifest structures and installation instructions follow the [OpenAI documentation](https://learn.chatgpt.com/docs/build-plugins) and [Claude Code documentation](https://code.claude.com/docs/en/plugins-reference). Standard format fields and commands provide interoperability. STN Ultradesign is independently published; the named companies and authors have not issued or endorsed it.
-
-## Future contributions and product work
-
-Any future inclusion of libraries, fonts, icons, images, or other third-party material requires checking the specific license and recording the required notices. A source citation does not substitute for permission. When applying the skill to a product, the rights and agreements covering that product's content also apply. These notices do not guarantee the absence of legal risk.
-
-Reviewed: September 16, 2026.
+Do not contribute copied skill instructions, proprietary templates or assets without appropriate rights. Any future included dependency must retain its required license and attribution notices. Research notes and source comparisons belong in project-local working records, not this package. Removing a citation does not grant rights to copied material; original writing and appropriate asset rights remain necessary.

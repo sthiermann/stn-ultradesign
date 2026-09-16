@@ -13,9 +13,9 @@ STN Ultradesign helps coding agents examine existing interfaces, develop distinc
 
 Built for desktop, tablet, and phone. Grounded in primary design sources. Organized around your product's users, language, and existing identity.
 
-[**Get started →**](docs/installation.md) · [Read the skill](skills/stn-ultradesign/SKILL.md) · [Research](docs/research/overview.md) · [Evaluation](docs/quality/evaluation.md) · [Privacy](PRIVACY.md)
+[**Get started →**](docs/installation.md) · [Read the skill](skills/stn-ultradesign/SKILL.md) · [Method](skills/stn-ultradesign/references/feature-parity.md) · [Evaluation](docs/quality/evaluation.md) · [Privacy](PRIVACY.md)
 
-Release **v0.2.0** · [MIT license](LICENSE) · Codex + Claude Code
+Release **v0.3.0** · [MIT license](LICENSE) · Codex + Claude Code
 
 [![Package checks](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml/badge.svg)](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml)
 
@@ -47,13 +47,13 @@ A dashboard is useful only when people understand what its numbers mean and what
 
 Three connected passes examine **meaning → exploration and action → consistency across views**. Follow a headline into its chart, filtered records, linked detail, and return path. Identify useful missing filters, comparisons, explanations, or drilldowns, while preserving what already works. Recommendations explain their evidence, dependencies, and tradeoffs; a familiar industry pattern is not automatically right for every application.
 
-The audit asks you focused questions whenever domain meaning or direction remains uncertain, with no fixed question ceiling. Previously confirmed answers carry forward. See the [analytical meaning method](skills/stn-ultradesign/references/analytical-meaning.md), [surface record](skills/stn-ultradesign/assets/analytical-surface.template.md), and [research](docs/research/analytical-experiences.md).
+The audit asks you focused questions whenever domain meaning or direction remains uncertain, with no fixed question ceiling. Previously confirmed answers carry forward. See the [analytical meaning method](skills/stn-ultradesign/references/analytical-meaning.md), [surface record](skills/stn-ultradesign/assets/analytical-surface.template.md).
 
 ## Less searching. More useful work.
 
 Minimalism should make work easier to find. Every critical task follows a visible path: **entry → useful action → object and context → evidence → outcome → return**. A camera event should lead to the right camera and moment. A live chart should explain its scope, units and freshness. Closing a detail should restore the work you left.
 
-The skill tests those paths in the rendered concept before calling them ready. It separates product navigation from local views and commands, checks compact layouts without piling up desktop navigation, and keeps required actions discoverable. A missing workflow stays unfinished even when its button looks polished. Feedback becomes a concrete change with an acceptance condition and fresh evidence. See the [task-flow method](skills/stn-ultradesign/references/task-flow-design.md) and [research on navigation and proportion](docs/research/task-flow-and-proportion.md).
+The skill tests those paths in the rendered concept before calling them ready. It separates product navigation from local views and commands, checks compact layouts without piling up desktop navigation, and keeps required actions discoverable. A missing workflow stays unfinished even when its button looks polished. Feedback becomes a concrete change with an acceptance condition and fresh evidence. See the [task-flow method](skills/stn-ultradesign/references/task-flow-design.md).
 
 ## Craft is part of the method
 
@@ -89,6 +89,8 @@ Preserve the logo and font. Evolve the palette. Reimagine the layout. Or choose 
 
 A redesign must account for what the product already does. Build an **old → new feature map** recording location, role access, behavior, states, and proposed destination. A full-product redesign maps every discovered capability. A bounded concept or focused fix maps its requested scope plus all transitively affected shared usages and dependencies. Audit-only work records the current baseline without inventing proposed destinations. A cleaner composition does not authorize dropping a capability.
 
+**Every action needs a home.** Inspect toolbar overflow, object menus, edit modes, independent overlays, saved preferences and supported simultaneous panels. Selecting a view, creating one, arranging its contents and sharing it are different capabilities. The concept must demonstrate where familiar actions moved, what they do and how the user returns. A page name in a checklist does not establish feature coverage. Use the [capability walkthrough](skills/stn-ultradesign/assets/capability-walkthrough.template.md).
+
 Preserve existing **light/dark modes, supported languages, density options, and every chart or graph type**. Moving, merging, or changing a feature must preserve its usable capability or follow an explicitly agreed change. Verify affected capabilities and variants against the mapping before calling the redesign complete; a narrow fix does not require redesigning unrelated areas. See the [feature-parity method](skills/stn-ultradesign/references/feature-parity.md).
 
 Modernity is more than an effect. The [navigation and materials guide](skills/stn-ultradesign/references/navigation-and-materials.md) chooses patterns from task frequency, hierarchy and available space. Visual language is researched for the current project, with readable fallbacks and explicit web implementation limits.
@@ -101,6 +103,7 @@ Modernity is more than an effect. The [navigation and materials guide](skills/st
 | **Navigation & materials** | Adaptive hierarchy, sidebars, navigation stacks, list/detail, contextual drawers, user-selected materials, shape, elevation, and purposeful motion. |
 | **Adaptive interfaces** | Available space, content, touch, keyboard, pointer, zoom, and user preferences. |
 | **Product workflows** | Navigation, forms, wizards, search, filters, settings, editing, pending actions, and recovery. |
+| **Messaging** | Conversation discovery, recipient context, composition, supported delivery states, drafts, attention and coexistence with the main workspace. |
 | **Account & access UX** | Sign-in and recovery screens, session controls, role explanations, permission states, and the placement of personal versus administrative settings. |
 | **Business administration** | Member and invitation journeys, scope, ownership, role changes, and governance where the product actually needs them. |
 | **Developer experience** | API-access screens, service-account workflows, webhook configuration, delivery feedback, and readable API documentation. |
@@ -149,13 +152,11 @@ An audit does not authorize creating or revoking real credentials, changing real
 
 ## Open method. Honest evidence.
 
-The reference library distinguishes **standards, platform guidance, research, heuristics, and product decisions**. Its primary sources include W3C, Apple, Google, Microsoft, IBM, and influential design researchers. Sources inform the method; their authors do not endorse this project. See the [source index](skills/stn-ultradesign/references/sources.md) and [research notes](docs/research/overview.md).
+The method is independently written and design-language-neutral. It researches the current product and the user’s chosen direction, then turns those findings into explicit decisions and observable checks. Project research stays with that project; this repository contains original instructions, templates, tools and synthetic exercises.
 
-The [award-reference study](docs/research/award-design-review.md) catalogues **216 awarded projects**, with deeper document analysis of seven selected projects and two additional industrial examples. Award metadata, documented design decisions, visual inspection and live testing are distinct evidence levels. The catalogue is a discovery resource, not a claim that every listed product was audited or that award-winning marketing layouts belong in every business application.
+The package includes an audit ledger, a design contract, a local Python validator and synthetic evaluation fixtures. Package checks and coverage tests are automated. Actual client installation, application behavior, user research, and aesthetic acceptance are reported separately in the [evaluation record](docs/quality/evaluation.md).
 
-The repository includes original instructions, progressive references, an audit ledger template, a design contract, a local Python validator, and synthetic evaluation fixtures. Package checks and coverage tests are automated. Actual client installation, application behavior, user research, and aesthetic acceptance are reported separately in the [evaluation record](docs/quality/evaluation.md).
-
-**Version 0.2.0 is an early release.** There is no validated claim of universal superiority or a fixed percentage improvement. The evaluation record preserves unsuccessful outcomes too, including an early synthetic concept rejected for its visual quality. That feedback informed stronger concept and craft requirements; it is not counted as a passed design evaluation.
+**Version 0.3.0 is an early release.** There is no validated claim of universal superiority or a fixed percentage improvement. The evaluation record preserves unsuccessful outcomes too, including an early synthetic concept rejected for its visual quality. That feedback informed stronger concept and craft requirements; it is not counted as a passed design evaluation.
 
 ## Development priorities
 
@@ -164,10 +165,10 @@ The repository includes original instructions, progressive references, an audit 
 | Full-audit inventory and coverage rules | Broader trials on realistic products, including deep administrative workflows. |
 | Concept approval and implementation contracts | Repeated, independently reviewed concept-to-code exercises across device sizes. |
 | Synthetic fixtures and local consistency checks | Reproducible task outcomes and visual assessments under documented conditions. |
-| Source-linked specialist references | Ongoing review of changing platform guidance and client installation behavior. |
+| Original specialist methods and project-specific research | Ongoing review of changing platform guidance and client installation behavior. |
 
 These are development priorities, not promised results or release dates. Improvements should earn their place through clearer decisions and better observed outcomes.
 
 ---
 
-Created by [Sven Thiermann](https://github.com/sthiermann). Original project content is released under the [MIT License](LICENSE). [Contribute](CONTRIBUTING.md) · [Source and copyright notices](THIRD_PARTY_NOTICES.md)
+Created by [Sven Thiermann](https://github.com/sthiermann). Original project content is released under the [MIT License](LICENSE). [Contribute](CONTRIBUTING.md) · [Copyright and originality](THIRD_PARTY_NOTICES.md)

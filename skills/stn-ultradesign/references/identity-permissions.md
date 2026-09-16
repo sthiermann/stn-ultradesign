@@ -8,7 +8,7 @@ Distinguish identity proofing, authentication, authorization, organization membe
 
 Build an actor/action/resource/scope matrix before redesigning access controls. Include anonymous, invited, active, suspended and removed members where applicable. Add lifecycle changes: ownership transfer, expired invitation, lost authenticator and organization departure. State what happens to owned data and shared work.
 
-OWASP recommends least privilege, denial by default and permission validation on every request. [Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html) Apply that boundary explicitly: hiding a button communicates availability; the server must enforce access. Separate `UI verified`, `server evidence reviewed` and `security verification outstanding` in findings.
+Treat access as an explicit contract: hiding a button communicates availability; the server must enforce permissions on every relevant operation. Separate `UI verified`, `server evidence reviewed` and `security verification outstanding` in findings.
 
 ## 2. Design sign-in as a recoverable journey
 
@@ -16,11 +16,11 @@ Make account creation and existing-account access distinguishable. Offer methods
 
 For every method specify idle, submitting, challenged, cancelled, rejected, temporarily blocked, unavailable and complete states. Include back navigation, opening a second tab, switching account and resuming an interrupted task. An authentication loop is a workflow failure even if each individual screen appears correct.
 
-OWASP discusses generic authentication responses to reduce account enumeration, including nonvisual discrepancies such as timing and HTTP responses. [Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html) Agree the disclosure policy with the security owner. Pair necessary generic wording with useful next actions; avoid inventing account facts. Test that error copy never contradicts the backend outcome.
+Agree account-disclosure policy with the security owner, including visible messages and response differences. Pair necessary generic wording with useful next actions; avoid inventing account facts. Test that error copy never contradicts the backend outcome.
 
 ## 3. Password policy: verify the current standard
 
-NIST SP 800-63B-4 final, July 2025, requires at least 15 characters for single-factor passwords; passwords used only within MFA may have a minimum of eight. It recommends allowing at least 64 characters. It prohibits extra composition rules and arbitrary periodic changes, while requiring change on evidence of compromise. It requires checking proposed passwords against a blocklist. These are requirements within NIST's scope, not automatic worldwide law. [NIST SP 800-63B-4, §3.1.1](https://pages.nist.gov/800-63-4/sp800-63b.html#passwords)
+Derive password requirements from the product’s verified current authentication policy. Explain accepted length and disallowed values before submission, permit paste and password-manager use, and retain useful validation without exposing account facts. Do not invent complexity rules or scheduled password changes as design improvements; flag policy questions for the responsible owner.
 
 Audit the actual configured service policy; do not silently relax an organization's security policy during a cosmetic redesign. Explain valid requirements before entry. Check that frontend and server rules agree, long inputs remain usable and rejected values receive an actionable reason. Verify reveal/hide controls without losing cursor position or input.
 
@@ -28,27 +28,27 @@ Apply the accessible-authentication checks in [accessibility.md](accessibility.m
 
 ## 4. Passkeys: a complete lifecycle
 
-FIDO's consumer passkey guidance covers creation/management and sign-in with a graceful fallback. It does not prescribe every relying party's security policy. [Required patterns](https://www.passkeycentral.org/design-guidelines/required-patterns/), [Principles](https://www.passkeycentral.org/design-guidelines/principles)
+Map passkey setup, sign-in, device changes and fallback to the actual identity implementation. A polished enrollment screen is insufficient when a person cannot recover access on another device.
 
 Use familiar language around the platform interaction and report the actual result when it returns. Explain creation in an account-related context. Make existing credentials visible and manageable without pretending the application controls every credential-manager action. Validate platform-specific assumptions against current supported environments.
 
-The published patterns separately address management and sign-in. [Passkey management](https://www.passkeycentral.org/design-guidelines/required-patterns/create-view-and-manage-passkeys-in-account-settings), [Passkey sign-in](https://www.passkeycentral.org/design-guidelines/required-patterns/sign-in-with-a-passkey)
+Keep managing an existing sign-in method distinct from authenticating with it; account settings and sign-in need different entry and recovery contracts.
 
 Test cancelled platform dialogs, no available passkey, another device, an unsupported environment, duplicate attempts and removal of a credential. Define fallback without claiming that all fallbacks provide equal assurance. Before removing the last usable method, make the remaining access route explicit. Distinguish removing a credential from this account and removing its copy from a credential provider. Do not promise universal synchronization or recovery across providers.
 
 ## 5. MFA and recovery
 
-OWASP treats MFA recovery and factor replacement as security-sensitive parts of the authentication lifecycle. [Multifactor Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html) Plan enrollment, verification, backup methods, loss, replacement and organization enforcement together. A successful setup illustration is incomplete if losing a phone strands the user.
+Plan enrollment, verification, backup methods, loss, replacement and organization enforcement together. A successful setup illustration is incomplete if losing a phone strands the user.
 
 For one-time codes, test whole-code paste, autofill, leading zeroes, screen readers, resend, expiry and a newly requested code invalidating an old one. Prefer a single coherent input experience; visually segmented fields must not break those operations. Announce the remaining action without placing credentials in a live region unnecessarily. A countdown must reflect real server policy.
 
-OWASP password-recovery guidance calls for consistent account-disclosure responses and securely generated, expiring, single-use reset tokens. It distinguishes recovery from ordinary sign-in and discusses session invalidation after reset. [Forgot Password Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html)
+Treat recovery as its own journey: request, handoff, expiry, invalid or already-used link, new credentials, completion and session consequences. Verify these outcomes against the identity implementation rather than assuming a form submission completed recovery.
 
 Test expired links, reused links, multiple requests, lost access to the delivery channel and a reset completed in another tab. Explain what changed and how to continue. Respect the approved support and identity-verification policy; a friendly recovery flow must not invent a bypass around account ownership checks.
 
 ## 6. Federation and enterprise sign-in
 
-An identity-provider button represents a handoff with failure and return states, not a complete security implementation. RFC 9700 is the OAuth 2.0 security best-current-practice document; use the actual provider protocol and current implementation guidance for redirect and token protections. [RFC 9700](https://www.rfc-editor.org/rfc/rfc9700.html)
+An identity-provider button represents a handoff with failure and return states, not a complete security implementation. Use the configured protocol and current implementation guidance for redirects, identity scope and token protections; record security dependencies outside the UX review separately.
 
 Audit provider cancellation, organizational restrictions, unavailable provider, mismatched account, unverified address, account linking and duplicate membership. A user might belong to more than one organization with different requirements. Explain when they must use a managed identity without revealing unnecessary organization membership to an unauthenticated visitor.
 
@@ -56,7 +56,7 @@ Require a deliberate policy for linking identities; matching displayed email tex
 
 ## 7. Sessions and sensitive changes
 
-OWASP's session guidance covers server-enforced expiry, logout and renewal after privilege changes. [Session Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html)
+Confirm server-enforced expiry, logout and privilege-change behavior before specifying the visible session experience. A local screen reset does not prove the session ended.
 
 Define the visible experience for inactivity expiry, absolute expiry, forced sign-out, sign-out from another device and a role change during use. Keep a recoverable draft where the data policy permits and say whether it was saved. Avoid claiming an action succeeded when reauthentication interrupted the commit.
 
@@ -78,7 +78,7 @@ Use actual backend capabilities in the UI. Keep a material permissions change re
 
 ## 9. Tenant context and account switching
 
-OWASP's multi-tenant guidance treats client-provided tenant identifiers as selectors that require server-verified authorization. It also covers cache, session, file and asynchronous-work isolation. [Multi-Tenant Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Multi_Tenant_Security_Cheat_Sheet.html)
+Treat a client-selected tenant or workspace as a context selector, not proof of authorization. Verify the UI’s scope and record server-side isolation dependencies for caches, files, sessions and background work.
 
 Make current workspace and identity visible at consequential moments. On switching, define what happens to drafts, selections, uploads, notifications and open dialogs. Recheck access for deep links and distinguish inaccessible resources from resources that legitimately moved. Avoid displaying another workspace's cached data during a loading transition.
 

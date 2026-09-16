@@ -1,6 +1,6 @@
 # Product thinking and evaluation
 
-Load this reference when the problem, audience, task, information structure, success measure, or design direction is unsettled; also when an audit proposes structural changes. The procedures below are this skill's synthesis, not a claim that one author prescribes the entire method. Source access date: 2026-09-16.
+Load this reference when the problem, audience, task, information structure, success measure, or design direction is unsettled; also when an audit proposes structural changes. The procedures below are original working methods to adapt to the project’s tasks and evidence.
 
 ## 1. Establish the problem before the screen
 
@@ -25,7 +25,7 @@ Record:
 
 Example: “A project administrator gives a contractor access to one project, verifies the effective scope, and can revoke it later.” “Redesign the permissions modal” describes a proposed solution, not this outcome. Keep unsupported assumptions explicitly marked. A stakeholder's request and an analytics event establish different kinds of evidence.
 
-Don Norman and Eli Spencer connect human-centered work to underlying problems, local context, complete activities and iterative testing. This supports investigating the activity before optimizing an isolated component. Their community-design essay is not a prescriptive web component standard. [Primary source](https://jnd.org/community-based-human-centered-design/)
+Investigate the complete activity and its operating context before optimizing a component. A local screen improvement can move difficulty to another person or later step.
 
 For example, in a camera observation task the work unit is the selected camera feed. A layout that replaces feeds with decorative summaries can undermine that task even when the summaries look polished. Establish whether the operator needs to notice changes across many identifiable sources or inspect detail in one image; those activities need different scales and a reliable transition between them. In an editor the work unit may instead be the document or drawing; in an access review it may be the person-resource-capability decision. Do not impose a monitoring layout on these different activities.
 
@@ -75,7 +75,7 @@ Compare a full-context arrangement with a focused or maximum-content arrangement
 
 Dense layouts should reduce avoidable framing, repetition and travel before reducing text or control size. Keep the supported density choices and accessibility constraints. For imagery, distinguish thumbnails that let people identify a source and notice change from views suitable for detailed inspection. Test both scales with difficult but safe content. A larger DOM count or a greater number of tiny tiles is not proof that more useful information is visible.
 
-Jakob Nielsen's heuristics are broad inspection aids rather than specific layout laws. Ben Shneiderman explicitly calls for adaptation to each domain. Apply them to explain an observed problem, not to give an unsupported design preference the status of a universal rule. [Nielsen](https://www.nngroup.com/articles/ten-usability-heuristics/), [Shneiderman](https://www.cs.umd.edu/users/ben/goldenrules.html)
+Use heuristics as inspection prompts adapted to the domain. Explain the observed consequence; a familiar rule name cannot establish that a preferred layout is universally correct.
 
 **Done when:** navigation, terminology, persistent regions and disclosure each have a task-based rationale; consequential hidden information is accounted for. Focus modes have a complete return contract and do not silently reduce required awareness.
 
@@ -91,7 +91,7 @@ For data-heavy or media-heavy surfaces, connect the composition to a provisional
 
 Keep a concept decision log: requirement, selected option, rejected alternative, reason, open risk, and evidence. After refinement, present the concrete concept for the approval required by the user's chosen process. Record its version and approved scope. Implementation must preserve the approved hierarchy, interactions, content and visual intent; map changes back to the concept and surface meaningful deviations. This approval applies to that concept-to-implementation boundary, not unrelated work the user has already authorized. Follow the main skill's concept-to-code contract.
 
-Brad Frost's component model links reusable parts with complete pages containing representative content. Julie Zhuo's 2025 essay advocates learning through working prototypes. The latter is a practitioner position, not experimental proof that documentation or specialist review is obsolete. [Frost](https://atomicdesign.bradfrost.com/chapter-2/), [Zhuo](https://lg.substack.com/p/the-death-of-product-development)
+Evaluate reusable parts in complete pages with representative content. Use working prototypes to test behavior and interpretation; component consistency alone cannot establish a coherent product.
 
 **Done when:** the chosen concept answers the important uncertainty, its evidence limits are visible, and any required approval has a traceable version.
 
@@ -109,7 +109,7 @@ Classify every significant recommendation:
 
 A design can be distinctive through typography, composition, imagery and controlled motion while remaining predictable in its behavior. Choose a coherent direction; do not average unrelated design systems into a new visual language. A particular radius, gradient, font or animation duration is not “world standard” simply because a prominent company uses it.
 
-Dieter Rams provides a philosophy of useful, understandable, honest and durable design. Bruce Tognazzini argues that aesthetic changes should be assessed against user performance. Neither source proves that all software should look like a Braun product or an Apple interface. [Rams](https://www.vitsoe.com/us/about/good-design), [Tognazzini](https://asktog.com/atc/principles-of-interaction-design/)
+Judge visual changes by usefulness, comprehensibility, honest feedback and durability as well as appearance. Aesthetic resemblance to a reference is not proof of improved task performance.
 
 **Done when:** a reviewer can distinguish a requirement, a supported finding, an assumption and a stylistic choice without inferring the distinction.
 
@@ -119,7 +119,7 @@ Plan a small formative study to find task problems. Recruit people who match the
 
 Observe first. Record independent completion, wrong turns, critical errors, assistance, recovery, comprehension and the participant's explanation. Ask neutral follow-up questions. A preference rating cannot replace observed task success. Think-aloud can explain confusion but changes timing; use comparable conditions when making time comparisons.
 
-NN/g describes qualitative usability testing as observation of realistic participants performing realistic tasks. Its small-study guidance concerns discovering common problems in a defined group, not proving a population success rate. [Usability Testing 101](https://www.nngroup.com/articles/usability-testing-101/)
+Observe representative participants performing realistic tasks. Small qualitative sessions can expose common problems within a defined group; they cannot establish a population success rate.
 
 Choose additional methods by uncertainty:
 
@@ -140,7 +140,7 @@ Determine sample size from the method, audience diversity, expected effect and d
 
 Define measures before redesign to prevent selecting only favorable results. For each measure record the goal, observable signal, event or data source, denominator, eligible population, time window, exclusions and owner. Use existing consented data; avoid collecting sensitive content solely to make a dashboard richer.
 
-Google researchers Rodden, Hutchinson and Fu present HEART and a goals-to-metrics process for user-centered measurement. Use its categories selectively rather than treating every category as a required KPI. [Original publication page](https://research.google/pubs/measuring-the-user-experience-on-a-large-scale-user-centered-metrics-for-web-applications/)
+Connect product goals to observable signals and then to measurable outcomes. Select measures appropriate to the task, such as successful completion, avoidable errors, time, adoption or satisfaction; do not require every category to become a dashboard metric.
 
 | Product goal | Candidate measure | Guardrail |
 | --- | --- | --- |

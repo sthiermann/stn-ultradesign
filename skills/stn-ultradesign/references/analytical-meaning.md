@@ -1,8 +1,8 @@
 # Analytical meaning: from measures to decisions
 
-Load for every surface where people interpret quantities, comparisons, rankings, status, or analytical relationships: business tables, operational widgets, reports, financial summaries, inventory views, charts, and their details. Use this module before selecting presentation in [data visualization](data-visualization.md). Record each usage with the [analytical surface template](../assets/analytical-surface.template.md). Source access date: **2026-09-16**.
+Load for every surface where people interpret quantities, comparisons, rankings, status, or analytical relationships: business tables, operational widgets, reports, financial summaries, inventory views, charts, and their details. Use this module before selecting presentation in [data visualization](data-visualization.md). Record each usage with the [analytical surface template](../assets/analytical-surface.template.md).
 
-These are original audit and design procedures, informed by the primary sources below. They are not a universal business model, a statistical certification, or permission to change financial, operational, or access policies. During an audit, identify evidence and gaps. During concept work, propose improvements with dependencies. Implement only within the established approval and authorization boundary.
+These are original audit and design procedures. They are not a universal business model, a statistical certification, or permission to change financial, operational, or access policies. During an audit, identify evidence and gaps. During concept work, propose improvements with dependencies. Implement only within the established approval and authorization boundary.
 
 ## 1. Establish what the number means
 
@@ -27,7 +27,7 @@ Check definitions against documentation, queries, model measures, API contracts,
 
 Ask focused questions throughout the audit when unresolved business meaning could change a finding or recommendation. Reuse confirmed answers, state why the remaining question matters, and continue independent inspection while it is unresolved. Follow [discovery and preferences](discovery-and-preferences.md); completing an initial brief does not end necessary domain clarification.
 
-Power BI's modeling guidance distinguishes observation grain, dimensions, and measures evaluated in a filtering context. Its examples also show why a numeric field is not automatically summable. Use that distinction to investigate the existing data model rather than guessing semantics from column types. [Microsoft: star schema guidance](https://learn.microsoft.com/en-us/power-bi/guidance/star-schema)
+Distinguish observation grain, dimensions and measures evaluated within a filter context. Investigate the existing model: a numeric field is not automatically additive.
 
 **Done when:** every displayed measure has a traceable definition or a visible audit gap, and every consequential interpretation names its supporting evidence.
 
@@ -49,7 +49,7 @@ Use small, independently calculated fixtures. **Synthetic example:** one team co
 
 Inspect joins and membership: a transaction appearing under several tags can be valid, but a grand total must not silently duplicate its value. Distinguish sum of groups from distinct population total. Explain intentional nonadditivity where users would otherwise perceive a defect.
 
-Tableau documents how grouping and aggregation change the marks represented in a view. Microsoft separately illustrates the hazards of comparing fine-grained actuals with coarser targets. An annual target does not become a valid weekly target merely because the chart has a weekly axis. Require an approved allocation method or omit that unsupported comparison with an explanation. [Tableau: aggregation](https://help.tableau.com/current/pro/desktop/en-us/calculations_aggregation.htm), [Microsoft: relationships and higher-grain facts](https://learn.microsoft.com/en-us/power-bi/guidance/relationships-many-to-many)
+Determine how grouping and aggregation change each mark. Comparing fine-grained actuals with coarse targets requires an approved allocation method; an annual target does not become a weekly target merely because the axis is weekly.
 
 **Done when:** totals, subtotals, groups, and drill levels retain valid meaning, including empty groups, duplicates, overlapping membership, and changed granularity.
 
@@ -68,7 +68,7 @@ Choose the reference because it answers the user's question, not because every c
 
 Show absolute context alongside relative change when it affects interpretation. **Synthetic example:** a rate moving from 10% to 12% rose by 2 percentage points, or 20% relative to its starting value. Label which quantity is shown. A zero or negative reference needs an explicit rule; never substitute infinity or a persuasive percentage by convenience. Preserve currency and conversion date/basis, gross versus net, and nominal versus adjusted values where relevant.
 
-Test how filtering changes the reference. “Share of all customers,” “share of this selection,” and “share of authorized customers” are different measures. A top-N list within a selected region is different from global top-N followed by a region filter. Tableau's documented filter order demonstrates both denominator and ranking effects; the portable requirement is to verify the calculation order, not to copy a particular vendor's configuration. [Tableau: order of operations](https://help.tableau.com/current/pro/desktop/en-us/order_of_operations.htm)
+Test how filtering changes the reference. “Share of all customers,” “share of this selection” and “share of authorized customers” differ. A regional top-N differs from a global top-N subsequently filtered to one region. Verify calculation and filter order.
 
 **Done when:** the reader can identify the comparison population and time basis, and filtering cannot silently redefine the question.
 
@@ -84,9 +84,9 @@ Keep these interpretations distinct:
 
 A rising arrow means movement, not automatically improvement. Lower cost can coexist with worse service; higher stock can improve availability while increasing holding exposure. Show an appropriate balancing measure when its omission would distort the decision and the data exists. Do not invent an optimized tradeoff or combine incompatible objectives into an unexplained score.
 
-Use “statistically significant” only when an identified analysis supports it. Record method, population, sample size, effect estimate, uncertainty, and relevant assumptions; account for repeated comparisons where applicable. The ASA's statement separates statistical significance from effect size and practical importance and rejects decisions based solely on a p-value cutoff. It does not supply a universal business threshold. [ASA statement announcement, 2016](https://www.amstat.org/docs/default-source/amstat-documents/p-valuestatement.pdf)
+Use “statistically significant” only with a supported analysis. Record method, population, sample size, effect estimate, uncertainty and assumptions; account for repeated comparisons where relevant. A cutoff alone does not establish practical importance or a business threshold.
 
-Distinguish a model-detected anomaly from a verified incident. A plausible explanation is an investigation lead, not proof. Tableau explicitly limits Explain Data to exploring relationships, rather than proving causation or conducting hypothesis tests. Apply the same restraint to generated explanations and AI-written analytical summaries. [Tableau: how Explain Data works](https://help.tableau.com/current/pro/desktop/en-us/explain_data_explained.htm)
+Distinguish a model-detected anomaly from a verified incident. A plausible explanation is an investigation lead, not proof of cause. Apply this restraint to generated summaries as well.
 
 **Done when:** evaluative words, arrows, anomaly labels, and explanations say no more than the evidence supports.
 
@@ -96,9 +96,9 @@ Separate categorical identity, selection, magnitude, lifecycle state, data quali
 
 For every consequential threshold, record the metric and unit, direction, inclusive/exclusive boundary, applicable scope and period, source/owner, effective version, and response. Identify any actual persistence window, hysteresis, suppression, or escalation rule in the system; propose missing behavior explicitly instead of claiming it exists. Test values just below, exactly at, and just above the boundary, as well as null, stale, and out-of-range inputs.
 
-Power BI's KPI component supports both increasing and decreasing directions of improvement. Qlik supports configured conditional ranges and symbols. Those facilities enable a presentation; they do not authorize a target, establish its validity, or make red/amber/green cutoffs universal. [Microsoft: KPI visual](https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-kpi), [Qlik: creating KPIs](https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Visualizations/KPI/create-kpis.htm)
+Define whether increasing, decreasing or staying within a range is desirable for each measure. A component’s ability to color a number does not authorize the target or make traffic-light thresholds universal.
 
-Use a readable label plus an appropriate noncolor cue for status. Define attention levels in relation to the required response and the product's domain. Keep routine information quieter than actionable exceptions without hiding it. Carbon's guidance distinguishes severity and other lifecycle meanings; its example names and domain scales are not universal business policy. [Carbon: status indicators](https://carbondesignsystem.com/patterns/status-indicator-pattern/)
+Use a readable label and appropriate noncolor cue for status. Relate attention levels to the required response and domain. Keep routine information quieter than actionable exceptions without hiding it.
 
 Keep missing or stale evidence distinct from current success. A last-known healthy state may remain useful if its age and uncertainty are explicit. An unknown threshold should produce a neutral value plus an open definition, not an invented green state. Do not infer global health from only the visible, accessible, or successfully loaded subset. If several conditions conflict, expose the relevant conditions or use a documented precedence rule; do not invent an average severity.
 
@@ -108,9 +108,9 @@ Keep missing or stale evidence distinct from current success. A last-known healt
 
 Display the essential subject, unit, time basis, and comparison where the value is read. Share common context at page or section level when its scope is obvious. Put formula details, lineage, exclusions, and methodology in accessible disclosure; do not force users through a tooltip to discover that a headline represents an estimate or incomplete period. Keep important context when a widget is expanded, exported, embedded, or opened directly.
 
-Freshness needs multiple clocks when relevant: source observation/event time, ingestion or model refresh, and view rendering. A reload can redraw an old imported dataset. State the actual freshness signal and unknowns rather than labeling every successful render “live.” [Microsoft: data refresh](https://learn.microsoft.com/en-us/power-bi/connect-data/refresh-data)
+Distinguish source observation or event time, ingestion/model refresh and view rendering where relevant. A reload can redraw stale data; state the actual freshness signal and unknowns instead of labeling every rendered view “live.”
 
-Distinguish selected, eligible/possible, excluded by current filters, no matching records, suppressed by policy, and inaccessible information. Qlik's associative model illustrates how an excluded value can remain meaningful in relation to a selection; its vendor-specific colors are not a portable success/failure palette. [Qlik: associative selection model](https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Selections/associative-selection-model.htm)
+Distinguish selected, eligible, excluded by filters, no matching records, policy-suppressed and inaccessible information. A filter exclusion is not an error, and an unknown value is not zero.
 
 Name the interaction before designing it:
 

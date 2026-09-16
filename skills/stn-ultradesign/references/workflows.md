@@ -10,9 +10,9 @@ Retain justified repetition for consequential confirmation, continuity when a he
 
 Review compact and expanded states, selected and unselected choices, errors, tooltips and supported locales. An explanatory message may be useful on first use but redundant beside a well-understood control; decide from the task, not a blanket ban on help text. Remove duplicated controls only after preserving their discoverable task access and reconciling the feature map.
 
-Apple's [Writing guidance](https://developer.apple.com/design/human-interface-guidelines/writing) emphasizes purposeful words and consistent language; NN/g's [minimalist-design heuristic](https://www.nngroup.com/articles/aesthetic-minimalist-design/) explains competition for attention. These support the review, not an absolute rule that useful information may occur only once.
+Use purposeful, consistent wording. Repetition is a problem when it adds reading without meaning or creates disagreement; useful context may appear again where people make a consequential decision.
 
-Load when auditing or designing navigation, forms, onboarding, wizards, settings, dialogs, search, uploads, notifications, checkout, collaboration or AI-assisted tasks. Access date: 2026-09-16. Source paragraphs describe published guidance; the decision rules, contracts and test scenarios below are this skill's operational synthesis. Pattern-library conventions are evidence to evaluate in context, not universal laws.
+Load when auditing or designing navigation, forms, onboarding, wizards, settings, dialogs, search, uploads, notifications, checkout, collaboration or AI-assisted tasks. The decision rules, contracts and test scenarios are original working methods. Evaluate familiar patterns in context; a common convention is not a universal law.
 
 ## 1. Start with a workflow inventory
 
@@ -51,7 +51,7 @@ For every recovery action answer: what will retry repeat, can it duplicate a sid
 
 ## 4. Choose the appropriate task structure
 
-GOV.UK advises starting question journeys with one question per page and preserving browser-back behavior. That guidance belongs to its service context. [Question pages](https://design-system.service.gov.uk/patterns/question-pages/) USWDS distinguishes a linear step indicator from nonlinear or conditionally changing forms. [Step indicator](https://designsystem.digital.gov/components/step-indicator/)
+Choose step size from the user’s task and dependency structure. A single decision per page can help an unfamiliar process; a familiar expert task may work better in one editable view. Keep browser Back and saved work coherent.
 
 Use a single page when users need to compare fields, edit quickly or understand a compact whole. Use a wizard when dependencies, risk or unfamiliarity justify guided sequencing. Use a task list when independently completable sections can be resumed or delegated. Use an editor when iteration and spatial context dominate. A dashboard is useful only when users can explain the decision each element supports.
 
@@ -71,11 +71,11 @@ Ask only for data with a known purpose. For each field identify the data type, a
 
 Treat names, addresses, phone numbers, date formats and identifiers as international data. Record which locales the product actually supports; do not invent a globally valid regex. Where normalization is appropriate, show the interpreted result and preserve the meaningful original. Verify browser autofill, input method composition, paste and mobile keyboards.
 
-USWDS's complex-form guidance considers trust, progression and retaining submitted information. [Complete a complex form](https://designsystem.digital.gov/patterns/complete-a-complex-form/) Apply this by stating preparation needs, data use and what users can save. Test with missing, unusually long, partially known and valid-but-uncommon answers. Make dependency changes explicit when they invalidate later answers.
+State preparation needs, data use and save/resume behavior. Test missing, unusually long, partially known and valid-but-uncommon answers. Make dependency changes explicit when they invalidate later answers.
 
 ## 7. Validation and correction
 
-GOV.UK recommends an error summary plus field-level messages for validation failures and distinguishes user-correctable input errors from service problems. [Recover from validation errors](https://design-system.service.gov.uk/patterns/validation/)
+Pair a useful error summary with field-level messages where a long form needs both. Distinguish user-correctable input from service failures and preserve valid answers.
 
 Decide when each check becomes useful: before submission for obvious constraints, after meaningful interaction for field feedback, and after server response for authoritative business rules. Avoid interrupting unfinished input. Preserve valid non-sensitive answers after rejection. Make error copy state the issue and an achievable correction, with a support route when the user cannot fix it.
 
@@ -85,7 +85,7 @@ Completion means the user can find every remaining issue, correct it and succeed
 
 ## 8. Wizards, review and long-running applications
 
-GOV.UK's task-list pattern supports grouped work; its check-answers pattern offers review before final submission. [Complete multiple tasks](https://design-system.service.gov.uk/patterns/complete-multiple-tasks/), [Check answers](https://design-system.service.gov.uk/patterns/check-answers/) USWDS recommends manageable question groups, save/resume and explaining impacts when an earlier answer changes later work. [Progress easily](https://designsystem.digital.gov/patterns/complete-a-complex-form/progress-easily/)
+For independent subtasks, make completion and remaining work visible without imposing a false sequence. For consequential submission, offer review and direct correction. Explain how changed upstream answers affect later work.
 
 Specify step entry, completion and editability. Show progress truthfully: avoid a fixed total when branches can change it. Preserve answers going back. A “Change” action from review should return to review with dependencies revalidated. Distinguish draft complete from submitted; a green step must not imply a committed transaction.
 
@@ -93,7 +93,7 @@ For collaboration, define who can complete each section and whose work is curren
 
 ## 9. Onboarding and first use
 
-GOV.UK recommends requiring an account only when the service needs it and allowing useful access before account creation where possible. [Create accounts](https://design-system.service.gov.uk/patterns/create-accounts/)
+Require an account only when the product needs identity or persistence; preserve useful pre-sign-in access where supported.
 
 Identify the first meaningful user outcome. Make required setup distinguishable from optional personalization, product education and commercial upsell. Ask for access or information when its purpose becomes understandable. Let users defer nonessential setup and find it later. Avoid tours that block the task while explaining controls the user has not encountered.
 
@@ -111,7 +111,7 @@ Test search or discoverability for rarely used settings, a locked organization p
 
 ## 11. Permissions and contextual requests
 
-Android's permission guidance asks for permission in the context of the requested feature and calls for graceful degradation after denial or revocation. [Request runtime permissions](https://developer.android.com/training/permissions/requesting)
+Request platform access when the person invokes the relevant feature. Explain the benefit and preserve a useful path after denial or later revocation.
 
 Apply a capability-specific contract: what resource, for what task, for how long, and what alternative exists? Separate the app's explanation from the operating system or browser grant dialog. Respect cancellation. On return, inspect the actual permission state; do not infer success from having opened a dialog.
 
@@ -121,13 +121,13 @@ Cover unavailable hardware, restricted environments, policy denial, temporary gr
 
 Use a modal when an immediate scoped decision must be completed or dismissed before returning. Use an inline region, side panel or page when users need surrounding context or substantial work. Write the outcome into action labels. Distinguish Cancel from a negative decision and from closing an informational overlay.
 
-Specify initial focus, keyboard handling, background behavior, close control, unsaved data, nested popups and focus return in the contract; use [accessibility.md](accessibility.md) for APG-backed behavior. Test a long translation and the virtual keyboard. A dialog that fits desktop can still conceal its action or error on a phone.
+Specify initial focus, keyboard handling, background behavior, close control, unsaved data, nested popups and focus return in the contract; use [accessibility.md](accessibility.md) for semantic and keyboard behavior. Test a long translation and the virtual keyboard. A dialog that fits desktop can still conceal its action or error on a phone.
 
 Review interruption frequency over the whole task. Several individually defensible alerts may together create a hostile flow. A confirmation should expose decision-relevant information rather than ask a reflexive generic question. Preserve a comprehensible route when the original trigger disappears or the underlying object changes.
 
 ## 13. Destructive and consequential actions
 
-WCAG AA SC 3.3.4 requires at least one of reversal, checking with correction, or confirmation for the specified legal, financial and stored-data submissions; it is not a rule that every action needs a modal. [Error Prevention](https://www.w3.org/WAI/WCAG22/Understanding/error-prevention-legal-financial-data.html)
+WCAG AA SC 3.3.4 requires at least one of reversal, checking with correction, or confirmation for the specified legal, financial and stored-data submissions; it is not a rule that every action needs a modal. Error Prevention
 
 Classify consequences by reversibility, affected people, data volume, external commitment and recovery cost. Prefer undo when recovery is real and reliable. For irreversible or widely consequential actions, show exact objects, scope and consequences at the decision point. Typed confirmation is a product-specific option for exceptional risk, not a general standard.
 
@@ -159,7 +159,7 @@ Define whether selection applies to visible rows, the current page, loaded items
 
 ## 17. Upload, import, export and download
 
-GOV.UK provides both file-picker and drag/drop paths and recommends reusing a prior upload within a journey when appropriate. [File upload](https://design-system.service.gov.uk/components/file-upload/) OWASP treats type checks, size limits, storage and scanning as server-side security considerations; UI file restrictions alone do not establish safety. [File Upload Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html)
+Provide file-picker and non-dragging alternatives. Preserve reusable prior uploads when appropriate. Type checks, size limits, storage and scanning depend on the backend; UI restrictions alone cannot establish safety.
 
 Before selection explain allowed formats, limits and purpose. During processing distinguish transferred from validated or imported. Provide per-file status, removable queued items and clear retry behavior. For imports show mapping, preview, duplicates and a row-level error report before committing consequential changes.
 
@@ -167,7 +167,7 @@ For exports identify scope, filters, format, locale and sensitive fields. Explai
 
 ## 18. Notifications and empty states
 
-Carbon distinguishes notification intent from delivery type and recommends relevant, timely information with disruption appropriate to the situation. Its pattern guidance includes draft areas; do not mistake every example for a shipped component. [Notifications](https://carbondesignsystem.com/patterns/notification-pattern/)
+Choose notification delivery from urgency, actionability and current context. A background status, recoverable error and urgent interruption need different prominence and dismissal behavior.
 
 Use inline feedback for a local issue, a persistent banner for an ongoing broad condition and a transient message for low-risk acknowledgement. Important recovery instructions need a durable home. Group repeated events and make notification preferences understandable by type and channel.
 
@@ -183,7 +183,7 @@ Design plan changes, refunds, cancellation, renewal and data export as real work
 
 ## 20. AI-assisted and agentic workflows
 
-Microsoft's HAX guidance covers initial expectations, ongoing interaction, errors and adaptation over time. [Human-AI Interaction Guidelines](https://www.microsoft.com/en-us/haxtoolkit/ai-guidelines/) Its explanation guidance cautions that explanations can increase trust even when that trust is unwarranted. [Guideline 11](https://www.microsoft.com/en-us/haxtoolkit/guideline/make-clear-why-the-system-did-what-it-did/)
+Make automated assistance understandable at first use, during work and after failure. Distinguish a plausible explanation from verified evidence; persuasive wording must not imply accuracy or authority the system has not established.
 
 Specify what the AI proposes, what it can execute, and which actions require an actual user decision. Show inspectable inputs, relevant evidence, editable output and honest limits. A generated plan, a queued action and a completed external action are distinct states. Never use a confidence decoration as fabricated evidence.
 
@@ -191,7 +191,7 @@ Design stop, revise, retry, resume, reject, compare and revert where meaningful.
 
 ## 21. Completion, help and service recovery
 
-GOV.UK confirmation guidance covers evidence of completion and what follows. [Confirmation pages](https://design-system.service.gov.uk/patterns/confirmation-pages/)
+Show the actual outcome, a useful reference where available, what happens next and how to correct or revisit the result.
 
 Make completion state what actually happened, what remains pending, who acts next, and how to return. Include a reference or record when users will need proof or follow-up. Avoid implying approval when an application was only received. Keep the next action specific to the user rather than automatically sending everyone to a dashboard.
 

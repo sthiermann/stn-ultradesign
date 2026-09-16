@@ -1,6 +1,6 @@
 # HTML, CSS and React implementation
 
-Use for web frontends. Native desktop/mobile apps also need their framework's current interaction and accessibility APIs; a DOM audit cannot certify a native app. The procedures below are original engineering guidance informed by the linked primary documentation, checked 2026-09-16.
+Use for web frontends. Native desktop/mobile apps also need their framework's current interaction and accessibility APIs; a DOM audit cannot certify a native app. The procedures below are original engineering guidance. Verify current implementation contracts for the project’s installed framework and supported browsers.
 
 ## Learn the existing implementation before choosing tools
 
@@ -10,21 +10,21 @@ Map the design contract into four layers: tokens, primitives, composed patterns 
 
 ## Semantic HTML
 
-Choose elements by interaction: links navigate, buttons act, native inputs collect values, fieldsets group related choices, and table structure expresses tabular relationships. Use headings and landmarks to expose the same hierarchy as the visual design. Preserve logical document order; CSS placement cannot compensate for an incoherent focus/reading order. These semantics are defined by the [HTML Living Standard](https://html.spec.whatwg.org/multipage/semantics.html) and [form elements](https://html.spec.whatwg.org/multipage/forms.html).
+Choose elements by interaction: links navigate, buttons act, native inputs collect values, fieldsets group related choices, and table structure expresses tabular relationships. Use headings and landmarks to expose the same hierarchy as the visual design. Preserve logical document order; CSS placement cannot compensate for an incoherent focus/reading order. Verify the chosen elements against the current language and browser contract.
 
 Associate each field with a label, guidance and relevant error. Choose `autocomplete`, input type and `inputmode` by meaning and expected input. A numeric-looking identifier is often text: postal codes can have letters or leading zeroes. Placeholder text is not the field's only label. Retain browser autofill and password-manager support.
 
-For disclosure, use a real disclosure behavior. For a modal, define name, opening focus, containment, Escape/close behavior, scroll, background inertness and focus restoration. Native `<dialog>` can provide modal behavior through `showModal()`; setting only the `open` attribute is not equivalent. See [HTML dialog definition](https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element).
+For disclosure, use a real disclosure behavior. For a modal, define name, opening focus, containment, Escape/close behavior, scroll, background inertness and focus restoration. Native `<dialog>` can provide modal behavior through `showModal()`; setting only the `open` attribute is not equivalent. Check support and behavior in the project’s target browsers.
 
-The [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API) concerns display/lifecycle and does not choose whether content is semantically a menu, tooltip or dialog. Set the correct behavior for the intended pattern. Verify current support for newer attributes instead of assuming every evergreen browser implements them.
+The Popover API concerns display/lifecycle and does not choose whether content is semantically a menu, tooltip or dialog. Set the correct behavior for the intended pattern. Verify current support for newer attributes instead of assuming every evergreen browser implements them.
 
 ## Resilient CSS layout
 
 Start with intrinsic sizing and normal document flow. Use Grid for two-dimensional relationships and Flexbox for appropriate one-dimensional groups. Account for minimum-content sizing, long strings and nested flex/grid children; investigate whether `min-inline-size: 0` or wrapping is needed before hiding overflow.
 
-Use viewport media queries for application-wide changes and user/device capabilities; use container size queries when a component must adapt to the actual space its parent gives it. Declare a suitable containment context and test nesting. [MDN container queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries) documents the mechanism and fallbacks.
+Use viewport media queries for application-wide changes and user/device capabilities; use container size queries when a component must adapt to the actual space its parent gives it. Declare a suitable containment context and test nesting. Provide a usable fallback for the supported browser baseline.
 
-Prefer logical properties for layout that should follow writing direction. Check whether a particular icon or order is directional before mirroring it. [MDN logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Logical_properties_and_values) maps inline/block behavior to writing modes.
+Prefer logical properties for layout that should follow writing direction. Check whether a particular icon or order is directional before mirroring it. Test inline/block behavior under the supported writing directions.
 
 Apply fluid values only where the contract permits variation. A `clamp()` expression is not automatically accessible: text must still resize appropriately and avoid clipping. Define readable text measure and flexible control height. Avoid fixed-height text containers. Treat viewport units, mobile browser bars, safe areas and on-screen keyboards as separate constraints; test the actual target browser.
 
@@ -32,7 +32,7 @@ Build CSS around semantic tokens such as `text-muted`, `surface-raised`, `border
 
 Use cascade layers or the project's established ordering to manage overrides. Avoid escalating specificity until a single component can only be corrected by another override. Maintain documented z-index roles and stacking contexts for sticky bars, overlays, menus and toasts.
 
-For token interchange, the [DTCG 2025.10 format](https://www.designtokens.org/tr/2025.10/format/) is a stable community specification, explicitly not a W3C Standard. Adopt it where interoperable tooling is useful; do not force a migration from a working token source solely to use the format.
+Choose token interchange only when it serves the project’s actual tools. Verify format support and preserve semantic roles; adopting a new format alone is not a reason to replace a working token source.
 
 ## Type, assets and motion in production
 
@@ -40,19 +40,19 @@ Check typeface rights, script coverage, fallback metrics, supported weights, num
 
 Use the existing icon family consistently, with accessible names for interactive icons and hidden semantics for decoration. Give images an intentional crop and reserved dimensions; test replacement images. Provide responsive sources where useful. Do not fabricate product imagery, reviews or metrics that users could mistake for real evidence.
 
-Motion should express a state or spatial relationship. Prefer compositing-friendly changes where they preserve the design; measure costly effects. Provide meaningful static transitions for [reduced-motion preferences](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion). Essential information and completion states must remain visible without animation. Never make layout or focus correctness depend on a decorative animation's timing.
+Motion should express a state or spatial relationship. Prefer compositing-friendly changes where they preserve the design; measure costly effects. Provide meaningful static transitions for reduced-motion preferences. Essential information and completion states must remain visible without animation. Never make layout or focus correctness depend on a decorative animation's timing.
 
 ## React state as UX infrastructure
 
-React's [state-structure guidance](https://react.dev/learn/choosing-the-state-structure) recommends avoiding contradictory, duplicated and unnecessary state. For a consequential async interaction, a discriminated state such as editing/saving/saved/error can express transitions more safely than unrelated booleans. Keep draft and confirmed values distinct when failures are possible.
+Avoid contradictory, duplicated and unnecessary React state. For a consequential async interaction, a discriminated state such as editing/saving/saved/error can express transitions more safely than unrelated booleans. Keep draft and confirmed values distinct when failures are possible.
 
-React [preserves state according to tree position and identity](https://react.dev/learn/preserving-and-resetting-state). Stable keys and deliberate reset boundaries therefore affect focus, form contents and continuity. Test switching records or tenants and returning to drafts. Resetting sensitive state on an identity change may be required even when retaining UI state elsewhere is helpful.
+React component identity and tree position affect whether state is retained. Stable keys and deliberate reset boundaries therefore affect focus, form contents and continuity. Test switching records or tenants and returning to drafts. Resetting sensitive state on an identity change may be required even when retaining UI state elsewhere is helpful.
 
-Use effects for synchronization with external systems. Derive ordinary display values during rendering and put direct user actions in event handlers where appropriate. See [You Might Not Need an Effect](https://react.dev/learn/you-might-not-need-an-effect). Follow the project's data-fetching architecture; account for races, cancellation, late responses, retry and stale data rather than adding ad hoc fetch effects to each view.
+Use effects for synchronization with external systems. Derive ordinary display values during rendering and put direct user actions in event handlers where appropriate. Follow the project's data-fetching architecture; account for races, cancellation, late responses, retry and stale data rather than adding ad hoc fetch effects to each view.
 
-For fields, maintain a consistent controlled/uncontrolled model and keep controlled input updates responsive. [React input documentation](https://react.dev/reference/react-dom/components/input) describes the constraints. Preserve composition input for languages that use IMEs; avoid formatting that jumps the caret or commits incomplete text. Validate at useful times rather than announcing errors on every intermediate keystroke.
+For fields, maintain a consistent controlled/uncontrolled model and keep controlled input updates responsive. Preserve composition input for languages that use IMEs; avoid formatting that jumps the caret or commits incomplete text. Validate at useful times rather than announcing errors on every intermediate keystroke.
 
-[`useId`](https://react.dev/reference/react/useId) can create IDs for accessible relationships; it is not the source of data keys for a list. Ensure label, help and error references remain unique when multiple instances of the same form appear.
+`useId` can create IDs for accessible relationships; it is not the source of data keys for a list. Ensure label, help and error references remain unique when multiple instances of the same form appear.
 
 Expose component state through appropriate semantics (`aria-expanded`, `aria-selected`, `aria-invalid`, etc.) with the actual correct pattern. A focusable custom control needs its complete keyboard contract; adding a role alone is insufficient. Reuse mature primitives, then test their integration.
 
@@ -68,7 +68,7 @@ Use actual permission decisions from trusted application state to communicate av
 
 ## Performance is observable behavior
 
-The Google [Web Vitals reference](https://web.dev/articles/vitals) identifies good field thresholds at the 75th percentile: LCP ≤2.5 s, INP ≤200 ms, CLS ≤0.1, segmented by desktop/mobile. Treat these as web performance guidance, not a complete usability score. A single local run cannot establish production compliance.
+Set field performance targets for loading, interaction and layout stability, segmented by relevant devices. Verify the current metric definitions and thresholds before interpreting them. A local sample cannot establish production performance or overall usability.
 
 Also measure the application's critical task: opening a large dataset, filtering, typing, navigating, saving and chart interaction. Reserve loading space, keep meaningful work visible, avoid full-page spinners for local changes, and handle slow/stalled requests. Reduce main-thread work before adding animation polish. Set budgets appropriate to the supported devices and network conditions.
 
@@ -91,15 +91,15 @@ Learn a feature because an observed task or constraint needs it. New APIs such a
 
 Read [navigation-and-materials.md](navigation-and-materials.md) for the composition decision.
 
-“HTML5 design” is not a visual specification. The current HTML Living Standard defines meaningful document elements and behavior, including [`nav`](https://html.spec.whatwg.org/multipage/sections.html#the-nav-element); CSS defines presentation mechanisms. Neither prescribes a fashionable palette, corner radius or shadow. Record those as deliberate product tokens and validate them against the task.
+“HTML5 design” is not a visual specification. HTML defines semantic elements and behavior; CSS defines presentation mechanisms. Neither prescribes a fashionable palette, corner radius or shadow. Record these as product decisions and validate them against the task.
 
 ### Material is a rendering contract
 
 Define each material by purpose, foreground/background pairing, opacity, blur, border, highlight, shadow, stacking level and fallback. Keep glass on a composited surface layer; do not lower the opacity of a wrapper that also contains text. Give diagrams, code, forms and tables a stable readable backing when they appear inside a translucent container. Test their entire scroll range over bright, dark, patterned and moving content. Contrast belongs to the resulting pixels, not an isolated color token.
 
-CSS [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/backdrop-filter) filters content behind an element. Its result depends on transparency and backdrop-root boundaries; nested opacity/filter effects can change what is sampled. It does not automatically reproduce a native platform's material renderer, optical behavior or adaptive legibility. Apply it only when the current project's selected material requires it. Use a solid surface as the working baseline, enhance through feature queries, and verify the actual minimum supported browsers.
+CSS `backdrop-filter` filters content behind an element. Its result depends on transparency and backdrop-root boundaries; nested opacity/filter effects can change what is sampled. It does not automatically reproduce a native platform's material renderer, optical behavior or adaptive legibility. Apply it only when the current project's selected material requires it. Use a solid surface as the working baseline, enhance through feature queries, and verify the actual minimum supported browsers.
 
-The [`prefers-reduced-transparency` query](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-transparency) has limited availability in the documentation checked on 2026-09-16. Honor it when available, but do not rely on every browser exposing the system preference. For a product with prominent translucent materials, provide a usable opaque appearance option and test the fallback. Respect forced colors and contrast preferences without removing the semantic distinction between selected, focused, disabled and destructive controls.
+Verify current support for `prefers-reduced-transparency` in the project’s browsers. Honor it when available, but do not rely on every browser exposing the system preference. For a product with prominent translucent materials, provide a usable opaque appearance option and test the fallback. Respect forced colors and contrast preferences without removing the semantic distinction between selected, focused, disabled and destructive controls.
 
 Shape and elevation need a small intentional grammar. Define a restrained radius hierarchy, nested inset relationships, and shadow direction/softness by layer. Decide whether a floating toolbar, anchored inspector, modal and content block should feel related or distinct. A dark-theme shadow may need a boundary highlight to communicate separation. Avoid applying one decorative shadow to every row or stacking blurred layers merely to appear advanced. These are design hypotheses to render and compare, not universal pixel values.
 
@@ -107,11 +107,11 @@ Shape and elevation need a small intentional grammar. Define a restrained radius
 
 Specify motion by cause: navigating deeper or back, revealing a contextual inspector, changing a selection, moving an item, saving, or receiving urgent information. For each, define what moves, origin/destination, continuity, cancellation, interruption and the reduced-motion alternative. Do not animate every incoming value in a monitoring grid or block an urgent action behind a transition. A changing datum should not reset the entire page animation.
 
-CSS View Transitions can connect old and new visual states. The [CSSWG Level 1 document](https://drafts.csswg.org/css-view-transitions-1/) linked here is an editor's draft, not evidence that every API detail is stable in every browser. [Chrome's implementation guidance](https://developer.chrome.com/docs/web-platform/view-transitions/same-document) explains same-document transitions and reduced-motion handling. Feature-detect the chosen API; keep the navigation/state update fully functional when unsupported or interrupted. Never make browser Back, focus restoration, document title, URL or draft retention depend on the animation completing.
+CSS View Transitions can connect old and new visual states. Verify the exact API and browser support required by the project. Feature-detect the chosen API; keep the navigation/state update fully functional when unsupported or interrupted. Never make browser Back, focus restoration, document title, URL or draft retention depend on the animation completing.
 
-If the project's installed React release supports [`ViewTransition`](https://react.dev/reference/react/ViewTransition), follow that release's integration contract. Current React documentation describes framework-coordinated transitions and explicitly notes that reduced motion is not disabled automatically. Do not layer a competing `document.startViewTransition()` coordinator around React's own transition mechanism. Inspect the lockfile and router before choosing an implementation; do not import an API from a newer documentation version into an older installed release.
+If the project's installed React release supports `ViewTransition`, follow that release's integration contract. Current React documentation describes framework-coordinated transitions and explicitly notes that reduced motion is not disabled automatically. Do not layer a competing `document.startViewTransition()` coordinator around React's own transition mechanism. Inspect the lockfile and router before choosing an implementation; do not import an API from a newer documentation version into an older installed release.
 
-Prefer transitions of transform and opacity when they express the intended result, and profile layout/paint/compositing costs on representative hardware. [web.dev's animation guidance](https://web.dev/articles/animations-guide) explains why properties requiring layout or paint can cost more. This is a starting point, not a guarantee that an arbitrarily large blurred layer or video grid will perform well. Compare measured frame delivery and input response with the effects enabled and disabled.
+Prefer transitions of transform and opacity when they express the intended result, and profile layout/paint/compositing costs on representative hardware. Properties requiring layout or paint can be more expensive than composited changes. This is a starting point, not a guarantee that an arbitrarily large blurred layer or video grid will perform well. Compare measured frame delivery and input response with the effects enabled and disabled.
 
 ### Navigation state survives adaptation
 
@@ -121,7 +121,7 @@ Use links for destinations and buttons for commands. Give navigation regions dis
 
 Measure space occupied by persistent navigation at the actual target sizes and text settings. A stack of app bar, breadcrumbs, section tabs, local tabs and sticky action bar can leave little space for the task even when every component passes separately. Record the resulting usable content area and demonstrate a simpler hierarchy. There is no universal maximum percentage: the decision follows the product's task and needs a rendered comparison.
 
-Check sticky and floating controls while tabbing and scrolling with the on-screen keyboard. [WCAG 2.4.11 AA](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html) requires a focused component not to be entirely hidden by author-created content; the skill's preferred design target is to keep the full focus indicator and relevant control comfortably visible. Distinguish that stronger design target from the criterion's minimum. Verify safe areas, reduced viewport height, long translated titles, split-window use and role-dependent navigation entries.
+Check sticky and floating controls while tabbing and scrolling with the on-screen keyboard. WCAG 2.4.11 AA requires a focused component not to be entirely hidden by author-created content; the skill's preferred design target is to keep the full focus indicator and relevant control comfortably visible. Distinguish that stronger design target from the criterion's minimum. Verify safe areas, reduced viewport height, long translated titles, split-window use and role-dependent navigation entries.
 
 ### Acceptance evidence for these effects
 

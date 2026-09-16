@@ -21,7 +21,7 @@ For new UI, use representative content and at least one stressed example per sig
 | Usability sessions | Where representative people struggle and why | Population-level effect from a tiny sample |
 | Field measurements | Real device/network performance and task signals | Causal attribution without suitable study design |
 
-[Playwright's accessibility testing guide](https://playwright.dev/docs/accessibility-testing) supports automated scans while explicitly warning that automated testing cannot detect all accessibility problems. [Testing Library's guiding principles](https://testing-library.com/docs/guiding-principles/) favor checks resembling how software is used. Apply those ideas by asserting outcomes rather than implementation trivia.
+Assert observable outcomes rather than implementation trivia. Combine appropriate automation with manual interaction and rendered inspection; automated accessibility findings are only one layer of evidence.
 
 ## Minimum useful interaction pass
 
@@ -31,6 +31,8 @@ For new UI, use representative content and at least one stressed example per sig
 - Check Back/cancel and persistence of entered work.
 - Verify success reflects actual completed work.
 - Verify permission and session changes where they affect the task, using safe test environments.
+- Reconcile baseline actions against proposed controls in both directions; identify additions separately and keep missing child actions unresolved.
+- Check independent overlays, panels and preferences in the supported combinations that alter behavior, including closing, reopening, resize, return and reload persistence.
 
 Test selectors should describe user-visible roles and names where reliable. Use stable test identifiers for ambiguous structures, not brittle coordinates or incidental CSS class names. A test asserting that a new class exists does not prove the requested user outcome.
 

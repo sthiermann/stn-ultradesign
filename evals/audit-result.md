@@ -46,7 +46,7 @@ Severity follows the skill's local scale. There is no basis for a percentage des
 
 Reproduce by editing Display name and tabbing through the email field. The next focus is `Delete workspace`; Save is absent from the focus order and has no button role. It is a `div` with only an `onclick` handler.
 
-**Impact:** keyboard-only users cannot perform a central action. Relevant WCAG 2.2 criteria are [2.1.1 Keyboard](https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html) and the missing programmatic role under [4.1.2 Name, Role, Value](https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html).
+**Impact:** keyboard-only users cannot perform a central action. Relevant WCAG 2.2 criteria are 2.1.1 Keyboard and the missing programmatic role under 4.1.2 Name, Role, Value.
 
 **Recommendation and acceptance:** use a correctly named native submit button. After input, Save and Retry must be operable through Tab/Enter/Space, with accessible error feedback. This does not require redesigning the entire page.
 
@@ -70,7 +70,7 @@ Focus remains on the background when opening. Escape does nothing; Shift+Tab fro
 
 **Impact:** keyboard and assistive-technology users cannot reliably follow the context and scope of a consequential action. Existing explanatory text and a working Cancel action are useful but do not complete the interaction model.
 
-**Basis:** [WAI-ARIA APG Modal Dialog](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/) is informative guidance. Missing role/name information also concerns SC 4.1.2. Not every APG deviation, such as Escape considered alone, is automatically a separate WCAG violation.
+**Basis:** the modal interaction pattern is informative guidance. Missing role/name information also concerns SC 4.1.2. Not every interaction-pattern deviation, such as Escape considered alone, is automatically a separate WCAG violation.
 
 **Recommendation and acceptance:** use appropriate native dialog behavior or a fully implemented modal component: accessible name, suitable initial focus, inactive background, contained focus order, Escape/Cancel, and return to the trigger. Recheck all three exits with pointer and keyboard. No actual deletion occurred or is claimed.
 
@@ -82,7 +82,7 @@ The shell is always 1200 CSS pixels wide, with a fixed 220px navigation and no a
 
 **Impact:** important content will likely require horizontal movement in narrow views. Desktop screenshots do not establish tablet/phone suitability.
 
-**Basis:** [WCAG 1.4.10 Reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html), including exceptions. A possible exception for a particular table would not exempt the whole fixed shell.
+**Basis:** WCAG 1.4.10 Reflow, including exceptions. A possible exception for a particular table would not exempt the whole fixed shell.
 
 **Recommendation and acceptance:** specify a fluid main area and suitable compact navigation. Actually operate all three pages, every expanded level and the dialog at 320 CSS pixels and appropriate medium/wide sizes. Use local table scrolling only where the task justifies it. The dialog can flex-shrink; `width:450px` alone does **not** establish a separate 498px minimum-width defect.
 
@@ -94,7 +94,7 @@ Labels are 98%, 99%, 100%, but bar widths are 10, 105, 220. The final bar is 22 
 
 **Impact:** the graphic can suggest substantially greater quantitative change than the numbers support.
 
-**Basis:** numerical consistency, the data-visualization module, and [ONS guidance on axes and scales](https://service-manual.ons.gov.uk/data-visualisation/guidance/axes-and-gridlines).
+**Basis:** numerical consistency, the data-visualization module,.
 
 **Recommendation and acceptance:** use a common, understandable bar scale or an appropriate dot/line representation with an explicit range. Express the change as +2 percentage points, identify the period and justify evaluative language. Text values were present in the checked accessibility tree; the chart is not claimed to be wholly invisible to screen readers. Its structure and meaning still require a real screen-reader check.
 
@@ -104,7 +104,7 @@ Labels are 98%, 99%, 100%, but bar widths are 10, 105, 220. The final bar is 22 
 
 The two normal-text/background pairs reach only 1.866:1 and 1.725:1. These uses are neither inactive controls nor logos nor incidental text inside images.
 
-**Basis:** [WCAG 1.4.3 Contrast Minimum](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html), requiring 4.5:1 for normal text. This finding concerns the specified text usages, not every gray line.
+**Basis:** WCAG 1.4.3 Contrast Minimum, requiring 4.5:1 for normal text. This finding concerns the specified text usages, not every gray line.
 
 **Recommendation and acceptance:** adjust secondary text to at least 4.5:1 on both actual backgrounds and inspect every header usage. Primary text and white Save text on blue passed the calculated static color-pair checks; this is not a complete contrast pass for all states.
 
@@ -134,7 +134,7 @@ Despite “No deliveries yet,” the detail action opens “Delivery attempts / 
 
 Both messages are written into ordinary empty paragraphs without live-region, status or alert semantics. Success/failure appears visually without deliberate focus movement. Text nodes being readable in the tree does not demonstrate automatic announcements.
 
-**Basis:** [WCAG 4.1.3 Status Messages](https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html). **Confidence:** the missing programmatic mechanism is demonstrated in source; actual spoken output was not heard.
+**Basis:** WCAG 4.1.3 Status Messages. **Confidence:** the missing programmatic mechanism is demonstrated in source; actual spoken output was not heard.
 
 **Recommendation and acceptance:** implement an appropriate preexisting feedback region with suitable urgency. Announce outcomes clearly once; retry should neither remain silent nor interrupt repeatedly without reason. Verify the intended browser/screen-reader combinations afterward.
 

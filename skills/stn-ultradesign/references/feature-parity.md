@@ -12,6 +12,18 @@ Record the source revision, working-tree changes relevant to the UI, runtime env
 
 Create a feature map using [the template](../assets/feature-map.template.md). Give each capability a stable ID and link it to the audit's surface, usage, workflow and transition IDs where applicable. A feature is a meaningful user outcome or control with a behavior contract, not just a menu item. Split a row when actors, side effects, state behavior or preservation decisions differ. For example, viewing a chart, editing its threshold and exporting its underlying data can require separate rows even when they share one widget.
 
+### Reconcile controls, states and simultaneous work
+
+Do a control-by-control pass within the requested scope before designing its replacement. A page label such as “dashboard” or “messaging” is not a feature inventory. Cross-check rendered controls with source handlers, conditional branches, stored preferences and documented behavior. Inspect toolbar overflow, object menus, hover/focus controls, keyboard commands, empty states, edit modes and role-dependent entries. Keep source-only findings separate from runtime observations. A feature may exist without appearing in the opening screenshot.
+
+For each actionable control, record its verb, target, scope, preconditions, entry points, result, persistence and reversal. Separate actions with different contracts even when their labels look similar: selecting a saved view, creating one, changing its contents, reordering items, editing its layout, sharing it and deleting it are not one “view management” capability. Preserve the supported subset; do not invent the others.
+
+Identify independently controlled state. A label overlay, status icons, object privacy, recognition filters, on-object metrics and a statistics inspector may have separate controls and different scopes. Do not collapse them into one “details” toggle unless that behavioral change is explicitly agreed. Record whether a choice affects one object, the current view, this user or everyone; visual hiding does not change processing, recording, access or data retention unless the actual contract says so.
+
+Map combinations that users can intentionally use together. Two independently available features can still lose parity when a redesign makes them mutually exclusive. Record whether inspection, inline statistics, messaging, editing and the main workspace may coexist; which selected object each follows; whether opening one closes another; and what survives closing, resizing, switching views or returning. Test the supported combinations that change behavior or available work area, not an arbitrary Cartesian product.
+
+Use the [capability walkthrough](../assets/capability-walkthrough.template.md) to reconcile old controls against proposed controls and supported combinations. Every discovered action gets a mapped outcome or an explicit gap. A feature group is useful for presentation but cannot hide unfinished child actions.
+
 Discover at least these dimensions where the product supports them within the requested scope and its affected dependencies:
 
 - Main destinations, nested views, deep links, command menus, context menus, dialogs, drawers, widgets and all defined drilldown levels.
@@ -58,6 +70,8 @@ Keep personal account settings distinct from installation, organization or proje
 
 UI inspection establishes presentation behavior, not server-side authorization. Preserve known API contracts and identify backend dependencies. Use the access and privacy boundary in `SKILL.md`; feature discovery is not permission to obtain secrets or alter real roles.
 
+When editing a partially visible collection or configuration, establish whether saving merges changes or replaces the whole collection. Hidden or unauthorized entries must not become implicit deletions merely because they are absent from the editor. Preserve those entries without revealing their contents, or clearly limit editing when the backend cannot safely retain them. Verify save, cancel and concurrent updates under the relevant restricted role with safe fixtures. This applies to saved views, shared lists, group membership and other scoped collections that actually exist in the product.
+
 ## Treat supported preferences as product capabilities
 
 Preserve the user's ability to choose each existing language, theme and density mode unless a specific change is approved. A dark concept does not approve removing light mode. An English screenshot does not approve losing translated navigation, errors, dialogs or accessible names. A spacious layout does not approve deleting an expert's compact view.
@@ -76,6 +90,10 @@ Use synthetic data when evidence would otherwise reveal sensitive operational de
 
 ## Make the comparison understandable
 
+Start with the user's own familiar terms and demonstrate “where did it go?” For each moved or redesigned capability in the review scope, begin at the normal destination, locate its new entry without implementation knowledge, perform the proposed action with a safe fixture, show the resulting state and return. Include the relevant role and compact layout when they change access. A tooltip, dead button, navigation label or prose promise does not demonstrate the workflow.
+
+Group the review around real work so the user does not need to read a long ledger: configure a workspace; observe it with selected overlays; inspect a problem while preserving context; coordinate through a conversation; return to monitoring. Use only activities the product actually supports. Keep missing branches in the external review record, never as fake product outages or denials. When a familiar action is still absent, say exactly which one and keep its coverage open.
+
 Include a capability-preservation summary with every substantial concept revision, in the user's language: what stays, what moves and its exact new entry, what changes in interaction, what remains undesigned, and what needs an explicit decision. Link each consequential item to its feature ID and role/variant contract. Make the summary available beside the concept, not only in implementation notes. A user should be able to locate a familiar feature without reverse-engineering the mockup. If a capability appears unnecessary or its meaning is unclear, preserve it provisionally and ask about its actual use before proposing removal. General approval of a cleaner aesthetic is never approval of that removal.
 
 Present a short explanation beside the full feature map. Show an old/new navigation map and matched screenshots or annotated wireframes for consequential moves. Describe a concrete journey in ordinary language: where the person starts, what they can still do, what changed, and how they return. Mark prototype-only omissions visibly, with their mapped destination. Screenshots must use safe content and identify whether they show observed, simulated or proposed behavior.
@@ -89,5 +107,7 @@ Keep added capabilities separate from preserved ones. An attractive new activity
 Before concept review, every capability within the requested scope and its affected dependencies has a traceable disposition, even if not all are designed yet; a full-product redesign includes every discovered capability. Before implementation, the approved scope and affected shared usages have explicit old-to-new behavior and variant contracts; proposed retirements are either specifically approved or retained. During implementation, link capability IDs to code and acceptance checks.
 
 Before declaring the redesign complete, verify each included capability in its relevant actor, state and presentation contexts. Compare old and new outputs, navigation, recovery and preference persistence. Report separately: inventory completeness, mapping completeness, concept coverage, implemented coverage and verified parity. Do not give all five the same percentage.
+
+Reconcile in both directions: every baseline action must have a destination, and every proposed control must have a baseline capability or an explicitly identified addition. Then check supported combinations and persistence separately. A passing parent group cannot close a missing child action. An interactive concept demonstrates the proposed interaction only; production parity also needs actual backend, permission and persistence evidence.
 
 An unfinished or blocked feature stays visible as such. A scoped prototype can be complete as a prototype while large parts of the existing application remain outside it; say that explicitly. It cannot establish full application parity. If the application changes during the work, record the baseline delta, reconcile new or changed capabilities and reopen affected checks before making a completion claim.

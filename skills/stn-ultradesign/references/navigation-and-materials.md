@@ -2,7 +2,7 @@
 
 Read for app shells, overloaded settings, adaptive navigation, contextual panes, floating controls, translucent materials, or motion that changes perceived hierarchy. Apply this module within the current audit, concept, or implementation scope. An audit diagnoses; it does not authorize a redesign. Follow [discovery-and-preferences.md](discovery-and-preferences.md), [feature-parity.md](feature-parity.md), and [concept-to-code.md](concept-to-code.md) when proposing substantial changes.
 
-The decision tables and review procedures are original operational synthesis. Vendor sources provide contextual evidence, not a default design language or universal rules. Research the user's requested system and applicable version before deriving its visual contract; existing citations do not replace that work.
+The decision tables and review procedures are original working methods. Research the user’s requested system and applicable version before deriving its visual contract; the skill does not prescribe a default language or material.
 
 ## 1. Separate the authority of each decision
 
@@ -13,7 +13,7 @@ The decision tables and review procedures are original operational synthesis. Ve
 | CSS specification | Defined web behavior and syntax, subject to specification status | Uniform browser support or a native rendering equivalent |
 | Product decision | A justified arrangement for this domain, audience, and task | A worldwide standard merely because the result looks current |
 
-Establish the requested brand or design language first. Research its current primary guidance, relevant actual interfaces, component states and platform constraints; identify the specific expression the user wants, which may differ from the newest release. Translate observations into testable product rules and intentional departures using [brand-discovery.md](brand-discovery.md). Do not silently inherit a style from this skill's research examples.
+Establish the requested brand or design language first. Research its current primary guidance, relevant actual interfaces, component states and platform constraints; identify the specific expression the user wants, which may differ from the newest release. Translate observations into testable product rules and intentional departures using [brand-discovery.md](brand-discovery.md). Do not silently inherit a style from another project.
 
 For a web application, describe custom materials as the product's implementation. A matching effect does not establish native optical, input, accessibility or window-management equivalence. A platform reference does not override the approved concept.
 
@@ -28,7 +28,7 @@ Inventory destinations and commands separately. For each item, record its scope,
 - **Contextual inspector:** secondary information or editing that depends on a selected subject.
 - **Preference:** a persistent choice, with its user, workspace, or system scope stated.
 
-An app destination, an open document, and an action can all look like a tab-shaped control while requiring different behavior. Make those differences explicit in labels, semantics, selection, and close behavior. Microsoft's navigation guidance distinguishes flat, hierarchical, and mixed structures; its NavigationView component supports adaptive placement but still requires the application to implement navigation. Selecting a styled item is not sufficient evidence of a working route. [Microsoft navigation basics](https://learn.microsoft.com/en-us/windows/apps/design/basics/navigation-basics), [NavigationView](https://learn.microsoft.com/en-us/windows/apps/design/controls/navigationview)
+An app destination, open document and action can all look tab-shaped while requiring different behavior. Make those differences explicit in labels, semantics, selection and close behavior. A styled selected item is not proof of a working route.
 
 | Pattern | Use when | Specify before approving |
 |---|---|---|
@@ -47,7 +47,7 @@ Distinguish navigation between destinations from action toolbars and local views
 
 ## 3. Adapt hierarchy, not just component width
 
-Use actual available width and height, text size, input capabilities, window state, and task needs. Android's adaptive navigation guidance changes navigation form with window size and posture while retaining destinations; its default scaffold choices are implementation conventions, not mandatory web breakpoints. [Android adaptive navigation](https://developer.android.com/develop/adaptive-apps/guides/build-adaptive-navigation)
+Use actual width and height, text scale, input capabilities, window state and task needs. Navigation may change form while retaining destinations and state; a library default is not a mandatory breakpoint.
 
 **Wide workspace:** expose labeled navigation if it improves repeated switching. Keep object actions near their object. Offer deliberate collapse or pinning where the product needs it; retain the user's chosen state at the agreed scope. Avoid tiny icon-only navigation as an automatic synonym for sophistication.
 
@@ -67,7 +67,7 @@ Choose the entry and switching pattern from actual work, rather than making ever
 | Landing-page directory | First visits, unfamiliar categories or infrequent setup benefit from descriptions and orientation | Experienced users must repeatedly return to the directory to change a neighboring setting; retain direct peer access or an agreed resume path |
 | Sequential overview → area → detail | Compact space or a genuine parent-child task benefits from one context at a time | The sequence is imposed on a wide workspace despite frequent peer switching; do not add an intermediate page merely for visual consistency |
 
-A global rail and an adjacent settings sidebar are valid candidates when they represent distinct scopes. For example, the global selection is Settings, the local selection is Notifications, and its content is directly visible. Label the scopes, make both selections coherent, and test content width with realistic forms, long translations and text enlargement. There is no one-sidebar limit. Apple documents simultaneous hierarchy in split views and selection in the panes leading to detail; Microsoft documents adaptive navigation forms. These support evaluating multiple panes, not a universal requirement to use two rails. [Apple split views](https://developer.apple.com/design/human-interface-guidelines/split-views), [Microsoft NavigationView](https://learn.microsoft.com/en-us/windows/apps/design/controls/navigationview)
+A global rail and adjacent settings sidebar are valid candidates when their scopes differ. For example, the global selection is Settings, the local selection is Notifications and its content is directly visible. Label both scopes, preserve coherent selections and test realistic forms, translations and text enlargement. Neither a one-sidebar limit nor two permanent rails is universal.
 
 Preserve a working navigation pattern unless a requested change or a demonstrated task benefit justifies replacing it. Before introducing a directory or hiding local navigation, compare task entry to the first meaningful result, then switching from category A to B and C and returning with the relevant draft and position intact. Compare direct peer selection with Back → overview → next category. Minimize unnecessary actions, re-entry and hierarchy travel while checking recognition, content space and correctness. A tidy overview does not compensate automatically for repeated switching costs. Keep an approved compact hierarchy while evaluating the wide layout independently.
 
@@ -99,9 +99,9 @@ Group actions by function and frequency, and specify which remain visible when s
 
 Define behavior for entering, selecting, drilling down, opening an inspector, resizing, returning, and refreshing. Track selected object, active group, query, filters, scroll anchor, draft, focus target, and relevant navigation history. Preserve only meaningful state, with an explicit rule for reset.
 
-For list/detail, decide whether Back returns through prior objects or through structural levels. Android documents both approaches and warns that pane-dependent history can become surprising after a size change. Do not accept a library default without testing the product's expected return path. [Android list/detail, updated 2026-09-11](https://developer.android.com/develop/adaptive-apps/guides/list-detail)
+For list/detail, decide whether Back returns through prior objects or structural levels. Test that history remains understandable after resizing; do not accept a pane-dependent library default without checking the product’s return contract.
 
-In a web app, distinguish browser history from a parent-location control and from closing a temporary surface. Deep links, refresh, and opening a destination in a new tab must behave consistently with the router's contract. A back-shaped button must not silently mean discard-and-go-home. Windows guidance similarly ties Back to navigation history rather than decorative placement alone. [Microsoft backward navigation, updated 2026-02-19](https://learn.microsoft.com/en-us/windows/apps/develop/ui/navigation/navigation-history-and-backwards-navigation)
+Distinguish browser history, a parent-location control and closing a temporary surface. Deep links, refresh and opening another tab must agree with the router. A back-shaped button must not silently discard work and go home.
 
 Test sticky chrome with keyboard focus, in-page links, error jumps, text enlargement, a short landscape window, and a visible virtual keyboard. Specify which region scrolls; avoid multiple nested regions without a clear task benefit. When navigation minimizes on scroll, retain a discoverable return and avoid changing controls under a stationary pointer or finger. A collapsing header must not remove a focused control unexpectedly.
 
@@ -128,13 +128,13 @@ Inspect interacting layers and unexplained mixtures of treatments. If multiple e
 
 For custom web materials, test computed foreground/background combinations and rendered contrast over the darkest, brightest, busiest, and moving backgrounds that can occur. A screenshot over a convenient wallpaper is insufficient. Do not assume blur guarantees contrast or that a single fixed opacity works across both themes.
 
-WCAG 2.2 AA includes minimum text contrast, non-text contrast where required to identify controls or graphical information, visible keyboard focus, and focus not entirely hidden by author-created content. Enhanced unobscured focus and the specific Focus Appearance criterion are AAA. State the criterion and level being checked; do not label a material WCAG-compliant based only on its base color tokens. [WCAG 2.2](https://www.w3.org/TR/WCAG22/), [Focus Not Obscured explanation](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum)
+WCAG 2.2 AA includes minimum text contrast, non-text contrast where required to identify controls or graphical information, visible keyboard focus, and focus not entirely hidden by author-created content. Enhanced unobscured focus and the specific Focus Appearance criterion are AAA. State the criterion and level being checked; do not label a material WCAG-compliant based only on its base color tokens.
 
-CSS Media Queries Level 5 defines reduced-motion, reduced-transparency, contrast, color-scheme, and forced-colors preference features; the retrieved document is a Working Draft dated 2026-06-29. Feature support and operating-system integration still need checking in the project's browsers. Provide a readable default and fallback even when a preference query is unavailable. Do not claim the web automatically inherits all native accessibility adaptations. [CSS Media Queries Level 5](https://drafts.csswg.org/mediaqueries-5/)
+Check support for reduced motion, reduced transparency, contrast, color scheme and forced colors in the target browsers and operating systems. Provide a readable default even when a preference signal is unavailable; the web does not automatically inherit native adaptations.
 
 ## 7. Make shape, elevation, and motion explain relationships
 
-Choose shapes by role: an enclosing surface, an interactive control, a status marker, and a chart mark should remain distinguishable. Compare independent, capsule and related corner geometry under the approved shape system; use [component-states.md](component-states.md#relate-corners-instead-of-copying-one-radius) for inset and rendered-edge checks. CSS defines corner behavior, not a preferred brand radius. [CSS corner geometry](https://www.w3.org/TR/css-backgrounds-3/#corners)
+Choose shapes by role: enclosing surface, interactive control, status marker and chart mark. Compare independent, capsule and related corner geometry under the approved system; use [component-states.md](component-states.md#relate-corners-instead-of-copying-one-radius) for inset and rendered-edge checks. CSS defines mechanisms, not a preferred brand radius.
 
 Use elevation to identify overlap, temporary context, or active interaction. Do not add a shadow to every section when spacing and typography already explain grouping. Check edges in light, dark, and contrast modes; a soft shadow alone may fail to separate important regions.
 
@@ -191,9 +191,9 @@ An information message does not become an interrupting alert because its contain
 
 ### Implement the web contract, not a native screenshot
 
-Start from usable semantic controls. A custom menu requires its complete keyboard, focus, selection, and dismissal behavior; a visually similar collection of links does not automatically need ARIA menu semantics. Use the relevant [WAI-ARIA Authoring Practices pattern](https://www.w3.org/WAI/ARIA/apg/patterns/) when a custom composite widget is necessary, and verify actual assistive-technology behavior. APG is implementation guidance; its examples are not certification or ready-made product code.
+Start from usable semantic controls. A custom composite needs its complete keyboard, focus, selection and dismissal behavior; a collection of links does not automatically need menu semantics. Verify the chosen pattern with actual assistive technology where available.
 
-When the approved direction uses `backdrop-filter`, treat it as an enhancement over a readable surface. Its backdrop boundary and ancestor effects influence what is filtered. CSS blur alone cannot substantiate native-equivalent behavior. [MDN backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/backdrop-filter)
+When the approved direction uses `backdrop-filter`, treat it as an enhancement over a readable surface. Backdrop boundaries and ancestor effects change what is filtered. Blur alone cannot establish native-equivalent material behavior.
 
 Render a compact control specimen in its real layout: buttons, independent and exclusive choices, open menu, selected row, badge, inline message and alert when the product has them. Include supported themes/densities, keyboard focus, pending/error states and applicable reduced-effect alternatives. Then test consuming screens; the specimen supplements the full usage audit rather than replacing it.
 
@@ -215,4 +215,4 @@ Deliver the navigation map, adaptive transformations, overlay rules, material re
 
 For a reference-led concept, compare both light and dark renderings with the actual reference. Check the distribution of materials across content, navigation and overlays; background chroma; edge direction and intensity; shadow hierarchy; concentric geometry; selection versus hover; and behavior during opening, scrolling and return. A uniform colored wash, strong border on every nested group, generic blur everywhere or identical elevation across all surfaces can preserve the vocabulary while missing the reference's hierarchy. Diagnose those visible mismatches before adding more effects. Retain any explicitly requested departures as product choices.
 
-Separate the requested expression from the latest release of its source system. Record the chosen reference and verify current implementation constraints; neither a reference nor a CSS effect proves native equivalence. Only when the user chooses Apple Liquid Glass, consult the [optional historical research](../../../docs/research/liquid-glass-controls.md) as a starting point, then research the requested expression afresh. It is not a default production recipe.
+Separate the requested expression from the source system’s latest release. Research the user-selected reference for the current project and record implementation constraints. A reference or CSS effect does not prove native equivalence; there is no inherited default material recipe.

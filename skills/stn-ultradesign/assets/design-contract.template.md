@@ -82,6 +82,10 @@ Link the [task-flow record](task-flow.template.md) for critical tasks. Record vi
 
 ## Control and material states
 
+- Action-level baseline and retrieval walkthrough:
+- Supported independent overlays, concurrent panels and persistence contract:
+- Unfinished child actions, with exact concept/implementation coverage limits:
+
 For affected families, use [component-states.md](../references/component-states.md). Bind the user's brand choices to concrete state treatments, not adjectives alone. Include native-control exceptions and the reason for changing a control pattern; retain its existing values, meaning and effects.
 
 | Family / usage | State or relevant combination | Geometry / surface / edge / foreground / focus / motion | Brand decision | Keyboard / touch / form behavior | Theme / reduced-effect alternative | Evidence / unresolved checks |

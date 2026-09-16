@@ -1,8 +1,18 @@
 # Changelog
 
+## 0.3.0 — 2026-09-16
+
+- Reconcile existing features down to actions, hidden controls, independent display preferences and coupled panel states.
+- Require a demonstrated old-to-new retrieval walkthrough before claiming feature-complete concept coverage.
+- Preserve hidden members when editing a partially visible collection; verify the actual merge or replacement contract.
+- Check the latest changelog against synchronized release metadata and document versioning expectations.
+- Add conditional messaging-workflow guidance for conversations, composition, delivery, attention and embedded workspaces.
+- Keep current-project research private; remove public provider reports, source catalogues and external citations.
+- Preserve original instructions, standards-aware checks, installation compatibility and honest evaluation limits.
+
 ## 0.2.0 — 2026-09-16
 
-- Make design-language neutrality explicit: research the user-selected reference per project, translate evidence into a rendered direction proof, and keep vendor-specific archives outside universal instructions.
+- Make design-language neutrality explicit: research the user-selected reference per project, translate evidence into a rendered direction proof, and keep prior project choices outside universal instructions.
 - Add a conditional typography trial and explicit limits on uncompleted application evaluations.
 - Keep prototype implementation disclosures in an external review frame while preserving product-faithful interface copy.
 
@@ -11,7 +21,7 @@
 
 - Add critical-task walkthroughs, visible entry/detail/return contracts, live investigation semantics and concrete feedback-to-evidence records.
 - Require a user-readable capability-preservation summary with substantial concepts; reconcile source changes during design work.
-- Expand primary-source research on task navigation, award references and the limits of golden-ratio claims; keep metadata discovery separate from observed product behavior.
+- Separate task-navigation and proportion choices from unsupported universal design claims.
 - Add a fresh, source-only logistics concept evaluation without providing the reviewer an expected answer.
 - Add a reference-fidelity method: inspect actual device-specific visuals and relevant motion, translate qualities into acceptance conditions, and retain user rejection as an unresolved finding.
 
@@ -20,9 +30,9 @@
 - Add a company/product brand brief and selective inheritance matrix for visual identity, layout, materials, and motion.
 - Add product-purpose discovery, at least twenty tailored preference questions, and traceable preservation of existing features and variants.
 - Add semantic business-interface audits connecting metric definitions, exploration, drilldowns and cross-view consistency, plus adaptive questions throughout audit work.
-- Add brand-bound component anatomy and interaction-state contracts, with deeper Apple material research and cross-system control guidance.
+- Add brand-bound component anatomy and interaction-state contracts, with explicit material roles and control behavior.
 - Add regression checks for release metadata, labelled SVG versions and README image dependencies.
-- Add adaptive navigation, material, shape, elevation, and motion guidance informed by current primary sources, including Apple WWDC26.
+- Add adaptive navigation, material, shape, elevation, and motion guidance matched to the selected project direction.
 - Expand web implementation guidance for translucent surfaces, navigation state, animation, fallbacks, and performance verification.
 - Clarify account and access work as UX inspection, with explicit boundaries against credential collection.
 - Preserve the distinction between complete audits and focused work, and between formal checks and actual design acceptance.

@@ -130,6 +130,7 @@ Release **v0.1.0** is a historical metadata example.
             if relative != "README.md":
                 self.write(relative, "")
         manifest = {"name": MODULE.NAME, "version": "0.2.0", "license": "MIT"}
+        self.write("CHANGELOG.md", "# Changelog\n\n## 0.2.0 — 2026-09-16\n\nCompatible changes.\n")
         self.write(".codex-plugin/plugin.json", json.dumps(dict(manifest, skills="./skills/")))
         self.write(".claude-plugin/plugin.json", json.dumps(manifest))
         self.write(".claude-plugin/marketplace.json", json.dumps({
@@ -150,6 +151,27 @@ Release **v0.1.0** is a historical metadata example.
                     self.assertIn("not client installation or design quality", output.getvalue())
                 else:
                     self.assertIn("current release 0.1.0 differs", errors.getvalue())
+
+    def test_cli_rejects_stale_or_duplicate_changelog_release(self):
+        # Use a copy of the actual package: only the release record is changed.
+        import shutil
+        package = self.root / "package"
+        shutil.copytree(ROOT, package, ignore=shutil.ignore_patterns(".git", "__pycache__"))
+        current = json.loads((package / ".codex-plugin/plugin.json").read_text())["version"]
+        for headings, expected in (
+            (f"## {current} — 2026-09-16\n\n## 0.0.1 — 2026-09-01\n", 0),
+            ("## 0.0.1 — 2026-09-01\n", 1),
+            (f"## {current} — 2026-09-16\n\n## {current} — 2026-09-15\n", 1),
+            ("No release recorded.\n", 1),
+        ):
+            with self.subTest(headings=headings):
+                (package / "CHANGELOG.md").write_text("# Changelog\n\n" + headings)
+                output, errors = io.StringIO(), io.StringIO()
+                with patch.multiple(MODULE, ROOT=package, SKILL=package / "skills" / MODULE.NAME), \
+                        redirect_stdout(output), redirect_stderr(errors):
+                    self.assertEqual(MODULE.main(), expected, errors.getvalue())
+                if expected:
+                    self.assertIn("CHANGELOG.md:", errors.getvalue())
 
 
 if __name__ == "__main__":

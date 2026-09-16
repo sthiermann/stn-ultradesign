@@ -36,9 +36,11 @@ During audits as well as concept work, ask as many focused questions as necessar
 
 Establish the company/product brand and the authority of supplied guidelines or assets. Ask how much to inherit separately for typography, colors, shapes, icons, imagery, voice, layout/navigation, motion and materials. Record preserve/evolve/reinterpret/explore decisions with concrete limits in the [brand inheritance matrix](references/brand-discovery.md); do not infer that keeping brand colors also freezes the old layout. Reuse existing answers and authorization.
 
-Remain neutral to design language. When the user chooses a vendor language, company identity or visual reference, follow the [reference research and translation method](references/brand-discovery.md#research-the-selected-language-for-this-project): investigate current primary guidance and actual examples, derive project-specific rules, demonstrate them with real task content, and verify every affected usage. Do not inherit a previous project's palette, material, typography or platform generation. Archived research is evidence to reassess, never the next project's default style.
+Remain neutral to design language. When the user chooses a vendor language, company identity or visual reference, follow the [reference research and translation method](references/brand-discovery.md#research-the-selected-language-for-this-project): investigate current primary guidance and actual examples, derive project-specific rules, demonstrate them with real task content, and verify every affected usage. Do not inherit a previous project's palette, material, typography or platform generation. Keep research evidence project-local under [project-research.md](references/project-research.md); publish original methods rather than provider catalogues or copied source material.
 
 Discover existing role/admin visibility, supported languages, light/dark/system choices, density preferences, graphs and operational thresholds relevant to the requested scope. For design or implementation, maintain an [old-to-new feature map](assets/feature-map.template.md) covering that scope plus all transitively affected shared usages and dependencies. A full-product redesign maps every discovered capability, including those outside its current prototype. A focused fix maps its affected capabilities without turning unrelated areas into a product-wide design task. Preserve behavior and supported variants unless specifically changed. A general aesthetic approval does not authorize feature loss; retirement requires an actual user decision identifying the affected capability and consequences. Audit-only work records the current baseline and coverage; it does not require proposed destinations or a redesign map.
+
+Map existing controls at action and state level, including hidden menus, edit modes, independent overlays, preferences and supported simultaneous panels. A page or feature-group label cannot account for its unfinished child actions. For moved capabilities, demonstrate their new entry, result and return with the [capability walkthrough](assets/capability-walkthrough.template.md). Preserve familiar user terminology in the comparison so users can find their existing work again.
 
 Preserve established vocabulary, brand, working flows, and framework choices unless the requested change justifies replacing them. A familiar control is a useful default when it fits the task. Visual distinctiveness comes from an intentional, product-specific system, not universal bans on a font, color, radius, or layout.
 
@@ -62,6 +64,7 @@ Read only the branches relevant to the current work. For a whole-product audit, 
 | Navigation hierarchy, overloaded settings, panels, selected materials, shape and motion | [navigation-and-materials.md](references/navigation-and-materials.md) |
 | Desktop/tablet/phone, input modes, navigation and adaptation | [platform-adaptation.md](references/platform-adaptation.md) |
 | Forms, wizards, settings, search, editing, asynchronous flows | [workflows.md](references/workflows.md) |
+| Existing or requested conversations, message composition, embedded messenger panels and delivery states | [messaging-workflows.md](references/messaging-workflows.md) |
 | Redundant facts, repeated labels/help, conflicting summaries and unnecessary reading | [workflows.md](references/workflows.md#information-economy-in-the-actual-task) |
 | Account and access workflows: sign-in, recovery, sessions, role selection and scope | [identity-permissions.md](references/identity-permissions.md) |
 | Personal/org/project settings, invitations, roles, billing and governance | [business-administration.md](references/business-administration.md) |
@@ -72,7 +75,7 @@ Read only the branches relevant to the current work. For a whole-product audit, 
 | HTML/CSS/React, state, performance, component engineering | [web-engineering.md](references/web-engineering.md) |
 | Behavioral, visual, accessibility and concept-conformance checks | [verification.md](references/verification.md) |
 | Skill evaluation, regression evidence, maintenance | [skill-evaluation.md](references/skill-evaluation.md) |
-| Source authority, freshness, research provenance | [sources.md](references/sources.md) |
+| Current project research, reference authority, freshness and private evidence | [project-research.md](references/project-research.md) |
 
 ## Execute with traceability
 
@@ -103,4 +106,4 @@ Use the smallest useful package for the mode: an audit with coverage and priorit
 
 For full audits, and scoped audits where a ledger is useful, copy [audit.template.json](assets/audit.template.json) and follow the schema-2 format in `audit-method.md`. Run `python3 scripts/audit_coverage.py PATH --require-complete` from this skill directory. Separate valid records, agreed scope reviewed, original full scope reviewed and checks passed; percentages concern planned checks only. Version-1 ledgers require migration and fresh reconciliation. The script validates self-declared records; it cannot inspect the app, authenticate evidence, establish discovery completeness or certify UX/security. The [design contract template](assets/design-contract.template.md) records approved concepts.
 
-Research snapshot: 2026-09-16. For version-dependent APIs, browser support, identity rules, or a claim about the newest platform guidance, verify the current primary source before applying it. Maintain project-specific decisions in the project; change this reusable skill only when the user requests an update.
+For version-dependent APIs, browser support, identity rules, or a claim about the newest platform guidance, verify the current primary source before applying it. Maintain project-specific decisions in the project; change this reusable skill only when the user requests an update.
