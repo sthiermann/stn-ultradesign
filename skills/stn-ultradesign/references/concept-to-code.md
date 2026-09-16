@@ -2,6 +2,8 @@
 
 Use [delivery-workflow.md](delivery-workflow.md) for stage order, responsibilities, handoffs and readiness. This reference defines the concept artifacts, refinement and implementation contract within that workflow. It is the skill's chosen method, not an international standard; honor existing approval and explicit authorization to implement directly.
 
+Carry the current [requirement register](requirements-conformance.md) through concept and implementation. It records what must be satisfied; the design contract records how and what was approved. Link these records rather than maintaining competing interpretations. A selected reference additionally needs the applicable [research and translation](project-research.md) before the affected direction is treated as settled.
+
 ## The reviewable concept
 
 Start a substantial concept with a **visual thesis tied to the product's work**: what the person needs to recognize, compare or control, and how the composition will make that relationship visible. Name the organizing object or activity, the dominant region, the supporting context, the intended density, and the visual character. “Modern, clean, premium” is not a thesis. “An exception-focused dispatch workspace with a stable activity spine and an adjacent object inspector” makes structural choices that can be challenged. This example is a candidate for that task, not a template for other products.
@@ -15,6 +17,7 @@ Make the concept concrete enough that the user can judge it before application c
 | Artifact | What the user should be able to judge |
 | --- | --- |
 | Product brief | Audience, primary task, scope, assumptions, success criteria |
+| Requirement and reference interpretation | What consequential requests mean in observable terms; which reference rules apply; what remains a proposal or unverified approximation |
 | Visual thesis and composition choice | Which domain relationships shape this design; why this structure fits better than the considered alternatives |
 | Information architecture | Main destinations, route relationships, naming, wayfinding |
 | Workflow diagram | Actor, entry, decisions, back/cancel, progress, success and recovery |
@@ -90,7 +93,7 @@ Use `assets/design-contract.template.md` to turn discussion into one current sou
 
 ## Approval boundary
 
-Before requesting concept approval, finish the design work needed to make the proposal reviewable. Clearly state the exact version and scope awaiting approval. Continue already authorized research and prototype verification while feedback is pending. Wait to implement the affected production design until the user's approval arrives.
+Before requesting concept approval, finish the design work needed to make the proposal reviewable. Clearly state the exact version and scope awaiting approval. Continue already authorized research and prototype verification while feedback is pending. If the user explicitly authorized direct implementation or already approved this scope, proceed within that authorization; otherwise wait to implement the affected production design until approval arrives. Required checks and preservation still apply to directly authorized implementation.
 
 Approval can be scoped: “Use variant B for the dashboard; keep exploring settings.” Implement the approved dashboard independently; leave settings in concept status. “Looks good, implement this version” is sufficient approval when the referred artifact is unambiguous. Do not ask again.
 
@@ -118,7 +121,7 @@ If a font lacks a suitable license, a control cannot support the required access
 
 ## Implement from the contract
 
-1. Link each acceptance ID to its source decision, affected route/component and verification method.
+1. Reconcile the active requirements, approved contract and applicable reference profile; link acceptance IDs to affected usages and verification methods. Close neither an untested requirement nor a declared exclusion as a pass.
 2. Implement shared tokens and primitives, then a real vertical slice of a critical journey.
 3. Render the slice with the agreed fixture and compare it with the approved artifact.
 4. Resolve deviations before expanding the pattern across the application.
@@ -128,8 +131,8 @@ Reference images are comparison evidence, not a reason to hardcode all coordinat
 
 ## Finish with a conformance report
 
-For each acceptance ID record `pass`, `fail`, `blocked`, or `not-tested`, with evidence. Include approved deviations, the implementation revision, tested environments and outstanding dependencies. Report semantic/behavioral equivalence separately from visual fidelity.
+For each acceptance obligation use the statuses and freshness rules in [requirements-conformance.md](requirements-conformance.md). Include approved deviations, the implementation revision, tested environments and outstanding dependencies. Report semantic/behavioral equivalence separately from visual fidelity. Verify both the request-to-concept interpretation and concept-to-implementation result; faithfully implementing a misinterpreted concept does not satisfy the original requirement.
 
-Completion means the agreed scope is implemented and verified to the available evidence. A limitation such as unavailable screen-reader testing remains explicit; neither a good screenshot nor a broad approval retroactively establishes a missing test.
+Completion requires every active in-scope requirement to satisfy its required applicable obligations with current evidence. A required check that is failed, blocked or untested prevents a completion claim for that scope. An unavailable optional check remains a disclosed limit; it is not a failed required check or proof of equivalence. An explicitly accepted reduction can complete its smaller scope while the original excluded requirements remain visibly outside that claim. Neither a good screenshot nor broad approval retroactively establishes a missing test.
 
 When discussing the result, show a short before/concept/implemented comparison where useful. Describe material differences rather than making the user infer them from images.

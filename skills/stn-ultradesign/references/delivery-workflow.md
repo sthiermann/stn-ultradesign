@@ -12,8 +12,8 @@ Read the existing framework, components, domain behavior and owner's answers fir
 
 | Responsibility | Produces | Accountable check |
 | --- | --- | --- |
-| Requirements and UX lead | Product purpose, adaptive interview, current capability map, task and navigation model | Every requested outcome has a visible entry, meaningful result and return; missing domain meaning stays explicit |
-| Visual designer | Art direction, composition alternatives, typography, palette, materials, shape, imagery and motion | The work expresses this product and agreed identity across actual content, states and device sizes |
+| Requirements and UX lead | Product purpose, adaptive interview, requirement register, current capability map, task and navigation model | Every active requirement has a scoped interpretation and acceptance obligations; missing meaning and conflicts stay explicit |
+| Visual designer | Investigated reference profile when selected, art direction, composition alternatives and visual/interaction rules | Observed mechanisms become explicit project rules; the work expresses the agreed identity across actual content, states and device sizes |
 | Design engineer | Shared tokens, accessible primitives, product components, interactive concept and authorized implementation | The actual HTML/CSS/framework code delivers the visual and behavioral contract, including difficult states |
 | Independent reviewer | Findings against requirements, task behavior, visual craft and implementation evidence | Observed defects are fixed and rechecked in the integrated revision; acceptance is not inferred from the author's confidence |
 | Delivery lead | One current contract, assignments, integration and readiness decision | Contributors use the same approved decisions; the whole requested scope remains accounted for |
@@ -27,14 +27,14 @@ Use only tools and agent capabilities available in the current host. This skill 
 
 | Stage | Work and visible result | Exit condition |
 | --- | --- | --- |
-| 1. Requirements | Inspect the product and code; discover purpose, tasks, brand inheritance, constraints and preferences; maintain the current capability map | Relevant facts and answers have decision consequences; critical unknowns are resolved or dependent work remains explicitly open |
-| 2. Creative direction | Explore materially different compositions when direction is open; render the strongest direction with real task content and a distinctive interaction | The layout and identity are inspectable, connected to the brief, and stronger for a stated reason than the considered alternatives |
-| 3. System and components | Choose reuse/native/primitive/custom boundaries; build shared tokens and stateful component specimens | Core controls, their open states and a demanding task component work within one coherent system |
+| 1. Requirements | Inspect the product and code; discover purpose, tasks, brand inheritance, constraints and preferences; reconcile the requirement register and capability map | Active requests and discovered constraints have scoped interpretations and acceptance obligations; critical unknowns leave dependent work open |
+| 2. Creative direction | Investigate the selected reference; explore compositions where direction remains open; render real task content and a meaningful interaction | The reference's applicable families, source conflicts and evidence gaps are accounted for; derived rules and any departures are explicit; composition follows the brief |
+| 3. System and components | Choose reuse/native/primitive/custom boundaries; build shared tokens and stateful specimens; compare demanding examples with the intended rules | The representative proof passes its declared visual and interaction checks; unverified native behavior and unresolved interpretations remain open before affected patterns expand |
 | 4. Concept | Compose the system into complete reviewable journeys and all surfaces of the scope being presented | The user can locate retained capabilities, perform the proposed work and return; missing pages and states prevent a full-scope readiness claim |
 | 5. Independent review | Review requirements and workflows separately from composition/craft and implementation; fix material findings | Reviewers inspect the corrected integrated artifact; remaining issues, unavailable checks and judgment disagreements are visible |
 | 6. Human acceptance | Present the actual revision, demonstrated scope, key choices and open tradeoffs | The owner's actual approval covers the implementation being started, or explicit prior authorization already permits it |
 | 7. Implementation | Build the authorized contract with shared components, then propagate through a verified critical journey | All approved surfaces and relevant states are implemented; deviations are resolved through the affected decision |
-| 8. Verification | Compare the result with requirements, concept, feature baseline and target contexts | Claims are backed by the relevant source, rendered, interaction and test evidence; unresolved failures remain open |
+| 8. Verification | Reconcile every active in-scope requirement with the result, concept, feature baseline and target contexts | Required applicable obligations have current evidence; failures, gaps and authorized exclusions are separate from passes; the result has no unexplained consequential additions |
 
 Work may loop between stages: a component experiment can reveal a better composition, and a reviewer can reopen a workflow. Research, safe prototypes and unrelated authorized work can continue while a genuine dependent decision waits. An early preview is useful; label its actual scope rather than calling it the finished application. A full-product request remains open until its remaining surfaces and workflows are completed.
 
@@ -42,11 +42,7 @@ Work may loop between stages: a component experiment can reveal a better composi
 
 Follow [discovery-and-preferences.md](discovery-and-preferences.md) and [brand-discovery.md](brand-discovery.md). A substantial concept covers at least twenty relevant preference questions early, including previously answered ones, then adds questions when the product exposes material uncertainty. Ask only what cannot be responsibly established from available evidence or prior decisions. Respect explicit delegation and distinguish optional taste from an unresolved dependency.
 
-Translate each consequential answer into this chain:
-
-**Answer or observed need → scoped decision → affected tasks and component usages → observable acceptance condition → evidence.**
-
-For example, a preference to keep a comparison visible affects panel geometry, narrow-layout return, keyboard focus and whether an editor is modal. “Use a modern panel” captures none of those outcomes. Link to existing brief, feature-map and contract IDs instead of copying competing versions of the same requirement into each worker's notes. Give changes in user direction precedence over older preferences and record which decisions they replace.
+Use [requirements-conformance.md](requirements-conformance.md) for the authoritative request-to-result chain, decision states, acceptance obligations and change handling. Link existing brief, feature-map and contract IDs rather than copying competing records into each worker's notes. For example, keeping a comparison visible affects panel geometry, narrow-layout return, focus and modality; “use a modern panel” does not define those outcomes. Confirm a material interpretation through a concrete example or focused question; proceed within already delegated choices.
 
 ### Creative direction is a real work product
 
@@ -54,7 +50,7 @@ Use [visual-systems.md](visual-systems.md) and [concept-to-code.md](concept-to-c
 
 When the brief leaves a major direction open, compare two or three credible approaches using the same difficult content and task. Recommend one; do not make the user assemble unrelated fragments. An established approved direction needs refinement, not another obligatory round of alternatives. Demonstrate a memorable, task-relevant interaction when it improves the experience; meaningful direct manipulation, animated explanation or spatial inspection may earn its complexity. Follow the requested expressive range rather than defaulting every application to either a quiet dashboard or a decorative showcase.
 
-For a chosen reference language, research its relevant current or explicitly requested generation, inspect examples and translate its mechanisms into project rules. Judge the actual material, geometry, motion and information hierarchy. An adjective, copied screenshot arrangement or library theme name is insufficient. Keep research provenance private to the project; do not import unrelated references into the reusable skill.
+For a chosen reference language, complete the applicable study and translation in [project-research.md](project-research.md). Establish the actual generation and platform, inspect relevant subsections and component variants, and distinguish textual, visual and interaction evidence. Give the designer and engineer the same project profile and rule IDs. A prior project's reference, a library's defaults or a source's unexamined appearance must not silently supply missing decisions.
 
 ### Build one authored component system
 
@@ -64,17 +60,19 @@ Classify actions before selecting their surfaces under [component-states.md](com
 
 Build a state board with the core button/field/selection/menu/editor families and the product's most demanding domain component. Open the menu and selector; show focus, selection, loading, error, long text and relevant theme/input variants. Judge the components in a real page as well as in isolation. A gallery of attractive closed controls does not finish the system stage.
 
+Before scaling a reference-led direction, compare this proof with the selected reference under comparable conditions. Check task roles, geometry relationships, foreground/background behavior and actual transition sequences, not just a mood or a closed-state screenshot. If the proof fails, correct the underlying rule or implementation and recheck it before spreading that pattern. This is an internal quality checkpoint, not an extra mandatory owner approval. It establishes only the named specimens; stage 4 still covers the whole requested concept and stage 8 its applicable usages.
+
 ### Review outcomes separately
 
 The independent reviewer returns concrete findings and evidence, not a flattering score:
 
 | Review lens | Questions that can reject the candidate |
 | --- | --- |
-| Requirements and preservation | Did any answer, existing action, real role, data meaning or supported combination disappear? Are the remaining pages merely labels? |
+| Requirements and preservation | Does every active requirement reach an actual artifact and current acceptance evidence? Did any answer, existing action, real role, data meaning or supported combination disappear? Are additions within authorized discretion? |
 | UX and comprehension | Can someone discover and finish the critical task without knowing the implementation? Is the outcome real in the prototype state, and is return/recovery clear? |
 | Visual craft | Is the hierarchy deliberate, composition product-specific, typography controlled, material convincing and detail consistent across states and sizes? Does the owner's chosen reference actually come through? |
 | Engineering and inclusion | Do shared components, semantics, focus, input modes, draft state, reduced effects and performance support the proposed experience? |
-| Contract fidelity | Does the integrated revision match the approved structure, behavior, content and visual rules? Which differences are authorized? |
+| Contract fidelity | Does the interpreted reference satisfy the request, does the concept embody those rules, and does the integrated revision match the approved concept? Which differences are authorized, unverified or unresolved? |
 
 A serious failure in one lens is not offset by strengths in another. Record reproduction or observed context, affected decision/capability, consequence and correction. The engineer/designer fixes the artifact; the reviewer checks the new revision and affected shared usages. Do not close a finding with revised prose or an old screenshot. Continue until the reviewable scope has no unresolved readiness blockers, or report the specific dependency that prevents closure. User rejection remains unresolved until a concrete new artifact addresses it.
 
@@ -82,7 +80,7 @@ Review [verification.md](verification.md) and its relevant browser/task checks. 
 
 ## Delegate with a complete, bounded handoff
 
-For each worker provide the task, required skill branch, current brief/contract revision, baseline and input artifacts, exact allowed outputs/files, applicable capability IDs, unresolved decisions, tools available and completion evidence. The [delivery record](../assets/delivery-plan.template.md) contains the minimal handoff fields. Preserve existing authorization; do not give a worker broader production or external-action permission than the project has.
+For each worker provide the task, required skill branch, current requirement/contract/profile revisions, original request and decision references, baseline and input artifacts, exact allowed outputs/files, complete affected requirement/rule/capability IDs, deferred or blocked obligations, tools available and completion evidence. Reviewers receive the original inputs as well as the author's summary. Require workers to return the revisions they used; stale decisions reopen the affected result before integration. The [delivery record](../assets/delivery-plan.template.md) contains the minimal handoff fields. Preserve existing authorization; do not give a worker broader production or external-action permission than the project has.
 
 Parallelize independent discovery, reference investigation or review. Settle shared navigation, tokens and component contracts before parallel page construction. Assign one owner per shared file or use an explicit integration boundary. Workers return artifacts and concise findings; the lead inspects their actual result and reconciles contradictions. A worker's “done” message is not an integration check.
 

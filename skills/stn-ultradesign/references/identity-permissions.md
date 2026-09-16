@@ -1,6 +1,6 @@
 # Account and access workflows
 
-Load for the user experience of sign-in, registration, passkeys, MFA, account recovery, sessions, permissions, roles, invitations, sharing, tenant switching or security settings. Access date: 2026-09-16. Review what people see, understand and can accomplish: layout, instructions, decisions, feedback and recovery. Do not obtain credentials, inspect secret stores or bypass an unavailable role. Use authorized test fixtures and user-controlled authentication under the boundary in `SKILL.md`. Standards below constrain the design; they do not turn a UX audit into a backend security assessment. Source paragraphs summarize published guidance; audit decisions are this skill's original method.
+Load for the user experience of sign-in, registration, passkeys, MFA, account recovery, sessions, permissions, roles, invitations, sharing, tenant switching or security settings. Review what people see, understand and can accomplish: layout, instructions, decisions, feedback and recovery. Do not obtain credentials, inspect secret stores or bypass an unavailable role. Use authorized test fixtures and user-controlled authentication under the boundary in `SKILL.md`. These audit and design procedures are original working methods. Verify applicable current identity and accessibility guidance against the project's implementation and policies; record sources and applicability in private project evidence. A UX audit does not establish backend security conformance.
 
 ## 1. Establish the identity model
 
@@ -40,7 +40,7 @@ Test cancelled platform dialogs, no available passkey, another device, an unsupp
 
 Plan enrollment, verification, backup methods, loss, replacement and organization enforcement together. A successful setup illustration is incomplete if losing a phone strands the user.
 
-For one-time codes, test whole-code paste, autofill, leading zeroes, screen readers, resend, expiry and a newly requested code invalidating an old one. Prefer a single coherent input experience; visually segmented fields must not break those operations. Announce the remaining action without placing credentials in a live region unnecessarily. A countdown must reflect real server policy.
+For one-time codes, test whole-code paste, autofill, leading zeroes, screen readers, expiry and resend behavior, including whether requesting a new code invalidates the previous one. Prefer a single coherent input experience; visually segmented fields must not break those operations. Announce the remaining action without placing credentials in a live region unnecessarily. A countdown must reflect real server policy.
 
 Treat recovery as its own journey: request, handoff, expiry, invalid or already-used link, new credentials, completion and session consequences. Verify these outcomes against the identity implementation rather than assuming a form submission completed recovery.
 

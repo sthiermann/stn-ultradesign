@@ -6,7 +6,11 @@ Use when inspecting or refining buttons, fields, selectors, checkboxes, radios, 
 
 A contemporary page can still contain unfinished controls. Inventory each component family, its actual variants and consuming contexts. Include native controls, library wrappers and local overrides. A narrow fix covers affected uses; a full audit covers every discovered usage and applicable state, following [audit-method.md](audit-method.md).
 
-Translate confirmed brand preferences into a component contract before polishing isolated screenshots. Carry forward approved decisions; do not reopen the interview or introduce a new approval gate for a focused repair. Record:
+Translate confirmed brand preferences into a component contract before polishing isolated screenshots. Carry forward approved decisions; do not reopen the interview or introduce a new approval gate for a focused repair.
+
+Link the active requirement and reference-rule IDs from [requirements-conformance.md](requirements-conformance.md) and [project-research.md](project-research.md). Compare a demanding real usage, its open states and relevant transitions with those rules before propagating the family. Reuse this evidence in the state board; an inherited library style or working handler does not establish visual fidelity.
+
+Record the applicable contract parts:
 
 | Contract part | Concrete decision |
 | --- | --- |

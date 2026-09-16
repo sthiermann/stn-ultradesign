@@ -15,7 +15,7 @@ Use it with an existing application, a new product or one focused workflow. Brin
 
 [**Get started →**](docs/installation.md) · [Workflow](skills/stn-ultradesign/references/delivery-workflow.md) · [Read the skill](skills/stn-ultradesign/SKILL.md) · [Privacy](PRIVACY.md)
 
-Release **v0.4.0** · [MIT license](LICENSE) · Codex + Claude Code
+Release **v0.5.0** · [MIT license](LICENSE) · Codex + Claude Code
 
 [![Package checks](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml/badge.svg)](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml)
 
@@ -32,9 +32,9 @@ Substantial concept, design-system and redesign work follows a connected sequenc
 
 | Stage | What you receive |
 | --- | --- |
-| **1. Requirements** | A clear purpose, users and tasks, complete capabilities in scope, brand constraints, preferences and observable acceptance criteria. |
-| **2. Creative direction** | A product-specific visual thesis and meaningful structural alternatives, with reasons for the chosen direction. |
-| **3. System & components** | Layout rules, typography, color, spacing, materials, motion and reusable components with their relevant states and variants. |
+| **1. Requirements** | A traceable record connecting your requests, preferences and product constraints to affected capabilities and observable acceptance criteria. |
+| **2. Creative direction** | A researched interpretation of your chosen identity, a product-specific visual thesis and structural alternatives where the direction remains open. |
+| **3. System & components** | Shared visual and interaction rules, demonstrated with demanding content, open controls and relevant states before the pattern expands. |
 | **4. Complete concept** | A rendered, reviewable experience covering the agreed views, core journeys, device sizes, difficult content and recovery paths. |
 | **5. Independent review** | A separate critical review of requirements, visual craft, usability, consistency, preserved capabilities and available evidence. Findings feed into revision. |
 | **6. Human acceptance** | Your acceptance of a specific concept revision, scope, decisions and known gaps, recorded in a design contract. |
@@ -61,9 +61,19 @@ Substantial concept work begins with **at least 20 meaningful preference questio
 
 Existing identity becomes a deliberate input. Decide what to preserve, evolve or replace across typography, palette, shapes, icons, imagery, voice, layout, motion and materials. Those boundaries carry into the component system and design contract. See [discovery and preferences](skills/stn-ultradesign/references/discovery-and-preferences.md) and [brand discovery](skills/stn-ultradesign/references/brand-discovery.md).
 
+## Your requirements stay connected to the result
+
+Every consequential request follows a traceable path: **your intent → a scoped decision → affected components and journeys → observable checks → current evidence**. A requirement can be recorded without being satisfied. The skill keeps concept coverage, implemented behavior and verified outcomes distinct.
+
+When you choose a design language, the skill investigates its relevant platform and generation, component families, visual rules and interactions. It records what was read, visually inspected or actually exercised, then translates those findings into project-specific rules. Difficult examples test the interpretation before it spreads. Final review follows every affected usage in the agreed scope.
+
+Changing a decision reopens the checks that depend on it. Existing answers remain valid elsewhere. Missing evidence, untested behavior and proposed exceptions stay visible; a broad approval or a successful code check cannot silently close them. Concrete reference research stays with your project, outside this reusable package.
+
+Explore [requirements and conformance](skills/stn-ultradesign/references/requirements-conformance.md) and [reference research](skills/stn-ultradesign/references/project-research.md).
+
 ## Visual craft belongs in the system
 
-A coherent experience needs more than attractive isolated screens. The skill connects composition, hierarchy, rhythm and density to the user's next decision. Structural alternatives use the same task and content, so their consequences are visible.
+A coherent experience needs more than attractive isolated screens. The skill connects composition, hierarchy, rhythm and density to the user's next decision. Where a structural decision remains open, alternatives use the same task and content so their consequences are visible.
 
 Buttons, fields, selectors, switches, menus, badges, messages and icons receive a consistent anatomy and the states their tasks require. Focus, hover, selection, pending work, errors and state combinations must remain understandable. Shared rules connect surfaces without forcing a dense workspace, a permissions editor and an API reference into the same layout.
 
@@ -87,7 +97,7 @@ Review follows the connection from a headline to its chart, filtered records, li
 
 A full audit covers every discovered page, component usage, widget, dialog, drilldown and defined relevant workflow, state and transition in scope. Large products are covered in resumable batches. Inaccessible areas stay visible as gaps; sampling requires an agreed scope change.
 
-The package includes templates for briefs, feature maps, component-related acceptance, task flows, design contracts and audit evidence. Its local Python coverage validator checks the consistency of a declared inventory, obligations and evidence. It does not inspect the application or certify discovery completeness, design quality or security.
+The package includes templates for requirements, briefs, reference translation, feature maps, task flows, design contracts and audit evidence. Its local Python coverage validator checks the consistency of a declared audit inventory, obligations and evidence. It does not evaluate the requirement register, inspect the application or certify discovery completeness, design quality or security.
 
 Independent review challenges the current artifact against the requirements and design intent. It uses a separate reviewer when the host supports one; otherwise, self-review is identified as such and the limitation remains explicit. Human acceptance records the revision and scope that may proceed. Verification then checks the implementation itself. See [verification](skills/stn-ultradesign/references/verification.md).
 

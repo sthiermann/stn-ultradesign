@@ -93,7 +93,7 @@ Test the chosen library’s actual behavior. Labels on individual marks do not b
 
 Define the dashboard's recurring questions and the action each answer enables. Group related evidence so comparison is spatially easy. Give critical exceptions stronger prominence than routine summaries. Avoid giving every metric equal visual weight or surrounding every number with a large empty card. Support density that serves the audience while preserving legibility and interaction space.
 
-A numerical widget needs a label, value, unit, relevant period and meaningful comparator. Include whether higher is better, where ambiguity exists. Distinguish a target from the previous period and a forecast. A sparkline may explain trajectory; it does not replace the value definition. Show stale or partially refreshed data explicitly and identify refresh time semantics.
+A numerical widget needs a label, value, clear measure/unit meaning and applicable time context. Add a comparator when the analytical question calls for one and a justified data source supports it; a standalone count or current value need not invent a comparison. Include whether higher is better when the interpretation requires it. Distinguish a target from the previous period and a forecast. A sparkline may explain trajectory; it does not replace the value definition. Show stale or partially refreshed data explicitly and identify refresh time semantics.
 
 Separate at-a-glance monitoring from analytical exploration. Use that distinction to choose overview content and deeper destinations. Do not shrink a desktop dashboard into an unreadable phone screen to preserve its one-screen composition.
 

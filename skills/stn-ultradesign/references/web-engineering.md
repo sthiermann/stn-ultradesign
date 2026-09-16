@@ -6,6 +6,8 @@ Use for web frontends. Native desktop/mobile apps also need their framework's cu
 
 Inspect framework and dependency versions, component wrappers, CSS strategy, token source, routes, data layer, form library, validation, SSR/hydration, tests and browser policy. Choose native features or an existing accessible primitive when they fit. A new library earns its cost only if it solves a real capability gap. Do not migrate frameworks or replace the design system merely because another stack is fashionable.
 
+Bind the chosen implementation to the current [requirements](requirements-conformance.md) and any derived [reference rules](project-research.md). Verify a demanding real component and its relevant states before propagating that foundation. Separate behavioral reuse from appearance: a primitive's default theme is not evidence of conformance. Record rendering or platform behavior that can only be approximated, and resolve any consequential departure from the accepted contract before dependent expansion.
+
 Map the design contract into four layers: tokens, primitives, composed patterns and product journeys. Keep visual variants separate from business permissions and data loading. Shared components need explicit behavior contracts, not only a screenshot gallery.
 
 ### Choose the component foundation

@@ -1,6 +1,6 @@
 # Task flows before interface polish
 
-Use when a product feels complicated, hides useful work, or presents an attractive shell with incomplete primary workflows. Apply within the requested scope; this module does not turn a focused fix into a redesign. Reuse the [preference brief](discovery-and-preferences.md), existing approvals and [feature map](feature-parity.md). Substantial concepts retain the established twenty-question method; this procedure adds no question quota or approval gate. Source review: 2026-09-16.
+Use when a product feels complicated, hides useful work, or presents an attractive shell with incomplete primary workflows. Apply within the requested scope; this module does not turn a focused fix into a redesign. Reuse the [preference brief](discovery-and-preferences.md), existing approvals and [feature map](feature-parity.md). Substantial concepts retain the established twenty-question method; this procedure adds no question quota or approval gate.
 
 ## 1. Name the work and its first useful step
 

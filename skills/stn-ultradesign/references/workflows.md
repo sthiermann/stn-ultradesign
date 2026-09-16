@@ -99,7 +99,7 @@ Identify the first meaningful user outcome. Make required setup distinguishable 
 
 Design first use around authentic user data or clearly labeled samples. Show whether an example can be edited, copied or discarded. Include returning users, invited users, migrated accounts and experienced users joining a second workspace. A completion checklist should correspond to actual usefulness, not merely encourage engagement.
 
-Measure first successful task, time to useful outcome, abandonment and avoidable support requests. An onboarding redesign passes only if it improves the chosen outcomes without hiding privacy, price or account consequences.
+Define the intended onboarding outcomes and how to evaluate them, such as first successful task, time to useful outcome, abandonment and avoidable support requests. Concept and implementation checks establish the behavior due at those stages; they do not prove improved user outcomes. Claim improvement only with comparable outcome evidence and stated limits. Keep privacy, price and account consequences clear throughout.
 
 ## 10. Settings and preferences
 
@@ -127,7 +127,7 @@ Review interruption frequency over the whole task. Several individually defensib
 
 ## 13. Destructive and consequential actions
 
-WCAG AA SC 3.3.4 requires at least one of reversal, checking with correction, or confirmation for the specified legal, financial and stored-data submissions; it is not a rule that every action needs a modal. Error Prevention
+WCAG 2.2 AA SC 3.3.4 requires at least one of reversal, input checking with correction, or review/confirmation with correction for its specified legal commitments, financial transactions, modification/deletion of user-controllable stored data, and test-response submissions. It does not require a modal for every action.
 
 Classify consequences by reversibility, affected people, data volume, external commitment and recovery cost. Prefer undo when recovery is real and reliable. For irreversible or widely consequential actions, show exact objects, scope and consequences at the decision point. Typed confirmation is a product-specific option for exceptional risk, not a general standard.
 
@@ -190,8 +190,6 @@ Specify what the AI proposes, what it can execute, and which actions require an 
 Design stop, revise, retry, resume, reject, compare and revert where meaningful. Keep a user's manual changes when regenerating. For multi-step agents show consequential progress and partial results without flooding the interface. Test wrong output, missing evidence, ambiguous intent, tool failure, permission change and interrupted execution. Judge success by reliable task completion and recoverability, not by how human the animation appears.
 
 ## 21. Completion, help and service recovery
-
-Show the actual outcome, a useful reference where available, what happens next and how to correct or revisit the result.
 
 Make completion state what actually happened, what remains pending, who acts next, and how to return. Include a reference or record when users will need proof or follow-up. Avoid implying approval when an application was only received. Keep the next action specific to the user rather than automatically sending everyone to a dashboard.
 

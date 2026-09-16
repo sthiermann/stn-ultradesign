@@ -119,14 +119,14 @@ For each proposed product material, document:
 | Background range | Static surface, dense text, charts, changing imagery, video, or unknown content |
 | Readability protection | Opaque base, controlled translucency, scrim, edge, and foreground tokens |
 | Layer relationship | What sits above and below it; what establishes separation |
-| Theme behavior | Independent light/dark recipes, selected, disabled, focus, and error states |
+| Theme behavior | Recipes for each supported appearance and its applicable selected, disabled, focus, and error states |
 | Fallback | Opaque readable surface when effects are absent or unsuitable |
 | Preferences | Reduced transparency, increased contrast, reduced motion, and product overrides |
 | Cost | Observable scrolling, animation, rendering, and device-performance effect |
 
 Inspect interacting layers and unexplained mixtures of treatments. If multiple effects weaken separation or legibility, revise the composition or backing within the approved direction. Novelty is not evidence of task benefit, and an opaque alternative should retain the intended hierarchy when effects are unavailable.
 
-For custom web materials, test computed foreground/background combinations and rendered contrast over the darkest, brightest, busiest, and moving backgrounds that can occur. A screenshot over a convenient wallpaper is insufficient. Do not assume blur guarantees contrast or that a single fixed opacity works across both themes.
+For custom web materials, test computed foreground/background combinations and rendered contrast over the darkest, brightest, busiest, and moving backgrounds that can occur. A screenshot over a convenient wallpaper is insufficient. Do not assume blur guarantees contrast or that a single fixed opacity works across supported appearances.
 
 WCAG 2.2 AA includes minimum text contrast, non-text contrast where required to identify controls or graphical information, visible keyboard focus, and focus not entirely hidden by author-created content. Enhanced unobscured focus and the specific Focus Appearance criterion are AAA. State the criterion and level being checked; do not label a material WCAG-compliant based only on its base color tokens.
 
@@ -152,38 +152,13 @@ Distinguish four decisions: the material's role and variant; a control's semanti
 
 For a custom control, specify the surface fill or tint, foreground, edge, shadow, shape, focus indicator and transition independently. Keep measurements reviewable in the project's tokens; distinguish verified source values from product-specific choices. Inspect the material in its actual content relationship, including scroll and overlapping panels.
 
-| State | What must be distinguishable | Review failure to catch |
-|---|---|---|
-| Resting | Purpose, available action, current value | A control looks like a decorative badge or content label |
-| Hover | Pointer target and optional preview | Hover changes persistent selection or exposes the only usable action |
-| Keyboard focus | Where the next keyboard action applies | A faint highlight vanishes on a selected, tinted, or invalid control |
-| Pressed | Input was received, before its result | A bounce substitutes for action feedback, or alters the hit area |
-| Selected / checked / mixed | A persistent choice and, where relevant, partial group selection | Color alone carries the value; mixed is rendered as off |
-| Expanded | An associated surface is open | The trigger looks closed or its menu loses context after repositioning |
-| Pending | Work has started and its result is not yet known | Repeated activation creates duplicate work or the label becomes ambiguous |
-| Unavailable | The action cannot currently run, with context when needed | Dimming makes a relevant setting impossible to discover or understand |
-| Invalid / failed | Which value or action needs attention and how to recover | The error disappears when focus or hover changes |
-
-Specify simultaneous states as well: selected plus focus, invalid plus focus, expanded plus hover, and pending after activation. These are independent facts, not mutually exclusive CSS classes. Native focus and pointing systems vary by platform; their visual effects are not interchangeable with DOM focus.
+Use the [component state and context matrix](component-states.md#state-and-context-matrix) for resting, focused, selected, pending and other reachable states, including meaningful intersections. Verify that the chosen material preserves each distinction over its allowed backgrounds. Native focus and pointing systems vary by platform; their visual effects are not interchangeable with DOM focus.
 
 Keep pointer effects within a stable hit region and prevent enlargement from crowding adjacent content. Never make pointer effects a prerequisite for touch or keyboard access.
 
 ### Choose the component before its finish
 
-| Component | Preserve when changing its visual treatment |
-|---|---|
-| Action button | A clear verb, priority, press response, pending result, and destructive meaning where applicable |
-| Toggle button or switch | The controlled subject, persistent on/off state, and when the change takes effect |
-| Checkbox | Independent choices, label activation, hierarchy, and genuine mixed state where supported |
-| Radio group | Mutually exclusive choices and a stable group label; selected is not the same as focused |
-| Value selector | The current value and a predictable set of choices; searchable selection when the task warrants it |
-| Command menu | Context, ordering, unavailable items, submenus, dismissal, and focus return |
-| Status badge | Named meaning, freshness, and distinction between passive status and an actionable filter |
-| Inline information | The relevant subject and useful explanation without unnecessary interruption |
-| Alert | The actual consequence, available recovery or cancellation, and appropriate interruption |
-| Icon control | A consistent visual language, accessible name, identifiable meaning, and all interaction states |
-
-Preserve the semantic differences between independent choices, mutually exclusive choices, value selection and commands. Turning every choice into a switch is not modernization. Use [component-states.md](component-states.md) for the full behavior and state contract.
+Choose the control using [behavior before styling](component-states.md#choose-behavior-before-styling-its-shell), then apply the relevant [anatomy checks](component-states.md#make-the-small-visual-decisions-deliberate) and [message semantics](component-states.md#separate-signals-from-decoration). Preserve its established behavior while changing its material.
 
 Use selection marks separately from the temporary active menu row. For each menu group, decide whether icons improve recognition; avoid ornamental glyphs that compete with labels. A menu's material must preserve readable labels over its complete allowed backdrop.
 
@@ -199,20 +174,20 @@ Render a compact control specimen in its real layout: buttons, independent and e
 
 ## 9. Evidence required for review
 
-For concepts, render the proposed hierarchy at compact, intermediate, and wide sizes with realistic content; include an open detail or settings group, not just the landing screen. Compare a structural alternative before polishing materials. Review both themes and the relevant density choices. Record what improved and what remains unresolved; visual taste still requires the user's review.
+For concepts, render the proposed hierarchy across the supported size range with realistic content; include an open detail or settings group, not just the landing screen. Compare a structural alternative before polishing materials when a consequential structural choice remains open; preserve settled decisions. Review each supported appearance and relevant density choice within scope. Record what improved and what remains unresolved; visual taste still requires the user's review.
 
 For audits and verification, follow [audit-method.md](audit-method.md). A full audit checks every in-scope navigation usage and its defined relevant contexts, not one representative screen. A scoped fix checks its affected usages. Record evidence separately for:
 
 - Navigation correctness: current location, labels, links, role visibility, empty states, Back, refresh, and deep links.
 - Task continuity: edit, resize, hide/reopen pane, change destination, return, cancel, and save/review where applicable.
 - Space and reachability: long labels, localization, text enlargement, short windows, keyboard appearance, and every supported input method.
-- Material reliability: both themes, actual background extremes, overlapping layers, readable fallback, contrast and accessibility preferences.
+- Material reliability: each supported appearance, actual background extremes, overlapping layers, readable fallback, contrast and accessibility preferences.
 - Craft: compositional clarity, purposeful hierarchy, coherent geometry, restrained material use, and a distinctive relationship to the product's domain.
 
 Deliver the navigation map, adaptive transformations, overlay rules, material recipes, motion alternatives, and observed failures with their context. A functioning route does not prove aesthetic quality; an attractive image does not prove a complete workflow. Report unavailable runtime or device checks as gaps. Continue the implementation and accessibility detail in [web-engineering.md](web-engineering.md), [platform-adaptation.md](platform-adaptation.md), and [accessibility.md](accessibility.md).
 
 ## Reject superficial material matches
 
-For a reference-led concept, compare both light and dark renderings with the actual reference. Check the distribution of materials across content, navigation and overlays; background chroma; edge direction and intensity; shadow hierarchy; concentric geometry; selection versus hover; and behavior during opening, scrolling and return. A uniform colored wash, strong border on every nested group, generic blur everywhere or identical elevation across all surfaces can preserve the vocabulary while missing the reference's hierarchy. Diagnose those visible mismatches before adding more effects. Retain any explicitly requested departures as product choices.
+For a reference-led concept, compare each supported appearance in scope with the applicable reference under matched conditions; disclose mismatches or unavailable reference evidence. Check the distribution of materials across content, navigation and overlays; background chroma; edge direction and intensity; shadow hierarchy; concentric geometry; selection versus hover; and behavior during opening, scrolling and return. A uniform colored wash, strong border on every nested group, generic blur everywhere or identical elevation across all surfaces can preserve the vocabulary while missing the reference's hierarchy. Diagnose those visible mismatches before adding more effects. Retain any explicitly requested departures as product choices.
 
 Separate the requested expression from the source system’s latest release. Research the user-selected reference for the current project and record implementation constraints. A reference or CSS effect does not prove native equivalence; there is no inherited default material recipe.

@@ -23,6 +23,16 @@ For new UI, use representative content and at least one stressed example per sig
 
 Assert observable outcomes rather than implementation trivia. Combine appropriate automation with manual interaction and rendered inspection; automated accessibility findings are only one layer of evidence.
 
+## Verify the requirement and its interpretation
+
+Use [requirements-conformance.md](requirements-conformance.md) to reconcile active requirements, acceptance obligations and evidence at the artifact revision being reviewed. Read the original request or answer as well as its interpreted rule. Review in both directions: find missing requirements and consequential additions without an authorized basis. Preserve the distinction between a mapped requirement, a depicted concept and verified behavior.
+
+For a selected design language, inspect the private project profile produced by [project-research.md](project-research.md). Compare reference → interpreted project rule → rendered concept → integrated result. A consistent component family can still implement the wrong interpretation. Source reading, kit inspection, rendered specimens and observed native interactions support different claims; missing motion or target-platform evidence stays visible.
+
+Compare equivalent tasks, content, states, dimensions and appearance settings. State when identical conditions are unavailable and which comparison remains meaningful. Check structural roles, typography, semantic color, geometry relationships, material behavior and transition/recovery sequences. Distinguish an intentional project departure, an implementation defect and an unverified approximation. A visually similar start frame does not establish identical interactions or native rendering.
+
+The reviewer challenges the current evidence independently of the author's preferred verdict. Fixes to shared rules reopen their affected usages and applicable checks. Scope changes retain the original requirement and actual authorization; recording an exception or obtaining broad aesthetic approval cannot turn a missing obligation into a pass.
+
 ## Minimum useful interaction pass
 
 - Reach the task through normal navigation and a deep link if supported.

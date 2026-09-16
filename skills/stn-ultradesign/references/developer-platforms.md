@@ -124,7 +124,7 @@ Verify the project’s OpenAPI specification and tooling versions before proposi
 
 Swagger UI and Redoc/Redocly are tooling choices. Record the actual edition, package version, rendering capabilities, hosting model, and interactive-console behavior. A visually rendered schema is not evidence that every declared feature is interpreted correctly. Retain the contract source and test examples against the deployed API where authorized.
 
-Describe supported authentication accurately at global and operation level. OpenAPI security requirements can express alternatives and combinations; flattening them into one “API key required” badge can mislead users. A described permission is not backend enforcement. OpenAPI security
+Describe supported authentication accurately at global and operation level. OpenAPI security requirements can express alternatives and combinations; flattening them into one “API key required” badge can mislead users. A described permission is not backend enforcement.
 
 ## 10. Make the reference answer a developer's next question
 
@@ -141,7 +141,7 @@ Propose a navigable reference with resource/task grouping, search, stable operat
 | Errors | What failed; can it be corrected or retried; which identifier helps support? |
 | Lifecycle | What version, deprecation, replacement, or migration applies? |
 
-OpenAPI distinguishes parameters and request payloads. Reflect requiredness, serialization, and location accurately rather than turning every input into an interchangeable text box. OpenAPI parameters
+OpenAPI distinguishes parameters and request payloads. Reflect requiredness, serialization, and location accurately rather than turning every input into an interchangeable text box.
 
 Keep descriptions and schemas inspectable together. Provide readable type information and expandable nested details, but leave required constraints discoverable. Examples must use synthetic data and explicit placeholders. Preserve syntax and accessibility when copying; distinguish response examples from actual server results. Validate examples against the advertised contract and test pagination, validation errors, and permission failures rather than documenting only a successful response.
 

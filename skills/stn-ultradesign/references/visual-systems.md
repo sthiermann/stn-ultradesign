@@ -31,7 +31,7 @@ Derive a visual thesis from domain evidence before choosing components. Identify
 
 Use reusable components as material for that direction. A correct library assembly is a starting point; it does not decide the page's information relationships or create a distinctive product identity. Inspect whether a brand-name swap would leave a generic shell with no visible relation to the work. If so, revisit the composition, content hierarchy and interaction sequence before changing decorative details. Reuse and visual authorship can coexist; do not replace proven control behavior merely to be different.
 
-Compare structural alternatives with the same content when changing a major screen family. Examples include queue-plus-inspector versus overview-plus-drilldown, or a document-centered canvas versus a sequence of form sections. Assess what each keeps visible, what it hides and how it affects the next decision. Sidebars, cards, tables and grids are valid choices when their relationships fit; none should become the default shape of every unrelated surface.
+Compare structural alternatives with the same content when a consequential structural decision remains open for a major screen family; preserve settled choices. Examples include queue-plus-inspector versus overview-plus-drilldown, or a document-centered canvas versus a sequence of form sections. Assess what each keeps visible, what it hides and how it affects the next decision. Sidebars, cards, tables and grids are valid choices when their relationships fit; none should become the default shape of every unrelated surface.
 
 ### Set expressive ambition for the actual experience
 
@@ -51,7 +51,7 @@ Choose a few signature decisions that work together: type proportions, image fra
 
 Build a route-by-state inventory. Include primary pages, nested routes, authentication gates, menus, dialogs, drawers, popovers, empty/loading/error states, success feedback, permission differences, read-only modes, and embedded surfaces. Record which instances share components so a global repair can be distinguished from a page exception.
 
-For each inspected state, retain the route, viewport, theme, locale, input mode, selected record, data volume, and screenshot or reproducible steps. Mark unavailable states as untested. A component gallery cannot prove that the composed application is usable, and a route list cannot prove that overlays or transitions were reviewed.
+For each inspected state, retain the route, viewport, theme, locale, input mode, selected record, data volume, and screenshot or reproducible steps. Mark required checks blocked when tools, access, fixtures or authorization are unavailable; reserve not-tested for checks not yet attempted. Record applicability separately with its factual basis. A component gallery cannot prove that the composed application is usable, and a route list cannot prove that overlays or transitions were reviewed.
 
 Audit in three passes:
 
@@ -217,4 +217,4 @@ Review at two scales. At page scale, judge hierarchy, balance, information densi
 
 For each changed pattern, retain before/after evidence under matching content and conditions. Verify the affected component states and consuming routes; full audits inspect every documented usage and relevant configuration. Record remaining coverage gaps explicitly. An overall numerical score must never hide a critical unresolved issue.
 
-Completion requires a coherent visual contract, accounted-for states, resolved or prioritized defects, proportional regression checks and an honest separation of measured outcomes from expert judgment.
+Apply the stage criteria in [requirements-conformance.md](requirements-conformance.md#6-bound-completion-to-what-was-established). An audit can complete its agreed investigation with evidenced findings and prioritized corrections; that does not establish product conformance. Concept or implementation readiness requires passing current evidence for every applicable obligation due at that stage. Prioritizing a required correction leaves it unfinished. Keep additional improvement proposals separate and distinguish measured outcomes from expert judgment.

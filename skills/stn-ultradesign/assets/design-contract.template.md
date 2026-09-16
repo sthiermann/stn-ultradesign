@@ -11,6 +11,8 @@ Complete only sections relevant to this project. Remove unused sections with an 
 - Approval message reference, date and approved scope:
 - Superseded contract:
 - Implementation revision:
+- Authoritative requirement register path/revision (or inline equivalent):
+- Selected reference profile path/revision and applicable rule IDs, if any:
 
 ## Discovery and preference basis
 
@@ -126,14 +128,21 @@ Record navigation visibility, data visibility and action authority separately wh
 
 ## Acceptance and traceability
 
-| Acceptance ID | Observable expectation | Source decision | Route/component | Test environment and method | Result and evidence |
-| --- | --- | --- | --- | --- | --- |
+Link the [requirement register](requirements.template.md) and its acceptance obligations; use the following inline equivalent only if it is the authoritative record for this bounded scope. Apply [requirements-conformance.md](../references/requirements-conformance.md). Avoid copying active acceptance rows into multiple independently edited tables.
+
+| Obligation ID / requirement revision | Observable expectation / allowed variation | Decision or reference-rule ID | Usage / planned context | Stage and required evidence kind | Result / artifact revision / actual evidence or gap |
+| --- | --- | --- | --- | --- | --- | --- |
 
 For screenshot comparisons record browser, CSS viewport size, zoom, data fixture, fonts, locale, theme, expected scroll position and justified tolerance.
 
 Report visual/craft assessment separately from behavioral, accessibility and syntax results. A technical pass does not satisfy an unapproved or rejected visual direction.
 
 Report mapping completeness, depicted concept scope, implemented scope and verified feature parity separately. Verify the relevant actor/state/theme/locale/density contracts for each included feature; justify equivalence classes and retain blocked or untested variants as gaps.
+
+- Reconciliation: active in-scope requirements / linked requirements / requirements with all required applicable obligations satisfied:
+- Original request → interpreted rule → concept → implementation discrepancies:
+- Consequential additions and their requirement or authorized discretion:
+- Changed requirements, reference rules or shared components invalidating prior evidence:
 
 ## Refinement log
 

@@ -37,7 +37,7 @@ Publishing on GitHub does not add the package to the official plugin directory. 
 
 ## Claude Code: plugin from GitHub
 
-Enter these commands inside Claude Code:
+Enter these commands inside a Claude Code terminal session:
 
 ```text
 /plugin marketplace add sthiermann/stn-ultradesign

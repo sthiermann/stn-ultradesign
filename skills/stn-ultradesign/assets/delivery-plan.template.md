@@ -8,6 +8,7 @@ Use for substantial design work with multiple stages, surfaces or contributors. 
 - Current stage and reviewable increment:
 - Product/source baseline and observed runtime:
 - Current brief, preference record and design contract:
+- Authoritative [requirement register](requirements.template.md) and selected reference profile revisions:
 - Existing implementation authorization / exact approved scope:
 - Open dependencies and independent work that can continue:
 - Current artifact revision and preview:
@@ -27,8 +28,10 @@ Record when roles share one agent. Self-review is not independent review. Record
 
 ## Decision-to-result trace
 
-| Answer or need ID | Scoped decision / contract ID | Affected tasks and usages | Observable acceptance condition | Actual evidence / remaining gap |
-| --- | --- | --- | --- | --- |
+Link the authoritative requirement/obligation records rather than duplicating them here.
+
+| Requirement ID / revision | Decision or reference-rule IDs | Existing usage and acceptance record links | Current stage / readiness gap |
+| --- | --- | --- | --- |
 
 ## Stage record
 
@@ -48,11 +51,13 @@ Use planned, in progress, ready-for-review, approved-with-scope, complete-for-sc
 ## Worker handoff
 
 - Bounded task and relevant skill references:
-- Brief/contract revision and source inputs:
+- Requirement/brief/contract/reference-profile revisions and source inputs:
+- Original request/decision references, including deferred and blocked obligations for reviewers:
 - Capability IDs, acceptance conditions and unresolved choices:
 - Allowed outputs/files and shared-file owner:
 - Current tools, access and side-effect authorization:
 - Required artifact, evidence and concise return summary:
+- Worker-reported input revisions and changes requiring re-evaluation before integration:
 
 ## Review and resolution
 

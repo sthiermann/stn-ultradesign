@@ -10,6 +10,7 @@ Use [discovery and preferences](../references/discovery-and-preferences.md) thro
 - Existing design system, brand, framework and constraints:
 - Supported devices, input modes, locales, themes and density preferences:
 - Feature map path and reconciliation status:
+- Authoritative [requirement register](requirements.template.md), revision and related requirement IDs; link existing decisions rather than maintaining a second status record:
 - Authorized evidence sources and unavailable access:
 - Concept scope, explicit exclusions and implementation approval boundary:
 
@@ -113,7 +114,7 @@ Do not infer authority from a fashionable reference or call a preference a unive
 ## Direction to develop
 
 - Visual thesis tied to the product's work:
-- Structural alternatives to compare using the same task and content:
+- Consequential open structural decisions and alternatives to compare using the same task and content; preserve settled choices:
 - Known preferences to preserve:
 - Open dependencies and the work each blocks:
 - Optional preferences currently treated as proposals:

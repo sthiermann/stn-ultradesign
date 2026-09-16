@@ -8,7 +8,7 @@ Load for every frontend audit, concept, component change, or responsive redesign
 
 **Audit procedure.** Record the requested conformance version and level, product surfaces, third-party steps, browser/assistive-technology combinations, and exclusions. Default the design target to WCAG 2.2 AA when none is specified; identify this as a project recommendation, not a statement of jurisdictional law. A legal compliance assessment requires the actual applicable jurisdiction, procurement contract, product type, and standard version.
 
-Build a criterion-level ledger for the complete applicable A/AA set. This document emphasizes frequent failures; it is not a replacement for that ledger. Record `pass / fail / not applicable / not tested`, evidence, tested state, method, and limitation. A representative sample can support a scoped audit; it cannot prove untested pages conform.
+Build a criterion-level ledger for the complete applicable A/AA set. This document emphasizes frequent failures; it is not a replacement for that ledger. Record `pass / fail / blocked / not-tested`, evidence, tested state, method, and limitation. Record applicability separately with its factual basis. Missing tools, access, fixtures or authorization make a required check blocked; a check not yet attempted is not-tested. A representative sample can support an agreed scoped audit; it cannot prove untested pages conform.
 
 ## 2. Make accessibility reviewable before implementation
 
@@ -76,6 +76,6 @@ After approval, implement those behaviors faithfully. If a constraint emerges, s
 
 Evaluation tools alone cannot determine accessibility; human judgment and manual testing remain necessary.
 
-**Audit procedure.** Combine automated checks with keyboard inspection, zoom/spacing tests, accessibility-tree inspection, screen-reader journeys and user research where feasible. State the exact browser, OS, assistive technology and versions actually tested. If access is unavailable, mark that portion untested and provide a precise manual script. Do not translate a green scanner result into a conformance certificate.
+**Audit procedure.** Combine automated checks with keyboard inspection, zoom/spacing tests, accessibility-tree inspection, screen-reader journeys and user research where feasible. State the exact browser, OS, assistive technology and versions actually tested. If access is unavailable, mark the affected checks blocked, name the missing access and provide a precise manual script. Do not translate a green scanner result into a conformance certificate.
 
 Close an accessibility finding only when its original reproduction passes, adjacent states still work, the evidence is attached, and the approved interaction contract remains satisfied. An unresolved blocker on a critical workflow stays visible regardless of improvements to typography or an aggregate quality score.
