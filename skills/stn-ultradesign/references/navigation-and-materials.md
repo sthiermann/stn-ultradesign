@@ -198,3 +198,9 @@ For audits and verification, follow [audit-method.md](audit-method.md). A full a
 - Craft: compositional clarity, purposeful hierarchy, coherent geometry, restrained material use, and a distinctive relationship to the product's domain.
 
 Deliver the navigation map, adaptive transformations, overlay rules, material recipes, motion alternatives, and observed failures with their context. A functioning route does not prove aesthetic quality; an attractive image does not prove a complete workflow. Report unavailable runtime or device checks as gaps. Continue the implementation and accessibility detail in [web-engineering.md](web-engineering.md), [platform-adaptation.md](platform-adaptation.md), and [accessibility.md](accessibility.md).
+
+## Reject superficial material matches
+
+For a reference-led concept, compare both light and dark renderings with the actual reference. Check the distribution of materials across content, navigation and overlays; background chroma; edge direction and intensity; shadow hierarchy; concentric geometry; selection versus hover; and behavior during opening, scrolling and return. A uniform colored wash, strong border on every nested group, generic blur everywhere or identical elevation across all surfaces can preserve the vocabulary while missing the reference's hierarchy. Diagnose those visible mismatches before adding more effects. Retain any explicitly requested departures as product choices.
+
+Separate the reference generation from the latest platform release. For example, the [WWDC26 AppKit design update](https://developer.apple.com/videos/play/wwdc2026/289/?time=864) discusses sidebar and material refinements beyond the 2025 presentation. A user can prefer either expression. Record that choice instead of presenting one year's silhouette as an eternal Apple rule. Neither a reference nor a CSS effect proves native optical equivalence.
