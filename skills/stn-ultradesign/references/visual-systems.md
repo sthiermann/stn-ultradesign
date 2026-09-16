@@ -2,7 +2,7 @@
 
 Read for visual audits, redesigns, design-system work, components, widgets, typography, color, shape, layout, density, or motion. Read [platform-adaptation.md](platform-adaptation.md) as well when surfaces resize or span desktop, tablet, and phone. For concept-first design, follow [concept-to-code.md](concept-to-code.md): present a concrete concept, refine it, obtain approval, then implement and verify the contract. Use the mode selected in `SKILL.md`; preserve already approved scope and explicit direct-implementation authorization. Use the workflow and accessibility references for behavioral requirements; visual polish never substitutes for them.
 
-**Evidence policy.** Vendor guidance is authoritative about that vendor's intentions, not a universal rule. Source notes below identify borrowed principles. Everything labeled an audit procedure, decision table, candidate, or acceptance check is this skill's synthesis: use it to form and test product-specific decisions. Do not claim a new aesthetic improves performance without evidence. Reviewed 2026-09-16; verify implementation versions before changing dependencies.
+**Evidence policy.** The procedures, decision tables and acceptance checks here are original working methods. Research the chosen product language and implementation in [project-local evidence](project-research.md); guidance for one system does not establish a universal appearance. Separate a visual judgment from a demonstrated task improvement. Verify implementation versions before changing dependencies.
 
 ## 1. Establish the visual contract
 
@@ -32,6 +32,20 @@ Derive a visual thesis from domain evidence before choosing components. Identify
 Use reusable components as material for that direction. A correct library assembly is a starting point; it does not decide the page's information relationships or create a distinctive product identity. Inspect whether a brand-name swap would leave a generic shell with no visible relation to the work. If so, revisit the composition, content hierarchy and interaction sequence before changing decorative details. Reuse and visual authorship can coexist; do not replace proven control behavior merely to be different.
 
 Compare structural alternatives with the same content when changing a major screen family. Examples include queue-plus-inspector versus overview-plus-drilldown, or a document-centered canvas versus a sequence of form sections. Assess what each keeps visible, what it hides and how it affects the next decision. Sidebars, cards, tables and grids are valid choices when their relationships fit; none should become the default shape of every unrelated surface.
+
+### Set expressive ambition for the actual experience
+
+Identify where people are doing repeated work, discovering an idea, or moving between both. This sets the place for expression; it does not rank one experience above another.
+
+| Experience | Product-specific creative opportunity | Proof in the concept |
+| --- | --- | --- |
+| Operational workspace | Distinctive typographic hierarchy, dense comparison, direct manipulation, contextual tools and coordinated selection | A repeated task works at realistic volume; the composition exposes its relationships and keeps actions available |
+| Showcase or editorial experience | Art-directed imagery, dramatic scale, sequencing, interactive demonstration and spatial storytelling | The intended message is apparent, exploration rewards interaction, and a visitor can reach the next action directly |
+| Hybrid product | Expressive discovery leading into a precise configurator, editor or transaction | Identity remains coherent while density and controls change with the task; selections and context survive the transition |
+
+When the brief invites a new direction, develop a credible bolder structural candidate alongside the strongest familiar approach. Carry the same capabilities and realistic content into both. For example, compare a chronological investigation canvas with a queue-and-inspector workflow, or a spatial product explorer with an editorial comparison sequence. Evaluate the new interaction as well as the opening image. A dramatic concept that omits configuration, recovery or detail is an incomplete candidate.
+
+Choose a few signature decisions that work together: type proportions, image framing, color distribution, geometry and a characteristic interaction. Demonstrate them in a real task. Carry the resulting visual language into supporting screens with appropriate intensity; a billing form need not repeat the showcase's choreography. The selected brand and brief determine the direction, including an intentionally restrained one.
 
 ## 2. Inventory before judging
 
@@ -104,7 +118,7 @@ Suggested audit vocabulary, adapted to the project:
 
 Document supported theme and density combinations. Resolve hover, pressed, focus-visible, selected, disabled, loading, invalid, and read-only states by role rather than scattered component overrides. For a scoped token change, inspect affected consumers in both content-heavy and interaction-heavy views. In a full audit, inspect every usage and relevant configuration. A token change can make one screen look better while degrading another.
 
-Separate component structure from permitted visual customization. Define which tokens and composition slots can vary without breaking behavior, semantics or shared consistency.
+Separate component structure from permitted visual customization. Define which tokens and composition slots can vary without breaking behavior, semantics or shared consistency. Preserve semantic aliases when producing theme values; expose a small set of intentional component variants instead of distributing raw palette and spacing choices to every page. Theme, density and motion preferences are separate dimensions when the product supports them. Demonstrate the resulting combinations on a composed screen as well as a token sheet.
 
 ## 6. Audit typography as a working system
 
@@ -171,19 +185,29 @@ For control anatomy, selectors, checkbox/radio behavior, complete interaction st
 
 For each repeated component, create a compact specification: purpose, inputs, variants, states, action scope, content rules, keyboard behavior, responsive behavior, and failure cases. Share behavior and meaning before forcing unlike tasks into one visual component.
 
+Design the components that express the product's work, not only its buttons. A comparison row, incident timeline, material selector or annotated viewer can carry the visual thesis through layout, selection and feedback. Identify the shared anatomy and compose it from the system's primitives. Give a signature interaction a working specimen with actual content and an adverse state; carry the same implementation into consuming screens. Repeating bespoke page CSS produces drift, while forcing every domain object into a generic card erases useful differences. Use [the implementation decision](web-engineering.md#choose-the-component-foundation) to preserve proven behavior while authoring the appearance.
+
 Choose a list when items mainly need scanning, a table when aligned attributes support comparison, and cards when distinct content or media benefits from independent grouping. Treat this as a task hypothesis. Review nested cards, repeated badges, unlabeled icons, decorative charts, and redundant separators for whether they add information or merely compete for attention.
 
 For a dashboard widget, identify its decision, time period, units, freshness, source and path to detail. Keep unavailable or stale data distinct from zero. Show partial failure at the affected scope. Offer layout configuration when work differs meaningfully between users, and preserve existing configuration capabilities.
 
 A library’s accessibility support still needs correct composition, labels, headings, content and keyboard behavior. Verify the installed components in their actual host context.
 
-## 10. Make motion explain change
+## 10. Design motion and spatial interaction
 
-Assign every animation a job: acknowledge input, connect origin and destination, expose a change, preserve spatial understanding, or communicate progress. If no job can be stated, classify it as decorative and decide whether it earns its visual and performance cost.
+Give motion a role in the direction: feedback, continuity, explanation, atmosphere or play. Atmosphere can be a legitimate part of an expressive brief; judge its contribution to the experience alongside its attention and rendering cost. Design a small motion vocabulary by role, with duration or spring behavior, distance, sequencing and interruption rules. Avoid making every component perform the same entrance merely because one animation is available.
 
-Test interruption, reversal, repeated input, slow hardware, asynchronous completion and reduced motion. A transition must not hide current state or delay the next useful action. Preserve meaningful state changes without requiring depth effects or movement.
+| Technique | Useful opportunity | Equivalent experience to design |
+| --- | --- | --- |
+| Shared-element or layout transition | Follow an object between overview and detail | Immediate state change with recognizable identity, focus and return |
+| Drag, scrub or direct manipulation | Compare, reorder, inspect time or adjust a configuration | Discoverable controls for the same operation without precision dragging |
+| Scroll-linked narrative | Explain a sequence or reveal a product relationship | Readable ordered content and direct navigation without choreographed scrolling |
+| Responsive illustration or shader | Express material, mood or a concept in an appropriate showcase | A deliberately composed still or lighter effect with the same readable content |
+| 3D or spatial scene | Inspect shape, assembly, placement or an explicitly chosen immersive experience | Named views, meaningful descriptions and controls for the core task when movement or accelerated rendering is unavailable |
 
-Use expressive color, shape, scale and motion to direct attention only when they support the task. Preserve recognizable structure and useful labels; verify the result rather than transferring success claims from another product.
+For an ambitious effect, record the intended benefit, interaction, supported devices, asset/rendering budget and reduced or unavailable-effect version before investing in final polish. Build a short working sample in the real composition and compare it with that simpler version. Keep the effect when it expresses the chosen direction or improves the intended exploration and meets the task contract; simplify it when it obscures information or consumes the interaction budget. A 3D scene earns its place through this decision, not through a presumption that advanced graphics are modern.
+
+Test interruption, reversal, repeated input, asynchronous completion and reduced motion. State, focus and the next action remain correct independently of animation completion. Give people control over sustained motion and retain the visible outcome when effects are reduced. Define the fallback's composition deliberately; blank space or a disabled primary task is not a finished alternative. Use [the rendering guidance](web-engineering.md#build-expressive-rendering-as-a-bounded-component) when the chosen direction requires canvas, 3D or substantial animation.
 
 ## 11. Finish with evidence, not a style score
 

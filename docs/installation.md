@@ -59,7 +59,7 @@ For a local trial without marketplace installation:
 claude --plugin-dir /absolute/path/stn-ultradesign
 ```
 
-Replace `/absolute/path/stn-ultradesign` with the actual repository path. This starts the local development mode.
+Replace `/absolute/path/stn-ultradesign` with the actual repository path. This runs the local plugin for that session.
 
 ## Claude Code: individual skill alternative
 

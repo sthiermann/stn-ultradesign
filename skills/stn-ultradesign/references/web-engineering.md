@@ -8,6 +8,29 @@ Inspect framework and dependency versions, component wrappers, CSS strategy, tok
 
 Map the design contract into four layers: tokens, primitives, composed patterns and product journeys. Keep visual variants separate from business permissions and data loading. Shared components need explicit behavior contracts, not only a screenshot gallery.
 
+### Choose the component foundation
+
+Make this decision for each consequential component family, using the actual installed implementation. Preserve useful infrastructure while making the approved visual direction achievable.
+
+| Foundation | Choose when | Work the product still owns |
+| --- | --- | --- |
+| Existing designed component | Its behavior fits and its supported theme/variant API can express the contract | Reconcile tokens, anatomy and states; repair the shared component before patching its consumers |
+| Native element | Browser behavior and styling scope fit the task | Labels, surrounding composition, states and testing across the supported browsers |
+| Unstyled or headless primitive | The interaction is established but the product needs its own appearance or composition | Designed wrapper, functional layout, tokens, open/closed states, content and integration verification |
+| Custom interaction | A domain-specific behavior is missing or the verified alternatives cannot meet the contract | State model, semantics, keyboard/touch behavior, recovery, maintenance and evidence for the entire interaction |
+
+Judge dependencies by the exact required behavior, composition API, maintenance, licensing, compatibility and measured cost. Test the difficult integration first: for example, a searchable selector inside an editor, with async options and a long label. A library's example page does not prove that case. Keep the decision small enough to adopt incrementally.
+
+Unstyled primitives separate much of the behavior from presentation; they do not supply an authored visual system or eliminate accessibility work. Own one designed wrapper per shared family. Preserve the primitive's required props, event composition, references and semantics when changing its rendered parts. Reuse its state signals for styling where supported instead of inventing a second focus, selection or open-state model. Verify functional styles such as overlay coverage, hit area, scrolling and placement as carefully as color.
+
+### Develop the designed component once
+
+Use the existing component preview or a lightweight local harness; a new documentation tool is optional. Render the production component with deterministic fixtures, real typography and its theme/context providers. Include the states that challenge the design, especially open, selected-and-focused, loading/error and long content. Keep the specimen's controls outside the product component.
+
+Map primitive values to semantic roles, then to justified component variants. Keep the token source authoritative; if build tools generate CSS or theme objects, change the source and check the generated consumers. Test local theme scopes and portal-mounted content, which may leave the styled ancestor. Expose useful composition slots while keeping internal anatomy and behavior coherent; a growing list of arbitrary page overrides is a signal to revisit the variant or composition contract.
+
+Finish a meaningful interaction in isolation, place it in a real journey, then propagate that same component. Isolation makes craft and edge states easy to inspect; the host proves layering, focus, responsive space and data behavior. For a signature component, retain the approved interaction specimen as well as stills so later fixes preserve its feel and function.
+
 ## Semantic HTML
 
 Choose elements by interaction: links navigate, buttons act, native inputs collect values, fieldsets group related choices, and table structure expresses tabular relationships. Use headings and landmarks to expose the same hierarchy as the visual design. Preserve logical document order; CSS placement cannot compensate for an incoherent focus/reading order. Verify the chosen elements against the current language and browser contract.
@@ -40,7 +63,17 @@ Check typeface rights, script coverage, fallback metrics, supported weights, num
 
 Use the existing icon family consistently, with accessible names for interactive icons and hidden semantics for decoration. Give images an intentional crop and reserved dimensions; test replacement images. Provide responsive sources where useful. Do not fabricate product imagery, reviews or metrics that users could mistake for real evidence.
 
-Motion should express a state or spatial relationship. Prefer compositing-friendly changes where they preserve the design; measure costly effects. Provide meaningful static transitions for reduced-motion preferences. Essential information and completion states must remain visible without animation. Never make layout or focus correctness depend on a decorative animation's timing.
+Choose motion through [the visual interaction contract](visual-systems.md#10-design-motion-and-spatial-interaction). Keep asset loading, semantic state and focus independent of decorative timing. The implementation and reduced-motion version must produce the same intended task outcome.
+
+### Build expressive rendering as a bounded component
+
+Use HTML/CSS for interface structure, SVG when addressable vector parts serve the interaction, and canvas or accelerated graphics when drawing scale or a spatial scene calls for them. Select a rendering engine only after a small prototype demonstrates the required scene and input model. A shader background and a configurable 3D object have different contracts; neither should own the application's navigation or ordinary form controls.
+
+Keep domain state outside the renderer: selected object, configuration and committed values must survive scene remounts, a reduced-effect view or context loss. Expose semantic controls and meaningful descriptions in the document. Canvas pixels alone do not supply the names, relationships or actions needed by assistive technology. For an interactive scene, provide the operations needed to complete the task through those controls; a poster is sufficient only when the scene is decorative. In a configurator, a lighter view must still show the chosen options and permit configuration.
+
+Set project-specific limits for asset transfer, decoded textures, geometry, draw calls, drawing resolution and main-thread/input time. Measure startup and active interaction on representative weaker hardware. Load optional scenes near use, reserve their space and retain useful content while loading. Render on demand when the scene can rest; pause offscreen work and dispose of owned graphics resources on replacement or unmount according to the renderer's lifecycle. Reduce quality in deliberate steps while preserving meaningful detail and readable controls.
+
+Exercise unavailable acceleration, asset failure, context loss/restoration, route exit/reentry, touch, keyboard and reduced motion. Keep the working alternative available through failure and recovery; restoring the renderer must retain the user's selection. Compare enabled and reduced effects under the same task and load, including ordinary typing or navigation beside the scene. Record the observed costs and the chosen quality policy. A high frame rate in an empty demo does not establish application performance.
 
 ## React state as UX infrastructure
 

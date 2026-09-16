@@ -1,6 +1,6 @@
 # Concept, refinement, approval, implementation
 
-This is the owner's preferred process for substantial new designs and redesigns. It is a workflow chosen for this skill, not an international standard. Use it when requested or as the default stated in `SKILL.md`; honor explicit authorization to implement directly.
+Use [delivery-workflow.md](delivery-workflow.md) for stage order, responsibilities, handoffs and readiness. This reference defines the concept artifacts, refinement and implementation contract within that workflow. It is the skill's chosen method, not an international standard; honor existing approval and explicit authorization to implement directly.
 
 ## The reviewable concept
 

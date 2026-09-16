@@ -18,11 +18,12 @@ ROOT = Path(__file__).resolve().parents[1]
 NAME = "stn-ultradesign"
 SKILL = ROOT / "skills" / NAME
 REQUIRED = (
-    "README.md", "LICENSE", "CONTRIBUTING.md", "THIRD_PARTY_NOTICES.md", "CHANGELOG.md",
-    "docs/installation.md", "docs/quality/evaluation.md",
+    "README.md", "LICENSE", "CONTRIBUTING.md", "PRIVACY.md",
+    "docs/installation.md",
     ".codex-plugin/plugin.json", ".claude-plugin/plugin.json",
     ".claude-plugin/marketplace.json", f"skills/{NAME}/SKILL.md",
     f"skills/{NAME}/agents/openai.yaml", f"skills/{NAME}/references/project-research.md",
+    f"skills/{NAME}/references/delivery-workflow.md",
     f"skills/{NAME}/scripts/audit_coverage.py",
 )
 
@@ -165,16 +166,6 @@ def main():
         require(not ({"hooks", "mcpServers", "apps"} & manifest.keys()),
                 f"{label}: this package has no external integrations or hooks")
     require(codex.get("version") == claude.get("version"), "Plugin versions differ")
-    changelog = ROOT / "CHANGELOG.md"
-    if changelog.is_file():
-        releases = re.findall(r"(?m)^## (\d+\.\d+\.\d+)\s+[—-]\s+\d{4}-\d{2}-\d{2}\s*$",
-                              changelog.read_text(encoding="utf-8"))
-        require(bool(releases), "CHANGELOG.md: expected a dated release heading")
-        if releases:
-            require(releases[0] == codex.get("version"),
-                    "CHANGELOG.md: latest release differs from plugin version")
-            require(len(releases) == len(set(releases)),
-                    "CHANGELOG.md: duplicate release headings")
     require(codex.get("skills") == "./skills/", "Codex skill path differs from layout")
     require(marketplace.get("name") == NAME, "Marketplace name differs from package")
     entries = marketplace.get("plugins", [])

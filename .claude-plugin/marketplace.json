@@ -1,6 +1,6 @@
 {
   "name": "stn-ultradesign",
-  "description": "An original design skill for complete UI/UX audits, reviewable concepts, and verifiable implementation.",
+  "description": "A design skill for complete UI/UX audits, design systems, reviewed concepts and verified implementation.",
   "owner": {
     "name": "Sven Thiermann",
     "url": "https://github.com/sthiermann"
@@ -9,7 +9,7 @@
     {
       "name": "stn-ultradesign",
       "source": "./",
-      "description": "Product-wide UI/UX audits, refined design concepts, and implementation traced to approved decisions."
+      "description": "Requirements, creative direction, component systems, independent review and implementation traced to accepted decisions."
     }
   ]
 }

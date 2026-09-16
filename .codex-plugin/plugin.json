@@ -1,7 +1,7 @@
 {
   "name": "stn-ultradesign",
-  "version": "0.3.2",
-  "description": "Product-wide UI/UX audits, distinctive design concepts, and faithful implementation across desktop, tablet, and phone.",
+  "version": "0.4.0",
+  "description": "Product-wide UI/UX audits, creative direction, complete design systems and concepts, independent review, and verified implementation.",
   "author": {
     "name": "Sven Thiermann",
     "url": "https://github.com/sthiermann"
@@ -20,15 +20,15 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "STN Ultradesign",
-    "shortDescription": "Audit the product. Refine the concept. Verify the experience.",
-    "longDescription": "An original design skill connecting visual craft, complete user workflows, accessibility, and frontend engineering. Audit every usage, refine reviewable concepts with the user, and trace approved decisions into verified implementation.",
+    "shortDescription": "Shape the system. Review the concept. Verify the experience.",
+    "longDescription": "An original design skill connecting requirements, creative direction, complete component systems, rendered concepts, independent review, scoped human acceptance and verified frontend implementation.",
     "developerName": "Sven Thiermann",
     "category": "Productivity",
     "capabilities": [],
     "websiteURL": "https://github.com/sthiermann/stn-ultradesign",
     "defaultPrompt": [
       "Audit the entire frontend and document findings, evidence, and coverage.",
-      "Develop a product-specific design concept and refine it with me before implementation.",
+      "Develop a complete design concept from requirements and creative direction through the component system, independent review and my scoped acceptance.",
       "Implement the approved concept and verify behavior and visual fidelity."
     ]
   }

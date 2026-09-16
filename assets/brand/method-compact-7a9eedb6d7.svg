@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="1408" viewBox="0 0 640 1408" role="img" aria-labelledby="title desc">
+<title id="title">The STN Ultradesign delivery workflow</title>
+<desc id="desc">Requirements, creative direction, system and components, complete concept, independent review, human acceptance, implementation, verification. Review findings inform revision. Acceptance covers a specific revision and scope; verification checks the implemented result.</desc>
+<!-- Original artwork. Copyright 2026 Sven Thiermann. MIT License. -->
+<rect width="640" height="1408" fill="#101820"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="36" y="49" fill="#dfbd62" font-size="18" font-weight="700" letter-spacing="2">THE METHOD</text>
+<text x="36" y="103" fill="#f4f3ee" font-size="35" font-weight="700" letter-spacing="-.7">From requirements</text>
+<text x="36" y="147" fill="#f4f3ee" font-size="35" font-weight="700" letter-spacing="-.7">to a verified experience.</text>
+<path d="M36 180H604" stroke="#34424d"/>
+<path d="M62 234V1200" stroke="#536973" stroke-width="2"/>
+<circle cx="62" cy="245" r="23" fill="#101820" stroke="#8da1ab" stroke-width="2"/>
+<text x="62" y="252" text-anchor="middle" fill="#e1e7e9" font-size="18" font-weight="700">01</text>
+<text x="112" y="254" fill="#f4f3ee" font-size="30" font-weight="700" letter-spacing="-.4">Requirements</text>
+<text x="112" y="291" fill="#b8c6ce" font-size="23">Tasks + capabilities</text>
+<text x="112" y="323" fill="#b8c6ce" font-size="23">Preferences + criteria</text>
+<circle cx="62" cy="377" r="23" fill="#101820" stroke="#8da1ab" stroke-width="2"/>
+<text x="62" y="384" text-anchor="middle" fill="#e1e7e9" font-size="18" font-weight="700">02</text>
+<text x="112" y="386" fill="#f4f3ee" font-size="30" font-weight="700" letter-spacing="-.4">Creative direction</text>
+<text x="112" y="423" fill="#b8c6ce" font-size="23">Visual thesis</text>
+<text x="112" y="455" fill="#b8c6ce" font-size="23">Structural alternatives</text>
+<circle cx="62" cy="509" r="23" fill="#101820" stroke="#8da1ab" stroke-width="2"/>
+<text x="62" y="516" text-anchor="middle" fill="#e1e7e9" font-size="18" font-weight="700">03</text>
+<text x="112" y="518" fill="#f4f3ee" font-size="30" font-weight="700" letter-spacing="-.4">System + components</text>
+<text x="112" y="555" fill="#b8c6ce" font-size="23">Shared rules + anatomy</text>
+<text x="112" y="587" fill="#b8c6ce" font-size="23">States + variants</text>
+<circle cx="62" cy="641" r="23" fill="#101820" stroke="#8da1ab" stroke-width="2"/>
+<text x="62" y="648" text-anchor="middle" fill="#e1e7e9" font-size="18" font-weight="700">04</text>
+<text x="112" y="650" fill="#f4f3ee" font-size="30" font-weight="700" letter-spacing="-.4">Complete concept</text>
+<text x="112" y="687" fill="#b8c6ce" font-size="23">Rendered target views</text>
+<text x="112" y="719" fill="#b8c6ce" font-size="23">Journeys + recovery</text>
+<circle cx="62" cy="773" r="23" fill="#101820" stroke="#8da1ab" stroke-width="2"/>
+<text x="62" y="780" text-anchor="middle" fill="#e1e7e9" font-size="18" font-weight="700">05</text>
+<text x="112" y="782" fill="#f4f3ee" font-size="30" font-weight="700" letter-spacing="-.4">Independent review</text>
+<text x="112" y="819" fill="#b8c6ce" font-size="23">Critique + evidence</text>
+<text x="112" y="851" fill="#b8c6ce" font-size="23">Revise the current work</text>
+<path d="M62 877l28 28-28 28-28-28Z" fill="#dfbd62"/>
+<text x="62" y="912" text-anchor="middle" fill="#101820" font-size="18" font-weight="700">06</text>
+<text x="112" y="914" fill="#dfbd62" font-size="30" font-weight="700" letter-spacing="-.4">Human acceptance</text>
+<text x="112" y="951" fill="#b8c6ce" font-size="23">Specific revision + scope</text>
+<text x="112" y="983" fill="#b8c6ce" font-size="23">Recorded design contract</text>
+<circle cx="62" cy="1037" r="23" fill="#101820" stroke="#8da1ab" stroke-width="2"/>
+<text x="62" y="1044" text-anchor="middle" fill="#e1e7e9" font-size="18" font-weight="700">07</text>
+<text x="112" y="1046" fill="#f4f3ee" font-size="30" font-weight="700" letter-spacing="-.4">Implementation</text>
+<text x="112" y="1083" fill="#b8c6ce" font-size="23">Accepted decisions</text>
+<text x="112" y="1115" fill="#b8c6ce" font-size="23">Complete working flows</text>
+<circle cx="62" cy="1169" r="23" fill="#101820" stroke="#8da1ab" stroke-width="2"/>
+<text x="62" y="1176" text-anchor="middle" fill="#e1e7e9" font-size="18" font-weight="700">08</text>
+<text x="112" y="1178" fill="#f4f3ee" font-size="30" font-weight="700" letter-spacing="-.4">Verification</text>
+<text x="112" y="1215" fill="#b8c6ce" font-size="23">Behavior + accessibility</text>
+<text x="112" y="1247" fill="#b8c6ce" font-size="23">Responsive visual fidelity</text>
+<path d="M36 1300H604" stroke="#34424d"/>
+<text x="36" y="1340" fill="#b8c6ce" font-size="22">Review and refine. Accept a defined scope.</text>
+<text x="36" y="1375" fill="#b8c6ce" font-size="22">Verify what was implemented.</text>
+</g>
+</svg>
