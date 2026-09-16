@@ -1,7 +1,7 @@
 # STN Ultradesign
 
 <picture>
-  <source media="(max-width: 640px)" srcset="assets/brand/hero-compact.svg">
+  <source media="(max-width: 1000px)" srcset="assets/brand/hero-compact.svg">
   <img src="assets/brand/hero.svg" alt="STN Ultradesign. Design the whole experience. Product-specific design across desktop, tablet and phone." width="1280">
 </picture>
 
@@ -19,7 +19,7 @@ Built for desktop, tablet, and phone. Grounded in primary design sources. Organi
 ## From evidence to a coherent experience
 
 <picture>
-  <source media="(max-width: 640px)" srcset="assets/brand/method-compact.svg">
+  <source media="(max-width: 1000px)" srcset="assets/brand/method-compact.svg">
   <img src="assets/brand/method.svg" alt="Audit → Concept → Approve → Implement → Verify. Evidence informs the concept; review and refine it before approval. Implement the reviewed version and verify behavior, accessibility, and visual fidelity." width="1280">
 </picture>
 
@@ -36,8 +36,6 @@ For substantial design work, the default is **concept → refinement → your ap
 
 A monitoring grid needs useful image coverage and fast exception detection. An editor needs room to work. An administrative change needs understandable consequences and recovery. The skill establishes the primary task, meaningful unit of work, operating conditions, and observable success criteria before allocating screen space. Every persistent region must justify the attention and space it consumes.
 
-Twenty tailored questions are a minimum for substantial concept work, not a ceiling. Ask further questions when an unresolved task, navigation, material, color, density, or workflow decision would materially change the result. Reuse confirmed answers.
-
 ## Craft is part of the method
 
 An attractive component does not make a coherent product. STN Ultradesign asks what deserves attention, which relationships should be visible, and how composition supports the next decision.
@@ -52,7 +50,7 @@ Existing brand and platform conventions are inputs to a deliberate design decisi
 
 ## Your preferences before the first concept
 
-Substantial concept work starts with a structured brief of **at least 20 meaningful preference questions** tailored to the product. Previously confirmed answers carry forward. Establish the intended character, information density, layout priorities, typography, color, shape, motion, device behavior, and what already works for you. The brief makes the difference between established best practice and aesthetic preference clear, so you can make informed choices.
+Substantial concept work starts with a structured brief of **at least 20 meaningful preference questions** tailored to the product. This is a minimum, not a ceiling: ask more when an unresolved decision materially affects the outcome. Previously confirmed answers carry forward. Establish the intended character, information density, layout priorities, typography, color, shape, motion, device behavior, and what already works for you. The brief makes the difference between established best practice and aesthetic preference clear, so you can make informed choices.
 
 Those answers become design inputs and acceptance criteria. Reviewable alternatives then show their consequences in the actual product. See the [discovery and preference method](skills/stn-ultradesign/references/discovery-and-preferences.md).
 
