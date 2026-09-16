@@ -177,7 +177,32 @@ Research snapshot and access date: **2026-09-16**. This is a reference index, no
 | [Selecting evaluation tools](https://www.w3.org/WAI/test-evaluate/tools/selecting/) | W3C explanatory / implementation guidance | D | [accessibility](accessibility.md) |
 | [WAI tutorial](https://www.w3.org/WAI/tutorials/images/complex/) | W3C explanatory / implementation guidance | D | [data-visualization](data-visualization.md) |
 
-This register contains **160 distinct source URLs** used by the operational references. Counts describe the bibliography, not design quality or exhaustive coverage of the field.
+| [Apple, Platforms State of the Union, WWDC26](https://developer.apple.com/videos/play/wwdc2026/102/) | First-party guidance / implementation reference | D | [navigation-and-materials](navigation-and-materials.md) |
+| [Microsoft navigation basics](https://learn.microsoft.com/en-us/windows/apps/design/basics/navigation-basics) | First-party guidance / implementation reference | D | [navigation-and-materials](navigation-and-materials.md) |
+| [NavigationView](https://learn.microsoft.com/en-us/windows/apps/design/controls/navigationview) | First-party guidance / implementation reference | D | [navigation-and-materials](navigation-and-materials.md) |
+| [Apple tab bars](https://developer.apple.com/design/human-interface-guidelines/tab-bars) | First-party guidance / implementation reference | I | [navigation-and-materials](navigation-and-materials.md) |
+| [Android adaptive navigation](https://developer.android.com/develop/adaptive-apps/guides/build-adaptive-navigation) | First-party guidance / implementation reference | D | [navigation-and-materials](navigation-and-materials.md) |
+| [Apple sidebars](https://developer.apple.com/design/human-interface-guidelines/sidebars) | First-party guidance / implementation reference | I | [navigation-and-materials](navigation-and-materials.md) |
+| [Apple settings](https://developer.apple.com/design/human-interface-guidelines/settings) | First-party guidance / implementation reference | I | [navigation-and-materials](navigation-and-materials.md) |
+| [Apple toolbars](https://developer.apple.com/design/human-interface-guidelines/toolbars) | First-party guidance / implementation reference | I | [navigation-and-materials](navigation-and-materials.md) |
+| [What's new in SwiftUI, WWDC26](https://developer.apple.com/videos/play/wwdc2026/269/) | First-party guidance / implementation reference | D | [navigation-and-materials](navigation-and-materials.md) |
+| [Android list/detail, updated 2026-09-11](https://developer.android.com/develop/adaptive-apps/guides/list-detail) | First-party guidance / implementation reference | D | [navigation-and-materials](navigation-and-materials.md) |
+| [Microsoft backward navigation, updated 2026-02-19](https://learn.microsoft.com/en-us/windows/apps/develop/ui/navigation/navigation-history-and-backwards-navigation) | First-party guidance / implementation reference | D | [navigation-and-materials](navigation-and-materials.md) |
+| [Focus Not Obscured explanation](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum) | W3C explanatory guidance | D | [navigation-and-materials](navigation-and-materials.md) |
+| [CSS Media Queries Level 5](https://drafts.csswg.org/mediaqueries-5/) | Specification / draft; status qualified in module | D | [navigation-and-materials](navigation-and-materials.md) |
+| [Modernize your AppKit app, WWDC26](https://developer.apple.com/videos/play/wwdc2026/289/) | First-party guidance / implementation reference | D | [navigation-and-materials](navigation-and-materials.md) |
+| [Apple motion](https://developer.apple.com/design/human-interface-guidelines/motion) | First-party guidance / implementation reference | I | [navigation-and-materials](navigation-and-materials.md) |
+| [`nav`](https://html.spec.whatwg.org/multipage/sections.html#the-nav-element) | HTML Living Standard | D | [web-engineering](web-engineering.md) |
+| [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/backdrop-filter) | First-party guidance / implementation reference | D | [web-engineering](web-engineering.md) |
+| [`prefers-reduced-transparency` query](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-transparency) | First-party guidance / implementation reference | D | [web-engineering](web-engineering.md) |
+| [CSSWG Level 1 document](https://drafts.csswg.org/css-view-transitions-1/) | Specification / draft; status qualified in module | D | [web-engineering](web-engineering.md) |
+| [Chrome's implementation guidance](https://developer.chrome.com/docs/web-platform/view-transitions/same-document) | First-party guidance / implementation reference | D | [web-engineering](web-engineering.md) |
+| [`ViewTransition`](https://react.dev/reference/react/ViewTransition) | First-party guidance / implementation reference | D | [web-engineering](web-engineering.md) |
+| [web.dev's animation guidance](https://web.dev/articles/animations-guide) | First-party guidance / implementation reference | D | [web-engineering](web-engineering.md) |
+| [W3C's document guide](https://www.w3.org/WAI/standards-guidelines/wcag/docs/) | W3C explanatory guidance | D | [discovery-and-preferences](discovery-and-preferences.md) |
+| [APG introduction](https://www.w3.org/WAI/ARIA/apg/about/introduction/) | W3C explanatory guidance | D | [discovery-and-preferences](discovery-and-preferences.md) |
+
+This register contains **184 distinct source URLs** used by the operational references. Counts describe the bibliography, not design quality or exhaustive coverage of the field.
 
 ## Further provenance
 

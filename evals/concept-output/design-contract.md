@@ -35,4 +35,4 @@ Desktop staff and tablet/phone field curators manage document-workflow settings.
 
 ## Refinement and conformance
 
-v0.1 is the first proposal, with no user feedback received. Every change after approval must map to these IDs or an approved revision. Unseen workflows are excluded rather than silently approved. Prototype inspection validates reviewability only; production conformance requires real data, permissions, transitions, persistence and supported environments.
+v0.1 was the first proposal; the owner subsequently rejected its visual direction. No approval has been received. Every change after approval must map to these IDs or an approved revision. Unseen workflows are excluded rather than silently approved. Prototype inspection validates reviewability only; production conformance requires real data, permissions, transitions, persistence and supported environments.

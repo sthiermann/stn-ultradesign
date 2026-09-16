@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="470" viewBox="0 0 1280 470" role="img" aria-labelledby="title desc">
+  <title id="title">The STN Ultradesign method</title>
+  <desc id="desc">Audit, Concept, Approve, Implement, Verify. Evidence informs a product-specific concept. Refine its structure and visual craft with the user; then implement the approved version and verify behavior, accessibility and fidelity. The loop returns new findings to design decisions.</desc>
+  <!-- Original artwork. Copyright 2026 Sven Thiermann. MIT License. -->
+  <rect width="1280" height="470" fill="#101820"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="48" y="49" fill="#dfbd62" font-size="13" font-weight="700" letter-spacing="2">THE METHOD</text>
+    <text x="48" y="94" fill="#f4f3ee" font-size="30" font-weight="700" letter-spacing="-.7">Make decisions visible. Carry them through.</text>
+    <path d="M48 127H1232" stroke="#34424d"/>
+    <!-- The review loop belongs to the concept before production work. -->
+    <path d="M312 191V162H570V191" fill="none" stroke="#718690" stroke-width="1.5"/>
+    <path d="M565 184L570 191L575 184" fill="none" stroke="#718690" stroke-width="1.5"/>
+    <rect x="355" y="152" width="176" height="21" fill="#101820"/>
+    <text x="443" y="168" text-anchor="middle" fill="#b6c3ca" font-size="13" letter-spacing=".7">REVIEW + REFINE</text>
+    <!-- Step connectors remain quiet; the approval boundary is the accent. -->
+    <path d="M67 214H1197" stroke="#536973" stroke-width="2"/>
+    <path d="M613 214H807" stroke="#dfbd62" stroke-width="2"/>
+    <path d="M795 208L805 214L795 220" fill="none" stroke="#dfbd62" stroke-width="2"/>
+    <g fill="#101820" stroke="#8da1ab" stroke-width="2">
+      <circle cx="68" cy="214" r="17"/>
+      <circle cx="312" cy="214" r="17"/>
+      <circle cx="816" cy="214" r="17"/>
+      <circle cx="1060" cy="214" r="17"/>
+    </g>
+    <path d="M588 190L612 214L588 238L564 214Z" fill="#dfbd62"/>
+    <g fill="#e1e7e9" font-size="13" text-anchor="middle" font-weight="700">
+      <text x="68" y="219">01</text>
+      <text x="312" y="219">02</text>
+      <text x="816" y="219">04</text>
+      <text x="1060" y="219">05</text>
+    </g>
+    <text x="588" y="219" fill="#101820" font-size="13" text-anchor="middle" font-weight="700">03</text>
+    <g font-size="27" font-weight="700" fill="#f4f3ee" letter-spacing="-.6">
+      <text x="48" y="278">Audit</text>
+      <text x="292" y="278">Concept</text>
+      <text x="558" y="278" fill="#dfbd62">Approve</text>
+      <text x="796" y="278">Implement</text>
+      <text x="1040" y="278">Verify</text>
+    </g>
+    <g fill="#b8c6ce" font-size="17">
+      <text x="48" y="310">Inventory + evidence</text>
+      <text x="48" y="335">Every usage in scope</text>
+      <text x="292" y="310">Structure + visual craft</text>
+      <text x="292" y="335">Rendered and critiqued</text>
+      <text x="558" y="310">Your reviewed version</text>
+      <text x="558" y="335">A concrete design contract</text>
+      <text x="796" y="310">Decisions into code</text>
+      <text x="796" y="335">Complete user journeys</text>
+      <text x="1040" y="310">Behavior + fidelity</text>
+      <text x="1040" y="335">Evidence of the result</text>
+    </g>
+    <path d="M1060 364V402H312V365M307 373L312 365L317 373" fill="none" stroke="#718690" stroke-width="1.5"/>
+    <rect x="432" y="390" width="519" height="24" fill="#101820"/>
+    <text x="691" y="407" text-anchor="middle" fill="#b6c3ca" font-size="14" letter-spacing=".25">New findings inform the next decision. Approval stays scoped.</text>
+    <path d="M0 469.5H1280" stroke="#36434d"/>
+  </g>
+</svg>

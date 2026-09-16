@@ -1,6 +1,6 @@
-# Identity, authorization and account control
+# Account and access workflows
 
-Load for sign-in, registration, passkeys, MFA, account recovery, sessions, permissions, roles, invitations, sharing, tenant switching or security settings. Access date: 2026-09-16. This module audits the user experience and its security dependencies. It does not certify backend security from screenshots. Source paragraphs summarize published guidance; audit decisions are this skill's original method.
+Load for the user experience of sign-in, registration, passkeys, MFA, account recovery, sessions, permissions, roles, invitations, sharing, tenant switching or security settings. Access date: 2026-09-16. Review what people see, understand and can accomplish: layout, instructions, decisions, feedback and recovery. Do not obtain credentials, inspect secret stores or bypass an unavailable role. Use authorized test fixtures and user-controlled authentication under the boundary in `SKILL.md`. Standards below constrain the design; they do not turn a UX audit into a backend security assessment. Source paragraphs summarize published guidance; audit decisions are this skill's original method.
 
 ## 1. Establish the identity model
 

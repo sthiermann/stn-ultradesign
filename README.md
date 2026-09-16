@@ -1,97 +1,142 @@
 # STN Ultradesign
 
-**Oberflächen verstehen. Konzepte abstimmen. Gestaltung überprüfbar umsetzen.**
+<picture>
+  <source media="(max-width: 640px)" srcset="assets/brand/hero-compact.svg">
+  <img src="assets/brand/hero.svg" alt="STN Ultradesign. Design the whole experience. Product-specific design across desktop, tablet and phone." width="1280">
+</picture>
 
-STN Ultradesign ist ein eigenständig entwickelter Design-Skill für Codex und Claude Code. Er verbindet UI/UX-Audits, visuelle Gestaltung, vollständige Nutzerabläufe, Barrierefreiheit und HTML/CSS/React-Engineering. Für bestehende Anwendungen ebenso wie für neue Produkte auf Desktop, Tablet und Smartphone.
+[![Validate package](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml/badge.svg)](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml)
+**v0.2.0 · MIT · Codex + Claude Code**
 
-Das Ziel: Entscheidungen, die sich am Produkt und seinen Nutzern begründen lassen — vom Abstand eines Labels bis zur Wiederaufnahme eines unterbrochenen Workflows.
+**A design skill for the entire product: visual craft, complete workflows, and implementation you can verify.**
 
-[Installation](docs/installation.md) · [Skill lesen](skills/stn-ultradesign/SKILL.md) · [Forschungsgrundlage](docs/research/overview.de.md) · [Prüfstand](docs/quality/evaluation.md) · [Quellen](skills/stn-ultradesign/references/sources.md) · [Mitwirken](CONTRIBUTING.md) · [MIT-Lizenz](LICENSE)
+STN Ultradesign helps coding agents examine existing interfaces, develop distinctive design concepts, and carry approved decisions into HTML, CSS, and React. It connects the composition of a screen to the task behind it — and follows that task through loading, editing, failure, recovery, and completion.
 
-## Vom Auftrag zum geprüften Ergebnis
+Built for desktop, tablet, and phone. Grounded in primary design sources. Organized around your product's users, language, and existing identity.
 
-```mermaid
-flowchart LR
-    A[Aufgaben und Produkt verstehen] --> B[Oberflächen und Abläufe prüfen]
-    B --> C[Konkretes Konzept entwickeln]
-    C --> D[Gemeinsam verfeinern]
-    D --> E{Konzept freigegeben?}
-    E -->|Weitere Anpassungen| D
-    E -->|Ja| F[Getreu implementieren]
-    F --> G[Verhalten und Gestaltung prüfen]
-    B --> H[Audit mit Befunden und Abdeckung]
-```
+[**Get started →**](docs/installation.md) · [Read the skill](skills/stn-ultradesign/SKILL.md) · [Research](docs/research/overview.md) · [Evaluation](docs/quality/evaluation.md) · [Privacy](PRIVACY.md)
 
-Bei einem neuen Design oder größeren Redesign steht ein überprüfbares Konzept vor der Produktionsumsetzung. Die Freigabe bezieht sich auf konkrete Ansichten, Komponenten, Zustände und Entscheidungen. Bereits erteilte Freigaben bleiben für diesen Umfang gültig. Ein ausdrücklicher Auftrag zur direkten Umsetzung hat Vorrang.
+## From evidence to a coherent experience
 
-## Vier Arbeitsweisen
+<picture>
+  <source media="(max-width: 640px)" srcset="assets/brand/method-compact.svg">
+  <img src="assets/brand/method.svg" alt="Audit → Concept → Approve → Implement → Verify. Evidence informs the concept; review and refine it before approval. Implement the reviewed version and verify behavior, accessibility, and visual fidelity." width="1280">
+</picture>
 
-| Arbeitsweise | Ergebnis |
+For substantial design work, the default is **concept → refinement → your approval → implementation**. Approval applies to specific views, states, and decisions. Existing approval remains valid for that scope; an explicit request to implement directly takes precedence. Audit-only work produces findings without silently authorizing a redesign.
+
+| Start with… | Receive… |
 | --- | --- |
-| **Audit** | Inventar, beobachtete Probleme, Prioritäten, Belege und sichtbare Prüflücken. |
-| **Konzept zuerst** | Ansichten und Interaktionen, Alternativen bei relevanten Entscheidungen, gemeinsame Verfeinerung und dokumentierte Freigabe. |
-| **Freigegebenes Konzept umsetzen** | Implementierung mit nachvollziehbarer Verbindung zwischen Designentscheidungen, Komponenten und Prüfungen. |
-| **Gezielt verbessern** | Eine vereinbarte Komponente, ein Ablauf oder ein konkreter Fehler mit angemessenem Prüfumfang. |
+| **A complete frontend audit** | A reconciled inventory, prioritized findings, supporting evidence, and a resumable coverage record. |
+| **A new design direction** | A preference brief, a product-specific visual thesis, meaningful structural alternatives, rendered concepts, and decisions ready for review. |
+| **An approved concept** | An implementation traced to the agreed layout, components, behavior, and acceptance criteria. |
+| **One focused improvement** | A proportionate review and change to the requested component or workflow. |
 
-Die Arbeitsweise wird im normalen Auftrag beschrieben. Es sind keine zusätzlichen technischen Unterbefehle erforderlich.
+## The application’s purpose comes first
 
-## Was der Skill untersucht
+A monitoring grid needs useful image coverage and fast exception detection. An editor needs room to work. An administrative change needs understandable consequences and recovery. The skill establishes the primary task, meaningful unit of work, operating conditions, and observable success criteria before allocating screen space. Every persistent region must justify the attention and space it consumes.
 
-| Bereich | Beispiele |
+Twenty tailored questions are a minimum for substantial concept work, not a ceiling. Ask further questions when an unresolved task, navigation, material, color, density, or workflow decision would materially change the result. Reuse confirmed answers.
+
+## Craft is part of the method
+
+An attractive component does not make a coherent product. STN Ultradesign asks what deserves attention, which relationships should be visible, and how composition supports the next decision.
+
+- **Start with the domain.** Establish the main task, information hierarchy, constraints, and visual thesis before choosing the treatment.
+- **Compare structure.** Explore materially different arrangements using the same task and content. A new accent color is not a new concept.
+- **Give each surface a purpose.** A monitoring workspace, a permissions editor, and an API reference need different compositions. Shared tokens connect them.
+- **Inspect what actually renders.** Examine target sizes, difficult content, and relevant states. Critique typography, density, alignment, rhythm, and interaction; then revise.
+- **Keep two judgments separate.** Functional checks establish behavior. Visual review and user feedback establish whether the design meets the intended standard. Rejected concepts stay open.
+
+Existing brand and platform conventions are inputs to a deliberate design decision. Recommendations explain whether they follow an applicable standard, an established usability practice, a product constraint, or a matter of taste.
+
+## Your preferences before the first concept
+
+Substantial concept work starts with a structured brief of **at least 20 meaningful preference questions** tailored to the product. Previously confirmed answers carry forward. Establish the intended character, information density, layout priorities, typography, color, shape, motion, device behavior, and what already works for you. The brief makes the difference between established best practice and aesthetic preference clear, so you can make informed choices.
+
+Those answers become design inputs and acceptance criteria. Reviewable alternatives then show their consequences in the actual product. See the [discovery and preference method](skills/stn-ultradesign/references/discovery-and-preferences.md).
+
+## No silent feature loss
+
+A redesign must account for what the product already does. Build an **old → new feature map** recording location, role access, behavior, states, and proposed destination. A full-product redesign maps every discovered capability. A bounded concept or focused fix maps its requested scope plus all transitively affected shared usages and dependencies. Audit-only work records the current baseline without inventing proposed destinations. A cleaner composition does not authorize dropping a capability.
+
+Preserve existing **light/dark modes, supported languages, density options, and every chart or graph type**. Moving, merging, or changing a feature must preserve its usable capability or follow an explicitly agreed change. Verify affected capabilities and variants against the mapping before calling the redesign complete; a narrow fix does not require redesigning unrelated areas. See the [feature-parity method](skills/stn-ultradesign/references/feature-parity.md).
+
+Modernity is more than an effect. The [navigation and materials guide](skills/stn-ultradesign/references/navigation-and-materials.md) examines current Apple guidance, including WWDC26, alongside Google and Microsoft patterns. It translates references into product-specific decisions with readable fallbacks and explicit web implementation limits.
+
+## Coverage beyond the happy path
+
+| Capability | Decisions the skill makes explicit |
 | --- | --- |
-| Produkt und Struktur | Nutzeraufgaben, Informationsarchitektur, Navigation, Inhalt, Rollen und Erfolgskriterien. |
-| Visuelles System | Layout, Hierarchie, Abstände, Typografie, Farbe, Formen, Icons, Bewegung und Design-Tokens. |
-| Geräte und Eingabe | Anpassung an verfügbare Fläche, Maus, Tastatur, Touch, Zoom und Nutzereinstellungen. |
-| Komponenten und Abläufe | Formulare, Dialoge, Wizards, Suche, Filter, Einstellungen, Bearbeitung und Rückmeldungen. |
-| Identität und Berechtigungen | Anmeldung, Sitzungen, Wiederherstellung, Rollen, Organisationen und verweigerter Zugriff. |
-| Datenoberflächen | Tabellen, Diagramme, Dashboards, Widgets und Beziehungsgraphen einschließlich Datenqualität. |
-| Business-Verwaltung | Persönliche, Organisations- und Projekteinstellungen; Mitglieder, Einladungen, Rollen, Verantwortlichkeiten und Zugriffsgrenzen, soweit im Produkt vorhanden. |
-| Entwicklerzugriff | Persönliche und technische API-Tokens, Service Accounts, Webhooks, Zustellungen und verständliche OpenAPI-Dokumentation. |
-| Umsetzung | Semantisches HTML, belastbares CSS, React-Zustände, Komponenten und Performance. |
-| Verifikation | Visuelle Übereinstimmung, kritische Aufgaben, Tastaturbedienung, Barrierefreiheit und Fehlerzustände. |
+| **Visual systems** | Layout, hierarchy, type, spacing, color, shape, iconography, motion, and design tokens. |
+| **Navigation & materials** | Adaptive hierarchy, sidebars, navigation stacks, list/detail, contextual drawers, Liquid Glass references, shape, elevation, and purposeful motion. |
+| **Adaptive interfaces** | Available space, content, touch, keyboard, pointer, zoom, and user preferences. |
+| **Product workflows** | Navigation, forms, wizards, search, filters, settings, editing, pending actions, and recovery. |
+| **Account & access UX** | Sign-in and recovery screens, session controls, role explanations, permission states, and the placement of personal versus administrative settings. |
+| **Business administration** | Member and invitation journeys, scope, ownership, role changes, and governance where the product actually needs them. |
+| **Developer experience** | API-access screens, service-account workflows, webhook configuration, delivery feedback, and readable API documentation. |
+| **Data interfaces** | Tables, charts, dashboards, widgets, relationship graphs, missing data, and uncertainty. |
+| **Accessible engineering** | Semantic HTML, resilient CSS, React state, performance, focus, keyboard interaction, and verification. |
 
-**Ein vollständiger Audit umfasst jede Seite, jede Komponentenverwendung, jedes Widget, jede Drilldown-Ebene und sämtliche definierten relevanten Workflows, Zustände und Übergänge.** Große Anwendungen werden in fortsetzbaren Etappen geprüft. Nicht erreichbare Bereiche bleiben als offene Lücken sichtbar. Repräsentative Seiten ersetzen keinen vollständigen Audit; eine Stichprobe setzt eine ausdrücklich vereinbarte Änderung des Umfangs voraus. Ein Screenshot gilt nicht als Nachweis für funktionierende Interaktion oder sichere Autorisierung.
+**A full audit means every discovered page, component usage, widget, dialog, drilldown level, and defined relevant workflow, state, and transition in scope.** Large products are covered in resumable batches. A shared-component check does not replace its usage contexts. Inaccessible areas remain gaps. A reduced sample needs an agreed scope change and cannot close the original full-audit claim.
 
-## Direkt loslegen
+The included coverage validator checks the consistency of the audit's declared inventory, obligations, and evidence. It does not inspect the application or certify design quality, security, or discovery completeness.
 
-Nach der [Installation](docs/installation.md) in Codex:
+## Put it to work
 
-```text
-$stn-ultradesign Auditiere das gesamte Frontend. Erfasse jede Seite,
-Komponentenverwendung, jedes Widget und jede Drilldown-Ebene sowie alle
-definierten Workflows und relevanten Zustände. Liefere priorisierte Befunde
-mit Belegen und vollständiger, fortsetzbarer Prüfabdeckung.
-```
+Install the [Codex skill or Claude Code plugin](docs/installation.md), then describe the work in ordinary language.
+
+**Audit an existing application**
 
 ```text
-$stn-ultradesign Entwickle ein neues Designkonzept für diese Anwendung.
-Zeige die wichtigsten Ansichten für Desktop, Tablet und Smartphone.
-Verfeinere das Konzept mit mir und warte vor der Produktionsumsetzung
-auf meine Freigabe.
+$stn-ultradesign Audit the entire frontend. Inventory every page,
+component usage, widget, drilldown, and defined workflow and relevant state.
+Prioritize findings with evidence. Preserve unresolved coverage as gaps.
 ```
+
+**Develop a direction before changing production**
 
 ```text
-$stn-ultradesign Setze das freigegebene Konzept um. Ordne die Änderungen
-den vereinbarten Designentscheidungen zu und prüfe Verhalten, Barrierefreiheit
-und visuelle Übereinstimmung.
+$stn-ultradesign Develop a design concept for this application.
+Compare structural alternatives for its main tasks, render the chosen
+direction across target sizes, and refine it with me. Wait for my concept
+approval before changing the production implementation.
 ```
 
-In Claude Code heißt derselbe Skill nach Plugin-Installation
-`/stn-ultradesign:stn-ultradesign`. Bei Installation als einzelner Claude-Skill
-lautet der Aufruf `/stn-ultradesign`.
+**Implement an agreed design**
 
-## Nachvollziehbare Entscheidungen
+```text
+$stn-ultradesign Implement the approved concept. Trace the changes to
+its design decisions and verify behavior, accessibility, and visual fidelity.
+```
 
-Der Skill unterscheidet Standards, Herstellerempfehlungen, Forschung, Heuristiken und eigene Produktentscheidungen. Markenidentität und vorhandene Komponenten zählen genauso wie neue Möglichkeiten der Plattformen. Die Referenzen werden passend zur Aufgabe geladen; sie sollen konkrete Entscheidungen unterstützen.
+In Claude Code, use `/stn-ultradesign:stn-ultradesign` after plugin installation, or `/stn-ultradesign` for a standalone skill. The skill follows the language of your request; repository documentation is English.
 
-Zum Paket gehören eine Audit-Vorlage, ein Prüfer für deren Konsistenz und Abdeckung sowie eine Vorlage für den Designvertrag. Der Prüfer untersucht die Dokumentation des Audits. Er bewertet nicht automatisch die Qualität einer Anwendung.
+## Account and access reviews are UX work
 
-**Version 0.1.0** ist die erste Version dieses Verfahrens. Eine universelle Überlegenheit oder eine Verbesserung um einen festen Prozentsatz ist nicht nachgewiesen. Aussagen über tatsächliche Qualität brauchen reproduzierbare Aufgaben, Vergleichsbedingungen und Ergebnismessungen. Das [Evaluationsverfahren](skills/stn-ultradesign/references/skill-evaluation.md) beschreibt, wie solche Vergleiche durchgeführt werden können.
+This capability examines **interface layout, navigation, explanations, and user workflows**. Use synthetic fixtures, an already authenticated session, or sign-in completed by the user. It does not ask the agent to collect passwords, retrieve tokens, inspect credential stores, or harvest session data.
 
-## Inhalt und Voraussetzungen
+An audit does not authorize creating or revoking real credentials, changing real permissions, or sending real webhook tests. Evidence should contain the minimum needed to explain a design issue. The package adds no hooks, telemetry, MCP servers, or external services; these are operating instructions, not a technical sandbox. See the [privacy and access boundary](PRIVACY.md).
 
-Ein Skill mit thematischen Referenzen, eigenen Vorlagen und einem lokalen Python-Prüfer. Die Plugin-Manifeste konfigurieren keine Hooks, MCP-Server oder externen Dienste. Für die Arbeit an einer Anwendung nutzt der Agent die im jeweiligen Projekt vorhandenen Werkzeuge und Berechtigungen; Browserzugriff und geeignete Testdaten verbessern die Prüftiefe. Python 3 wird nur für den optionalen Audit-Prüfer benötigt.
+## Open method. Honest evidence.
 
-Die Dokumentation richtet sich auf Deutsch an Anwender. Die operativen Skill-Anweisungen sind auf Englisch verfasst; der Skill soll in der Sprache des jeweiligen Auftrags kommunizieren.
+The reference library distinguishes **standards, platform guidance, research, heuristics, and product decisions**. Its primary sources include W3C, Apple, Google, Microsoft, IBM, and influential design researchers. Sources inform the method; their authors do not endorse this project. See the [source index](skills/stn-ultradesign/references/sources.md) and [research notes](docs/research/overview.md).
 
-Quellen und Installationshinweise: geprüft am **16. September 2026**. Veränderliche Plattformregeln und APIs müssen bei ihrer Anwendung erneut geprüft werden. Hinweise zu Urheberschaft und externen Quellen stehen in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+The repository includes original instructions, progressive references, an audit ledger template, a design contract, a local Python validator, and synthetic evaluation fixtures. Package checks and coverage tests are automated. Actual client installation, application behavior, user research, and aesthetic acceptance are reported separately in the [evaluation record](docs/quality/evaluation.md).
+
+**Version 0.2.0 is an early release.** There is no validated claim of universal superiority or a fixed percentage improvement. The evaluation record preserves unsuccessful outcomes too, including an early synthetic concept rejected for its visual quality. That feedback informed stronger concept and craft requirements; it is not counted as a passed design evaluation.
+
+## Development priorities
+
+| Available now | Next evidence to establish |
+| --- | --- |
+| Full-audit inventory and coverage rules | Broader trials on realistic products, including deep administrative workflows. |
+| Concept approval and implementation contracts | Repeated, independently reviewed concept-to-code exercises across device sizes. |
+| Synthetic fixtures and local consistency checks | Reproducible task outcomes and visual assessments under documented conditions. |
+| Source-linked specialist references | Ongoing review of changing platform guidance and client installation behavior. |
+
+These are development priorities, not promised results or release dates. Improvements should earn their place through clearer decisions and better observed outcomes.
+
+---
+
+Created by [Sven Thiermann](https://github.com/sthiermann). Original project content is released under the [MIT License](LICENSE). [Contribute](CONTRIBUTING.md) · [Source and copyright notices](THIRD_PARTY_NOTICES.md)

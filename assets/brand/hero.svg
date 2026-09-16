@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">STN Ultradesign — Design the whole experience</title>
+  <desc id="desc">An original editorial illustration in dark slate and signal gold. A bold product statement sits beside an abstract composition of desktop, tablet and phone frames. It represents coherent structure across different surfaces, not a screenshot or a measured product outcome.</desc>
+  <!-- Original artwork. Copyright 2026 Sven Thiermann. MIT License. -->
+  <rect width="1280" height="640" fill="#101820"/>
+  <path d="M0 639.5H1280" stroke="#36434d"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <path d="M57 43H76V49H63V62H57ZM79 68H98V49H92V62H79Z" fill="#dfbd62"/>
+    <text x="116" y="64" fill="#f4f3ee" font-size="20" font-weight="700" letter-spacing="2.4">STN ULTRADESIGN</text>
+    <text x="1224" y="62" text-anchor="end" fill="#a9b5bd" font-size="14" letter-spacing="2">DESIGN SKILL / 0.1</text>
+    <path d="M56 96H1224" stroke="#34424d"/>
+    <text x="56" y="210" fill="#f4f3ee" font-size="76" font-weight="700" letter-spacing="-3.3">Design the</text>
+    <text x="56" y="296" fill="#f4f3ee" font-size="76" font-weight="700" letter-spacing="-3.3">whole experience.</text>
+    <path d="M59 326H132" stroke="#dfbd62" stroke-width="4"/>
+    <text x="58" y="373" fill="#c1cbd1" font-size="24">A deliberate system.</text>
+    <text x="58" y="408" fill="#c1cbd1" font-size="24">From the first screen to the final state.</text>
+    <g stroke="#34424d">
+      <path d="M58 474H710"/>
+      <path d="M265 494V546M491 494V546"/>
+    </g>
+    <g fill="#dfbd62" font-size="13" font-weight="700" letter-spacing="1.7">
+      <text x="58" y="507">01 / EVIDENCE</text>
+      <text x="289" y="507">02 / DIRECTION</text>
+      <text x="515" y="507">03 / FIDELITY</text>
+    </g>
+    <g fill="#e4e8e9" font-size="19">
+      <text x="58" y="541">Understand the product</text>
+      <text x="289" y="541">Refine the concept</text>
+      <text x="515" y="541">Verify the result</text>
+    </g>
+    <text x="58" y="603" fill="#8f9fa9" font-size="13" letter-spacing="1.4">DESKTOP · TABLET · PHONE</text>
+    <!-- Shared alignment guides, purposely visible as a design drawing. -->
+    <g stroke="#2b3944" stroke-dasharray="3 7">
+      <path d="M764 128V582M1012 128V582M1224 128V582"/>
+      <path d="M746 157H1238M746 434H1238M746 574H1238"/>
+    </g>
+    <!-- Desktop composition. -->
+    <rect x="788" y="157" width="436" height="277" rx="4" fill="#16222c" stroke="#647885" stroke-width="1.5"/>
+    <path d="M788 187H1224" stroke="#435661"/>
+    <circle cx="805" cy="172" r="3" fill="#dfbd62"/>
+    <circle cx="816" cy="172" r="3" fill="#617581"/>
+    <circle cx="827" cy="172" r="3" fill="#617581"/>
+    <path d="M808 214H870M808 225H850M808 247H854M808 258H864M808 280H849" stroke="#566b78" stroke-width="3"/>
+    <path d="M891 206V416" stroke="#40535f"/>
+    <text x="914" y="267" fill="#edf0ed" font-size="53" font-weight="700" letter-spacing="-3">Aa</text>
+    <path d="M914 290H1189M914 309H1150" stroke="#647b88" stroke-width="4"/>
+    <path d="M914 336H1119" stroke="#dfbd62" stroke-width="2"/>
+    <path d="M914 355H1174M914 370H1097M914 385H1143" stroke="#405662" stroke-width="3"/>
+    <!-- Tablet changes the spatial relationship; phone changes the hierarchy. -->
+    <rect x="764" y="394" width="264" height="174" rx="7" fill="#1a2b36" stroke="#8ba0ac" stroke-width="1.5"/>
+    <path d="M782 416H1010" stroke="#617c8d"/>
+    <path d="M782 437H899M782 451H883" stroke="#cfdae0" stroke-width="5"/>
+    <path d="M782 477H844M782 490H883M782 503H867M782 516H890" stroke="#6d8797" stroke-width="3"/>
+    <path d="M921 432V544" stroke="#5f7889"/>
+    <path d="M941 445H1008M941 465H986M941 485H998" stroke="#dfbd62" stroke-width="4"/>
+    <rect x="1066" y="341" width="138" height="239" rx="14" fill="#101820" stroke="#dfbd62" stroke-width="2"/>
+    <path d="M1115 354H1154" stroke="#dfbd62" stroke-width="3" stroke-linecap="round"/>
+    <rect x="1078" y="378" width="114" height="181" fill="#1a2b36"/>
+    <path d="M1090 395H1125" stroke="#dfbd62" stroke-width="3"/>
+    <path d="M1090 419H1179M1090 435H1166" stroke="#e2e7e8" stroke-width="6"/>
+    <path d="M1090 462H1180M1090 475H1158M1090 488H1172" stroke="#698493" stroke-width="3"/>
+    <path d="M1090 524H1165" stroke="#dfbd62" stroke-width="10"/>
+    <g fill="#dfbd62" font-size="12" letter-spacing="1.4">
+      <text x="788" y="142">ONE DESIGN LOGIC</text>
+      <text x="1224" y="607" text-anchor="end">DIFFERENT COMPOSITIONS</text>
+    </g>
+  </g>
+</svg>

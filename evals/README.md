@@ -1,18 +1,18 @@
-# Synthetische Evaluationen
+# Synthetic evaluations
 
-Diese Dateien wurden für die Entwicklung von STN Ultradesign selbst erstellt. Sie enthalten keine echte Kundenanwendung, keine gültigen Zugangsdaten und keine produktiven Integrationen.
+These files were independently created while developing STN Ultradesign. They contain no real customer application, valid credentials or production integrations.
 
-| Aufgabe | Eingabe | Archiviertes Ergebnis |
+| Task | Input | Archived result |
 | --- | --- | --- |
-| Vollständigen Audit durchführen, Grenzen offenlegen | [Auftrag](audit-fixture/task.md), [absichtlich fehlerhafte Mini-Anwendung](audit-fixture/index.html) | [Auditbericht](audit-result.md) |
-| Konzept vor Produktionsfreigabe entwickeln | [Brief](concept-fixture/brief.md) | [Konzept](concept-output/index.html), [Review](concept-output/review.md), [Vertrag](concept-output/design-contract.md), [Prüfprotokoll](concept-output/verification.md) |
+| Conduct a full audit and disclose limitations | [Task](audit-fixture/task.md), [deliberately defective mini application](audit-fixture/index.html) | [Audit report](audit-result.md) |
+| Develop a concept before production approval | [Brief](concept-fixture/brief.md) | [Concept](concept-output/index.html), [review](concept-output/review.md), [contract](concept-output/design-contract.md), [verification record](concept-output/verification.md) |
 
-Für einen unabhängigen Wiederholungslauf nur den jeweiligen Auftrag, den Skill und die dort genannten Eingaben geben. Das archivierte Ergebnis darf dem evaluierenden Agenten nicht vorab als Musterantwort dienen. Neue Ergebnisse unter `work/evaluation/` ablegen, damit die hier dokumentierte Ausgangsevaluation erhalten bleibt.
+For an independent repeat, provide only the relevant task, the skill and the inputs named by that task. Do not give the evaluating agent the archived result as a model answer. Save new results under `work/evaluation/` to preserve the development evaluation recorded here.
 
-Die Audit-Fixture enthält bewusst Defekte. Sie ist weder ein Produktionsstarter noch eine empfohlene Komponentenimplementierung. Bei Bedarf ausschließlich lokal aus dem Repository-Stamm bereitstellen:
+The audit fixture intentionally contains defects. It is neither a production starter nor a recommended component implementation. If needed, serve it locally from the repository root:
 
 ```sh
 python3 -m http.server 8767 --bind 127.0.0.1 --directory evals/audit-fixture
 ```
 
-Die HTML-Dateien benötigen keine externen Ressourcen. Aktuelle Browser-/Werkzeugverfügbarkeit und tatsächlich durchgeführte Tests beim Wiederholen neu protokollieren. Die [Qualitätsübersicht](../docs/quality/evaluation.md) erklärt die Grenzen der bisherigen Ergebnisse.
+The HTML files require no external resources. Record current browser/tool availability and the tests actually performed when repeating a task. The [quality overview](../docs/quality/evaluation.md) explains the limits of earlier results. Prompts and reports are published in English; translation does not turn historical observations into a new evaluation run.

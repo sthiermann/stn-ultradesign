@@ -1,92 +1,92 @@
-# Recherche: Workflows, Barrierefreiheit, Identität und Berechtigungen
+# Research: workflows, accessibility, identity and permissions
 
-Recherche- und Zugriffsdatum: **16. September 2026**. Verwendet wurden öffentlich zugängliche Primärquellen der jeweiligen Herausgeber. Die operativen Module sind eigenständig formuliert; fremde Skills, Quelltexte, Vorlagen oder Assets wurden nicht übernommen. Dieser Bericht ordnet Quellen und Grenzen ein. Die ausführlichen, direkt anwendbaren Prüfverfahren stehen in `skills/stn-ultradesign/references/`.
+Research and access date: **September 16, 2026**. Sources are publicly accessible primary publications from their respective publishers. Operational modules are independently authored; no third-party skills, source code, templates or assets were incorporated. This report explains source authority and limits. Detailed review procedures appear in `skills/stn-ultradesign/references/`.
 
-## Ergebnis und notwendige Unterscheidungen
+## Findings and necessary distinctions
 
-Ein belastbarer Design-Skill braucht drei getrennte Ebenen: technische Anforderungen mit prüfbaren Kriterien, kontextgebundene veröffentlichte Gestaltungsmuster und eigene begründete Produktentscheidungen. Diese Ebenen dürfen im Audit nicht unter dem gemeinsamen Etikett „weltweiter Standard“ verschwinden. Dieselbe Bildschirmgestaltung kann in einer öffentlichen Antragsstrecke sinnvoll und in einem häufig benutzten professionellen Editor hinderlich sein.
+A dependable design skill needs three separate layers: technical requirements with testable criteria, contextual published patterns, and reasoned product decisions. An audit must not collapse these into one label of “global standards.” A screen structure that helps an occasional public application process can obstruct a frequently used professional editor.
 
-WCAG 2.2 ist eine W3C Recommendation; die aktuell veröffentlichte Fassung trägt das Datum 12. Dezember 2024. Ihre Erfolgskriterien und Konformitätsregeln sind von erläuternden Understanding-Dokumenten zu unterscheiden. AA umfasst die zutreffenden A- und AA-Kriterien. Eine geprüfte Komponente allein belegt keine Konformität eines vollständigen Prozesses. [Quelle 1](https://www.w3.org/TR/WCAG22/)
+WCAG 2.2 is a W3C Recommendation; the current published document is dated December 12, 2024. Its success criteria and conformance rules differ from explanatory Understanding documents. AA includes applicable A and AA criteria. A checked component does not establish conformance of an entire process. [Source 1](https://www.w3.org/TR/WCAG22/)
 
-Die präzise Einstufung verhindert typische Fehlbehauptungen: 24×24 CSS-Pixel sind der AA-Ausgangspunkt für Zielgrößen mit definierten Ausnahmen; 44×44 ist das gesonderte AAA-Kriterium. Ein gewünschtes größeres Touch-Ziel bleibt eine sinnvolle Produktentscheidung, muss aber richtig begründet werden. Focus Appearance ist AAA; Focus Not Obscured Minimum ist AA und verbietet vollständiges Verdecken durch vom Autor erzeugten Inhalt. [Quelle 2](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html), [Quelle 4](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html), [Quelle 5](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html)
+Precise classification prevents common misstatements: 24×24 CSS pixels is the AA target-size baseline with defined exceptions; 44×44 is the separate AAA criterion. Larger touch targets can remain a useful product choice, but their rationale must be accurate. Focus Appearance is AAA; Focus Not Obscured Minimum is AA and prohibits complete obscuration by author-created content. [Source 2](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html), [Source 4](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html), [Source 5](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html)
 
-Die WAI-ARIA Authoring Practices sind Umsetzungshilfen, keine Zusicherung, dass jedes Beispiel in jeder Browser-/Hilfsmittelkombination sofort produktionsreif funktioniert. COGA ist ergänzende kognitive Gestaltungshilfe, kein weiterer WCAG-Konformitätskatalog. Das Prüfverfahren muss deshalb technische Tests, reale Interaktion und menschliches Urteil verbinden. [Quelle 11](https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/), [Quelle 12](https://www.w3.org/TR/coga-usable/), [Quelle 13](https://www.w3.org/WAI/test-evaluate/tools/selecting/)
+WAI-ARIA Authoring Practices provide implementation guidance, not a guarantee that every example is immediately production-ready in every browser/assistive-technology combination. COGA supplements cognitive accessibility guidance rather than adding another WCAG conformance catalog. Verification must combine technical tests, real interaction and human judgment. [Source 11](https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/), [Source 12](https://www.w3.org/TR/coga-usable/), [Source 13](https://www.w3.org/WAI/test-evaluate/tools/selecting/)
 
-Für Authentifizierung ist die finale NIST SP 800-63B-4 vom Juli 2025 maßgeblich für Aussagen über diesen NIST-Stand; ältere Entwürfe unterscheiden sich. Die Veröffentlichung ist keine pauschale Rechtsvorschrift für jede weltweite Anwendung. Die konkrete Assurance- und Organisationsrichtlinie muss vor einer Änderung geklärt sein. [Quelle 22](https://pages.nist.gov/800-63-4/sp800-63b.html)
+The final NIST SP 800-63B-4 from July 2025 is the relevant version for claims about that NIST authentication guidance; earlier drafts differ. It is not automatically a legal requirement for every application worldwide. Establish the applicable assurance and organizational policy before proposing changes. [Source 22](https://pages.nist.gov/800-63-4/sp800-63b.html)
 
-## Konsequenz für unseren Skill
+## Implications for the skill
 
-Die folgenden Punkte sind die eigene Synthese dieser Recherche:
+The following points are our synthesis:
 
-1. **Workflows als Verträge formulieren.** Vor Implementierung müssen Akteur, Kontext, Einstieg, Voraussetzungen, Zustände, Übergänge, Validierung, Zurück/Abbrechen, Unterbrechung, Wiederaufnahme, Seiteneffekte und Erfolg feststehen. Desktop, Tablet, Smartphone, Tastatur und Hilfsmittel gehören zum selben Vertrag.
-2. **Erst ein prüfbares Konzept abstimmen.** Das Konzept enthält reale Inhalte und relevante Fehlerzustände. Nach Verfeinerung und Nutzerfreigabe wird es nachvollziehbar umgesetzt. Materielle Abweichungen erfordern eine sichtbare Konzeptänderung, keine stillschweigende Umgestaltung.
-3. **Die tatsächliche Anwendung inventarisieren.** Routen, Rollen, Zustände und externe Schritte ergeben den Prüfumfang. Nicht zutreffende Muster werden begründet ausgeschlossen. Eine endlose pauschale Liste ersetzt keine vollständige Abdeckung der konkreten Software.
-4. **Bedeutungen trennen.** Leer, gefiltert leer, fehlende Berechtigung, Ladefehler, veraltet und offline sind unterschiedliche Zustände. Lokal gespeichert, zur Synchronisierung vorgemerkt und serverseitig gespeichert sind unterschiedliche Zusagen.
-5. **Fehlerfolgen prüfen.** Wiederholen darf Zahlungen, Einladungen und Veröffentlichungen nicht unbeabsichtigt duplizieren. Abbrechen, Schließen und serverseitig Beenden sind unterschiedliche Vorgänge. Bei unbekanntem Ergebnis muss eine sichere Statusprüfung möglich sein.
-6. **Sicherheitsgrenzen ausweisen.** Das Frontend erklärt Berechtigungen; ein ausgeblendeter Knopf beweist keine serverseitige Zugriffskontrolle. Ein schönes Passkey-Dialogdesign ersetzt weder Kontowiederherstellung noch korrekt implementierte Protokolle.
-7. **Verbesserung messbar machen.** Aufgabenabschluss, kritische Fehler, Erholung nach Fehlern, Zeit bis zum nutzbaren Ergebnis und Verständlichkeit sind die relevanten Vergleichsgrößen. Visuelle Modernität und tatsächliche Gebrauchstauglichkeit erhalten getrennte Evidenz.
+1. **Define workflows as contracts.** Before implementation, establish actor, scope, entry, prerequisites, states, transitions, validation, Back/Cancel, interruption, resumption, side effects and success. Desktop, tablet, phone, keyboard and assistive technology belong to the same contract.
+2. **Agree a reviewable concept first when redesign is requested.** Include realistic content and important failures. After refinement and approval, implement traceably. Material deviations need an explicit concept revision, not silent restyling. Audit-only work does not require implementation.
+3. **Inventory the actual application.** Routes, roles, states and external steps define coverage. Justify nonapplicable patterns. An endless generic checklist does not replace full coverage of the concrete product.
+4. **Distinguish meanings.** Empty, filtered empty, denied, load failure, stale and offline are different states. Locally saved, queued for synchronization and saved on the server are different promises.
+5. **Check failure consequences.** Retries must not unintentionally duplicate payments, invitations or publication. Canceling, closing and terminating a server process differ. Unknown outcomes need an appropriate status check.
+6. **State security boundaries.** Frontends explain permissions; hidden controls do not establish server authorization. Attractive passkey dialogs replace neither account recovery nor correct protocol implementation. Review legitimate sign-in/access UX without obtaining real passwords, tokens or sessions.
+7. **Measure improvement.** Task completion, critical errors, recovery, time to useful outcomes and comprehension support comparison. Visual modernity and actual usability need separate evidence.
 
-## Musterwahl und fachliche Grenzen
+## Pattern selection and domain limits
 
-GOV.UK empfiehlt, Frageprozesse zunächst mit einer Frage je Seite zu gestalten. Daraus folgt keine allgemeine Pflicht, professionelle Einstellungsoberflächen in viele einzelne Seiten zu zerlegen. USWDS beschreibt seinen Schrittindikator für lineare Sequenzen und grenzt nichtlineare beziehungsweise dynamisch verzweigte Formulare ab. Diese Unterschiede werden im Skill als Entscheidungsregeln erhalten. [Quelle 14](https://design-system.service.gov.uk/patterns/question-pages/), [Quelle 18](https://designsystem.digital.gov/components/step-indicator/)
+GOV.UK recommends starting question processes with one question per page. This is not a universal requirement to split professional settings into many separate pages. USWDS describes its step indicator for linear sequences and distinguishes nonlinear or dynamically branching forms. The skill preserves these boundaries as decision rules. [Source 14](https://design-system.service.gov.uk/patterns/question-pages/), [Source 18](https://designsystem.digital.gov/components/step-indicator/)
 
-FIDO dokumentiert sowohl Passkey-Verwaltung als auch Anmeldung und Rückfallmöglichkeiten. Der Geltungsbereich ist zu beachten: Consumer-UX mit synchronisierten Passkeys ist nicht automatisch die Sicherheitsrichtlinie einer regulierten Organisation. [Quelle 23](https://www.passkeycentral.org/design-guidelines/required-patterns/), [Quelle 24](https://www.passkeycentral.org/design-guidelines/principles)
+FIDO documents passkey management, sign-in and fallback paths. Scope matters: consumer UX with synchronized passkeys is not automatically the policy of a regulated organization. [Source 23](https://www.passkeycentral.org/design-guidelines/required-patterns/), [Source 24](https://www.passkeycentral.org/design-guidelines/principles)
 
-OWASP trennt Authentifizierung von Autorisierung und verlangt in seiner Autorisierungshilfe die Prüfung von Berechtigungen bei jeder Anfrage. Mandantenwechsel brauchen außerdem einen verlässlichen Kontext über Daten, Cache und Hintergrundarbeit hinweg. Diese Aussagen werden im Designaudit als Integrationsabhängigkeiten geführt; backendseitig nicht geprüfte Sicherheit wird ausdrücklich offen gelassen. [Quelle 26](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html), [Quelle 29](https://cheatsheetseries.owasp.org/cheatsheets/Multi_Tenant_Security_Cheat_Sheet.html)
+OWASP distinguishes authentication from authorization and recommends checking permissions on every request. Tenant changes also require consistent context across data, caches and background work. The design audit treats these as integration dependencies and explicitly leaves untested backend assurance unresolved. This is not an instruction to conduct penetration testing. [Source 26](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html), [Source 29](https://cheatsheetseries.owasp.org/cheatsheets/Multi_Tenant_Security_Cheat_Sheet.html)
 
-Die operativen Module behandeln außerdem Upload/Import/Export, Suche/Filter/Bulk-Auswahl, Benachrichtigungen, destruktive Aktionen, Kauf/Abonnement/Kündigung, Zusammenarbeit und KI-Workflows. Die ergänzenden Primärlinks stehen direkt neben den entsprechenden Aussagen in den Modulen. Es wird weder behauptet, dass alle Branchen ein einheitliches Verfahren hätten, noch dass die bloße Umsetzung eines Musters Rechtskonformität nachweise.
+Operational modules also cover upload/import/export, search/filter/bulk selection, notifications, destructive actions, purchase/subscription/cancellation, collaboration and AI workflows. Additional primary links appear beside the relevant claims. The skill claims neither uniform workflows across industries nor legal compliance from implementing a pattern alone.
 
-## Was HTML, CSS und React dafür beherrschen müssen
+## Required HTML, CSS and React knowledge
 
-Diese Lernziele sind eigene technische Ableitungen:
+These learning objectives are our technical synthesis:
 
-- **HTML:** native Aktionen und Navigation, sichtbare Labels, Gruppen/Legenden, angemessene Tabellenstruktur, Eingabezweck, Dateieingaben, Formularabschluss und semantische Statusdarstellung.
-- **CSS:** belastbare Reflow-Layouts, Textvergrößerung und Spacing-Overrides, tatsächliche Hit-Areas, Fokusdarstellung, hohe Kontraste, lange Inhalte, Hilfsmittelmodi sowie Overlays ohne abgeschnittene Aktionen.
-- **React:** explizite Zustände statt widersprüchlicher boolescher Flags, stabile Objektidentität, korrekte Fokusziele nach Übergängen, synchronisierte Formularwerte, Behandlung veralteter Antworten und Fehlergrenzen ohne Verlust der Wiederherstellbarkeit.
-- **Integration:** fachlich wahre Speicher- und Prozesszustände, sichere Wiederholung, serverseitige Validierung, Berechtigungsmatrix, Session-Ablauf, Mandantenkontext und nachvollziehbare Grenzen der Frontendprüfung.
-- **Qualitätssicherung:** reale Tastatur- und Screenreader-Wege, schmale und vergrößerte Ansicht, Fehler/Rückkehr/Unterbrechung, Rollenwechsel, parallele Bearbeitung und Vergleich zur freigegebenen Konzeptrevision.
+- **HTML:** native actions and navigation, visible labels, groups/legends, appropriate table structure, input purpose, file inputs, form submission and semantic status presentation.
+- **CSS:** robust reflow, text enlargement and spacing overrides, actual hit areas, focus appearance, contrast, long content, accessibility modes and overlays without clipped actions.
+- **React:** explicit states rather than contradictory Boolean flags, stable object identity, appropriate focus after transitions, synchronized form values, stale-response handling and recoverable error boundaries.
+- **Integration:** truthful save/process states, appropriate retries, server validation, permission matrices, session expiry, tenant scope and clearly limited frontend conclusions.
+- **Verification:** actual keyboard/screen-reader paths, narrow and enlarged layouts, error/return/interruption, role changes, concurrent editing and comparison with the approved concept revision.
 
-## Verifizierter Kernkatalog: 30 Primärquellen
+## Verified core register: 30 primary sources
 
-Alle Links wurden am **2026-09-16** geöffnet oder ihr Primärinhalt über die Recherche abgerufen. Laufende Hilfeseiten haben nicht überall ein belastbares Veröffentlichungsdatum; deshalb wird ihr Zugriffstag dokumentiert.
+Every link was opened or its primary content retrieved during research on **2026-09-16**. Living documentation does not always provide a reliable publication date, so the access date is recorded.
 
-| Nr. | Herausgeber und direkte Quelle | Funktion im Skill |
+| No. | Publisher and direct source | Role in the skill |
 |---|---|---|
-| 1 | [W3C – WCAG 2.2](https://www.w3.org/TR/WCAG22/) | Normative Grundlage und Konformitätsumfang |
-| 2 | [WAI – Target Size Minimum](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html) | Zielgrößen einschließlich Ausnahmen |
-| 3 | [WAI – Reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html) | Reflow und zweidimensionale Inhalte |
-| 4 | [WAI – Focus Not Obscured Minimum](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html) | Sichtbarkeit bei Overlays und Sticky-Flächen |
-| 5 | [WAI – Focus Appearance](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html) | AAA von AA sauber unterscheiden |
-| 6 | [WAI – Accessible Authentication Minimum](https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html) | Kognitive Barrieren in der Anmeldung |
-| 7 | [WAI – Redundant Entry](https://www.w3.org/WAI/WCAG22/Understanding/redundant-entry.html) | Wiederholte Eingaben im gleichen Prozess |
-| 8 | [WAI – Text Spacing](https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html) | Resilienz gegen Nutzeranpassung |
-| 9 | [WAI – Dragging Movements](https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html) | Pointer-Alternative zusätzlich zur Tastatur |
-| 10 | [APG – Modal Dialog](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/) | Fokus, Modalität und Rückkehr |
-| 11 | [APG – Read Me First](https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/) | ARIA-Grenzen und Interoperabilität |
-| 12 | [W3C – COGA Content Usable](https://www.w3.org/TR/coga-usable/) | Ergänzende kognitive Gestaltungshilfe |
-| 13 | [WAI – Selecting Evaluation Tools](https://www.w3.org/WAI/test-evaluate/tools/selecting/) | Grenzen automatisierter Prüfung |
-| 14 | [GOV.UK – Question Pages](https://design-system.service.gov.uk/patterns/question-pages/) | Kontextbezogene Frageprozesse |
-| 15 | [GOV.UK – Validation](https://design-system.service.gov.uk/patterns/validation/) | Fehlerauffindbarkeit und Korrektur |
-| 16 | [GOV.UK – Check Answers](https://design-system.service.gov.uk/patterns/check-answers/) | Überprüfung vor Abschluss |
-| 17 | [GOV.UK – Complete Multiple Tasks](https://design-system.service.gov.uk/patterns/complete-multiple-tasks/) | Nichtlineare Aufgabenpakete |
-| 18 | [USWDS – Step Indicator](https://designsystem.digital.gov/components/step-indicator/) | Passender Einsatz eines Fortschrittsindikators |
-| 19 | [USWDS – Progress Easily](https://designsystem.digital.gov/patterns/complete-a-complex-form/progress-easily/) | Komplexe Formulare und Wiederaufnahme |
-| 20 | [GOV.UK – Confirmation Pages](https://design-system.service.gov.uk/patterns/confirmation-pages/) | Abschlussnachweis und nächste Schritte |
-| 21 | [GOV.UK – Create Accounts](https://design-system.service.gov.uk/patterns/create-accounts/) | Begründung einer Kontopflicht |
-| 22 | [NIST – SP 800-63B-4](https://pages.nist.gov/800-63-4/sp800-63b.html) | Aktueller Identitäts- und Authentifizierungsstand |
-| 23 | [FIDO – Required Passkey Patterns](https://www.passkeycentral.org/design-guidelines/required-patterns/) | Anmeldung und Verwaltung als Einheit |
-| 24 | [FIDO – Passkey Principles](https://www.passkeycentral.org/design-guidelines/principles) | Consumer-UX und Sicherheitsgrenzen |
-| 25 | [OWASP – Authentication](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html) | Kontodisclosure und Anmeldefehler |
-| 26 | [OWASP – Authorization](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html) | Durchsetzung von Berechtigungen |
-| 27 | [OWASP – Forgot Password](https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html) | Wiederherstellung als eigener Prozess |
-| 28 | [OWASP – Session Management](https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html) | Ablauf, Logout und Sicherheitsereignisse |
-| 29 | [OWASP – Multi-Tenant Security](https://cheatsheetseries.owasp.org/cheatsheets/Multi_Tenant_Security_Cheat_Sheet.html) | Mandantenkontext und Isolation |
-| 30 | [Android – Runtime Permissions](https://developer.android.com/training/permissions/requesting) | Kontextbezogene Rechteanfrage und Ablehnung |
+| 1 | [W3C — WCAG 2.2](https://www.w3.org/TR/WCAG22/) | Normative basis and conformance scope |
+| 2 | [WAI — Target Size Minimum](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html) | Target size and exceptions |
+| 3 | [WAI — Reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html) | Reflow and two-dimensional content |
+| 4 | [WAI — Focus Not Obscured Minimum](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html) | Visibility around overlays and sticky surfaces |
+| 5 | [WAI — Focus Appearance](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html) | Distinguishing AAA from AA |
+| 6 | [WAI — Accessible Authentication Minimum](https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html) | Cognitive barriers during sign-in |
+| 7 | [WAI — Redundant Entry](https://www.w3.org/WAI/WCAG22/Understanding/redundant-entry.html) | Repeated entry in one process |
+| 8 | [WAI — Text Spacing](https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html) | Resilience to user adjustments |
+| 9 | [WAI — Dragging Movements](https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html) | Pointer alternatives in addition to keyboard operation |
+| 10 | [APG — Modal Dialog](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/) | Focus, modality and return |
+| 11 | [APG — Read Me First](https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/) | ARIA limits and interoperability |
+| 12 | [W3C — COGA Content Usable](https://www.w3.org/TR/coga-usable/) | Supplemental cognitive-accessibility guidance |
+| 13 | [WAI — Selecting Evaluation Tools](https://www.w3.org/WAI/test-evaluate/tools/selecting/) | Limits of automated checks |
+| 14 | [GOV.UK — Question Pages](https://design-system.service.gov.uk/patterns/question-pages/) | Contextual question workflows |
+| 15 | [GOV.UK — Validation](https://design-system.service.gov.uk/patterns/validation/) | Finding and correcting errors |
+| 16 | [GOV.UK — Check Answers](https://design-system.service.gov.uk/patterns/check-answers/) | Review before submission |
+| 17 | [GOV.UK — Complete Multiple Tasks](https://design-system.service.gov.uk/patterns/complete-multiple-tasks/) | Nonlinear groups of tasks |
+| 18 | [USWDS — Step Indicator](https://designsystem.digital.gov/components/step-indicator/) | Appropriate progress-indicator use |
+| 19 | [USWDS — Progress Easily](https://designsystem.digital.gov/patterns/complete-a-complex-form/progress-easily/) | Complex forms and resumption |
+| 20 | [GOV.UK — Confirmation Pages](https://design-system.service.gov.uk/patterns/confirmation-pages/) | Completion evidence and next steps |
+| 21 | [GOV.UK — Create Accounts](https://design-system.service.gov.uk/patterns/create-accounts/) | Justifying account requirements |
+| 22 | [NIST — SP 800-63B-4](https://pages.nist.gov/800-63-4/sp800-63b.html) | Current identity/authentication guidance |
+| 23 | [FIDO — Required Passkey Patterns](https://www.passkeycentral.org/design-guidelines/required-patterns/) | Sign-in and management together |
+| 24 | [FIDO — Passkey Principles](https://www.passkeycentral.org/design-guidelines/principles) | Consumer UX and security boundaries |
+| 25 | [OWASP — Authentication](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html) | Account disclosure and sign-in errors |
+| 26 | [OWASP — Authorization](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html) | Permission enforcement |
+| 27 | [OWASP — Forgot Password](https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html) | Recovery as a separate process |
+| 28 | [OWASP — Session Management](https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html) | Expiry, logout and security events |
+| 29 | [OWASP — Multi-Tenant Security](https://cheatsheetseries.owasp.org/cheatsheets/Multi_Tenant_Security_Cheat_Sheet.html) | Tenant context and isolation |
+| 30 | [Android — Runtime Permissions](https://developer.android.com/training/permissions/requesting) | Contextual permission requests and denial |
 
-## Gelieferte Module und verbleibende Prüfgrenze
+## Delivered modules and remaining limits
 
-- `references/workflows.md`: Entscheidungsregeln und vollständige Zustands-/Übergangsverträge für 22 Prüfbereiche.
-- `references/accessibility.md`: WCAG-Einstufungen mit Ausnahmen und ein eigenständiger manueller/automatisierter Prüfablauf; der vollständige Kriterienkatalog bleibt zusätzlich verpflichtend zu inventarisieren.
-- `references/identity-permissions.md`: Identitätslebenszyklus, Berechtigungen, Passkeys, Wiederherstellung und Mandantenwechsel mit expliziter Backend-Grenze.
+- `references/workflows.md`: decision rules and complete state/transition contracts across 22 review areas.
+- `references/accessibility.md`: WCAG classifications and exceptions, plus original manual/automated procedures; the complete criteria register must still be inventoried.
+- `references/identity-permissions.md`: identity lifecycle, permission UX, passkeys, recovery and tenant changes with an explicit backend boundary.
 
-Noch nicht belegt ist die Wirksamkeit des zusammengestellten Skills an einer realen Anwendung. Dafür braucht es einen Pilot mit derselben Ausgangsaufgabe vor und nach dem Eingriff, festgehaltener Konzeptfreigabe und nachvollziehbaren Nutzungsergebnissen. Die Recherche begründet die Methode; sie ersetzt diesen Wirksamkeitsnachweis nicht.
+The assembled skill's effectiveness on a real application has not been established by this research. That requires a pilot with the same starting task before and after changes, recorded concept approval and traceable user outcomes. Research supports the method; it does not replace evidence of effectiveness.

@@ -1,203 +1,203 @@
-# Unabhängiger UI/UX-Audit: Luma Operations
+# Independent UI/UX audit: Luma Operations
 
-Stand: 16. September 2026. Modus: ausschließlich Audit; die Anwendung wurde nicht geändert.
+Date: September 16, 2026. Mode: audit only; the application was not changed.
 
-**Ergebnis:** Alle drei implementierten Seiten und alle im Quelltext definierten Anwendungsaktionen wurden in der laufenden Fixture aufgerufen, einschließlich beider Projekt-Drilldowns, sämtlicher Ausgänge des Löschdialogs und der Webhook-Detailansicht. Dabei wurden erhebliche Probleme bei Formularen, Tastaturbedienung, Dialogen und verlässlicher Rückmeldung bestätigt. **Dies ist noch kein abgeschlossener vollständiger UI/UX- oder WCAG-Audit:** Responsive Ansichten, mehrere Eingabemethoden und die vollständige Prüfung aller anwendbaren WCAG-Kriterien sind offen.
+**Result:** All three implemented pages and all application actions defined in the source were exercised in the running fixture, including both project drilldowns, every deletion-dialog exit and webhook details. Significant problems with forms, keyboard operation, dialogs and reliable feedback were confirmed. **This is not a completed full UI/UX or WCAG audit:** responsive layouts, several input methods and the complete applicable WCAG criteria review remain outstanding.
 
-## Prüfgrundlage und tatsächlicher Umfang
+## Basis and actual scope
 
-- Auftrag: `evals/audit-fixture/task.md`.
-- Angewandter Skill: `skills/stn-ultradesign/SKILL.md`; insbesondere `audit-method.md`, `verification.md`, `accessibility.md`, `data-visualization.md`, `business-administration.md` und `developer-platforms.md`.
-- Einziger untersuchter Anwendungsquelltext: `evals/audit-fixture/index.html`, 21 Zeilen; SHA-256 `74ee7a4c906066c108c9cb10b3ad81bf8f7ab55062e19ad2f4301b0e4c4d76e3`.
-- Laufzeit: `http://127.0.0.1:8767/`, Microsoft Edge unter macOS, eigener Tab. Browser- und Betriebssystemversion wurden nicht erfasst. CUA hatte keinen Browser-Provider; die Prüfung erfolgte über native App-Bedienung, Accessibility Tree und Screenshots.
-- Sichtbare Rolle: ausschließlich „member“, Workspace „Example Workspace“, synthetische Identität Casey. Andere Rollen, Mandanten, Featureflags und Konfigurationen sind nicht implementiert.
-- Der Browser bestätigte zum Ende 100 % Zoom. Eine kurze Änderung auf 110 % wurde zurückgesetzt. Versuche, 200 % herzustellen, führten zu keinem verifizierten 200-%-Test. Screenshot-Abmessungen von 1280 × 768 sind **keine** Messung des CSS-Viewports.
-- Die Fixture besitzt keinen echten Server, keine echten Schlüssel und keine externen Seiteneffekte. Die angebliche Löschung wurde deshalb als autorisierte Simulation ausgeführt.
-- Zum Ende meldete CUA, der Mac sei gesperrt und könne nicht automatisch entsperrt werden. Weitere Laufzeittests waren damit blockiert. Der letzte verifizierte Zustand ist `#missing`; ein anschließender Rückkehrversuch wurde durch die Sperre verhindert.
+- Task: `evals/audit-fixture/task.md`.
+- Skill used: `skills/stn-ultradesign/SKILL.md`, particularly `audit-method.md`, `verification.md`, `accessibility.md`, `data-visualization.md`, `business-administration.md` and `developer-platforms.md`.
+- Only application source examined: `evals/audit-fixture/index.html`, 21 lines; SHA-256 `74ee7a4c906066c108c9cb10b3ad81bf8f7ab55062e19ad2f4301b0e4c4d76e3`.
+- Runtime: `http://127.0.0.1:8767/`, Microsoft Edge on macOS, dedicated tab. Browser and OS versions were not recorded. CUA had no browser provider; inspection used native application control, the accessibility tree and screenshots.
+- Visible role: only “member,” workspace “Example Workspace,” synthetic identity Casey. Other roles, tenants, feature flags and configurations are not implemented.
+- The browser confirmed 100% zoom at the end. A brief change to 110% was reverted. Attempts to reach 200% did not produce a verified 200% test. Screenshot dimensions of 1280 × 768 are **not** a CSS-viewport measurement.
+- The fixture has no real server, real keys or external side effects. Its purported deletion was therefore exercised as an authorized simulation.
+- At the end, CUA reported that the Mac was locked and could not be unlocked automatically. Further runtime tests were blocked. The last verified state was `#missing`; a subsequent attempt to return was prevented by the lock.
 
-Andere Evaluationsdateien, Bewertungsmaßstäbe und Schlussfolgerungen wurden nicht gelesen. Es gab keine Änderung der App, keine Installation und keine Sicherheitsprüfung eines Backends.
+No other evaluation files, scoring rubrics or conclusions were read. No application changes, installations or backend security tests were performed. This English edition translates the archived report; it is not a new test run.
 
-## Evidenzprotokoll
+## Evidence log
 
-Die folgenden Auszüge stammen aus den tatsächlich zurückgegebenen UI-Zuständen. Screenshots wurden visuell geprüft, aber nicht als separate Bilddateien archiviert; die Belege unten sind Beobachtungsprotokoll, Accessibility-Tree-Auszüge, Quellstellen und berechnete Kontraste.
+The excerpts below come from UI states actually returned during the run. Screenshots were visually examined but not archived as separate image files. Evidence here consists of observation notes, accessibility-tree excerpts, source locations and calculated contrasts.
 
-| ID | Tatsächlich ausgeführte Prüfung und Beobachtung |
+| ID | Executed check and observation |
 |---|---|
-| E01 | Einstieg `/`: Overview, Settings und Developers vorhanden. Übersicht zeigt Jan 98 %, Feb 99 %, Mar 100 %, den Satz „Monthly completion increased dramatically.“ und eine Teams-Tabelle. Die drei Zahlen wurden auch im Accessibility Tree als Text ausgegeben. |
-| E02 | `Operations →` geöffnet: „Operations projects“ und `Project Linden` erscheinen. Anschließend `Project Linden` geöffnet: Überschrift, „3 overdue tasks“, `Close details`. Schließen entfernt die Detailansicht; Fokus laut Tree danach auf HTML-Inhalt statt Projekt-Auslöser. |
-| E03 | Settings: Display name von Casey zu `Casey Updated` geändert; Notification email zu `invalid-email`. Tab aus dem E-Mail-Feld setzt den Fokus direkt auf `Delete workspace`. `Save changes` wird im Tree ausschließlich als Text aufgeführt. |
-| E04 | Pointer-Aktivierung von `Save changes`: beide Felder werden auf Casey beziehungsweise casey@example.test zurückgesetzt; Meldung „Server unavailable. Try again.“ erscheint. Keine feldbezogene Validierung vor diesem Ausgang. Erneute Aktivierung mit den wiederhergestellten Standardwerten ergibt denselben Fehlerzustand. |
-| E05 | `Delete workspace` öffnet Overlay; Fokus bleibt laut Tree auf dem Hintergrund-Auslöser. Escape schließt es nicht. Tab setzt Fokus auf `×`; Shift+Tab setzt ihn wieder auf den Hintergrund-Auslöser. Das Overlay wird als Container, nicht als benannter Dialog ausgegeben. |
-| E06 | Dialog getrennt über `Cancel` und über `×` geschlossen; beide Ausgänge funktionieren visuell, Fokus liegt danach jeweils auf dem HTML-Inhalt. Separat erneut geöffnet und `Delete everything` ausgeführt: nativer Alert „Deletion simulated; no real data changed“. `OK` geschlossen. |
-| E07 | Developers: readonly-Feld mit `demo_value_not_a_live_secret`; Scope-Menü mit `Full workspace access` und `Read only`. `Read only` gewählt, `Save` aktiviert: „Changes saved“. Neuladen setzt Scope zurück auf `Full workspace access` und entfernt Meldung. Auch Save im Standard-Scope wurde aufgerufen. |
-| E08 | Webhooks zeigt „No deliveries yet.“. `View delivery details` öffnet „Delivery attempts / Loading…“. Die Loading-Anzeige bleibt beim späteren Screenshot bestehen und erscheint nach Navigation/Browser-Zurück weiter. Quelltext besitzt keine Abschluss-, Fehler- oder Retry-Transition. |
-| E09 | Navigation Developers → Overview; Browser-Zurück führt zu Developers und erhält seinen lokalen Meldungs-/Drilldown-Zustand; Browser-Vorwärts führt wieder zu Overview. Direkt eingegebenes `#missing` blendet sämtlichen Hauptinhalt aus; Header und Navigation bleiben. |
-| E10 | Übersicht, beide Projektstufen, Dialog und Developers mit geöffneten Lieferdetails visuell geprüft. Diagramm-Balken wirken extrem unterschiedlich lang; sekundäre graue Texte sind sehr schwach. Keine formale Pixelmessung aus diesen Screenshots. |
-| E11 | Reproduzierbare Kontrastberechnung aus den CSS-Farbwerten, WCAG-sRGB-Linearisierung: `#b9bec7` auf `#f4f6fa` = **1,725:1**; auf Weiß = **1,866:1**. Kontrollwerte: Weiß/`#244bc5` = 7,272:1; `#242b39`/`#f4f6fa` = 13,118:1. Keine Bildkompression als Messgrundlage. |
-| E12 | Quelltextprüfung: feste Shellbreite 1200 px ohne Media-/Container-Queries (Z. 7); Balkenbreiten 10/105/220 für Werte 98/99/100 (Z. 11); Save-div ohne Tastatur-/Button-Semantik (Z. 12); globale Dialog-divs ohne Fokuslogik (Z. 15); unbekannte Hashes ohne Fallback (Z. 17–18); Form-reset vor Fehler (Z. 19). |
+| E01 | Entry `/`: Overview, Settings and Developers are present. Overview shows Jan 98%, Feb 99%, Mar 100%, “Monthly completion increased dramatically.” and a Teams table. The accessibility tree also exposes all three values as text. |
+| E02 | Opened `Operations →`: “Operations projects” and `Project Linden` appear. Opened `Project Linden`: heading, “3 overdue tasks,” `Close details`. Closing removes details; the tree then reports focus on HTML content rather than the project trigger. |
+| E03 | Settings: changed Display name from Casey to `Casey Updated` and Notification email to `invalid-email`. Tab from the email field moves directly to `Delete workspace`. The tree lists `Save changes` as text only. |
+| E04 | Pointer activation of `Save changes` resets both fields to Casey and casey@example.test; “Server unavailable. Try again.” appears. No field-level validation precedes this outcome. Activating again with the restored defaults gives the same error. |
+| E05 | `Delete workspace` opens an overlay; the tree still places focus on the background trigger. Escape does not close it. Tab focuses `×`; Shift+Tab returns to the background trigger. The overlay is exposed as a container, not a named dialog. |
+| E06 | Closed the dialog separately through `Cancel` and `×`; both work visually, with focus subsequently on HTML content. Reopened and selected `Delete everything`: native alert “Deletion simulated; no real data changed.” Dismissed with `OK`. |
+| E07 | Developers: readonly field containing `demo_value_not_a_live_secret`; scope options `Full workspace access` and `Read only`. Selected `Read only`, activated `Save`: “Changes saved.” Reload restores `Full workspace access` and removes the message. Save was also exercised in the default scope. |
+| E08 | Webhooks says “No deliveries yet.” `View delivery details` opens “Delivery attempts / Loading…”. Loading persists in a later screenshot and after navigation/browser Back. Source contains no completion, failure or retry transition. |
+| E09 | Navigated Developers → Overview; browser Back returns to Developers and preserves its local message/drilldown state; Forward returns to Overview. Entering `#missing` hides all main content while retaining the header and navigation. |
+| E10 | Visually inspected Overview, both project levels, the dialog and Developers with delivery details open. Chart bars have radically different lengths; secondary gray text appears weak. No formal screenshot pixel measurements were taken. |
+| E11 | Reproducible contrast calculation from CSS colors using WCAG sRGB linearization: `#b9bec7` on `#f4f6fa` = **1.725:1**; on white = **1.866:1**. Controls: white on `#244bc5` = 7.272:1; `#242b39` on `#f4f6fa` = 13.118:1. Image compression was not a measurement source. |
+| E12 | Source: fixed 1200px shell without media/container queries (line 7); bar widths 10/105/220 for values 98/99/100 (line 11); Save div without button/keyboard semantics (line 12); global dialog divs without focus logic (line 15); unknown hashes without fallback (lines 17–18); form reset before failure (line 19). |
 
-## Priorisierte Befunde
+## Prioritized findings
 
-Die Schweregrade sind die projektinterne Skala des Skills. Es gibt keine belastbare Grundlage für einen prozentualen Design-Score oder behauptete Umsatz-/Effizienzgewinne.
+Severity follows the skill's local scale. There is no basis for a percentage design score or claimed revenue/efficiency gains.
 
-### UX-01 — Hoch: Einstellungen lassen sich per Tastatur nicht speichern
+### UX-01 — High: settings cannot be saved with a keyboard
 
-**Ort:** Settings, `Save changes`; Quelltext Z. 12. **Evidenz:** E03, E12; unmittelbar beobachtet.
+**Location:** Settings, `Save changes`; source line 12. **Evidence:** E03, E12; directly observed.
 
-Reproduktion: Display name bearbeiten, per Tab zum E-Mail-Feld und weiter navigieren. Der nächste Fokus ist `Delete workspace`; die Speicheraktion fehlt in der Fokusfolge und besitzt keine Button-Rolle. Der Text ist als `div` mit ausschließlich `onclick` implementiert.
+Reproduce by editing Display name and tabbing through the email field. The next focus is `Delete workspace`; Save is absent from the focus order and has no button role. It is a `div` with only an `onclick` handler.
 
-**Folge:** Eine zentrale Handlung ist für reine Tastaturbedienung blockiert. Dies betrifft WCAG 2.2 [2.1.1 Keyboard](https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html) und die fehlende programmatisch erkennbare Rolle unter [4.1.2 Name, Role, Value](https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html).
+**Impact:** keyboard-only users cannot perform a central action. Relevant WCAG 2.2 criteria are [2.1.1 Keyboard](https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html) and the missing programmatic role under [4.1.2 Name, Role, Value](https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html).
 
-**Empfehlung und Abnahme:** Eine native, korrekt benannte Speicher-Schaltfläche mit Formular-Submit verwenden. Nach Eingabe sind Speichern und Wiederholen per Tab/Enter/Space möglich; der tatsächliche Fehler bleibt zugänglich. Das erfordert keinen gestalterischen Umbau der gesamten Seite.
+**Recommendation and acceptance:** use a correctly named native submit button. After input, Save and Retry must be operable through Tab/Enter/Space, with accessible error feedback. This does not require redesigning the entire page.
 
-### UX-02 — Hoch: Speicherfehler vernichtet den bearbeiteten Entwurf
+### UX-02 — High: a save failure destroys the draft
 
-**Ort:** Settings, beide Felder und Fehlerrückmeldung; Z. 12, 19. **Evidenz:** E04; unmittelbar beobachtet und im Handler bestätigt.
+**Location:** Settings, both fields and error feedback; lines 12, 19. **Evidence:** E04; observed and confirmed in the handler.
 
-Reproduktion: beide Werte ändern und Save aktivieren. Die Anwendung meldet einen Serverfehler, setzt die Eingaben aber vorher zurück. „Try again“ kann damit nicht dieselben Änderungen erneut senden. Auch ein offensichtlich ungültiger E-Mail-Wert erreicht diesen Ausgang; der direkte Klickpfad nutzt die native Formularvalidierung nicht.
+Change both values and activate Save. The application reports a server failure but resets the inputs first. “Try again” therefore cannot resend the same changes. Even an obviously invalid email reaches this outcome; the direct click path bypasses native form validation.
 
-**Folge:** Eingabearbeit geht verloren, Ursache und Korrekturmöglichkeit werden verwischt. Der konkrete Verlust ist belegt; ob ein leeres Feld erlaubt wäre, ist dagegen keine dokumentierte Produktregel.
+**Impact:** entered work is lost, obscuring the cause and recovery path. This loss is demonstrated; whether an empty field should be allowed is not a documented product rule.
 
-**Basis:** Fehlererholung und wahrheitsgetreue Speicherzustände aus den Skill-Modulen Workflows/Business Administration; die Forderung nach Entwurfserhalt ist hier eine begründete UX-Empfehlung. Kein pauschaler WCAG-Verstoß allein wegen fehlender clientseitiger Validierung wird behauptet.
+**Basis:** recovery and truthful save states from the workflow/business-administration modules. Preserving the draft is a contextual UX recommendation here. No blanket WCAG violation is claimed merely because client-side validation is absent.
 
-**Empfehlung und Abnahme:** Bei Fehlschlag Werte bewahren, Feldvalidierung vom Transportfehler trennen, Retry auf denselben Entwurf anwenden. Test: `Casey Updated` und eine gültige geänderte E-Mail bleiben nach simuliertem Serverfehler erhalten; ungültige E-Mail erhält eine verständliche Korrekturanweisung; Wiederholen leert das Formular nicht.
+**Recommendation and acceptance:** preserve values on failure, separate field validation from transport errors, and retry the same draft. `Casey Updated` and a valid changed email should remain after the simulated server failure. Invalid email needs clear correction guidance; retry must not clear the form.
 
-### UX-03 — Hoch: Der Löschdialog besitzt keinen verlässlichen Modalitäts- und Fokusvertrag
+### UX-03 — High: the deletion dialog lacks a reliable modal/focus contract
 
-**Ort:** Settings → Delete workspace → Overlay; Z. 15. **Evidenz:** E05, E06.
+**Location:** Settings → Delete workspace → overlay; line 15. **Evidence:** E05, E06.
 
-Beim Öffnen bleibt der Fokus auf dem Hintergrund. Escape wirkt nicht; Shift+Tab aus dem Schließen-Control erreicht den Hintergrund. Der Accessibility Tree meldet einen allgemeinen Container. Nach Cancel beziehungsweise × kehrt Fokus nicht zum Auslöser zurück.
+Focus remains on the background when opening. Escape does nothing; Shift+Tab from Close reaches the background. The accessibility tree reports a generic container. After Cancel or ×, focus does not return to the trigger.
 
-**Folge:** Tastatur- und assistive Nutzung können den Kontext und die Reichweite einer folgenreichen Handlung nicht verlässlich verfolgen. Der vorhandene Erklärungstext und die tatsächlich funktionierende Cancel-Aktion sind positiv, reichen aber nicht für das Interaktionsmodell.
+**Impact:** keyboard and assistive-technology users cannot reliably follow the context and scope of a consequential action. Existing explanatory text and a working Cancel action are useful but do not complete the interaction model.
 
-**Basis:** [WAI-ARIA APG Modal Dialog](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/) ist informative Gestaltungsempfehlung. Fehlende Rollen-/Namensinformation betrifft zusätzlich SC 4.1.2. Nicht jede Abweichung von APG, etwa Escape isoliert betrachtet, ist automatisch ein eigenständiger WCAG-Verstoß.
+**Basis:** [WAI-ARIA APG Modal Dialog](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/) is informative guidance. Missing role/name information also concerns SC 4.1.2. Not every APG deviation, such as Escape considered alone, is automatically a separate WCAG violation.
 
-**Empfehlung und Abnahme:** Passendes natives Dialogverhalten oder vollständig implementierte Modal-Komponente verwenden: Name, geeigneter Startfokus, Hintergrund inaktiv, begrenzte Fokusfolge, Escape/Cancel, Rückkehr zum Auslöser. Alle drei Ausgänge erneut mit Maus und Tastatur prüfen. Kein echtes Löschen ist hier erfolgt oder behauptet.
+**Recommendation and acceptance:** use appropriate native dialog behavior or a fully implemented modal component: accessible name, suitable initial focus, inactive background, contained focus order, Escape/Cancel, and return to the trigger. Recheck all three exits with pointer and keyboard. No actual deletion occurred or is claimed.
 
-### UX-04 — Hoch, aus Quelltext stark belegt: Die feste Seitenbreite verhindert eine adaptive Shell
+### UX-04 — High, strongly supported by source: fixed width prevents an adaptive shell
 
-**Ort:** Shell aller drei Seiten, einschließlich lokaler Komponenten und Drilldowns; Z. 7. **Evidenz:** E12; **kein ausgeführter 320-px-Laufzeittest**.
+**Location:** the shell on all three pages, including local components and drilldowns; line 7. **Evidence:** E12; **no executed 320px runtime test**.
 
-Die Shell ist immer 1200 CSS px breit, mit fest 220 px breiter Navigation und ohne adaptive Regel. Bei einem 320-px-Viewport bleiben damit bereits strukturell 880 px außerhalb der sichtbaren Breite. Formular- und Navigationsinhalte benötigen keine unvermeidliche zweidimensionale Darstellung.
+The shell is always 1200 CSS pixels wide, with a fixed 220px navigation and no adaptive rules. At a 320px viewport, its structure extends 880px beyond the visible width. Forms and navigation do not require inherently two-dimensional presentation.
 
-**Folge:** Auf schmalen Ansichten sind wichtige Inhalte voraussichtlich nur durch horizontales Verschieben erreichbar. Desktop-Screenshots allein belegen keine Tablet-/Smartphone-Tauglichkeit.
+**Impact:** important content will likely require horizontal movement in narrow views. Desktop screenshots do not establish tablet/phone suitability.
 
-**Basis:** [WCAG 1.4.10 Reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html), einschließlich seiner Ausnahmen. Eine mögliche Ausnahme für einzelne Tabellen würde nicht die gesamte feste Shell freistellen.
+**Basis:** [WCAG 1.4.10 Reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html), including exceptions. A possible exception for a particular table would not exempt the whole fixed shell.
 
-**Empfehlung und Abnahme:** Fluiden Hauptbereich und eine passende schmale Navigation spezifizieren. Alle drei Seiten, jede aufgeklappte Ebene und den Dialog bei 320 CSS px sowie sinnvollen mittleren/breiten Größen tatsächlich bedienen. Lokales Tabellen-Scrolling nur dort einsetzen, wo die Aufgabe es rechtfertigt. Der Dialog hat Flex-Shrink; aus `width:450px` allein wird ausdrücklich kein gesonderter 498-px-Mindestbreitenfehler abgeleitet.
+**Recommendation and acceptance:** specify a fluid main area and suitable compact navigation. Actually operate all three pages, every expanded level and the dialog at 320 CSS pixels and appropriate medium/wide sizes. Use local table scrolling only where the task justifies it. The dialog can flex-shrink; `width:450px` alone does **not** establish a separate 498px minimum-width defect.
 
-### UX-05 — Mittel: Das Diagramm überzeichnet eine Veränderung von zwei Prozentpunkten
+### UX-05 — Medium: the chart exaggerates a two-percentage-point change
 
-**Ort:** Overview → Completion rate; Z. 11. **Evidenz:** E01, E10, E12.
+**Location:** Overview → Completion rate; line 11. **Evidence:** E01, E10, E12.
 
-Die Beschriftungen lauten 98, 99, 100 %, die Balkenbreiten dagegen 10, 105, 220. Der letzte Balken ist 22-mal so lang wie der erste. Auch gleiche Wertabstände erzeugen ungleiche Längenzuwächse: 95 und 115 px. Eine lineare, gemeinsame Skala erklärt diese Darstellung deshalb nicht. „Increased dramatically“ verstärkt den Eindruck; eine fachliche Bedeutung dieser Wortwahl ist nicht dokumentiert. „Current month“ über der Darstellung passt außerdem nicht eindeutig zu drei Monatswerten ohne Jahresangabe.
+Labels are 98%, 99%, 100%, but bar widths are 10, 105, 220. The final bar is 22 times the first's length. Equal value increments also produce unequal length increments of 95 and 115px; a shared linear scale cannot explain them. “Increased dramatically” reinforces the impression without documented domain justification. “Current month” also does not clearly match three monthly values without a year.
 
-**Folge:** Die Anzeige kann eine deutlich größere quantitative Veränderung suggerieren, als die Zahlen belegen.
+**Impact:** the graphic can suggest substantially greater quantitative change than the numbers support.
 
-**Basis:** Numerische Konsistenz; Skill Data Visualization; [ONS zu Achsen und Skalen](https://service-manual.ons.gov.uk/data-visualisation/guidance/axes-and-gridlines).
+**Basis:** numerical consistency, the data-visualization module, and [ONS guidance on axes and scales](https://service-manual.ons.gov.uk/data-visualisation/guidance/axes-and-gridlines).
 
-**Empfehlung und Abnahme:** Für Balken eine gemeinsame, nachvollziehbare Größenskala verwenden oder ein geeignetes Punkt-/Linienformat mit sichtbar erklärtem Wertebereich wählen. Veränderung als +2 Prozentpunkte ausdrücken, Zeitraum eindeutig benennen, behauptete Bewertung fachlich begründen. Die Textwerte sind im geprüften Accessibility Tree vorhanden; ein vollständig unsichtbares Diagramm für Screenreader wird nicht behauptet. Struktur und Verständlichkeit mit einem echten Screenreader bleiben zu testen.
+**Recommendation and acceptance:** use a common, understandable bar scale or an appropriate dot/line representation with an explicit range. Express the change as +2 percentage points, identify the period and justify evaluative language. Text values were present in the checked accessibility tree; the chart is not claimed to be wholly invisible to screen readers. Its structure and meaning still require a real screen-reader check.
 
-### UX-06 — Mittel: Sekundärtext unterschreitet den Textkontrast deutlich
+### UX-06 — Medium: secondary text has insufficient contrast
 
-**Ort:** Header auf allen drei Seiten; Overview „Status for the current month“; Z. 7, 9, 11. **Evidenz:** E10, E11.
+**Location:** header on all three pages; Overview “Status for the current month”; lines 7, 9, 11. **Evidence:** E10, E11.
 
-Die beiden normalen Text-/Hintergrundkombinationen erreichen nur 1,866:1 beziehungsweise 1,725:1. Diese Texte sind weder inaktive Controls noch Logos oder beiläufige Textbestandteile eines Bildes.
+The two normal-text/background pairs reach only 1.866:1 and 1.725:1. These uses are neither inactive controls nor logos nor incidental text inside images.
 
-**Basis:** [WCAG 1.4.3 Contrast Minimum](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html), Ziel 4,5:1 für normalen Text. Der Befund gilt für diese konkreten Textverwendungen, nicht pauschal für jede graue Linie.
+**Basis:** [WCAG 1.4.3 Contrast Minimum](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html), requiring 4.5:1 for normal text. This finding concerns the specified text usages, not every gray line.
 
-**Empfehlung und Abnahme:** Sekundärtextfarbe an beiden tatsächlichen Hintergründen auf mindestens 4,5:1 bringen und sämtliche Header-Verwendungen prüfen. Primärtext und weißer Speichertext auf Blau bestanden die hier berechneten statischen Farbpaarprüfungen; das ist kein vollständiger Kontrast-Pass sämtlicher Zustände.
+**Recommendation and acceptance:** adjust secondary text to at least 4.5:1 on both actual backgrounds and inspect every header usage. Primary text and white Save text on blue passed the calculated static color-pair checks; this is not a complete contrast pass for all states.
 
-### UX-07 — Mittel: „Changes saved“ behauptet eine Speicherung, die nicht stattfindet
+### UX-07 — Medium: “Changes saved” claims persistence that does not occur
 
-**Ort:** Developers → Scope/Save; Z. 13. **Evidenz:** E07.
+**Location:** Developers → Scope/Save; line 13. **Evidence:** E07.
 
-`Read only` wählen, Save aktivieren, neu laden: Die Anzeige springt zu `Full workspace access` zurück. Der Handler ändert ausschließlich den Rückmeldetext. Das ist eine belegte Diskrepanz des Prototypverhaltens, **kein** Nachweis einer tatsächlichen Berechtigungsänderung oder Sicherheitslücke.
+Select `Read only`, activate Save, then reload: the display returns to `Full workspace access`. The handler only changes feedback text. This is a demonstrated prototype inconsistency, **not** evidence of a real permission change or security vulnerability.
 
-**Folge:** Eine Person kann glauben, den Zugriff eingeschränkt zu haben. Auch in einer Demo sollte ein simuliertes Ergebnis als solches erkennbar sein.
+**Impact:** someone may believe they restricted access. Even a demonstration should label simulated outcomes clearly.
 
-**Empfehlung und Abnahme:** Entweder die Simulation transparent benennen oder einen klar definierten speicherbaren Testzustand einführen. In einer späteren echten Anwendung erst nach bestätigter Speicherung Erfolg melden und gespeicherte von wirksamen Berechtigungen unterscheiden. Nach Reload muss der sichtbare Zustand zum versprochenen Vertrag passen; Backend-Enforcement erfordert eine getrennte autorisierte Prüfung.
+**Recommendation and acceptance:** explain the simulation or implement a defined persistent test state. In a future real product, report success only after confirmed saving and distinguish saved from effective permissions. Reloaded state must match the promised contract. Backend enforcement requires separately authorized evidence.
 
-### UX-08 — Mittel: Webhook-Drilldown endet dauerhaft in einem widersprüchlichen Ladezustand
+### UX-08 — Medium: webhook details remain in a contradictory loading state
 
-**Ort:** Developers → Webhooks → View delivery details; Z. 13. **Evidenz:** E08 und vollständiger Handler-Quelltext.
+**Location:** Developers → Webhooks → View delivery details; line 13. **Evidence:** E08 and the full handler source.
 
-Trotz „No deliveries yet“ öffnet die Detailaktion „Delivery attempts / Loading…“. Es gibt weder einen Request noch eine definierte Transition zu Ergebnis, Leerzustand oder Fehler. Eine bloß längere Wartezeit würde den Quelltext-bedingten Stillstand nicht lösen.
+Despite “No deliveries yet,” the detail action opens “Delivery attempts / Loading…”. There is no request or transition to results, empty state or failure. Waiting longer would not resolve this source-defined dead end.
 
-**Folge:** Die Person kann nicht unterscheiden, ob überhaupt Daten existieren, ob etwas bearbeitet wird oder welche Handlung hilft.
+**Impact:** users cannot tell whether data exists, processing is underway or any action would help.
 
-**Empfehlung und Abnahme:** Für diese leere Fixture einen ehrlichen abgeschlossenen Leerzustand zeigen. Falls ein echter Abruf vorgesehen ist, Lade-, Leer-, Ergebnis-, Fehler- und angemessenen Retry-Zustand definieren. Detailansicht nie ohne laufende Arbeit als dauerhaft ladend ausgeben. Keine echten Webhook-Zustellungen oder Provider-Retryregeln wurden getestet.
+**Recommendation and acceptance:** show an honest completed empty state for this fixture. If a real request is intended, define loading, empty, populated, failure and appropriate retry states. Do not present permanent loading without ongoing work. No real webhook deliveries or provider retry rules were tested.
 
-### UX-09 — Mittel: Speicher-Rückmeldungen haben keine programmatische Statussemantik
+### UX-09 — Medium: save feedback lacks programmatic status semantics
 
-**Ort:** Settings `#save-status`, Developers `#key-status`; Z. 12–13, 19. **Evidenz:** E04, E07 plus Quelltext.
+**Location:** Settings `#save-status`, Developers `#key-status`; lines 12–13, 19. **Evidence:** E04, E07 and source.
 
-Beide Rückmeldungen werden in gewöhnliche leere Absätze geschrieben, ohne Live-Region-/Status-/Alert-Semantik. Der Fehler oder Erfolg erscheint visuell ohne gezielte Fokusführung. Die vorhandenen Textknoten sind im Tree lesbar; das beweist keine spontane Ankündigung.
+Both messages are written into ordinary empty paragraphs without live-region, status or alert semantics. Success/failure appears visually without deliberate focus movement. Text nodes being readable in the tree does not demonstrate automatic announcements.
 
-**Basis:** [WCAG 4.1.3 Status Messages](https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html). **Vertrauen:** fehlender programmatischer Mechanismus aus Quelltext belegt; tatsächlich gesprochene Ausgabe wurde nicht gehört.
+**Basis:** [WCAG 4.1.3 Status Messages](https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html). **Confidence:** the missing programmatic mechanism is demonstrated in source; actual spoken output was not heard.
 
-**Empfehlung und Abnahme:** Geeignete, bereits im DOM vorhandene Rückmelderegion mit passender Dringlichkeit implementieren. Erfolg und Fehler einmal verständlich ankündigen; Wiederholen darf weder still bleiben noch unnötig mehrfach unterbrechen. Danach mit den vorgesehenen Browser-/Screenreader-Kombinationen prüfen.
+**Recommendation and acceptance:** implement an appropriate preexisting feedback region with suitable urgency. Announce outcomes clearly once; retry should neither remain silent nor interrupt repeatedly without reason. Verify the intended browser/screen-reader combinations afterward.
 
-### UX-10 — Niedrig: Unbekannte Direktlinks führen zu leerem Hauptinhalt
+### UX-10 — Low: unknown direct links leave the main content empty
 
-**Ort:** Hash-Navigation; Z. 17–18. **Evidenz:** E09.
+**Location:** hash navigation; lines 17–18. **Evidence:** E09.
 
-Direktes Öffnen von `#missing` lässt den Hauptbereich leer. Navigation und Header bleiben vorhanden, sodass kein vollständiger Ausstieg blockiert ist. Für einen ungültigen, veralteten oder falsch eingegebenen Link fehlen jedoch Erklärung und definierter Fallback.
+Opening `#missing` leaves the main area blank. Navigation and header remain, so escape is not completely blocked. An invalid, outdated or mistyped link nevertheless lacks explanation and a defined fallback.
 
-**Empfehlung und Abnahme:** Eindeutigen Nicht-gefunden-Zustand oder sinnvolle Standardroute vorsehen. Direktlinks auf alle bekannten Seiten, unbekannten Hash, Reload sowie Browser-Zurück/Vorwärts prüfen. Innerhalb der getesteten gültigen Seiten funktionierten Browser-Zurück/Vorwärts.
+**Recommendation and acceptance:** provide a clear not-found state or appropriate default route. Check direct links to every known page, unknown hashes, reload and browser Back/Forward. Back/Forward worked between the valid pages tested.
 
-## Zusätzliche Vertragsfragen und zurückgehaltene Behauptungen
+## Additional contract questions and withheld claims
 
-- Settings mischt personenbezogen wirkende Felder und Workspace-Löschung. Die Überschrift „Workspace actions“ trennt bereits einen Bereich. Ob Display name und Notification email global, workspacebezogen oder gemeinsam gelten, ist nicht dokumentiert. Vor einer Neuordnung den tatsächlichen Eigentümer und Wirkungsbereich klären; kein erfundenes Organisationsmodell einführen.
-- Die Aussage „All members can manage workspace keys“ ist expliziter Fixture-Inhalt. Es gibt keine Grundlage, eine abweichende Owner-only-Regel als weltweiten Standard aufzuzwingen. Wer löschen oder Schlüssel verwalten darf, benötigt einen echten Produktvertrag und serverseitige Prüfung.
-- `demo_value_not_a_live_secret` ist erkennbar synthetisch. Dies ist kein nachgewiesenes Secret-Leak. Maskierung allein wäre im echten Produkt außerdem keine Autorisierung.
-- Der Close-Button ist laut CSS 14 × 14 px. Das ist ein Kandidat für bessere Bedienbarkeit, aber **kein automatisch nachgewiesener Verstoß gegen WCAG 2.5.8**: Abstands- und Gleichwertigkeitsausnahmen müssen mit tatsächlicher Geometrie geprüft werden. Cancel bietet hier zusätzlich einen anderen Schließweg. 44 × 44 CSS px ist keine pauschale AA-Vorgabe.
-- Bei den Projekt-Drilldowns fehlen programmatisch sichtbare Aufklappzustände; nach Close details geht Fokus zum HTML-Inhalt. Für die Verfeinerung empfiehlt sich ein klarer Disclosure-/Fokusvertrag mit Rückkehr zu Project Linden. Es wird keine ungetestete Screenreader-Unbenutzbarkeit behauptet.
-- Kein „moderneres“ Font, Farbschema, Glass-Effekt oder zusätzliche Animation ist allein wegen Geschmack erforderlich. Die vorhandenen nativen Labels, Tabellenüberschriften, Hauptüberschriften und klare Textbenennung der Löschfolge sind brauchbare Grundlagen.
+- Settings mixes apparently personal fields with workspace deletion. “Workspace actions” already separates one section. Whether Display name and Notification email are global, workspace-specific or shared is undocumented. Establish ownership and effects before reorganizing; do not invent an organization model.
+- “All members can manage workspace keys” is explicit fixture content. There is no basis to impose owner-only access as a universal standard. Actual deletion/key-management permissions need a product contract and appropriate backend evidence.
+- `demo_value_not_a_live_secret` is clearly synthetic. It is not a demonstrated secret leak. Masking alone would not establish authorization in a real product either.
+- CSS declares the Close button as 14 × 14px. It merits usability review but is **not an automatically demonstrated WCAG 2.5.8 failure**: spacing/equivalent-target exceptions need actual geometry checks. Cancel provides another dismissal path. 44 × 44 CSS pixels is not a blanket AA requirement.
+- Project drilldowns lack programmatically exposed expanded states; closing details moves focus to HTML content. Refinement should define disclosure and focus behavior, including return to Project Linden. Untested screen-reader unusability is not asserted.
+- No “more modern” font, palette, glass effect or animation is necessary purely as a matter of taste. Existing native labels, table headers, main headings and clear deletion-consequence wording are useful foundations.
 
-## Inventar und Abdeckungsmatrix
+## Inventory and coverage matrix
 
-`pass` bezieht sich ausschließlich auf den benannten ausgeführten Check; `fail` bedeutet geprüft mit Befund. Responsive-, AT- und weitere offene Querschnittschecks sind unten getrennt aufgeführt. Ein besuchtes Element ist nicht automatisch insgesamt bestanden.
+`pass` applies only to the named executed check; `fail` means investigated with a finding. Outstanding responsive, assistive-technology and other cross-cutting checks appear separately below. Visiting an element does not make it pass overall.
 
-| Einheit / konkrete Verwendung | Geprüfter Zustand oder Übergang | Ergebnis und Evidenz |
+| Entity / concrete usage | State or transition checked | Result and evidence |
 |---|---|---|
-| Shell: Header, Main-Navigation mit drei Links, Hauptbereich; je auf Overview/Settings/Developers | Inhalte, Labels, Routenwechsel, visuelle Gruppierung | **fail** Kontrast/Adaptive-Quelle; Links funktionieren (E01, E09–E12) |
-| Overview: h1 und sekundäre Periodenzeile | initial | **fail** Kontrast und unklare Periodenbeschreibung (E01, E11) |
-| Completion-Widget: h2, SVG mit drei Labels/Balken, Fazit | sämtliche vorhandenen Werte | **fail** Skalierung (E01, E10, E12) |
-| Teams-Widget: h2, Tabelle, beide Header, einzige Zeile, Owner, Operations-Button | initial, Öffnen | **pass** vorhandene Inhalte/erste Transition; weitere Accessibility-Dimensionen offen (E01–E02) |
-| Operations-Drilldown: h3, Project-Linden-Button | öffnen, Projekt öffnen | **pass** definierte Öffnungen; Aufklappsemantik verbesserungsbedürftig (E02) |
-| Project-Linden-Detail: h4, Aufgabenstatus, Close-details-Button | öffnen/schließen | **fail** Fokus nach Schließen; Inhalte erreichbar (E02) |
-| Settings: h1, beide Label/Input-Verwendungen | Ausgangswerte, Textbearbeitung, ungültige E-Mail, Tab-Folge | **pass** Labels/Eingabe; Validierungsvertrag unvollständig (E03–E04) |
-| Settings: Save-div und Rückmeldung | Klick, Fehler, Retry; Tastaturversuch | **fail** UX-01/02/09 (E03–E04) |
-| Settings: Workspace-actions-h2, Delete-workspace-Button | öffnen | **pass** Auslöser und erklärter Zielbereich; Modalvertrag fail (E05) |
-| Lösch-Overlay: Container, Titel, Erklärung | geöffnet, Escape, Fokusfolge | **fail** UX-03 (E05) |
-| Dialog: × | schließen | **pass** Sichtbarkeit; **fail** Fokusrückkehr (E06) |
-| Dialog: Cancel | abbrechen | **pass** Sichtbarkeit; **fail** Fokusrückkehr (E06) |
-| Dialog: Delete everything | simuliert bestätigen | **pass** angekündigter Simulationsausgang (E06) |
-| Browser-Alert: Erklärung, OK | quittieren | **pass** lokale Bestätigung (E06) |
-| Developers: h1, API-credentials-h2, Richtlinientext, Key-Label, readonly-Keyfeld | Ausgangszustand | **pass** Inhalt/zugänglicher Feldname; keine echte Secret-/Backendprüfung (E07) |
-| Developers: Scope-Label und natives Select | beide definierten Optionen | **pass** Auswahl erreichbar (E07) |
-| Developers: Save und Rückmeldung | Save in beiden Scopes, Reload nach Read only | **fail** UX-07/09 (E07) |
-| Webhooks: h2 und Leertext | leer | **fail** Widerspruch zur Folgeansicht (E08) |
-| Webhooks: View-delivery-details-Button, h3, Loading-Text | öffnen, erneute Navigation/Rückkehr | **fail** UX-08 (E08–E09) |
-| Router-Zusatzfall | unbekannter Hash | **fail** UX-10 (E09) |
+| Shell: header, three-link main navigation, main area on Overview/Settings/Developers | Content, labels, route changes, grouping | **fail** contrast/adaptive source; links work (E01, E09–E12) |
+| Overview: h1 and secondary period text | Initial | **fail** contrast and unclear period (E01, E11) |
+| Completion widget: h2, SVG with three labels/bars, conclusion | Every provided value | **fail** scale (E01, E10, E12) |
+| Teams widget: h2, table, both headers, only row, owner, Operations button | Initial, opening | **pass** content/first transition; other accessibility dimensions unresolved (E01–E02) |
+| Operations drilldown: h3, Project Linden button | Open, open project | **pass** defined opening actions; disclosure semantics need improvement (E02) |
+| Project Linden detail: h4, task status, Close details button | Open/close | **fail** focus after closing; content reachable (E02) |
+| Settings: h1, both label/input usages | Initial values, editing, invalid email, Tab order | **pass** labels/input; validation contract incomplete (E03–E04) |
+| Settings: Save div and feedback | Click, failure, retry, keyboard attempt | **fail** UX-01/02/09 (E03–E04) |
+| Settings: Workspace actions h2, Delete workspace button | Open | **pass** trigger and stated scope; modal contract fails (E05) |
+| Deletion overlay: container, title, explanation | Open, Escape, focus order | **fail** UX-03 (E05) |
+| Dialog: × | Close | **pass** visible dismissal; **fail** focus return (E06) |
+| Dialog: Cancel | Cancel | **pass** visible dismissal; **fail** focus return (E06) |
+| Dialog: Delete everything | Simulated confirmation | **pass** stated simulation result (E06) |
+| Browser alert: explanation, OK | Acknowledge | **pass** local confirmation (E06) |
+| Developers: h1, API credentials h2, policy text, key label, readonly field | Initial | **pass** content/accessible field name; no real secret/backend testing (E07) |
+| Developers: scope label and native select | Both defined options | **pass** selection operable (E07) |
+| Developers: Save and feedback | Save in both scopes, reload after Read only | **fail** UX-07/09 (E07) |
+| Webhooks: h2 and empty-state text | Empty | **fail** inconsistency with subsequent view (E08) |
+| Webhooks: View delivery details button, h3, loading text | Open, navigate away/return | **fail** UX-08 (E08–E09) |
+| Additional router case | Unknown hash | **fail** UX-10 (E09) |
 
-**Besuchszahlen:** 3/3 implementierte Hauptseiten; 2/2 verschachtelte Projekt-Drilldowns; 1/1 Webhook-Drilldown; 1/1 anwendungsseitiges Overlay mit 3/3 definierten Ausgängen; 1/1 daraus erzeugter nativer Alert. Beide Scope-Optionen und beide Save-Handler wurden aktiviert. Alle expliziten App-Handler in `index.html` wurden ausgeführt; wiederholte Schleifen wurden nicht als neue Implementierungszweige gezählt. Der fehlerhafte Verlauf gilt als untersuchte Abdeckung, keinesfalls als bestandene Produktqualität.
+**Visited counts:** 3/3 main pages; 2/2 nested project drilldowns; 1/1 webhook drilldown; 1/1 application overlay with 3/3 defined exits; 1/1 resulting native alert. Both scope options and both Save handlers were activated. Every explicit application handler in `index.html` was exercised; repeated loops were not counted as new implementation branches. A defective path counts as investigated coverage, never as passing product quality.
 
-## Was vor einer vollständigen Audit-Aussage noch fehlt
+## What remains before a complete-audit claim
 
-| Offene Dimension | Status, konkreter nächster Test |
+| Outstanding dimension | Status and next check |
 |---|---|
-| Responsive Integration sämtlicher obiger Verwendungen | **blocked** durch gesperrten Mac; 320 CSS px, Tabletbreite, breites/kurzes Fenster, aufgeklappte Zustände und Dialog prüfen. Feste Shell ist bereits aus Quelle beanstandet. |
-| Zoom und Textanpassung | **not-tested** bei 200 %/Reflow-Zielgröße; echte Zoomwerte bestätigen, Text-Spacing-Overrides und lange Eingaben prüfen. 110 % ist kein Ersatz. |
-| Vollständige Tastaturbedienung | **teilweise getestet**; Save-Barriere/Modalfokus belegt, aber noch nicht jede Aktion mit jeder zutreffenden Taste und jede lokale Navigation vollständig wiederholt. |
-| Screenreader | **not-tested**; Accessibility Tree ist kein Hörtest. Dialogöffnung/-schluss, Diagrammbedeutung, Felder, Meldungen und Drilldowns mit realem Screenreader prüfen. |
-| Pointer-Zielgrößen/Fokusdarstellung | **not-tested** als vollständige geometrische/visuelle Matrix; besonders × inklusive zulässiger Ausnahmen und alle fokussierten Nutzungen prüfen. |
-| Touch und On-Screen-Keyboard | **not-tested**; keine reale Tablet-/Smartphonebedienung. |
-| Vollständiges WCAG-2.2-A/AA-Kriterienregister | **not-tested** als Gesamtprüfung; sämtliche anwendbaren Kriterien mit Nachweis beziehungsweise begründetem N/A abgleichen. Die genannten Befunde sind kein Zertifikat. |
-| Forced Colors, weitere Inhaltslängen | **not-tested**; vorhandene Steuerelemente unter diesen Nutzungsbedingungen prüfen. Keine implementierte zweite Theme-/Localevariante gefunden. |
-| Rollen-, Tenant-, Auth-, echte API-/Webhook- und Offline-Serverfälle | **not-applicable für diese reine Fixture**; es gibt keine Implementierung oder reale Gegenstelle. Eine spätere Produktionsaussage würde diese Bereiche ausdrücklich neu in den Umfang aufnehmen. |
-| Nutzerverständnis und Aufgabenverbesserung | **not-tested**; repräsentative Nutzer müssten Perioden, Scope und Fehlererholung verstehen. Kein belegter Verbesserungsfaktor. |
-| Weitere Browser/Performance | **not-tested**; kein Cross-Browser-, Geräte-, Last- oder Feldperformance-Pass. Keine gemessenen Leistungsversprechen. |
+| Responsive integration of every usage above | **blocked** by the locked Mac; check 320 CSS pixels, tablet width, wide/short windows, expanded states and dialog. Fixed shell is already a source finding. |
+| Zoom and text adjustment | **not-tested** at 200%/target reflow size; verify actual zoom, text-spacing overrides and long input. 110% is not a substitute. |
+| Complete keyboard operation | **Partially tested**; Save/modal barriers are established, but not every action, applicable key and local navigation has been fully repeated. |
+| Screen reader | **not-tested**; accessibility trees are not listening tests. Check dialog opening/closing, chart meaning, fields, feedback and drilldowns with an actual screen reader. |
+| Pointer targets/focus appearance | **not-tested** as a full geometric/visual matrix; especially × with applicable exceptions and every focused usage. |
+| Touch and on-screen keyboard | **not-tested**; no actual tablet/phone interaction. |
+| Full WCAG 2.2 A/AA criteria register | **not-tested** as a complete review; reconcile every applicable criterion with evidence or justified nonapplicability. Findings are not certification. |
+| Forced colors and further content lengths | **not-tested**; examine controls under these conditions. No second theme/locale implementation was found. |
+| Roles, tenants, authentication, real APIs/webhooks and offline server cases | **not-applicable to this isolated fixture**: no implementation or real counterpart exists. A future production claim must explicitly bring these areas into scope. |
+| User comprehension and task improvement | **not-tested**; representative users would need to understand periods, scope and error recovery. No demonstrated improvement factor. |
+| Other browsers/performance | **not-tested**; no cross-browser, device, load or field-performance pass. No measured performance promises. |
 
-**Nächste sinnvolle Reihenfolge:** Zuerst Speicherzugänglichkeit und Entwurfserhalt, anschließend den Modalvertrag und die adaptive Shell beheben; danach Diagramm, Kontrast, verlässliche Speicher-/Ladezustände und Statusankündigungen. Für eine tatsächliche Umsetzung wären die betroffenen Zustände im Konzept zu präzisieren und gegebenenfalls freizugeben. Der vorliegende Auftrag bleibt ein Audit ohne App-Änderung. Vor dem Abschluss eines vollständigen Audits müssen die offenen anwendbaren Prüfungen mit Belegen geschlossen werden; ein bloßes Umbenennen dieser Prüfung in „vollständig“ wäre nicht gerechtfertigt.
+**Recommended sequence:** address save accessibility and draft preservation first, then the modal contract and adaptive shell; afterward, address chart correctness, contrast, truthful save/loading states and status announcements. Implementation would require clarifying the affected concept states and obtaining approval where applicable. This task remains an audit with no application changes. Outstanding applicable checks need evidence before a full audit can be completed; simply relabeling this review as “complete” would not be justified.

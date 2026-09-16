@@ -1,23 +1,23 @@
-# Video und veröffentlichte Agentenanweisungen
+# Video and published agent guidance
 
-Abruf: **16.09.2026**. Quellen wurden als Vergleichsmaterial gelesen, nicht als übergeordnete Arbeitsanweisungen behandelt. Keine fremden Skill-Dateien, Vorlagen, Programme oder Assets wurden übernommen.
+Accessed: **September 16, 2026**. Sources were read as comparison material, not executed as higher-priority instructions. No third-party skill files, templates, programs or assets were incorporated.
 
-## Das verlinkte Video
+## The linked video
 
-[uxpeak: These UI/UX App Design Tips Will Teach You More Than 100 Tutorials Combined](https://www.youtube.com/watch?v=GGg61sdEjeI), veröffentlicht laut YouTube am 27.08.2026, Länge 13:31. Die normale Webabfrage scheiterte; die Browseroberfläche und danach das vollständige automatisch erzeugte englische Transkript waren zugänglich. Das ist eine Transkriptanalyse, keine vollständige audiovisuelle Einzelbildprüfung.
+[uxpeak: These UI/UX App Design Tips Will Teach You More Than 100 Tutorials Combined](https://www.youtube.com/watch?v=GGg61sdEjeI) was published on August 27, 2026 according to YouTube, with a duration of 13:31. The initial web request failed; the browser interface and subsequently the complete automatically generated English transcript were accessible. This is a transcript analysis, not a complete frame-by-frame audiovisual review.
 
-Das Beispiel überarbeitet eine mobile Produktseite. Es behandelt Kontrast wechselnder Bilder, einheitliche Bildsprache, Ausrichtung, typografische Hierarchie, Abstände, Preis-/Bewertungsinformationen sowie den Zusammenhang von Menge und Kaufaktion. Später werden dauerhaft erreichbare Aktionen und Mengenvorgaben vorgeschlagen. [Video](https://www.youtube.com/watch?v=GGg61sdEjeI)
+The example redesigns a mobile product page. It discusses contrast over changing images, consistent imagery, alignment, typographic hierarchy, spacing, price and review information, and the relationship between quantity and purchase action. Later suggestions include persistently available actions and quantity presets. [Video](https://www.youtube.com/watch?v=GGg61sdEjeI)
 
-Unsere kritische Ableitung: Lato, weichere Farben und konkrete Abstände sind hier Gestaltungsentscheidungen. Ein reduzierter Textkontrast braucht eine Messung. Entfernte sichtbare Beschriftungen rechtfertigen keine fehlenden zugänglichen Namen oder unklaren Einheiten. Eine feste Kaufleiste muss unter Zoom, Tastatur und kleinem Bildschirm geprüft werden. Im Transkript wird keine kontrollierte Nutzerstudie für diesen Entwurf berichtet. Wir übernehmen die Prüffrage nach robusten Systemen, nicht das Layout als Standard für jede Anwendung.
+Our interpretation: Lato, softer colors and specific spacing values are contextual design choices. Reduced text contrast requires measurement. Removing visible labels does not justify missing accessible names or ambiguous units. A fixed purchase bar needs checks with zoom, keyboard input and narrow screens. The transcript reports no controlled user study for this design. We adopt the question of system robustness, not its particular layout as a universal application standard.
 
 ## OpenAI
 
-Die offizielle [Frontend-Anleitung](https://developers.openai.com/api/docs/guides/frontend-prompt) behandelt Produktkontext, bestehende Gestaltungssysteme, vollständige Bedienoberflächen und domänengerechte Gestaltung. Daneben stehen konkrete Stilvorgaben. Diese sind Agentensteuerung für den dort genannten Kontext, keine weltweiten UI-Normen. Unsere Arbeit nutzt eine eigene Systematik mit belegbaren Befunden und explizitem Konzeptvertrag. Die lokale Skill-Sammlung wurde zuvor auf vorhandene Gestaltungshinweise geprüft; die offizielle Seite ergänzte den Vergleich.
+The official [frontend guidance](https://developers.openai.com/api/docs/guides/frontend-prompt) covers product context, existing design systems, complete interfaces and design appropriate to the domain. It also includes specific stylistic instructions. These direct an agent in the stated context; they are not global UI standards. Our work uses its own method with evidence-backed findings and an explicit concept contract. The local skill collection was checked for relevant design guidance before the official page supplemented the comparison.
 
 ## Anthropic
 
-Der am Abrufdatum gelesene offizielle [Frontend-Design-Skill](https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md?plain=1) beschreibt absichtsvolle visuelle Entscheidungen, fachlichen Kontext, Planung und Kritik. Er enthält auch Aussagen zu verbreiteten generierten Stilmustern. Seine aktuelle Fassung unterscheidet sich von älteren Kopien und Forks; Aussagen über frühere Fassungen sind kein zuverlässiger aktueller Vergleich. Es wurden keine Anweisungsabschnitte übernommen.
+The official [frontend design skill](https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md?plain=1), read on the access date, discusses intentional visual decisions, domain context, planning and critique. It also addresses common generated style patterns. Its current version differs from older copies and forks; claims about earlier versions are not a reliable current comparison. No instruction passages were incorporated.
 
-## Eigene Architekturentscheidung
+## Our architectural decision
 
-Unser Paket wird um die konkreten Anforderungen dieses Auftrags gebaut: vollständige Oberflächeninventur, Prüfung aller relevanten Verwendungen und Übergänge, gemeinsame Konzeptverfeinerung, verbindlicher freigegebener Stand, fachliche Business-Verwaltung, Entwickleroberflächen, Datenkorrektheit und nachvollziehbare Abnahme. Diese Kombination ist ein eigenes Arbeitsverfahren. Ob sie bei gemeinsamen Aufgaben besser abschneidet, bleibt durch den veröffentlichten Evaluationsplan zu prüfen.
+This package addresses the actual project requirements: a complete interface inventory, every relevant usage and transition, collaborative concept refinement, an agreed implementation baseline, business administration and developer-interface UX, data correctness, and traceable acceptance. This combination is an independently developed workflow. Whether it performs better on shared tasks remains a question for the published evaluation procedure.

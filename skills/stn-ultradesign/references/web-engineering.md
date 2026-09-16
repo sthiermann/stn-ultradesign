@@ -86,3 +86,43 @@ Also measure the application's critical task: opening a large dataset, filtering
 | Visual/interaction verification | Implemented result traceably matches its approved contract |
 
 Learn a feature because an observed task or constraint needs it. New APIs such as view transitions, anchor positioning or newer container-query types require current compatibility checks and fallbacks; their novelty is not a reason to redesign the product around them.
+
+## Deliver contemporary materials and navigation on the web
+
+Read [navigation-and-materials.md](navigation-and-materials.md) for the composition decision.
+
+“HTML5 design” is not a visual specification. The current HTML Living Standard defines meaningful document elements and behavior, including [`nav`](https://html.spec.whatwg.org/multipage/sections.html#the-nav-element); CSS defines presentation mechanisms. Neither prescribes a fashionable palette, corner radius or shadow. Record those as deliberate product tokens and validate them against the task.
+
+### Material is a rendering contract
+
+Define each material by purpose, foreground/background pairing, opacity, blur, border, highlight, shadow, stacking level and fallback. Keep glass on a composited surface layer; do not lower the opacity of a wrapper that also contains text. Give diagrams, code, forms and tables a stable readable backing when they appear inside a translucent container. Test their entire scroll range over bright, dark, patterned and moving content. Contrast belongs to the resulting pixels, not an isolated color token.
+
+CSS [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/backdrop-filter) filters content behind an element. Its result depends on transparency and backdrop-root boundaries; nested opacity/filter effects can change what is sampled. It is not Apple's native Liquid Glass renderer and does not automatically reproduce its optical behavior or adaptive legibility. Use a solid surface as the working baseline, enhance through feature queries, and verify the actual minimum supported browsers.
+
+The [`prefers-reduced-transparency` query](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-transparency) has limited availability in the documentation checked on 2026-09-16. Honor it when available, but do not rely on every browser exposing the system preference. For a product with prominent translucent materials, provide a usable opaque appearance option and test the fallback. Respect forced colors and contrast preferences without removing the semantic distinction between selected, focused, disabled and destructive controls.
+
+Shape and elevation need a small intentional grammar. Define a restrained radius hierarchy, nested inset relationships, and shadow direction/softness by layer. Decide whether a floating toolbar, anchored inspector, modal and content block should feel related or distinct. A dark-theme shadow may need a boundary highlight to communicate separation. Avoid applying one decorative shadow to every row or stacking blurred layers merely to appear advanced. These are design hypotheses to render and compare, not universal pixel values.
+
+### Motion must preserve the interaction
+
+Specify motion by cause: navigating deeper or back, revealing a contextual inspector, changing a selection, moving an item, saving, or receiving urgent information. For each, define what moves, origin/destination, continuity, cancellation, interruption and the reduced-motion alternative. Do not animate every incoming value in a monitoring grid or block an urgent action behind a transition. A changing datum should not reset the entire page animation.
+
+CSS View Transitions can connect old and new visual states. The [CSSWG Level 1 document](https://drafts.csswg.org/css-view-transitions-1/) linked here is an editor's draft, not evidence that every API detail is stable in every browser. [Chrome's implementation guidance](https://developer.chrome.com/docs/web-platform/view-transitions/same-document) explains same-document transitions and reduced-motion handling. Feature-detect the chosen API; keep the navigation/state update fully functional when unsupported or interrupted. Never make browser Back, focus restoration, document title, URL or draft retention depend on the animation completing.
+
+If the project's installed React release supports [`ViewTransition`](https://react.dev/reference/react/ViewTransition), follow that release's integration contract. Current React documentation describes framework-coordinated transitions and explicitly notes that reduced motion is not disabled automatically. Do not layer a competing `document.startViewTransition()` coordinator around React's own transition mechanism. Inspect the lockfile and router before choosing an implementation; do not import an API from a newer documentation version into an older installed release.
+
+Prefer transitions of transform and opacity when they express the intended result, and profile layout/paint/compositing costs on representative hardware. [web.dev's animation guidance](https://web.dev/articles/animations-guide) explains why properties requiring layout or paint can cost more. This is a starting point, not a guarantee that an arbitrarily large blurred layer or video grid will perform well. Compare measured frame delivery and input response with the effects enabled and disabled.
+
+### Navigation state survives adaptation
+
+Model destination, selected object, local section, filter state, draft state and temporary overlay separately. When a wide list-detail layout becomes a narrow navigation stack, preserve the selected object's URL, the list's query/scroll context, its available actions and the route back. Do not create a second mobile data model or silently remount a form with a new key when the viewport changes.
+
+Use links for destinations and buttons for commands. Give navigation regions distinct accessible names and mark the current destination. Do not turn an ordinary list of route links into an ARIA menu unless the complete menu interaction is intended. Modal drawers need dialog behavior; a persistent side panel does not automatically need a modal focus trap.
+
+Measure space occupied by persistent navigation at the actual target sizes and text settings. A stack of app bar, breadcrumbs, section tabs, local tabs and sticky action bar can leave little space for the task even when every component passes separately. Record the resulting usable content area and demonstrate a simpler hierarchy. There is no universal maximum percentage: the decision follows the product's task and needs a rendered comparison.
+
+Check sticky and floating controls while tabbing and scrolling with the on-screen keyboard. [WCAG 2.4.11 AA](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html) requires a focused component not to be entirely hidden by author-created content; the skill's preferred design target is to keep the full focus indicator and relevant control comfortably visible. Distinguish that stronger design target from the criterion's minimum. Verify safe areas, reduced viewport height, long translated titles, split-window use and role-dependent navigation entries.
+
+### Acceptance evidence for these effects
+
+Record rendered bright/dark/busy backgrounds, each supported theme, the opaque fallback, reduced motion, input response under representative load, and interrupted/back navigation. Exercise a real content-first or maximum-workspace mode if the task needs one: entry and exit, keyboard recovery, critical-status visibility, saved selection and return to the previous arrangement. A static polished screenshot cannot close these checks.

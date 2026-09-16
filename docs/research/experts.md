@@ -1,138 +1,138 @@
-# Primärrecherche: Designexperten, Produktdenken und Datenvisualisierung
+# Primary research: design experts, product thinking and data visualization
 
-Recherchestand und Abrufdatum sämtlicher Quellen: **16.09.2026**. Dies ist eine kuratierte Auswahl international einflussreicher Autoren, Forscher und Institutionen. Es gibt keine belastbare weltweite Rangliste der „besten Designer“. Die Auswahl folgt dem Nutzen ihrer offen zugänglichen Originalveröffentlichungen für einen wiederverwendbaren Software-Design-Skill.
+Research and access date for all sources: **September 16, 2026**. This is a curated selection of internationally influential authors, researchers and institutions. There is no credible global ranking of the “best designers.” Selection reflects the usefulness of accessible original publications for a reusable software-design skill.
 
-## Ergebnis für den Skill
+## Implications for the skill
 
-Der tragfähige gemeinsame Kern ist Aufgabenverständnis, nachvollziehbare Struktur, verlässliches Feedback, menschliche Kontrolle, passende Informationsdarstellung und überprüfbare Nutzbarkeit. Neuheit einer visuellen Mode belegt keine bessere Bedienung. Ein Designsystem liefert Konventionen; es ersetzt weder lokale Nutzerforschung noch fachliche Korrektheit. Die folgenden praktischen Folgerungen sind unsere Synthese, keine wörtliche oder vollständige Wiedergabe einzelner Autoren.
+The shared foundation is understanding tasks, coherent structure, reliable feedback, human control, appropriate information representation and verifiable usability. A new visual trend does not establish better interaction. Design systems provide conventions; they replace neither local user research nor domain correctness. The following practical conclusions are our synthesis, not complete or verbatim reproductions of individual authors.
 
-1. **Probleme vor Oberflächen definieren:** Zielgruppe, Auslöser, gewünschtes Ergebnis, Grenzen, Fehlerfolgen und Evidenzstatus vor dem visuellen Konzept dokumentieren.
-2. **Ganze Aktivitäten prüfen:** Einstieg, Informationsbeschaffung, Durchführung, Rückmeldung, Wiederaufnahme, Korrektur und Übergabe an andere Menschen berücksichtigen.
-3. **Behauptungen klassifizieren:** Verbindliche Anforderung, Plattformkonvention, beobachtetes Problem, begründete Hypothese und Stilentscheidung getrennt ausweisen.
-4. **Darstellungen nach Fragen auswählen:** Datenvertrag und fachliche Vergleichsfrage vor Diagrammtyp, Farbe und Animation festlegen.
-5. **Konzepte nachvollziehbar freigeben:** Wenn Konzept-zuerst beauftragt ist, Annahmen und Erfolgskriterien vorlegen, den konkreten Entwurf verfeinern und dessen freigegebenen Stand bis in die Implementierung nachverfolgen. Ein Mockup gilt nicht als Nutzerstudie.
-6. **Ergebnisse statt Begeisterung behaupten:** Erledigung, Fehler, Wiederaufnahme und Entscheidungsqualität messen. Eine prozentuale Qualitätssteigerung darf erst nach einer passenden Messung berichtet werden.
+1. **Define problems before interfaces:** document users, triggers, intended outcomes, constraints, failure consequences and evidence status before the visual concept.
+2. **Review complete activities:** include entry, gathering information, execution, feedback, resumption, correction and handoff to other people.
+3. **Classify claims:** distinguish requirements, platform conventions, observed problems, reasoned hypotheses and stylistic choices.
+4. **Choose representations for questions:** establish the data contract and domain comparison before chart type, color or animation.
+5. **Make concept approval traceable:** when concept-first work is requested, present assumptions and success criteria, refine the concrete design and trace its approved revision into implementation. A mockup is not a user study.
+6. **Report outcomes rather than predicted enthusiasm:** measure completion, errors, recovery and decision quality. Report percentage improvements only after suitable measurement.
 
-## Experten und Quellen
+## Experts and sources
 
-Jede aufgeführte Seite wurde geöffnet und ihr zugänglicher Text geprüft, soweit bei der Quelle nicht ausdrücklich eine Grenze genannt wird. Bei dynamischen Seiten und Diagrammen bedeutet das keine vollständige Prüfung sämtlicher interaktiver Beispiele. Dokumentdatum und Abrufdatum sind unterschiedliche Dinge. Suchmaschinenangaben zum Veröffentlichungsalter wurden nicht als Dokumentdatum übernommen.
+Each listed page was opened and its accessible text examined, except where a limitation is stated. Reading a dynamic page does not establish complete inspection of every interactive example. Publication and access dates differ; search-engine age estimates were not treated as document dates.
 
-### E01 — Don Norman und Eli Spencer: Human-centered Design
+### E01 — Don Norman and Eli Spencer: human-centered design
 
-[Community-based, Human-centered Design](https://jnd.org/community-based-human-centered-design/), Autorenwebsite, 2019. **Einordnung:** methodischer Essay. Er verbindet Ursachenverständnis, Menschen und lokalen Kontext, vollständige Aktivitäten sowie iterative Erprobung. Experten- und Gemeinschaftswissen werden gemeinsam betrachtet. **Ableitung:** Erkenntnisse über Nutzer benötigen Quellen und Kontext; fiktive Persona-Eigenschaften dürfen nicht als Forschung erscheinen. Keine Vorgabe für bestimmte digitale Formen oder Komponenten.
+[Community-based, Human-centered Design](https://jnd.org/community-based-human-centered-design/), author's website, 2019. **Type:** methodological essay connecting root causes, people and local context, complete activities and iteration. It considers expert and community knowledge together. **Application:** user claims require sources and context; invented persona attributes must not appear as research. It prescribes no specific digital shapes or components.
 
-### E02 — Jakob Nielsen: Usability-Heuristiken
+### E02 — Jakob Nielsen: usability heuristics
 
-[10 Usability Heuristics for User Interface Design](https://www.nngroup.com/articles/ten-usability-heuristics/), 1994, zuletzt geprüft laut Seite 30.01.2024. **Einordnung:** etablierte Inspektionsheuristiken. Die Seite bezeichnet sie ausdrücklich als allgemeine Faustregeln. **Ableitung:** konkrete Probleme an Status, Sprache, Kontrolle, Konsistenz, Fehlervermeidung, Gedächtnislast und Hilfestellung prüfen. Ein Heuristik-Audit kann Risiken aufzeigen; es beweist keine gemessene Nutzerzufriedenheit.
+[10 Usability Heuristics for User Interface Design](https://www.nngroup.com/articles/ten-usability-heuristics/), 1994; page states last reviewed January 30, 2024. **Type:** established inspection heuristics, explicitly described as broad rules of thumb. **Application:** investigate concrete status, language, control, consistency, prevention, memory-load and help problems. Heuristic review can identify risks, not establish measured user satisfaction.
 
-### E03 — Dieter Rams: Designphilosophie
+### E03 — Dieter Rams: design philosophy
 
-[Ten principles for good design bei Vitsœ](https://www.vitsoe.com/us/about/good-design), langjähriger Hersteller und Designpartner. **Einordnung:** gestalterische Leitprinzipien aus dem Industriedesign. Nützlichkeit, Verständlichkeit, Ehrlichkeit, sorgfältige Ausarbeitung und Dauerhaftigkeit lassen sich auf Software übertragen. **Grenze:** Diese Übertragung ist Interpretation; Rams liefert hier keine Webstandards, Schriftgrößen oder Farbtokens. Lizenzhinweise der Quelle beachten; der Skill paraphrasiert knapp.
+[Ten principles for good design at Vitsœ](https://www.vitsoe.com/us/about/good-design), a longstanding manufacturer and design partner. **Type:** industrial-design principles. Usefulness, understandability, honesty, careful execution and longevity can inform software. **Limit:** this transfer is interpretation; the source provides no web standards, font sizes or color tokens. Respect its licensing notices; the skill uses brief paraphrases.
 
-### E04 — Ben Shneiderman: Interaktionsregeln
+### E04 — Ben Shneiderman: interaction rules
 
-[The Eight Golden Rules of Interface Design](https://www.cs.umd.edu/users/ben/goldenrules.html), eigene Universitätsseite, Fassung aus der sechsten Buchauflage 2016. **Einordnung:** erfahrungsbasierte Gestaltungsregeln. Shneiderman fordert selbst Anpassung und Validierung für den Anwendungsbereich. **Ableitung:** Interaktionsabschluss, Wiederherstellung, Nutzerkontrolle und verständliche Rückmeldungen prüfen. Die historische Erwähnung von „7 ± 2“ rechtfertigt keine pauschale Obergrenze für Navigationselemente.
+[The Eight Golden Rules of Interface Design](https://www.cs.umd.edu/users/ben/goldenrules.html), the author's university page, version from the sixth book edition, 2016. **Type:** experience-based rules; Shneiderman explicitly calls for domain adaptation and validation. **Application:** check closure, recovery, control and understandable feedback. The historical reference to “7 ± 2” does not justify a blanket navigation-item limit.
 
-### E05 — Bruce Tognazzini: überprüfbare Bedienbarkeit
+### E05 — Bruce Tognazzini: testable usability
 
-[First Principles of Interaction Design](https://asktog.com/atc/principles-of-interaction-design/), 05.03.2014. **Einordnung:** umfangreiche Expertenempfehlungen mit Beispielen und Meinungen. Relevant sind Auffindbarkeit, erwartbares Verhalten und die Prüfung ästhetischer Änderungen auf Bedienfolgen. **Ableitung:** Modernisierung muss wichtige Steuerelemente erkennbar lassen. Einzelne historische Beispiele und technische Vorschläge sind keine automatisch gültigen heutigen Implementierungsempfehlungen.
+[First Principles of Interaction Design](https://asktog.com/atc/principles-of-interaction-design/), March 5, 2014. **Type:** extensive expert recommendations with examples and opinions. Relevant themes include discoverability, predictable behavior and evaluating the usability effects of aesthetic changes. **Application:** modernization must preserve recognizable important controls. Historical examples and technical suggestions are not automatically current implementation advice.
 
 ### E06 — Luke Wroblewski: Mobile First
 
-[Mobile First, Introduction](https://www.lukew.com/mobilefirst/02-introduction/index.html), 2011, Originalbuch frei auf der Autorenwebsite. **Einordnung:** Produkt- und Entwurfsmethode. Mobile Einschränkungen können Priorisierung erzwingen; Gerätemöglichkeiten eröffnen passende Eingaben. **Ableitung:** Smartphone-Aufgaben eigenständig entwerfen. „Mobile First“ verlangt nicht, professionelle Desktop-Arbeit auf das Platzangebot eines Telefons zu reduzieren; diese Abgrenzung ist unsere kontextbezogene Anwendung.
+[Mobile First, Introduction](https://www.lukew.com/mobilefirst/02-introduction/index.html), 2011; original book freely available on the author's website. **Type:** product/design method. Mobile constraints can force prioritization while device capabilities enable appropriate input. **Application:** design phone tasks deliberately. “Mobile First” does not require reducing professional desktop work to phone-sized space; that qualification is our contextual interpretation.
 
-### E07 — Luke Wroblewski: mobile Eingaben
+### E07 — Luke Wroblewski: mobile input
 
-[Mobile First, Chapter 6: Inputs](https://www.lukew.com/mobilefirst/08-chapter-6/index.html), 2011. **Einordnung:** konkrete historische Formulargestaltung. Der Text behandelt sichtbare Fragen, Eingabearten und die Probleme verschwindender Labels. **Ableitung:** persistente Beschriftung, passende Eingabeunterstützung und reale virtuelle Tastaturen testen. Alte Aussagen über Browserfähigkeiten oder Plattform-Picker nicht ungeprüft in den Skill übernehmen.
+[Mobile First, Chapter 6: Inputs](https://www.lukew.com/mobilefirst/08-chapter-6/index.html), 2011. **Type:** concrete historical form guidance covering visible questions, input types and disappearing labels. **Application:** test persistent labels, suitable input support and real virtual keyboards. Recheck old browser-capability and platform-picker claims before applying them.
 
-### E08 — Josh Clark: physische Nutzung und Nutzen
+### E08 — Josh Clark: physical use and value
 
-[Inc. on Mastering the Mobile Magic of a Mighty Big Medium](https://bigmedium.com/ideas/inc-big-medium-profile.html), eigener Beitrag, 10.11.2015. **Einordnung:** kurze autorisierte Wiedergabe eigener Interviewprinzipien. Clark betont bequeme Zielerreichung und physische Touch-Nutzung und hinterfragt Engagement als Selbstzweck. **Ableitung:** Gerätehaltung und Eingabesituation prüfen; mehr Interaktionen oder längere Sitzungen sind nicht automatisch Erfolg. Das Buch *Designing for Touch* wurde nicht vollständig gelesen.
+[Inc. on Mastering the Mobile Magic of a Mighty Big Medium](https://bigmedium.com/ideas/inc-big-medium-profile.html), author's post, November 10, 2015. **Type:** brief authorized presentation of interview principles. Clark emphasizes comfortable task completion and physical touch use, questioning engagement as an end in itself. **Application:** examine device posture and input context; more interactions or longer sessions are not automatically success. The full book *Designing for Touch* was not read.
 
-### E09 — Brad Frost: System und konkrete Anwendung
+### E09 — Brad Frost: systems and actual use
 
-[Atomic Design Methodology, Chapter 2](https://atomicdesign.bradfrost.com/chapter-2/), frei zugängliches Originalbuch. **Einordnung:** Modell zur Strukturierung von Designsystemen. Wiederverwendbare Teile und vollständige Seiten mit repräsentativem Inhalt beeinflussen sich gegenseitig. **Ableitung:** Komponenten in realen Zuständen und Layouts prüfen. Die Kategorien sind kein vorgeschriebener React-Verzeichnisbaum und keine lineare Produktionsstraße.
+[Atomic Design Methodology, Chapter 2](https://atomicdesign.bradfrost.com/chapter-2/), openly available original book. **Type:** a model for structuring design systems. Reusable parts and complete pages with representative content inform each other. **Application:** inspect components in real states and layouts. These categories prescribe neither a React directory structure nor a linear production pipeline.
 
-### E10 — Julie Zhuo: Prototypen als Lernmittel
+### E10 — Julie Zhuo: prototypes as learning tools
 
-[The Death of Product Development as We Know it](https://lg.substack.com/p/the-death-of-product-development), 25.03.2025, von ihrer [Autorenwebsite](https://juliezhuo.com/) verlinkt. **Einordnung:** aktuelle, ausdrücklich meinungsgeprägte Position zu KI-gestützter Produktarbeit. Sie empfiehlt frühe Prototypen zur Prüfung von Leistungsfähigkeit, Verlässlichkeit und Geschwindigkeit. **Ableitung:** Unsicherheiten praktisch testen. Aussagen über Organisationsformen oder das Ende von Dokumentation sind keine nachgewiesenen universellen Best Practices.
+[The Death of Product Development as We Know it](https://lg.substack.com/p/the-death-of-product-development), March 25, 2025, linked from her [author website](https://juliezhuo.com/). **Type:** a current, explicitly opinionated account of AI-assisted product work. She recommends early prototypes to examine capability, reliability and speed. **Application:** test uncertainty in practice. Claims about organizational structures or documentation becoming obsolete are not established universal practices.
 
-### E11 — Tamara Munzner: richtige Validierungsebene
+### E11 — Tamara Munzner: appropriate validation levels
 
-[A Nested Model for Visualization Design and Validation](https://www.cs.ubc.ca/labs/imager/tr/2009/NestedModel/NestedModel.pdf), IEEE TVCG / InfoVis 2009, Autorenhost; [Publikationsseite](https://www.cs.ubc.ca/labs/imager/tr/2009/NestedModel/). **Einordnung:** wissenschaftlicher methodischer Beitrag. Aufgabenverständnis, Abstraktion, visuelle Interaktion und Algorithmus werden getrennt betrachtet. **Ableitung:** Eine Renderzeitmessung belegt nicht, dass ein Diagramm die richtige fachliche Frage beantwortet. Das Modell ordnet Validierung; es ist keine Chart-Galerie.
+[A Nested Model for Visualization Design and Validation](https://www.cs.ubc.ca/labs/imager/tr/2009/NestedModel/NestedModel.pdf), IEEE TVCG / InfoVis 2009, author-hosted; [publication page](https://www.cs.ubc.ca/labs/imager/tr/2009/NestedModel/). **Type:** scientific methodological contribution distinguishing domain tasks, abstraction, visual interaction and algorithms. **Application:** rendering-speed measurements do not establish that a chart answers the right domain question. This is a validation framework, not a chart gallery.
 
-### E12 — Edward Tufte: Informationsdichte mit Kontext
+### E12 — Edward Tufte: information density with context
 
-[Sparkline theory and practice](https://www.edwardtufte.com/notebook/sparkline-theory-and-practice-edward-tufte/), eigener Beitrag ab 27.05.2004 mit späteren Ergänzungen. **Einordnung:** Originaldiskussion einer Darstellungstechnik. Kleine Zeitverläufe können Zahlen und Text um Vergleichskontext ergänzen. **Ableitung:** Sparklines neben ihren Kennzahlen verwenden, wenn Verlauf relevant ist. Die Diskussion ist kein Anlass, alle Skalen, Beschriftungen oder verständnisfördernden Elemente zu entfernen.
+[Sparkline theory and practice](https://www.edwardtufte.com/notebook/sparkline-theory-and-practice-edward-tufte/), author's discussion beginning May 27, 2004, with later additions. **Type:** original discussion of a representation technique. Small time series can add comparison context to numbers and text. **Application:** place sparklines near their metrics when trends matter. This does not justify removing every scale, label or explanatory element.
 
-### E13 — Stephen Few: kompakte Zielvergleiche
+### E13 — Stephen Few: compact target comparisons
 
-[Bullet Graph Design Specification](https://www.perceptualedge.com/articles/misc/Bullet_Graph_Design_Spec.pdf), Original-PDF, Revision 10.10.2013. **Einordnung:** Spezifikation eines konkreten Diagrammtyps. Eine Hauptkennzahl kann mit Zielwerten und optionalen Bewertungsbereichen kompakt verglichen werden. **Ableitung:** Vergleichsfragen vor dekorativen KPI-Anzeigen priorisieren. Das PDF war über die www-Adresse abrufbar; die Adresse ohne www lieferte zeitweise eine Prüfsperre.
+[Bullet Graph Design Specification](https://www.perceptualedge.com/articles/misc/Bullet_Graph_Design_Spec.pdf), original PDF, revised October 10, 2013. **Type:** specification for a particular chart. A main measure can be compared compactly with targets and optional qualitative ranges. **Application:** prioritize comparison questions over decorative KPI displays. The www address was accessible; the address without www temporarily returned a verification block.
 
-### E14 — Stephen Few: Dashboard und Analyse unterscheiden
+### E14 — Stephen Few: distinguish dashboards from analysis
 
-[Dashboard Confusion Revisited](https://perceptualedge.com/articles/visual_business_intelligence/dboard_confusion_revisited.pdf), Original-PDF, 2007. **Einordnung:** Expertenanalyse von Monitoring-Dashboards. Sie trennt raschen Überblick von anderer analytischer Arbeit. **Ableitung:** Übersicht, Drill-down und Aktionsmöglichkeiten bewusst trennen. Die historische Ein-Bildschirm-Definition darf nicht dazu führen, dass auf einem Smartphone Texte und Ziele unlesbar klein werden.
+[Dashboard Confusion Revisited](https://perceptualedge.com/articles/visual_business_intelligence/dboard_confusion_revisited.pdf), original PDF, 2007. **Type:** expert analysis of monitoring dashboards, distinguishing rapid overview from other analytical work. **Application:** distinguish overview, drilldown and actions deliberately. The historical single-screen definition must not cause illegibly small text and targets on phones.
 
-### E15 — Mike Bostock: wiederverwendbare Visualisierungen
+### E15 — Mike Bostock: reusable visualizations
 
-[Towards Reusable Charts](https://bost.ocks.org/mike/chart/), 27.02.2012. **Einordnung:** technische Originalposition zur Konfiguration und Wiederverwendung von D3-Diagrammen. **Ableitung:** fachliche Konfiguration, Daten und Aktualisierung als klare Schnittstellen behandeln. Der Beitrag ist keine aktuelle React-Anleitung; heutige Bibliotheksversionen und Lifecycle-Anforderungen zusätzlich prüfen.
+[Towards Reusable Charts](https://bost.ocks.org/mike/chart/), February 27, 2012. **Type:** original technical discussion of configurable, reusable D3 charts. **Application:** make domain configuration, data and updates explicit interfaces. This is not current React guidance; also verify present library versions and lifecycle requirements.
 
-## Ergänzende Forschung und aktuelle operative Referenzen
+## Additional research and operational references
 
-### E16 — Kate Moran / NN/g: Usability-Studien
+### E16 — Kate Moran / NN/g: usability studies
 
-[Usability Testing 101](https://www.nngroup.com/articles/usability-testing-101/), 01.12.2019, laut Seite zuletzt geprüft 15.07.2026. **Einordnung:** methodische Anleitung. Realistische Teilnehmer bearbeiten realistische Aufgaben; Forschende beobachten. **Ableitung:** qualitative Problemfindung und quantitative Ergebnisbehauptungen trennen. Kleine iterative Studien können häufige Probleme finden, aber weder alle Nutzergruppen abdecken noch eine universelle Erfolgsquote beweisen.
+[Usability Testing 101](https://www.nngroup.com/articles/usability-testing-101/), December 1, 2019; page states last reviewed July 15, 2026. **Type:** methodological guidance: realistic participants attempt realistic tasks while researchers observe. **Application:** separate qualitative problem discovery from quantitative outcome claims. Small iterative studies can find common problems without covering every population or proving a universal success rate.
 
 ### E17 — Kerry Rodden, Hilary Hutchinson, Xin Fu / Google Research
 
-[Measuring the User Experience on a Large Scale](https://research.google/pubs/measuring-the-user-experience-on-a-large-scale-user-centered-metrics-for-web-applications/), CHI 2010. **Einordnung:** originale Publikationsseite mit Abstract zum HEART-Framework und der Verbindung von Produktzielen und Messgrößen. **Grenze:** Das historische Google-PDF ließ sich nicht vollständig abrufen; die heute verlinkte Downloadadresse führt zu einem fremden Host. Deshalb keine Behauptung vollständiger Lektüre dieses PDFs. Die Messverfahren im Skill sind eigene operative Synthese.
+[Measuring the User Experience on a Large Scale](https://research.google/pubs/measuring-the-user-experience-on-a-large-scale-user-centered-metrics-for-web-applications/), CHI 2010. **Type:** original publication page and abstract describing HEART and linking product goals to metrics. **Limit:** the historical Google PDF was not fully retrievable; the current download leads to a different host. No claim is made to have read that entire PDF. The skill's measurement procedures are our operational synthesis.
 
-### E18 — ONS: Achsen und Vergleichbarkeit
+### E18 — ONS: axes and comparability
 
-[Axes and gridlines](https://service-manual.ons.gov.uk/data-visualisation/guidance/axes-and-gridlines), offizielles Service Manual. **Einordnung:** institutionelle Darstellungsempfehlung. Baselines, vergleichbare Skalen und problematische Doppelachsen werden erläutert. **Ableitung:** Diagrammgeometrie muss den beabsichtigten Zahlenvergleich tragen. Einzelne redaktionelle Regeln des ONS sind kontextgebunden und nicht automatisch internationale Normen.
+[Axes and gridlines](https://service-manual.ons.gov.uk/data-visualisation/guidance/axes-and-gridlines), official service manual. **Type:** institutional presentation guidance explaining baselines, comparable scales and problematic dual axes. **Application:** chart geometry must support the intended numerical comparison. Individual ONS editorial rules are contextual, not automatically international standards.
 
-### E19 — ONS: Unsicherheit
+### E19 — ONS: uncertainty
 
-[Showing uncertainty in charts](https://service-manual.ons.gov.uk/data-visualisation/guidance/showing-uncertainty-in-charts), offizielles Service Manual. **Einordnung:** publikumsspezifische Kommunikationsrichtlinie. Unsicherheit soll sichtbar werden, wenn sie die Interpretation beeinflusst. **Ableitung:** Intervalle und ihre Bedeutung fachlich prüfen. Wir übernehmen weder die bevorzugte Banddarstellung als einzigen zulässigen Stil noch vereinfachte Formulierungen als allgemeine statistische Definition.
+[Showing uncertainty in charts](https://service-manual.ons.gov.uk/data-visualisation/guidance/showing-uncertainty-in-charts), official service manual. **Type:** audience-specific communication guidance. Show uncertainty when it affects interpretation. **Application:** verify intervals and their meaning. Neither a preferred band treatment nor simplified explanatory wording becomes a universal style or statistical definition.
 
-### E20 — ONS: kommunizierende Diagramme
+### E20 — ONS: charts that communicate
 
-[Data visualisation principles](https://service-manual.ons.gov.uk/data-visualisation/guidance/principles). **Einordnung:** Leitlinien für statistische Kommunikation; die Seite grenzt ihren Fokus ausdrücklich von explorativer Visualisierung ab. **Ableitung:** Chart-Aussage und Leserschaft vor Diagrammwahl klären; eine explorative Anwendung braucht zusätzliche Interaktions- und Analyseentscheidungen.
+[Data visualisation principles](https://service-manual.ons.gov.uk/data-visualisation/guidance/principles). **Type:** statistical communication guidance that explicitly distinguishes its focus from exploratory visualization. **Application:** establish the message and audience before choosing a chart; exploratory applications need additional interaction and analysis decisions.
 
-### E21 — W3C WAI: komplexe Grafiken
+### E21 — W3C WAI: complex graphics
 
-[Complex Images](https://www.w3.org/WAI/tutorials/images/complex/), offizielles Tutorial. **Einordnung:** informative Umsetzungsanleitung, nicht selbst der normative WCAG-Text. **Ableitung:** komplexe Diagramme brauchen sinnvolle Identifikation und eine ausführlichere äquivalente Erklärung; eine Datentabelle alleine erklärt nicht zwingend Muster. Strukturierte lange Inhalte nicht in ein einziges unstrukturiertes Attribut pressen.
+[Complex Images](https://www.w3.org/WAI/tutorials/images/complex/), official tutorial. **Type:** informative implementation guidance, not the normative WCAG text. **Application:** complex charts need meaningful identification and a fuller equivalent explanation; a table alone may not explain patterns. Do not compress structured long-form content into one unstructured attribute.
 
-### E22 — W3C WAI: grafischer Kontrast
+### E22 — W3C WAI: graphical contrast
 
-[Understanding SC 1.4.11: Non-text Contrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html). **Einordnung:** informative Erläuterung eines WCAG-Erfolgskriteriums. **Ableitung:** erforderliche grafische Information und Komponentenzustände im tatsächlichen Hintergrund prüfen. Nicht jedes dekorative Diagrammelement ist automatisch derselben Anforderung unterworfen. Konformitätsaussagen benötigen den normativen Standard und die tatsächliche Implementierung.
+[Understanding SC 1.4.11: Non-text Contrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html). **Type:** informative explanation of a WCAG success criterion. **Application:** check essential graphics and component states against their actual backgrounds. Not every decorative chart element has the same requirement. Conformance claims require the normative standard and actual implementation.
 
-### E23 — W3C APG: interaktive Grids
+### E23 — W3C APG: interactive grids
 
-[Grid Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/grid/). **Einordnung:** informative Pattern-Anleitung mit Tastatur- und Fokusmodell. **Ableitung:** statische Datentabelle und interaktives Grid unterscheiden. Ein ARIA-Rollenattribut implementiert keine Bedienlogik; auch ein weitverbreitetes Komponentenpaket muss in seiner konkreten Konfiguration geprüft werden.
+[Grid Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/grid/). **Type:** informative pattern guidance with keyboard and focus behavior. **Application:** distinguish static tables from interactive grids. An ARIA role does not implement interaction logic; popular component libraries still require checks in their actual configurations.
 
-### E24 — Observable Plot: Barrierefreiheit
+### E24 — Observable Plot: accessibility
 
-[Accessibility](https://observablehq.github.io/plot/features/accessibility), aktuelle Originaldokumentation, beim Abruf Version 0.6.17 ausgewiesen. **Einordnung:** Bibliotheksfähigkeiten und Optionen. **Ableitung:** ARIA-Beschriftung konfigurieren und anhand echter Aufgaben testen. Verfügbare Label-Optionen beweisen weder vollständige Tastaturbedienung noch automatische WCAG-Konformität.
+[Accessibility](https://observablehq.github.io/plot/features/accessibility), original documentation showing version 0.6.17 when accessed. **Type:** library capabilities and options. **Application:** configure ARIA labeling and test meaningful tasks. Label options establish neither complete keyboard support nor automatic WCAG conformance.
 
-### E25 — Observable Plot: Web- und React-Integration
+### E25 — Observable Plot: web and React integration
 
-[Getting started](https://observablehq.github.io/plot/getting-started), Originaldokumentation. **Einordnung:** Implementierungsreferenz zu Browser-, React- sowie Server-/Client-Darstellung. **Ableitung:** den Integrationsweg nach Volumen und Interaktion wählen, Aktualisierung und Bereinigung explizit behandeln. Beispiele gegen die tatsächlich installierte Version prüfen, nicht ungeprüft als zeitlose Vorlage speichern.
+[Getting started](https://observablehq.github.io/plot/getting-started), original documentation. **Type:** browser, React and server/client implementation reference. **Application:** choose integration according to data volume and interaction; handle updates and cleanup explicitly. Check examples against the installed version instead of treating them as timeless templates.
 
-## Ausdrückliche Grenzen und Widersprüche
+## Explicit limits and tensions
 
-- Die Recherche liest offen verfügbare Originalseiten und ausgewählte Original-PDFs, nicht sämtliche Bücher oder jede Veröffentlichung dieser Personen.
-- Ein weiteres Don-Norman-Essay über Human- versus Humanity-centered Design lieferte HTTP 429; es wurde nicht als voll gelesen verwendet. Der zugängliche gemeinsame Essay mit Eli Spencer dient als Basis.
-- Few's umfangreiches Dashboard-Kursskript war für den Abruf zu groß; stattdessen wurden zwei kleinere Original-PDFs gelesen.
-- Die historische *Mobile First*-Argumentation und aktuelle Mehrgeräte-Entwicklung passen zusammen, wenn Priorisierung und Eingabesituation übernommen werden. Alte Browserbeschränkungen werden nicht übernommen.
-- Rams' Zurückhaltung, Tuftes Datendichte und heutige ausdrucksstarke Markenoberflächen müssen kein einheitliches Aussehen erzeugen. Entscheidend ist, welche Darstellung der Aufgabe und der Zielgruppe dient.
-- Barrierefreiheit benötigt aktuelle Standards, Verhaltenstests und bei Bedarf Nutzertests; Zitate prominenter Designer ersetzen das nicht.
-- Für aktuelle Datenvisualisierung wurden Originaldokumentationen gelesen; keine spezifische Bibliothek wird für jedes Projekt vorgeschrieben.
-- „Perfekt“, „100-mal besser“ und „5000 %“ sind ohne Aufgaben, Vergleichsprodukt und Messverfahren nicht überprüfbar. Der Skill übersetzt diese Ambition in nachvollziehbare Qualitätsarbeit.
+- The review covers accessible original pages and selected original PDFs, not every book or publication by these authors.
+- Another Don Norman essay about human- versus humanity-centered design returned HTTP 429 and was not treated as fully read. The accessible joint essay with Eli Spencer supplies the basis.
+- Few's extensive dashboard course material was too large for retrieval; two shorter original PDFs were read instead.
+- Historical *Mobile First* reasoning can complement current multi-device development when prioritization and input context transfer, without carrying forward obsolete browser limitations.
+- Rams's restraint, Tufte's data density and expressive contemporary brands need not produce one appearance. Suitability for tasks and audiences is the deciding consideration.
+- Accessibility requires current standards, behavioral checks and, where needed, user studies; famous designers' statements do not replace them.
+- Original visualization documentation was reviewed without prescribing one library for every project.
+- “Perfect,” “100 times better” and “5,000%” are not verifiable without tasks, comparators and measures. The skill translates ambition into traceable quality work.
 
-## Umgesetzte Skill-Bausteine
+## Implemented skill modules
 
-- `skills/stn-ultradesign/references/product-thinking.md`: Aufgabenbrief, gesamter Arbeitsablauf, Informationsstruktur, Konzeptverfeinerung und Freigabetrace, Evidenzklassen, passende Studien und Ergebnismaße.
-- `skills/stn-ultradesign/references/data-visualization.md`: Datenvertrag, Fragen-zu-Diagrammen-Matrix, ehrliche Skalen, Unsicherheit und fehlende Werte, Farbe und Text, Tastatur/Touch/Assistenztechnik, Dashboards, Widgets, Tabellen, Grids, Beziehungsgrafen, Implementierungs- und Verständnistests.
+- `skills/stn-ultradesign/references/product-thinking.md`: task brief, complete activities, information structure, concept refinement and approval trace, evidence classes, appropriate studies and outcome measures.
+- `skills/stn-ultradesign/references/data-visualization.md`: data contracts, question-to-chart decisions, honest scales, uncertainty and missingness, color/text, keyboard/touch/assistive technology, dashboards, widgets, tables, grids, relationship graphs, implementation and comprehension checks.
 
-Beide Referenzen sind eigene operative Synthesen mit kurzen, gekennzeichneten Quellenankern und konkreten Abschlusskriterien. Sie sollen Entscheidungen im Projekt auslösen, nicht eine Sammlung attraktiver Schlagwörter reproduzieren.
+Both references are original operational syntheses with brief attributed source anchors and concrete completion criteria. They are intended to guide project decisions, not reproduce a collection of attractive slogans.

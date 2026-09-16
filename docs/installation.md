@@ -1,74 +1,74 @@
 # Installation
 
-Stand: 16. September 2026. Installiere entweder den einzelnen Skill oder das Plugin im jeweiligen Client. Eine doppelte Installation desselben Skills ist nicht erforderlich.
+As of September 16, 2026. Install either the individual skill or the plugin in your client. Installing the same skill twice is unnecessary.
 
-## Codex: einzelner Skill
+## Codex: individual skill
 
-Codex lädt projektbezogene Skills aus `.agents/skills/` und persönliche Skills aus `~/.agents/skills/`. Der ganze Skill-Ordner muss erhalten bleiben, damit Referenzen, Vorlagen und Skripte erreichbar sind. Siehe [OpenAI: Build skills](https://learn.chatgpt.com/docs/build-skills).
+Codex loads project skills from `.agents/skills/` and personal skills from `~/.agents/skills/`. Keep the entire skill directory so that references, templates and scripts remain available. See [OpenAI: Build skills](https://learn.chatgpt.com/docs/build-skills).
 
-Repository herunterladen, beispielsweise im Terminal:
+Download the repository, for example in a terminal:
 
 ```sh
 git clone https://github.com/sthiermann/stn-ultradesign.git
 cd stn-ultradesign
 ```
 
-Für eine persönliche Installation unter macOS oder Linux, aus dem heruntergeladenen Repository:
+For a personal installation on macOS or Linux, run these commands from the downloaded repository:
 
 ```sh
 mkdir -p "$HOME/.agents/skills"
 ln -s "$PWD/skills/stn-ultradesign" "$HOME/.agents/skills/stn-ultradesign"
 ```
 
-Der Link setzt voraus, dass am Ziel noch kein gleichnamiger Eintrag liegt und das Repository an diesem Ort bleibt. Alternativ den Ordner `skills/stn-ultradesign` vollständig nach `~/.agents/skills/stn-ultradesign` kopieren. Für eine Projektinstallation entsprechend nach `<projekt>/.agents/skills/stn-ultradesign` kopieren. Unter Windows die entsprechenden Verzeichnisse im Benutzerprofil verwenden; der Kopierweg benötigt keine symbolischen Links.
+The link assumes that no entry with the same name exists at the destination and that the repository stays in this location. Alternatively, copy the complete `skills/stn-ultradesign` directory to `~/.agents/skills/stn-ultradesign`. For a project installation, copy it to `<project>/.agents/skills/stn-ultradesign`. On Windows, use the corresponding directories in your user profile; copying does not require symbolic links.
 
-Codex neu öffnen, falls der Skill noch nicht erscheint. In Codex CLI oder IDE über `/skills` auswählen oder `$stn-ultradesign` im Auftrag erwähnen. Oberflächen mit einer Skill-Auswahl über `@` können den Skill dort anbieten.
+Reopen Codex if the skill does not appear. In Codex CLI or the IDE, select it through `/skills` or mention `$stn-ultradesign` in your request. Interfaces that offer a skill selector through `@` may also list it there.
 
 ```text
-$stn-ultradesign Prüfe den Einstellungsbereich auf Verständlichkeit,
-Konsistenz, Fehlerbehandlung und Tastaturbedienung.
+$stn-ultradesign Review the settings area for clarity, consistency,
+error recovery and keyboard operation.
 ```
 
-## Codex: Plugin-Paket
+## Codex: plugin package
 
-Das Repository enthält das unterstützte Kompatibilitätsmanifest `.codex-plugin/plugin.json`. Die offizielle [Plugin-Anleitung](https://learn.chatgpt.com/docs/build-plugins) beschreibt den lokalen Marketplace-Weg mit `$plugin-creator`: den vorhandenen Repository-Ordner einem lokalen Marketplace hinzufügen, den Client aktualisieren und das Plugin aus dieser Quelle installieren. Dabei soll der Creator das bestehende Paket registrieren und keine Skill-Inhalte neu erzeugen.
+The repository includes the supported compatibility manifest `.codex-plugin/plugin.json`. The official [plugin guide](https://learn.chatgpt.com/docs/build-plugins) describes a local marketplace workflow with `$plugin-creator`: register the existing repository directory in a local marketplace, refresh the client, then install the plugin from that source. The creator should register this existing package without regenerating its skill contents.
 
-Eine Veröffentlichung auf GitHub ist keine Aufnahme in das offizielle Plugin-Verzeichnis. Dieses Repository konfiguriert selbst keinen persönlichen Codex-Marketplace. Für die unmittelbare Nutzung reicht die oben dokumentierte Einzelinstallation.
+Publishing on GitHub does not add the package to the official plugin directory. This repository does not configure a personal Codex marketplace itself. The individual installation above is sufficient for immediate use.
 
-## Claude Code: Plugin aus GitHub
+## Claude Code: plugin from GitHub
 
-Die folgenden Befehle innerhalb von Claude Code eingeben:
+Enter these commands inside Claude Code:
 
 ```text
 /plugin marketplace add sthiermann/stn-ultradesign
 /plugin install stn-ultradesign@stn-ultradesign
 ```
 
-Den gewünschten Installationsumfang in der angezeigten Auswahl festlegen. Falls Claude Code dazu auffordert, anschließend `/reload-plugins` ausführen. Der Aufruf lautet:
+Choose the intended installation scope when prompted. If Claude Code requests it, run `/reload-plugins` afterward. Invoke the skill with:
 
 ```text
-/stn-ultradesign:stn-ultradesign Entwickle zunächst ein überprüfbares
-Designkonzept für diesen Workflow. Setze es nach meiner Freigabe um.
+/stn-ultradesign:stn-ultradesign First develop a reviewable design concept
+for this workflow. Implement it after my approval.
 ```
 
-Der Marketplace verweist auf das Plugin im Repository-Stamm. Daher den GitHub-Repositorynamen als Quelle verwenden, keine direkte URL zur einzelnen `marketplace.json`. Siehe [Claude Code: Marketplaces](https://code.claude.com/docs/en/plugin-marketplaces) und [Plugins entdecken und installieren](https://code.claude.com/docs/en/discover-plugins).
+The marketplace points to the plugin at the repository root. Use the GitHub repository name as the source, rather than a direct URL to its `marketplace.json`. See [Claude Code: Marketplaces](https://code.claude.com/docs/en/plugin-marketplaces) and [Discover and install plugins](https://code.claude.com/docs/en/discover-plugins).
 
-Zum lokalen Ausprobieren ohne Marketplace-Installation:
+For a local trial without marketplace installation:
 
 ```sh
-claude --plugin-dir /absoluter/pfad/stn-ultradesign
+claude --plugin-dir /absolute/path/stn-ultradesign
 ```
 
-`/absoluter/pfad/stn-ultradesign` durch den tatsächlichen Repository-Pfad ersetzen. Die [Plugin-Referenz](https://code.claude.com/docs/en/plugins-reference) dokumentiert diesen Entwicklungsmodus.
+Replace `/absolute/path/stn-ultradesign` with the actual repository path. The [plugin reference](https://code.claude.com/docs/en/plugins-reference) documents this development mode.
 
-## Claude Code: einzelner Skill als Alternative
+## Claude Code: individual skill alternative
 
-`skills/stn-ultradesign` vollständig nach `~/.claude/skills/stn-ultradesign` oder `<projekt>/.claude/skills/stn-ultradesign` kopieren. Danach `/stn-ultradesign` verwenden. Die persönliche Installation gilt für lokale Claude-Code-Sitzungen; andere Claude-Produkte haben eigene Ladewege. Siehe [Claude Code: Skills](https://code.claude.com/docs/en/skills).
+Copy the complete `skills/stn-ultradesign` directory to `~/.claude/skills/stn-ultradesign` or `<project>/.claude/skills/stn-ultradesign`. Then use `/stn-ultradesign`. Personal installation applies to local Claude Code sessions; other Claude products have their own loading mechanisms. See [Claude Code: Skills](https://code.claude.com/docs/en/skills).
 
-## Installation prüfen und aktualisieren
+## Verify and update the installation
 
-Einen neuen Auftrag öffnen und den Skill explizit aufrufen. Zunächst einen begrenzten Audit anfordern. Prüfen, ob der Agent den Skill und passende Referenzen liest, den Umfang einhält und tatsächlich beobachtete Ergebnisse von Annahmen trennt.
+Open a new task and explicitly invoke the skill. Start with a bounded audit. Check that the agent reads the skill and relevant references, respects the requested scope, and separates observed results from assumptions.
 
-Bei einer Link-Installation folgen die Skill-Dateien dem ausgecheckten Repository-Stand; bei einer Kopie muss der Skill-Ordner nach einer Aktualisierung erneut übertragen werden. Änderungen vor dem Übernehmen prüfen. Claude-Plugin-Updates über den Plugin-Manager des Clients ausführen.
+With a linked installation, skill files follow the checked-out repository revision. With a copied installation, copy the skill directory again after updating. Review changes before adopting them. Update Claude plugins through the client's plugin manager.
 
-Manifestvalidierung prüft das Paketformat. Sie belegt weder eine erfolgreiche Installation in allen Client-Versionen noch die fachliche Qualität eines konkreten Audits. Client-Version, Installationsweg und tatsächlich durchgeführte Prüfungen bei Problemen angeben.
+Manifest validation checks the package format. It establishes neither successful installation in every client version nor the quality of a particular audit. When reporting problems, include the client version, installation method and checks actually performed.

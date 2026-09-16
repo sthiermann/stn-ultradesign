@@ -1,6 +1,6 @@
 ---
 name: stn-ultradesign
-description: Audit application UI/UX, develop and refine reviewable design concepts, and implement approved designs faithfully across desktop, tablet, and mobile. Use for substantial frontend design reviews, workflow redesigns, design-system work, and concept-to-code projects; a small unrelated code fix does not trigger a whole-product audit.
+description: Audit application UI/UX, discover individual design preferences, preserve existing features through traceable redesigns, and implement approved concepts faithfully across desktop, tablet, and mobile. Use for substantial frontend reviews, workflow redesigns, design-system work, and concept-to-code projects; a small unrelated code fix does not trigger a whole-product audit.
 ---
 
 # STN Ultradesign
@@ -10,7 +10,7 @@ Turn observed user needs into coherent interfaces and complete workflows. Produc
 ## Select the work mode
 
 - **Audit:** Inspect the requested scope, produce findings and coverage. An audit request alone does not authorize a redesign.
-- **Concept first:** For a new design or substantial redesign, present a concrete concept, refine it with the user, then implement the approved version. This is the owner's preferred default for substantial design changes. Read [concept-to-code.md](references/concept-to-code.md) before making concepts. Preparation, research, and isolated prototypes can proceed before approval; changes to the production implementation wait for concept approval. An explicit instruction to implement directly overrides this default.
+- **Concept first:** For a new design or substantial redesign, discover individual preferences, map existing capabilities within the requested scope and its affected dependencies, present a concrete concept, refine it with the user, then implement the approved version. This is the owner's preferred default for substantial design changes. Read [discovery-and-preferences.md](references/discovery-and-preferences.md), [feature-parity.md](references/feature-parity.md) and [concept-to-code.md](references/concept-to-code.md) before developing the direction. Preparation, research, and isolated prototypes can proceed before approval; changes to the production implementation wait for concept approval. An explicit instruction to implement directly overrides this implementation boundary; existing features and confirmed preferences still apply.
 - **Implement agreed concept:** Find the actual approved artifacts and decisions in this conversation or project; translate them into acceptance checks and implement them without reopening settled choices. Approval already given remains valid for that scope.
 - **Focused improvement:** Address the specified component, workflow, or defect with proportional investigation. Preserve the rest of the product.
 
@@ -18,9 +18,21 @@ Do not turn a scoped request into a full audit. **A requested full audit must in
 
 For full audits, maintain the schema-2 inventory and planned obligations from `audit-method.md` before recording results. Link usages to their surfaces/families and transitions to endpoints/workflows. Plan finite, justified behavior classes per entity; do not multiply every global dimension onto every screen. Newly discovered entities, contexts or branches reopen reconciliation. Source inspection cannot close runtime obligations; missing access is blocked, not inapplicable. An approved sample can finish its agreed scope but never completes the original full-audit coverage claim.
 
+## Keep account and access reviews about the experience
+
+Account and access work means reviewing the layout, language, navigation, states and recovery of sign-in, personal settings, roles, API access and related journeys. It is not permission to collect credentials, inspect secret stores, bypass access controls or conduct a penetration test.
+
+Use user-controlled sign-in, an already authenticated session, or authorized synthetic test accounts. Do not ask the user to paste passwords, one-time codes, recovery codes, private keys or live API tokens into the conversation. Do not search password managers, credential files, `.env` secrets, browser cookies or session storage for access. Inspect safe configuration contracts and redacted fixtures instead. If a secret is unexpectedly visible, exclude it from notes, screenshots, prototypes and published artifacts; do not reveal or copy it to prove a design point.
+
+An audit may inspect a form without submitting it. Creating or revoking real credentials, changing real permissions, sending test webhooks/messages, ending sessions or deleting data is a consequential product action, not implicit audit authorization. Exercise those paths only with explicitly authorized actions and safe fixtures. Missing access remains a recorded gap. Backend security enforcement is a dependency to identify, not a security certification this design skill can supply.
+
 ## Establish the product contract
 
-Read project instructions, the existing design system and component library, supported browsers, app routes, localization, available tests, and any approved designs. Identify the users, their main tasks, roles, platform constraints, and current data states. Distinguish evidence from assumptions. Ask only for missing decisions that materially affect the result; continue independent work while waiting.
+Read project instructions, the existing design system and component library, supported browsers, app routes, localization, available tests, and any approved designs. Identify the users, their main tasks, roles, platform constraints, and current data states. Before allocating layout space, establish the application’s purpose, primary unit of work, operating conditions and observable success criteria using [product-thinking.md](references/product-thinking.md). Require a task reason for each persistent region; explore hiding secondary chrome when useful without hiding critical state or the return path. Distinguish evidence from assumptions. Ask only for missing decisions that materially affect the result; continue independent work while waiting.
+
+For a substantial concept, cover at least **twenty distinct, product-specific preference questions early**, and more whenever an unresolved decision materially affects the result, before committing to a visual direction. Carry forward already confirmed answers without re-asking them; ask the remaining questions in digestible batches. Record explicit delegation if the user waives the remaining interview. Do not pad the count with discoverable facts, apply it to a narrow fix, or turn unanswered optional preferences into an approval gate. Use the [design brief](assets/design-brief.template.md) and distinguish confirmed answers, pending preferences and hypotheses.
+
+Discover existing role/admin visibility, supported languages, light/dark/system choices, density preferences, graphs and operational thresholds relevant to the requested scope. For design or implementation, maintain an [old-to-new feature map](assets/feature-map.template.md) covering that scope plus all transitively affected shared usages and dependencies. A full-product redesign maps every discovered capability, including those outside its current prototype. A focused fix maps its affected capabilities without turning unrelated areas into a product-wide design task. Preserve behavior and supported variants unless specifically changed. A general aesthetic approval does not authorize feature loss; retirement requires an actual user decision identifying the affected capability and consequences. Audit-only work records the current baseline and coverage; it does not require proposed destinations or a redesign map.
 
 Preserve established vocabulary, brand, working flows, and framework choices unless the requested change justifies replacing them. A familiar control is a useful default when it fits the task. Visual distinctiveness comes from an intentional, product-specific system, not universal bans on a font, color, radius, or layout.
 
@@ -33,12 +45,15 @@ Read only the branches relevant to the current work. For a whole-product audit, 
 | Decision or task | Read |
 | --- | --- |
 | Full audit, coverage, findings, severity, evidence, completion | [audit-method.md](references/audit-method.md) |
+| Early preference discovery, twenty tailored questions, evidence versus taste | [discovery-and-preferences.md](references/discovery-and-preferences.md) |
+| Existing functions, old-to-new mapping, role/theme/locale/density and chart parity | [feature-parity.md](references/feature-parity.md) |
 | Concept, alternatives, refinement, approval, exact implementation | [concept-to-code.md](references/concept-to-code.md) |
 | User goals, information architecture, usability evidence | [product-thinking.md](references/product-thinking.md) |
 | Layout, hierarchy, color, type, shapes, iconography, motion, tokens | [visual-systems.md](references/visual-systems.md) |
+| Navigation hierarchy, overloaded settings, panels, glass/materials, shape and motion | [navigation-and-materials.md](references/navigation-and-materials.md) |
 | Desktop/tablet/phone, input modes, navigation and adaptation | [platform-adaptation.md](references/platform-adaptation.md) |
 | Forms, wizards, settings, search, editing, asynchronous flows | [workflows.md](references/workflows.md) |
-| Authentication, sessions, permissions, roles, organizations | [identity-permissions.md](references/identity-permissions.md) |
+| Account and access workflows: sign-in, recovery, sessions, role selection and scope | [identity-permissions.md](references/identity-permissions.md) |
 | Personal/org/project settings, invitations, roles, billing and governance | [business-administration.md](references/business-administration.md) |
 | API credentials, service accounts, webhooks and OpenAPI documentation | [developer-platforms.md](references/developer-platforms.md) |
 | Keyboard, screen reader, zoom, touch, contrast, WCAG distinctions | [accessibility.md](references/accessibility.md) |
@@ -50,11 +65,11 @@ Read only the branches relevant to the current work. For a whole-product audit, 
 
 ## Execute with traceability
 
-1. **Discover.** Establish scope, related inventory, critical journeys, existing conventions, and test access. For an audit, reconcile inventory sources, entity/context obligations and the interaction graph using `audit-method.md`. Done when known surfaces and usages are accounted for, obligations are planned and inaccessible areas remain explicit gaps.
+1. **Discover.** Establish scope, related inventory, critical journeys, existing conventions, and test access. For substantial concepts, complete the early preference record and feature map for the requested scope and its affected dependencies before developing the direction. For an audit, reconcile the current inventory, entity/context obligations and interaction graph using `audit-method.md`; do not invent a proposed design to complete discovery. Done when known surfaces and usages in scope are accounted for, obligations are planned and inaccessible areas remain explicit gaps.
 2. **Observe.** Exercise the planned journeys and behavior classes with actual roles, sizes and adverse states. Match evidence to its method, revision, environment and context. Link data-changing transitions to the UI/API response and persistence contract. Screenshots alone cannot establish behavior or authorization. Done when planned checks have appropriate evidence or explicit unresolved status; a defect report alone does not finish audit coverage.
-3. **Decide.** For audit-only work, deliver ranked findings. For design work, use the concept workflow and approval boundary. Express important decisions as component, layout, state, and workflow contracts. Done when the requested decision artifact is concrete enough to review, not merely adjectives or a mood board.
+3. **Decide.** For audit-only work, deliver ranked findings. For design work, use the concept workflow and approval boundary: express important decisions as component, layout, state, and workflow contracts; show old/new navigation and explain feature moves, retained variants and prototype omissions within the mapped scope. Done when the requested decision artifact is concrete enough to review, not merely adjectives or a mood board.
 4. **Implement when authorized.** Reuse or improve shared primitives before repeating fixes across screens. Make a complete thin slice of a real journey, verify it, and propagate the agreed rules. Track contract IDs to code and checks. Done when the agreed scope is implemented and remaining dependencies are visible.
-5. **Verify.** Compare the implementation to its baseline, agreed concept, target tasks, and applicable requirements. Separate code inspection, automation, visual inspection, manual interaction, and actual user research. Done when the evidence supports the claims and remaining failures are reported.
+5. **Verify.** Compare the implementation to its baseline, agreed concept, target tasks, and applicable requirements, including mapped features and relevant role/theme/locale/density variants. Separate code inspection, automation, visual inspection, manual interaction, and actual user research. Done when the evidence supports the claims and remaining failures are reported.
 
 Delegation can split independent surfaces or specialist passes. Give each worker the same scope and approved contract. Reconcile conflicting recommendations before reporting or implementing them. Do not allow independent agents to invent competing token systems.
 
@@ -70,7 +85,7 @@ Delegation can split independent surfaces or specialist passes. Give each worker
 
 ## Deliver the result
 
-Use the smallest useful package for the mode: an audit with coverage and prioritized findings; a concept with visual and interaction artifacts plus open decisions; or an implementation with conformance evidence and remaining gaps. Link artifacts and name what is ready for the next decision.
+Use the smallest useful package for the mode: an audit with coverage and prioritized findings; a concept with its preference brief, feature map, visual and interaction artifacts plus open decisions; or an implementation with conformance and parity evidence and remaining gaps. Link artifacts and name what is ready for the next decision.
 
 For full audits, and scoped audits where a ledger is useful, copy [audit.template.json](assets/audit.template.json) and follow the schema-2 format in `audit-method.md`. Run `python3 scripts/audit_coverage.py PATH --require-complete` from this skill directory. Separate valid records, agreed scope reviewed, original full scope reviewed and checks passed; percentages concern planned checks only. Version-1 ledgers require migration and fresh reconciliation. The script validates self-declared records; it cannot inspect the app, authenticate evidence, establish discovery completeness or certify UX/security. The [design contract template](assets/design-contract.template.md) records approved concepts.
 

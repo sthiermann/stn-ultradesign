@@ -1,28 +1,37 @@
-# Mitwirken
+# Contributing
 
-Verbesserungen sollen eine konkrete Designentscheidung oder Prüfung verlässlicher machen. Beschreibe im Issue oder Pull Request den Anwendungsfall, das beobachtete Problem und das gewünschte Ergebnis. Bei einer falschen Empfehlung reichen ein minimales Beispiel und ein nachvollziehbarer Gegenbeleg.
+Help make a concrete design decision or verification step more reliable. An issue or pull request should describe the task, the observed problem, and the intended outcome. For an incorrect recommendation, a minimal example and a traceable counterexample are useful evidence.
 
-## Anforderungen an Beiträge
+## Contribution principles
 
-- **Eigene Inhalte:** Texte, Regeln, Code, Vorlagen und Testdaten selbst erstellen. Keine fremden Skills, Komponentenbibliotheken, Screenshots, Schriftdateien oder Markenassets übernehmen. Öffentliche Prinzipien knapp in eigenen Worten erläutern und die Primärquelle verlinken.
-- **Prüfbare Empfehlungen:** Auslöser, Entscheidung, relevante Ausnahme und überprüfbares Ergebnis beschreiben. Standards, Herstellerempfehlungen, Forschung und eigene Annahmen unterscheiden.
-- **Passender Umfang:** Den Einstieg in `SKILL.md` knapp halten. Spezialwissen in die passende Referenz aufnehmen. Keine neuen Werkzeuge oder Abhängigkeiten ohne belegten Bedarf.
-- **Produktkontext:** Bestehende Marke, Zielgruppe, Aufgaben, Barrierefreiheit und Plattform berücksichtigen. Persönliche Stilvorlieben nicht zu universellen Verboten machen.
-- **Nachvollziehbare Ergebnisse:** Keine erfundenen Tests, Nutzerstudien, Screenshots, Freigaben oder Leistungsversprechen. Ein Mockup belegt keine funktionierende Interaktion.
-- **Vollständigkeit:** Ein Vollaudit darf keine Seite, Komponentenverwendung, kein Widget, keine Drilldown-Ebene und keinen definierten relevanten Ablauf durch eine Stichprobe ersetzen. Fortsetzbare Etappen und offene Zugriffslücken explizit erfassen.
+- **Write original material.** Create your own instructions, code, templates, illustrations, and fixtures. Do not import another design skill, component library, screenshot, font file, or brand asset. Summarize public principles briefly in your own words and link to the primary source.
+- **Make guidance actionable.** Describe the trigger, decision, relevant exception, and observable outcome. Distinguish standards, vendor guidance, research, and project assumptions.
+- **Respect the product.** Consider existing identity, user tasks, language, accessibility, and platform constraints. Personal aesthetic preferences are not universal rules.
+- **Preserve full-audit coverage.** Every discovered page, component usage, widget, drilldown, and defined relevant workflow belongs in the requested scope. Record resumable batches and access gaps. Sampling requires an explicit scope change.
+- **Evaluate craft as well as behavior.** Inspect rendered concepts at their target sizes, explain compositional decisions, and record criticism and revision. Passing an automated test does not establish aesthetic quality.
+- **Report only performed checks.** Do not invent studies, screenshots, approval, scores, or performance gains. A mockup is not evidence of working production behavior.
+- **Keep evidence private by scope.** Follow [PRIVACY.md](PRIVACY.md). Use synthetic fixtures for account and access workflows. Never publish customer data, credentials, session material, or private product screenshots.
 
-## Vor dem Pull Request
+Keep `SKILL.md` concise and place specialist detail in the relevant reference. Add dependencies or tools only when a demonstrated need justifies their maintenance cost. Public prose and examples should be in English; preserve proper names and exact source titles where needed.
 
-1. Interne Verweise, Skill-Namen und Metadaten kontrollieren.
-2. Für veränderliche Regeln die aktuelle Primärquelle prüfen; Datum, Version und relevante Grenzen nennen.
-3. Bei Verhaltensänderungen mindestens einen repräsentativen Auftrag und einen passenden Gegenfall ausführen. Ausgangslage, verwendeten Client, Modell, Werkzeuge und Ergebnis dokumentieren. Für reine Textkorrekturen genügt eine gezielte Prüfung.
-4. Änderungen am Audit-Prüfer mit gültigen sowie absichtlich inkonsistenten Datensätzen prüfen. Der Prüfer darf dokumentierte Abdeckung nicht als Nachweis tatsächlicher UI-Qualität ausgeben.
-5. Datenschutzgerechte Beispiele verwenden. Keine Kundendaten, Zugangsdaten oder internen Produktbilder veröffentlichen.
+## Before opening a pull request
 
-Die [Evaluationsreferenz](skills/stn-ultradesign/references/skill-evaluation.md) beschreibt Vergleiche unter kontrollierten Bedingungen. Ein fairer Vergleich verwendet dieselben Aufgaben und Bedingungen, macht Streuung sichtbar und trennt visuelle Präferenz von Aufgabenerfolg.
+1. Check internal links, metadata, skill names, and the relevant primary sources. Record version or access date for changing guidance.
+2. Run the repository checks from its root:
 
-## Änderungen am Paket
+   ```sh
+   python3 scripts/validate_repository.py
+   python3 -m unittest discover -s tests -v
+   ```
 
-Versionen in den Plugin-Manifesten synchron halten. Installationsanweisungen gegen offizielle Dokumentation und verfügbare Client-Hilfe prüfen. Eine Formatprüfung und ein tatsächlich ausgeführter Installationstest getrennt berichten. Neue Hooks, externe Dienste oder Netzwerkkomponenten sind eine eigene Produktentscheidung.
+3. For changes to operational behavior, exercise a representative task and a meaningful counterexample. Record the client, model, tools, initial conditions, and result. A focused review is sufficient for simple text corrections.
+4. For coverage-validator changes, test both valid and deliberately inconsistent ledgers. Declared coverage must never be presented as proof of actual interface quality.
+5. For visual changes, inspect the rendered output, check readability at normal and compact widths, and provide a concise account of what was verified.
 
-Mit einem Beitrag bestätigst du, dass du ihn unter der [MIT-Lizenz](LICENSE) dieses Projekts bereitstellen darfst. Erforderliche Quellen- und Rechtehinweise gehören in den Beitrag und gegebenenfalls in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+The [evaluation reference](skills/stn-ultradesign/references/skill-evaluation.md) describes controlled comparisons. Use the same tasks and conditions, expose variation, and separate visual preference from task success.
+
+## Packaging and rights
+
+Keep plugin versions synchronized. Check installation instructions against official documentation and available client help. Report manifest validation separately from an actual installation test. Hooks, network services, and integrations require a separate, justified scope decision.
+
+By contributing, you confirm that you can provide your contribution under the project's [MIT License](LICENSE). Include any required attribution or rights information with the contribution and, where appropriate, in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Attribution alone does not grant permission to reuse third-party material.

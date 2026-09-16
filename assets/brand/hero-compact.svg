@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="660" viewBox="0 0 640 660" role="img" aria-labelledby="title desc">
+  <title id="title">STN Ultradesign — Design the whole experience</title>
+  <desc id="desc">Compact editorial artwork. Product-specific design, from the first screen to the final state. Three abstract device outlines connect the idea across desktop, tablet and phone.</desc>
+  <!-- Original artwork. Copyright 2026 Sven Thiermann. MIT License. -->
+  <rect width="640" height="660" fill="#101820"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <path d="M36 36H54V42H42V54H36ZM57 60H75V42H69V54H57Z" fill="#dfbd62"/>
+    <text x="96" y="57" fill="#f4f3ee" font-size="20" font-weight="700" letter-spacing="2">STN ULTRADESIGN</text>
+    <path d="M36 86H604" stroke="#34424d"/>
+    <g fill="#f4f3ee" font-size="67" font-weight="700" letter-spacing="-2.7">
+      <text x="36" y="183">Design the</text>
+      <text x="36" y="257">whole experience.</text>
+    </g>
+    <path d="M38 290H107" stroke="#dfbd62" stroke-width="4"/>
+    <g fill="#c1cbd1" font-size="26">
+      <text x="37" y="336">A deliberate system.</text>
+      <text x="37" y="373">From the first screen to the final state.</text>
+    </g>
+    <g stroke-width="1.5">
+      <rect x="310" y="422" width="294" height="164" rx="3" fill="#16222c" stroke="#647885"/>
+      <path d="M310 446H604M368 458V574" stroke="#435661"/>
+      <path d="M324 464H353M324 477H346M324 490H351" stroke="#728794" stroke-width="3"/>
+      <text x="386" y="496" fill="#edf0ed" font-size="40" font-weight="700" letter-spacing="-2">Aa</text>
+      <path d="M386 515H585M386 530H558" stroke="#6a8190" stroke-width="3"/>
+      <path d="M386 551H558" stroke="#dfbd62" stroke-width="2"/>
+      <rect x="260" y="512" width="159" height="105" rx="4" fill="#1a2b36" stroke="#8ba0ac"/>
+      <path d="M273 534H352M273 550H336" stroke="#d3dfe4" stroke-width="4"/>
+      <path d="M273 571H355M273 585H342" stroke="#6d8797" stroke-width="3"/>
+      <path d="M374 528V602M385 547H405M385 565H402" stroke="#dfbd62" stroke-width="2"/>
+      <rect x="497" y="500" width="91" height="132" rx="9" fill="#101820" stroke="#dfbd62"/>
+      <path d="M512 527H548M512 546H574M512 559H562" stroke="#d3dfe4" stroke-width="4"/>
+      <path d="M512 584H574M512 596H558" stroke="#728794" stroke-width="3"/>
+      <path d="M530 511H554" stroke="#dfbd62" stroke-width="2"/>
+    </g>
+    <g font-size="18" letter-spacing="1.2" fill="#dfbd62">
+      <text x="37" y="466">EVIDENCE</text>
+      <text x="37" y="503">DIRECTION</text>
+      <text x="37" y="540">FIDELITY</text>
+    </g>
+    <text x="37" y="619" fill="#a6b4bd" font-size="15" letter-spacing=".6">EVERY SURFACE.</text>
+  </g>
+</svg>

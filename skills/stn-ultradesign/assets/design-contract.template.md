@@ -12,6 +12,15 @@ Complete only sections relevant to this project. Remove unused sections with an 
 - Superseded contract:
 - Implementation revision:
 
+## Discovery and preference basis
+
+- Design brief path and version:
+- Twenty-or-more tailored preference questions covered before the substantial direction, or narrow-scope exception:
+- Confirmed answers carried forward and explicit delegation reference, if any:
+- Optional preferences still treated as proposals:
+- Outstanding decisions that block dependent work:
+- Recommendation classes and applicability: normative requirements / platform or implementation guidance / research or heuristics / product choices / hypotheses:
+
 ## Users, tasks and constraints
 
 - Primary actors, roles and organization scope:
@@ -40,6 +49,21 @@ Include tokens, typography, icon family, layout regions, hierarchy, density, spa
 | Flow/state ID | Actor and entry | Action and transition | Validation / side effect | Back, cancel, failure and recovery |
 | --- | --- | --- | --- | --- |
 
+## Feature preservation and supported variants
+
+- Baseline revision, runtime context and known source changes:
+- Complete old-to-new feature map path, version and reconciliation status:
+- Existing functions outside this concept, their retained destinations and next stage:
+- Old/new navigation map and matched comparison artifacts:
+- Individually approved feature retirements: capability IDs, consequences and actual user decision references:
+- Existing chart types, graph interactions and thresholds retained or specifically redesigned:
+- Added capabilities and backend dependencies, separately identified:
+
+| Feature / variant ID | Current actor, capability and resource scope | Approved destination and behavior | Locale / theme / density rules and preference persistence | Allowed variation | Acceptance IDs |
+| --- | --- | --- | --- | --- | --- |
+
+Record navigation visibility, data visibility and action authority separately where they differ. Carry supported language, light/dark/system and density choices into the contract rather than inferring their removal from a single screenshot. Broad aesthetic approval does not approve feature retirement, changes to effective permissions or loss of supported preferences. Features outside the current prototype remain required unless specifically retired.
+
 ## Acceptance and traceability
 
 | Acceptance ID | Observable expectation | Source decision | Route/component | Test environment and method | Result and evidence |
@@ -48,6 +72,8 @@ Include tokens, typography, icon family, layout regions, hierarchy, density, spa
 For screenshot comparisons record browser, CSS viewport size, zoom, data fixture, fonts, locale, theme, expected scroll position and justified tolerance.
 
 Report visual/craft assessment separately from behavioral, accessibility and syntax results. A technical pass does not satisfy an unapproved or rejected visual direction.
+
+Report mapping completeness, depicted concept scope, implemented scope and verified feature parity separately. Verify the relevant actor/state/theme/locale/density contracts for each included feature; justify equivalence classes and retain blocked or untested variants as gaps.
 
 ## Refinement log
 
