@@ -1,6 +1,6 @@
 {
   "name": "stn-ultradesign",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Product-wide UI/UX audits, creative direction, complete design systems and concepts, independent review, and verified implementation.",
   "author": {
     "name": "Sven Thiermann",
@@ -27,6 +27,7 @@
     "capabilities": [],
     "websiteURL": "https://github.com/sthiermann/stn-ultradesign",
     "defaultPrompt": [
+      "Audit the entire frontend of this existing application using its current source code and running interface. Ask me about my requirements and design preferences, preserve existing capabilities, and develop a complete interactive design concept. Clarify which earlier design decisions still apply. Independently review and refine the concept with me. Implement production changes only after my approval.",
       "Audit the entire frontend and document findings, evidence, and coverage.",
       "Develop a complete design concept from requirements and creative direction through the component system, independent review and my scoped acceptance.",
       "Implement the approved concept and verify behavior and visual fidelity."

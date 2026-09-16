@@ -72,3 +72,13 @@ Open a new task and explicitly invoke the skill. Start with a bounded audit. Che
 With a linked installation, skill files follow the checked-out repository revision. With a copied installation, copy the skill directory again after updating. Review changes before adopting them. Update Claude plugins through the client's plugin manager.
 
 Manifest validation checks the package format. It establishes neither successful installation in every client version nor the quality of a particular audit. When reporting problems, include the client version, installation method and checks actually performed.
+
+## Start a new design review
+
+Open the application project in a new task and use the [README example for an audit and redesign](../README.md#put-it-to-work). Supply access to the original running application and the relevant source code. An earlier concept preview is not the original application.
+
+For a fresh review, start a separate task without copying or forking the previous design conversation. Previous concepts and preference notes can remain in their existing location; do not attach them as the desired result. Project instructions and design documents remain available, so clarify which earlier design decisions still apply while preserving current technical and product requirements. The skill should discover the product and ask about your current preferences through its normal workflow.
+
+Deleting old concepts or reverting working product changes is not a prerequisite. Preserve ongoing changes and identify the source revision and running build actually inspected. A separate working copy can isolate new artifacts when useful; it does not automatically remove historical guidance or make its runtime match the source. Audit and concept work can use the existing project with production changes held until approval.
+
+For a repeatable evaluation, record the skill revision, application baseline and available tools, and keep the skill version fixed during the run. Record findings for a later skill update. No additional test-specific launch prompt is required.

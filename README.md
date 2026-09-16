@@ -15,7 +15,7 @@ Use it with an existing application, a new product or one focused workflow. Brin
 
 [**Get started →**](docs/installation.md) · [Workflow](skills/stn-ultradesign/references/delivery-workflow.md) · [Read the skill](skills/stn-ultradesign/SKILL.md) · [Privacy](PRIVACY.md)
 
-Release **v0.5.0** · [MIT license](LICENSE) · Codex + Claude Code
+Release **v0.5.1** · [MIT license](LICENSE) · Codex + Claude Code
 
 [![Package checks](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml/badge.svg)](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml)
 
@@ -103,9 +103,20 @@ Independent review challenges the current artifact against the requirements and 
 
 ## Put it to work
 
-Install the [Codex skill or Claude Code plugin](docs/installation.md), then describe the work in ordinary language.
+Install the [Codex skill or Claude Code plugin](docs/installation.md), open the application project and start a new task. Choose the example that matches your intended scope. For a fresh review, follow the [new design review instructions](docs/installation.md#start-a-new-design-review); previous concepts do not need to be deleted.
 
-**Audit an existing application**
+**Audit an existing application and develop its redesign**
+
+```text
+$stn-ultradesign Audit the entire frontend of this existing application
+using its current source code and running interface. Ask me about
+my requirements and design preferences, preserve existing capabilities,
+and develop a complete interactive design concept. Clarify which
+earlier design decisions still apply. Independently review and refine
+the concept with me. Implement production changes only after my approval.
+```
+
+**Audit only**
 
 ```text
 $stn-ultradesign Audit the entire frontend. Inventory every page,
