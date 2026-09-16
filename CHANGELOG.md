@@ -3,6 +3,7 @@
 ## 0.2.0 — 2026-09-16
 
 - Publish the complete repository documentation in English with original responsive SVG presentation assets.
+- Add a company/product brand brief and selective inheritance matrix for visual identity, layout, materials, and motion.
 - Add product-purpose discovery, at least twenty tailored preference questions, and traceable preservation of existing features and variants.
 - Add adaptive navigation, material, shape, elevation, and motion guidance informed by current primary sources, including Apple WWDC26.
 - Expand web implementation guidance for translucent surfaces, navigation state, animation, fallbacks, and performance verification.

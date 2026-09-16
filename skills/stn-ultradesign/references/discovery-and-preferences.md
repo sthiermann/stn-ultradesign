@@ -29,6 +29,8 @@ Do not ask whether the application has features that can be discovered. After fi
 
 Discover the actual dataset sizes, available refresh modes, supported media streams and current state transitions before asking about them. Then ask meaningful unknowns: which objects must be compared simultaneously; whether an observed delay is acceptable for the task; which failure needs immediate attention; and what is hard to recognize at the current preview size. A requirement for higher density is not permission to make controls or text unusably small. Distinguish recognizing an object in an overview from inspecting its details.
 
+For company or product identity, use [brand-discovery.md](brand-discovery.md). Discover the supplied brand sources and their authority, then ask which dimensions to preserve, evolve, reinterpret or explore. Typography, color and shape inheritance do not imply that layout or navigation must remain unchanged. Carry this selective inheritance matrix into the brief and concept contract.
+
 ## Cover at least twenty tailored questions early
 
 Before developing the substantial visual direction, create at least **twenty distinct, relevant preference questions** in the [design brief](../assets/design-brief.template.md). Ground each in the observed product and a decision it can change. Carry forward already confirmed answers as covered questions with their source; ask only the unanswered questions. Do not count twenty paraphrases of one decision, questions about discoverable facts, or a yes/no request to accept accessibility as meaningful coverage.

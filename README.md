@@ -56,6 +56,12 @@ Substantial concept work starts with a structured brief of **at least 20 meaning
 
 Those answers become design inputs and acceptance criteria. Reviewable alternatives then show their consequences in the actual product. See the [discovery and preference method](skills/stn-ultradesign/references/discovery-and-preferences.md).
 
+## Your brand, deliberately carried forward
+
+Bring your company guidelines, existing design system, or approved reference materials. The skill establishes what is binding and asks **how much to inherit in each dimension**: typography, colors, shapes, icons, imagery, voice, layout, motion, and materials.
+
+Preserve the logo and font. Evolve the palette. Reimagine the layout. Or choose another combination: each decision gets a clear boundary in the brand brief and design contract. Asset provenance, theme behavior, and accessible color roles remain explicit. See [brand discovery and selective inheritance](skills/stn-ultradesign/references/brand-discovery.md).
+
 ## No silent feature loss
 
 A redesign must account for what the product already does. Build an **old → new feature map** recording location, role access, behavior, states, and proposed destination. A full-product redesign maps every discovered capability. A bounded concept or focused fix maps its requested scope plus all transitively affected shared usages and dependencies. Audit-only work records the current baseline without inventing proposed destinations. A cleaner composition does not authorize dropping a capability.

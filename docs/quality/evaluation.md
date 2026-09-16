@@ -1,4 +1,4 @@
-# Evaluation status of version 0.1.0
+# Evaluation status of version 0.2.0
 
 As of September 16, 2026. This version has been checked for package consistency, audit-validator behavior and selected skill decisions. This does not establish universal design superiority, complete WCAG conformance or a particular improvement factor.
 
@@ -22,9 +22,9 @@ python3 scripts/validate_repository.py
 python3 -m unittest discover -s tests -v
 ```
 
-GitHub Actions runs the same two commands with Python 3.12. The first [published CI run](https://github.com/sthiermann/stn-ultradesign/actions/runs/35088621779), for commit `31ed66c026eb0c5a15fc63ab2b23767963348c6a`, completed successfully. The subsequent [verified CI run](https://github.com/sthiermann/stn-ultradesign/actions/runs/35088920740), for commit `a11cec8`, also succeeded. These results belong to those published revisions; they do not pre-validate later changes. Official Codex validators were run separately in the development environment with Python 3.12 and PyYAML; their source code and dependencies are not distributed in this package.
+GitHub Actions runs the same two commands with Python 3.12. The first [published CI run](https://github.com/sthiermann/stn-ultradesign/actions/runs/35088621779), for commit `31ed66c026eb0c5a15fc63ab2b23767963348c6a`, completed successfully. The subsequent [verified CI run](https://github.com/sthiermann/stn-ultradesign/actions/runs/35088920740), for commit `a11cec8`, also succeeded. The [English 0.2 publication run](https://github.com/sthiermann/stn-ultradesign/actions/runs/35093327247), for commit `4294fe0`, also completed successfully. These results belong to those published revisions; they do not pre-validate later changes. Official Codex validators were run separately in the development environment with Python 3.12 and PyYAML; their source code and dependencies are not distributed in this package.
 
-The independently authored repository artwork was also rendered with librsvg and visually inspected at wide and narrow presentation widths: 1280px for the wide versions and 390px for the compact versions. All four SVGs passed XML checks and contain no scripts, images, `foreignObject`, `use`, `href`, external assets or fonts. Local picture sources and alternative text were checked. This is evidence about those artwork files and local rendering, not a live GitHub rendering test of the revised page or a client installation test.
+The independently authored repository artwork was also rendered with librsvg and visually inspected at wide and narrow presentation widths: 1280px for the wide versions and 390px for the compact versions. All four SVGs passed XML checks and contain no scripts, images, `foreignObject`, `use`, `href`, external assets or fonts. Local picture sources and alternative text were checked. These checks establish local artwork rendering, not aesthetic acceptance or client installation. The published GitHub README was subsequently inspected in a browser: its English text, version 0.2.0, and both illustration elements were present.
 
 ## Independent synthetic audit run
 
@@ -59,6 +59,8 @@ An independent countercheck confirmed the 24 tests and additional cases involvin
 The later discovery/preferences and feature-parity additions require tailored early questions, explicit distinction between evidence and preferences, and a mapping from existing to proposed capabilities. Existing actions, roles, states, languages, themes and density choices must not disappear without an agreed change. An independent read-only review examined these modules, their templates, skill routing, privacy boundaries and README claims. It found a scope contradiction: unqualified feature-mapping instructions could expand a focused change into a whole-product exercise.
 
 The skill, parity reference, feature-map template and README now distinguish full-product redesigns from bounded changes. A full-product redesign still maps every discovered capability; a focused change maps its requested scope plus transitively affected shared usages and dependencies. Audit-only work records the current baseline without requiring invented destinations. The corrected wording was reread and the repository validator passed. These are instruction and package checks, not a new independent application run. The new rules still require that practical evaluation; adding modules does not increase the count of successfully evaluated workflows.
+
+The purpose-first, navigation/materials and web implementation references were expanded using current primary documentation, including Apple WWDC26 transcripts. The brand-discovery module received an independent read-only review for selective inheritance, source authority, existing user decisions, asset provenance, accessible variants and approval scope. No material contradiction was found in that review. These are research and instruction checks; they do not establish successful application of every new rule to a complete product.
 
 ## Not yet demonstrated
 

@@ -31,6 +31,18 @@ Complete only sections relevant to this project. Remove unused sections with an 
 - Assumptions requiring later validation:
 - Explicit exclusions:
 
+## Brand inheritance contract
+
+- Brand brief / inheritance matrix version and applicable sources:
+- Binding assets and identity rules, with actual approval/delegation scope:
+- Decisions per dimension: typography, color, shape, icons, imagery, voice, layout, motion and materials:
+- Exact preservation boundaries, permitted evolution and proposed departures:
+- Theme-specific semantic tokens and accessible alternatives:
+- Asset provenance, documented use conditions and unresolved dependencies:
+- Component/surface exceptions and associated acceptance IDs:
+
+An approved visual reference does not authorize copying its assets. Preserving corporate typography or colors does not automatically preserve a legacy layout. Record those choices separately and retain the real authorization scope.
+
 ## Agreed visual and structural rules
 
 - Product-specific visual thesis: task, dominant work region, supporting context, density and intended character:

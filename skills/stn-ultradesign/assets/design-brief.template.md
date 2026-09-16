@@ -18,6 +18,42 @@ Use [discovery and preferences](../references/discovery-and-preferences.md). Rep
 | ID | Fact or confirmed preference | Source / message / date | Scope | Evidence limit |
 | --- | --- | --- | --- | --- |
 
+## Product mission and success criteria
+
+- Primary task and unit of work:
+- Operating context, concurrent objects, time sensitivity and error costs:
+- Current evidence and untested assumptions:
+- Observable success criteria and representative load:
+- Persistent regions: purpose, space cost, hide/show and recovery behavior:
+
+## Brand foundation and selective inheritance
+
+Use [brand discovery](../references/brand-discovery.md). Existing instructions and approved decisions carry forward; this record does not introduce an extra approval step.
+
+- Company / product identity and their relationship:
+- Current guidelines, asset locations, version/date and applicable scope:
+- Binding rules versus legacy implementation versus inspirational reference:
+- Already confirmed degree of change and decisions still needed:
+
+| Dimension | Source and authority | Current expression | Preserve / evolve / reinterpret / explore | Concrete extent and limits | Proposed expression / affected surfaces | Theme, locale, density or component exceptions | Acceptance and decision status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Name / logo | | | | | | | |
+| Typography | | | | | | | |
+| Colors | | | | | | | |
+| Shapes | | | | | | | |
+| Icons | | | | | | | |
+| Imagery | | | | | | | |
+| Voice | | | | | | | |
+| Layout / navigation | | | | | | | |
+| Motion | | | | | | | |
+| Materials / elevation | | | | | | | |
+
+| Asset | Source / version | Intended use | Available license or permission evidence | Restriction or unknown | Authorized fallback |
+| --- | --- | --- | --- | --- | --- |
+
+- Brand/task/accessibility conflicts and concrete alternatives:
+- Supplied references and the specific qualities to learn from, without copying:
+
 ## Early preference questions
 
 For a substantial concept, cover at least twenty distinct tailored preference questions. Carry forward confirmed answers with their source instead of re-asking them. Ask the remaining questions early in digestible batches. A narrow fix does not require this count. Record an explicit user delegation if the remaining interview is waived.
