@@ -12,7 +12,9 @@ Research snapshot and access date: **2026-09-16**. This is a reference index, no
 - Check current versions for identity policy, API specifications, component releases and browser support when applying them. A fixed older source can remain useful for a clearly identified enduring principle.
 - No foreign skills, scripts, catalogs, mockups or assets are redistributed. Competitor comparisons are separately documented in the repository research reports and do not supply executable instructions.
 
-## Sources used in the operational references
+## Sources consulted for the method and research archives
+
+This register records provenance, not a mandatory reading list or a preferred design language. Select and refresh sources for the actual project brief. Vendor-specific research archives do not prescribe styling for unrelated projects.
 
 | Source | Kind | Access | Used in |
 | --- | --- | --- | --- |
@@ -176,7 +178,7 @@ Research snapshot and access date: **2026-09-16**. This is a reference index, no
 | [SC 1.4.1](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html) | W3C explanatory / implementation guidance | D | [accessibility](accessibility.md) |
 | [Selecting evaluation tools](https://www.w3.org/WAI/test-evaluate/tools/selecting/) | W3C explanatory / implementation guidance | D | [accessibility](accessibility.md) |
 | [WAI tutorial](https://www.w3.org/WAI/tutorials/images/complex/) | W3C explanatory / implementation guidance | D | [data-visualization](data-visualization.md) |
-| [Apple, Platforms State of the Union, WWDC26](https://developer.apple.com/videos/play/wwdc2026/102/) | First-party guidance / implementation reference | D | [navigation-and-materials](navigation-and-materials.md) |
+| [Apple, Platforms State of the Union, WWDC26](https://developer.apple.com/videos/play/wwdc2026/102/) | First-party guidance; dated vendor research | D | [optional material research archive](../../../docs/research/liquid-glass-controls.md) |
 | [Microsoft navigation basics](https://learn.microsoft.com/en-us/windows/apps/design/basics/navigation-basics) | First-party guidance / implementation reference | D | [navigation-and-materials](navigation-and-materials.md) |
 | [NavigationView](https://learn.microsoft.com/en-us/windows/apps/design/controls/navigationview) | First-party guidance / implementation reference | D | [navigation-and-materials](navigation-and-materials.md) |
 | [Apple tab bars](https://developer.apple.com/design/human-interface-guidelines/tab-bars) | First-party guidance / implementation reference | I | [navigation-and-materials](navigation-and-materials.md) |
@@ -184,12 +186,12 @@ Research snapshot and access date: **2026-09-16**. This is a reference index, no
 | [Apple sidebars](https://developer.apple.com/design/human-interface-guidelines/sidebars) | First-party guidance / implementation reference | I | [navigation-and-materials](navigation-and-materials.md) |
 | [Apple settings](https://developer.apple.com/design/human-interface-guidelines/settings) | First-party guidance / implementation reference | I | [navigation-and-materials](navigation-and-materials.md) |
 | [Apple toolbars](https://developer.apple.com/design/human-interface-guidelines/toolbars) | First-party guidance / implementation reference | I | [navigation-and-materials](navigation-and-materials.md) |
-| [What's new in SwiftUI, WWDC26](https://developer.apple.com/videos/play/wwdc2026/269/) | First-party guidance / implementation reference | D | [navigation-and-materials](navigation-and-materials.md) |
+| [What's new in SwiftUI, WWDC26](https://developer.apple.com/videos/play/wwdc2026/269/) | First-party guidance; dated vendor research | D | [optional material research archive](../../../docs/research/liquid-glass-controls.md) |
 | [Android list/detail, updated 2026-09-11](https://developer.android.com/develop/adaptive-apps/guides/list-detail) | First-party guidance / implementation reference | D | [navigation-and-materials](navigation-and-materials.md) |
 | [Microsoft backward navigation, updated 2026-02-19](https://learn.microsoft.com/en-us/windows/apps/develop/ui/navigation/navigation-history-and-backwards-navigation) | First-party guidance / implementation reference | D | [navigation-and-materials](navigation-and-materials.md) |
 | [Focus Not Obscured explanation](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum) | W3C explanatory guidance | D | [navigation-and-materials](navigation-and-materials.md) |
 | [CSS Media Queries Level 5](https://drafts.csswg.org/mediaqueries-5/) | Specification / draft; status qualified in module | D | [navigation-and-materials](navigation-and-materials.md) |
-| [Modernize your AppKit app, WWDC26](https://developer.apple.com/videos/play/wwdc2026/289/) | First-party guidance / implementation reference | D | [navigation-and-materials](navigation-and-materials.md) |
+| [Modernize your AppKit app, WWDC26](https://developer.apple.com/videos/play/wwdc2026/289/) | First-party guidance; dated vendor research | D | [optional material research archive](../../../docs/research/liquid-glass-controls.md) |
 | [Apple motion](https://developer.apple.com/design/human-interface-guidelines/motion) | First-party guidance / implementation reference | I | [navigation-and-materials](navigation-and-materials.md) |
 | [`nav`](https://html.spec.whatwg.org/multipage/sections.html#the-nav-element) | HTML Living Standard | D | [web-engineering](web-engineering.md) |
 | [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/backdrop-filter) | First-party guidance / implementation reference | D | [web-engineering](web-engineering.md) |
