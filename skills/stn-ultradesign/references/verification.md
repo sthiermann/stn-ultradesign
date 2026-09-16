@@ -65,7 +65,7 @@ A discrepancy can be a bug, an intentional approved deviation, a rendering diffe
 
 ### Verify component families after integration
 
-After integrating a module, changing a shared primitive or receiving feedback about inconsistent behavior, reconcile all affected usages against the current family contract. Inspect newly introduced local implementations and wrappers as well as existing shared components. A successful isolated specimen or one page cannot close the cross-page check.
+First verify semantic fit: compare each action's task, owning workspace, selected surface and steps to outcome with its action-to-surface record. Reject a visually consistent implementation that introduces unnecessary intermediate panels or assigns unrelated tasks to one shell. Then, after integrating a module, changing a shared primitive or receiving feedback about inconsistent behavior, reconcile all affected usages against the current family contract. Inspect newly introduced local implementations and wrappers as well as existing shared components. A successful isolated specimen or one page cannot close the cross-page check.
 
 Open each affected usage through its real entry at the integrated revision. Compare placement, geometry, header/actions, motion and relevant interaction states; for editing surfaces, exercise validation, save/cancel, dirty dismissal, focus entry and focus return using safe fixtures. Verify the planned responsive transformations and reduced-motion behavior where affected. Still images can establish position, not the transition or focus sequence. Repeat the original failing path after correction and recheck consuming usages whose shared behavior changed; reopen coverage when another module adds an occurrence.
 
@@ -74,5 +74,7 @@ Record family ID, usage IDs, integrated revision, context, evidence and exceptio
 ## Stop and report accurately
 
 Run the repository's required checks and tests proportional to the change. Repeat checks when code or evidence changes, not just to inflate confidence. If a check is unavailable, explain the missing capability and perform the strongest available alternative without claiming equivalence.
+
+A concept with missing required pages, unresolved action mappings or lost widget/state semantics is not ready for approval of the full requested scope. A table listing the omissions makes the limit honest; it does not close it. If the owner rejects the current direction, preserve useful discovery and confirmed preferences, establish a corrected task-and-component slice, and verify it before expanding. Do not keep propagating the rejected architecture or silently restart the interview.
 
 Separate “all implemented acceptance checks passed,” “all requested surfaces were inspected,” and “users perform the task better.” Each needs its own evidence. For release readiness, name unresolved critical/high issues and incomplete required checks; avoid a single green score that hides them.

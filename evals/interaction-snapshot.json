@@ -1,0 +1,155 @@
+{
+  "evaluation": "interaction-forward-2026-09-16",
+  "skillVersion": "0.3.2",
+  "method": "Independent fresh-agent source review; no expected answer or prior reports supplied; no rendered or user test.",
+  "files": [
+    {
+      "path": "evals/interaction-fixture/baseline.json",
+      "sha256": "b65616fd015161f8e05b5be543c5b355b574c558a368fac62a61fe0f2731fcfb"
+    },
+    {
+      "path": "evals/interaction-fixture/proposal.html",
+      "sha256": "b95f65b5cc8da79944165fc1e9d1c0ffc1ab29c010519b431701abfa385a7078"
+    },
+    {
+      "path": "evals/interaction-fixture/task.md",
+      "sha256": "48dba3ebf9a9274d4efa7bf60c70fdce6117164cc28d9c7512723e9480b89102"
+    },
+    {
+      "path": "skills/stn-ultradesign/SKILL.md",
+      "sha256": "66a422cb457aaf033df8a237145f080115d12de8cfbcae921bfaa8c033602299"
+    },
+    {
+      "path": "skills/stn-ultradesign/agents/openai.yaml",
+      "sha256": "8a70af08b2a2a895236d85eb50f04120a7a00cb1de2dc49f00e220d16c0675c6"
+    },
+    {
+      "path": "skills/stn-ultradesign/assets/analytical-surface.template.md",
+      "sha256": "f208c66d6cd42bd9dbd99b96f4767d8a5007fc2c3c0ff55fa3c3611a1f73aa52"
+    },
+    {
+      "path": "skills/stn-ultradesign/assets/audit.template.json",
+      "sha256": "e9f7cf922454cc611c28957e37e675c55d6c3ff6665c705821e1264aae465c71"
+    },
+    {
+      "path": "skills/stn-ultradesign/assets/capability-walkthrough.template.md",
+      "sha256": "588303b40c55030756100ea09ecf5fd1cfb632fe8641d72ef89978a98f902da7"
+    },
+    {
+      "path": "skills/stn-ultradesign/assets/design-brief.template.md",
+      "sha256": "5ec72cfc826ee17a34537eda83c2cdbcb4aa3cfca758d3346e8c81b1b4293ff9"
+    },
+    {
+      "path": "skills/stn-ultradesign/assets/design-contract.template.md",
+      "sha256": "0e8408884ee370e6e19a4db78d64bef525493e5b78e94aae288dd1a072dbcbab"
+    },
+    {
+      "path": "skills/stn-ultradesign/assets/feature-map.template.md",
+      "sha256": "c299fafc2e491a01f50e663274d3c5a4e7bf81c2e8cbdd42c7b6df37ac305712"
+    },
+    {
+      "path": "skills/stn-ultradesign/assets/reference-translation.template.md",
+      "sha256": "86fb9abfde20bb55417b55571f6cd3d388c3fa87a18b24ba849d0a0c082fb6d3"
+    },
+    {
+      "path": "skills/stn-ultradesign/assets/task-flow.template.md",
+      "sha256": "0b040f5f29a1a3ce8cb9c909a1cb7a1af7cc3069eba7b2e672dc8f027cdcfdb5"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/accessibility.md",
+      "sha256": "812a3031c59079577050d4419fa5ee7cf55bcfe116d5937f8f9ea63292dd27ef"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/analytical-meaning.md",
+      "sha256": "4419a5ad87d892fa56674ecf95ae3609526e8876314d71650060215716d6c17e"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/audit-method.md",
+      "sha256": "04596baeea5be10cc01d2c6cd8009949f7fda2a4d883a0a7c86095f0d706b2a2"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/brand-discovery.md",
+      "sha256": "11dbca31bd7f50b5d9222269dc8f22302dcee6b2b69cad2b31a9cceccf1ab9df"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/business-administration.md",
+      "sha256": "504217fb6b02586061c6c19bbf6a2949dda7af4f62872b0d34d41d81742344f7"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/component-states.md",
+      "sha256": "c99378ab4c6fd5722e57c4868208c4374cc6b23a87b4e46c3e4c2256368c98ea"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/concept-to-code.md",
+      "sha256": "c2372cdb8927628690e9ba72263d912aeeff6e7f3a705f28036fddbf373a033c"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/data-visualization.md",
+      "sha256": "1a519fb4dcbe7bb2280a9f610e13772ede4e566379c0ec27846385b6fe32eb84"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/developer-platforms.md",
+      "sha256": "b287963e8de2546b43964070ba2b486ddf8860c31c20f0eeccfad83167b5f29d"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/discovery-and-preferences.md",
+      "sha256": "2d8ecd3db9f264cb92de74deb2a9a38a09c34c519aa3e318f5ba3d4c6ef6a803"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/feature-parity.md",
+      "sha256": "dbd8851145a9e4986759772f64394eab8a6987c122cc534921fc3acd9656fee2"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/identity-permissions.md",
+      "sha256": "65479dd01580271ca215998d0cb2ec71c51ac0d6611435af427b188f53daaf57"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/messaging-workflows.md",
+      "sha256": "5d8757af1849677c7bae405880952b4c72fea6fc20db55fbccdd5d4e000f60c7"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/navigation-and-materials.md",
+      "sha256": "089d67b12f319155132e2581f544ec47450faea3e7ff330cd08f4c78b64951d4"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/platform-adaptation.md",
+      "sha256": "9ccb99787e278d297867773b71ba3b68e8394ee4671540452c96d9318360a1b7"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/product-thinking.md",
+      "sha256": "c1fff79743507aa164c561d898116976345b9f7385d975bc665ae67f8186173f"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/project-research.md",
+      "sha256": "50123267676f750b49e289d663328ec8b5ef24fe3ee7f3c39036662d4f43a8c8"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/skill-evaluation.md",
+      "sha256": "091b09038bfab81154a42933a2d6b57e812aed150b7ce9bfc94780a1d24d0325"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/task-flow-design.md",
+      "sha256": "3bb5b28c1b23cd29c1ffed82f9493bae187e5837039d269d3c399e301b53f35b"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/verification.md",
+      "sha256": "d6746654a7fe1dd2f9f44d543bb20706a689280502213a5299aaf6c25b9c96ce"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/visual-systems.md",
+      "sha256": "fc89c3522fb27d76d6310975b23547c663a74192bbc59a1db56e9e29e87b1633"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/web-engineering.md",
+      "sha256": "b814be6478e2481c3b5bf4e0ad2cc92736f15bc3711cf968ac57e1061ce80e07"
+    },
+    {
+      "path": "skills/stn-ultradesign/references/workflows.md",
+      "sha256": "d421d52d49304c8ef07a5d0e0440be266fae99f7c76e05e695d171f980ea3ff2"
+    },
+    {
+      "path": "skills/stn-ultradesign/scripts/audit_coverage.py",
+      "sha256": "a55d56a4b83df8b68dfb2544a4d797c3905d2518b4d5a97936da50c35c69864c"
+    }
+  ]
+}

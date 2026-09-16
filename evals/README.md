@@ -6,6 +6,7 @@ These files were independently created while developing STN Ultradesign. They co
 | --- | --- | --- |
 | Conduct a full audit and disclose limitations | [Task](audit-fixture/task.md), [deliberately defective mini application](audit-fixture/index.html) | [Audit report](audit-result.md) |
 | Develop a concept before production approval | [Brief](concept-fixture/brief.md) | [Concept](concept-output/index.html), [review](concept-output/review.md), [contract](concept-output/design-contract.md), [verification record](concept-output/verification.md) |
+| Review component semantics and preservation in an operations concept | [Task](interaction-fixture/task.md), [baseline](interaction-fixture/baseline.json), [candidate](interaction-fixture/proposal.html) | [Independent source-only review](interaction-review.md), [input snapshot](interaction-snapshot.json); no rendering or user test claimed |
 | Review task completeness in a logistics concept | [Task](flow-fixture/task.md), [source fixture](flow-fixture/index.html) | [Independent source-only review](flow-review.md); no rendering or user test claimed |
 
 For an independent repeat, provide only the relevant task, the skill and the inputs named by that task. Do not give the evaluating agent the archived result as a model answer. Save new results under `work/evaluation/` to preserve the development evaluation recorded here.

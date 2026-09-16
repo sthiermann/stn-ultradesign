@@ -82,6 +82,13 @@ Link the [task-flow record](task-flow.template.md) for critical tasks. Record vi
 
 ## Control and material states
 
+### Action-to-surface decisions
+
+Classify affected actions before assigning shared primitives. Include direct commands, action menus, checkable display controls, value selectors, object editors/inspectors and consequential confirmations where present. Do not infer an action's family from a common button appearance.
+
+| Action / baseline capability ID | Verb, target and owning workspace | Immediate result | Chosen interaction surface and task reason | Visible steps to outcome / avoidable intermediates | Docked, expanded or compact bounds | Dismissal, state retention and return | Evidence / unresolved decision |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
 ### Shared family behavior
 
 | Family contract ID / decision | Applicable task family and all usage IDs | Placement / adaptation / modality | Header, actions, save and dismissal | Motion / reduced motion / focus entry and return | Shared primitive or adapter / local implementations | Approved exception or unresolved proposal | Integrated revision / per-usage evidence |
@@ -108,6 +115,8 @@ Inspect the open selector as well as its trigger, invalid fields with focus, sel
 - Old/new navigation map and matched comparison artifacts:
 - Individually approved feature retirements: capability IDs, consequences and actual user decision references:
 - Existing chart types, graph interactions and thresholds retained or specifically redesigned:
+- Widget anatomy and event lifecycle comparison, including series, values, icons, units, status meaning, placement and concurrent items:
+- Actual role records, permission keys and role-management actions mapped without substituting presentation categories:
 - Added capabilities and backend dependencies, separately identified:
 
 | Feature / variant ID | Current actor, capability and resource scope | Approved destination and behavior | Locale / theme / density rules and preference persistence | Allowed variation | Acceptance IDs |

@@ -1,0 +1,73 @@
+{
+  "product": "ThermoDesk",
+  "revision": "synthetic-baseline-1",
+  "scope": "Whole-product concept preserving all capabilities below",
+  "pages": [
+    {"id": "monitor", "label": "Monitoring", "purpose": "Observe selected chambers and investigate conditions"},
+    {"id": "schedules", "label": "Schedules", "purpose": "List, create and edit thermal schedules; inspect the next run"},
+    {"id": "people", "label": "People", "purpose": "List people, inspect their assigned chamber scopes and assign existing roles"},
+    {"id": "roles", "label": "Roles", "purpose": "List actual roles and edit permitted role names and grants"}
+  ],
+  "commands": [
+    {"id": "refresh", "label": "Refresh readings", "scope": "current monitoring view", "effect": "Refetch readings without changing the selected chambers, history interval or display preferences"},
+    {"id": "copy", "label": "Copy view link", "scope": "current view", "effect": "Copy selection and current history instant; does not create a saved object"},
+    {"id": "rename", "label": "Rename view", "effect": "Edit selected saved view name; explicit Save and Cancel; preserve old name until Save"},
+    {"id": "reset", "label": "Reset arrangement", "effect": "Restore default ordering; Undo available within the current session"}
+  ],
+  "displayChoices": [
+    {"id": "labels", "label": "Keep chamber names visible", "type": "independent boolean", "scope": "this person", "default": false},
+    {"id": "icons", "label": "Show status symbols", "type": "independent boolean", "scope": "this person", "default": true},
+    {"id": "previews", "label": "Event previews", "type": "independent boolean", "scope": "this person", "default": true},
+    {"id": "metrics", "label": "Chamber metrics", "type": "independent boolean", "scope": "this person", "default": false},
+    {"id": "inspector", "label": "Summary inspector", "type": "independent boolean", "scope": "this person", "default": true}
+  ],
+  "viewSelector": {"kind": "single selected saved view", "values": ["North lab", "Stability tests", "Evening run"], "default": "North lab", "changingValue": "Restore that view's chamber selection and ordering; retain personal display choices"},
+  "statistics": {
+    "perChamber": {
+      "simultaneousSeries": [
+        {"id": "ambient", "label": "Ambient", "symbol": "circle", "unit": "°C", "current": 23.4, "history": [23.1, 23.4, 23.3, 23.4]},
+        {"id": "probe", "label": "Probe", "symbol": "diamond", "unit": "°C", "current": 28.2, "history": [27.8, 28.0, 28.1, 28.2]},
+        {"id": "target", "label": "Target", "symbol": "square", "unit": "°C", "current": 28.0, "history": [28.0, 28.0, 28.0, 28.0]}
+      ],
+      "window": "Past 60 seconds, shared time axis",
+      "threshold": {"quantity": "Probe temperature", "upperInclusive": 30.0, "unit": "°C", "rule": "Preview an event when a new sample is at least the upper threshold", "editableWith": "threshold.write"},
+      "interaction": "Select a trace to inspect its exact sample value and time without hiding the other traces"
+    },
+    "summaryInspector": "Aggregate selected chambers, retain selection and time alignment; independent of on-chamber metrics",
+    "combinations": "All display booleans can be chosen independently; chamber metrics, summary inspector and messenger can remain visible together"
+  },
+  "events": {
+    "previewAnchor": "lower start edge of monitoring workspace",
+    "content": ["chamber illustration", "chamber name", "event time", "measured value", "threshold", "open incident action"],
+    "order": "newest nearest the bottom edge",
+    "visibleLimit": 3,
+    "overflow": "Show count and an entry to event history",
+    "expiry": "12 seconds; pause while hovered or keyboard-focused",
+    "dismissal": "Dismiss one preview without dismissing others or acknowledging the incident",
+    "persistence": "History retains events after preview expiry",
+    "burst": [
+      {"id": "e1", "chamber": "Chamber A", "value": 30.4, "time": "10:14:03"},
+      {"id": "e2", "chamber": "Chamber B", "value": 31.1, "time": "10:14:04"},
+      {"id": "e3", "chamber": "Chamber C", "value": 30.0, "time": "10:14:05"},
+      {"id": "e4", "chamber": "Chamber A", "value": 30.6, "time": "10:14:06"}
+    ]
+  },
+  "messenger": {
+    "modes": ["docked beside monitoring", "expanded workspace", "compact single-pane sequence"],
+    "actions": ["open/close", "new direct conversation", "choose recipient", "compose", "send", "return to conversation list"],
+    "participants": ["Alex Morgan", "Sam Chen"],
+    "draftRule": "Retain recipient selection and unsent text across panel changes, closing and mode changes",
+    "scope": "Independent of selected chamber; in docked mode setup and editing remain within the messenger region"
+  },
+  "permissions": {
+    "keys": ["chamber.read", "incident.read", "incident.acknowledge", "threshold.write", "schedule.write", "people.assign", "role.write"],
+    "roles": [
+      {"id": "r-observer", "name": "Observer", "system": true, "grants": ["chamber.read", "incident.read"]},
+      {"id": "r-technician", "name": "Technician", "system": false, "grants": ["chamber.read", "incident.read", "incident.acknowledge", "threshold.write", "schedule.write"]},
+      {"id": "r-coordinator", "name": "Coordinator", "system": false, "grants": ["chamber.read", "incident.read", "people.assign", "role.write"]}
+    ],
+    "roleActions": "List roles, inspect grants, create a custom role, edit custom role name/grants; system role is inspectable but not editable",
+    "scopeRule": "Role grants intersect assigned chamber scope; managing people does not imply threshold editing",
+    "hiddenData": "Never show out-of-scope chamber content"
+  }
+}

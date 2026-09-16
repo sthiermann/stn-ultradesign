@@ -15,7 +15,7 @@ Built for desktop, tablet, and phone. Grounded in primary design sources. Organi
 
 [**Get started →**](docs/installation.md) · [Read the skill](skills/stn-ultradesign/SKILL.md) · [Method](skills/stn-ultradesign/references/feature-parity.md) · [Evaluation](docs/quality/evaluation.md) · [Privacy](PRIVACY.md)
 
-Release **v0.3.1** · [MIT license](LICENSE) · Codex + Claude Code
+Release **v0.3.2** · [MIT license](LICENSE) · Codex + Claude Code
 
 [![Package checks](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml/badge.svg)](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml)
 
@@ -156,7 +156,7 @@ The method is independently written and design-language-neutral. It researches t
 
 The package includes an audit ledger, a design contract, a local Python validator and synthetic evaluation fixtures. Package checks and coverage tests are automated. Actual client installation, application behavior, user research, and aesthetic acceptance are reported separately in the [evaluation record](docs/quality/evaluation.md).
 
-**Version 0.3.1 is an early release.** There is no validated claim of universal superiority or a fixed percentage improvement. The evaluation record preserves unsuccessful outcomes too, including an early synthetic concept rejected for its visual quality. That feedback informed stronger concept and craft requirements; it is not counted as a passed design evaluation.
+**Version 0.3.2 is an early release.** There is no validated claim of universal superiority or a fixed percentage improvement. The evaluation record preserves unsuccessful outcomes too, including an early synthetic concept rejected for its visual quality. That feedback informed stronger concept and craft requirements; it is not counted as a passed design evaluation.
 
 ## Development priorities
 

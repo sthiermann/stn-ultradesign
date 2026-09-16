@@ -12,6 +12,8 @@ Inventory separately where present: show/hide the messenger, conversation list, 
 
 On wide layouts, consider a persistent conversation list and adjacent thread when frequent switching needs both. In an operational application, a docked conversation can preserve the main workspace; its width and opening behavior must leave the primary task usable. On narrow layouts, a list → thread sequence often makes context clearer than compressing both. Choose from actual work, not visual resemblance to a reference.
 
+Bind recipient selection, new-conversation setup and conversation editing to the messenger workspace. A docked messenger uses a local panel or in-panel sequence; its expanded mode can use the expanded region. Define how the same task adapts when space is insufficient, retaining the selected recipients, draft and return path. A shared application editor must not escape those bounds by default. Follow the action-to-surface contract in [component-states.md](component-states.md#choose-behavior-before-styling-its-shell).
+
 Keep participant identity, conversation purpose and relevant scope visible. Distinguish direct messages from a similarly named group. Make the selected conversation, unread state, draft and failed delivery distinguishable without relying on color alone. Dates, timestamps and message grouping should explain sequence without adding repetitive labels to every message.
 
 Define the relationship to other panels: can a person keep a chart inspector and conversation open together, does switching the main object change the thread, and is the conversation global or object-scoped? Do not replace independent panel state with one mutually exclusive menu by accident. Preserve a visible return path and relevant workspace selection.

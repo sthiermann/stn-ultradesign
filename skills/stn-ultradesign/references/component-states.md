@@ -23,7 +23,7 @@ Apply the user's chosen material, shape and motion language to the agreed famili
 
 ### One agreed contract across the component family
 
-When the user chooses a shared interaction pattern, persist its exact family and scope before changing individual usages. For an editing surface, define placement and attachment, modal or nonmodal behavior, width and responsive transformation, header and close placement, action order, save/cancel and dirty-state behavior, opening/closing motion, reduced-motion alternative, initial focus and focus return. A drawer, centered dialog or inline editor can each be appropriate; the user's agreed choice governs the affected product, not future unrelated projects.
+First classify the actions below; then apply shared behavior within each resulting family. When the user chooses a shared interaction pattern, persist its exact family and scope before changing individual usages. For an editing surface, define placement and attachment, modal or nonmodal behavior, width and responsive transformation, header and close placement, action order, save/cancel and dirty-state behavior, opening/closing motion, reduced-motion alternative, initial focus and focus return. A drawer, centered dialog or inline editor can each be appropriate; the user's agreed choice governs the affected product, not future unrelated projects.
 
 Enumerate every affected opening path, including local implementations, newly added modules, portals and conditional role/state branches. Follow the actual rendered path: two buttons named “Edit” may open different implementations. Include the selected family contract in delegated work and use one shared primitive or a deliberate adapter where practical. Multiple libraries or local wrappers must not silently create competing behavior. If separate implementations are necessary, verify each against the same observable contract.
 
@@ -31,7 +31,20 @@ Record exceptions with their task reason, affected usages and decision status. A
 
 ## Choose behavior before styling its shell
 
-“Dropdown” describes an appearance, not a complete interaction contract.
+“Dropdown” describes an appearance, not a complete interaction contract. Before implementing or propagating a surface, record **verb → target → owning workspace → immediate result → surface → dismissal/return** for each affected action in the [design contract](../assets/design-contract.template.md). Inspect what its handler actually does; a button label alone is insufficient.
+
+| Intent | Surface decision | Failure to reject |
+| --- | --- | --- |
+| Perform a reversible, fully specified command | Execute directly and show scoped feedback | An intermediate panel containing only another button for the same command |
+| Reveal a short set of commands | Anchored action menu with the established menu keyboard contract | Treating the command list as an object editor or a chain of navigation panels |
+| Adjust a small set of independent display choices | Anchored checkable menu or compact settings popover, according to the contents and save semantics | A full editor for every visibility toggle, or merging independent choices into one option |
+| Choose a value | Select, listbox or combobox as specified below | A command menu whose rows silently behave like form values |
+| Edit a data object or inspect substantial detail | The agreed editor or inspector family, scoped to its workspace | Opening it merely because every button was assigned the same visual shell |
+| Resolve a consequential decision | A proportionate confirmation surface when the consequence warrants it | Applying a confirmation step to ordinary reversible choices for consistency |
+
+These are task criteria, not an absolute ban on a surface type. Content, input and the approved product contract may justify another choice; record the reason. Direct routes and visible frequent controls can avoid an overflow entirely. For a menu containing form controls, use appropriate popover/form semantics instead of claiming an application-menu role for arbitrary content. Do not add a generic menu → panel → action chain when one reveal and one choice can complete the same work. Define dismissal by intent: a chosen command normally closes its menu and exposes the result; a group of independent display choices can remain open so several options can be adjusted together. Preserve feedback, Escape/outside dismissal and focus return without forcing repeated reopening. Verify the chosen primitive's actual keyboard and selection contract.
+
+The owning workspace constrains geometry as well as state. A nested editor or recipient picker inside a docked tool belongs to that tool's usable region; it must not become an application-wide overlay merely because a global drawer component is available. Define its docked, expanded and compact transformations, including insufficient-space fallback, focus, drafts and return. A deliberate task-context change can use a wider surface, but is a separate decision. Verify every supported container mode; viewport width alone does not establish available space.
 
 | Task | Candidate | Preserve or verify |
 | --- | --- | --- |

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.2 — 2026-09-16
+
+- Classify each action's task, owning workspace and immediate outcome before applying a shared surface treatment.
+- Distinguish direct commands, action menus, display popovers, selectors, editors, inspectors and confirmations; reject unnecessary intermediate panels.
+- Constrain nested tools to their actual docked or expanded workspace and verify each supported mode.
+- Preserve widget anatomy, concurrent series, live-event stack behavior and actual role records alongside individual permission contracts.
+- Keep full-scope approval open when required pages or behavioral contracts remain missing; re-establish a verified slice after owner rejection.
+- Add an original synthetic interaction-and-preservation fixture for independent outcome evaluation.
+
 ## 0.3.1 — 2026-09-16
 
 - Keep user-selected component-family behavior consistent across existing and newly integrated modules.

@@ -21,6 +21,8 @@ Use a varied set:
 11. An existing workspace with hidden actions, independently controlled overlays, simultaneous panels and restricted collection membership, to test granular preservation and safe editing.
 12. A project with an already agreed editing-surface family and a later module using a different local dialog implementation. Provide the raw components, existing decision and new entry path; evaluate whether the agent discovers the mismatch, preserves approved exceptions and verifies every affected integrated usage without turning that project's placement into a universal rule.
 
+The repository also supplies an [interaction and preservation task](../../../evals/interaction-fixture/task.md) with a synthetic baseline and candidate. Provide only those inputs and this skill for a fresh run. Evaluate the resulting action contracts, retained workflows and readiness decision; matching terms such as “popover” or “parity” is not a result.
+
 These are proposed test scenarios, not completed evaluations. For design-language cases, judge source relevance, faithful translation, actual rendered evidence and user-directed scope; the presence or absence of a vendor name is not itself a pass condition.
 
 Judge visible behavior: correct routing, scope preservation, useful findings, prioritization, design quality, state coverage, realistic verification and concept fidelity. Record false positives and missed high-impact problems. More reported issues is not automatically better.
