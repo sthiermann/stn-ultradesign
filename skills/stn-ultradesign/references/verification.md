@@ -44,6 +44,17 @@ For adaptive behavior, test compact, medium and expanded spaces appropriate to t
 
 Check forced colors, light/dark theme where supported, reduced motion and long/RTL content where applicable. Preserve scroll and focus on transitions. Test touch access to functions that otherwise appear on hover.
 
+## Inspect the delivery surface
+
+For visual changes, inspect the affected artifacts where people will actually consume them, within the authorized delivery workflow. A standalone image render cannot establish its integration into a page. For a GitHub README, inspect GitHub's rendered README at the intended revision, including surrounding text; a local Markdown preview is only a fallback. Apply the same distinction to an app shell, embedded widget, exported document or other host surface.
+
+- **Identity and freshness:** Record the inspected revision, delivery URL or file, viewport, usable content-column width, and selected responsive asset or variant. Confirm that the displayed asset is the expected version, using its resolved source and a hash or visible revision marker where available. After an asset change, refresh or reopen the consuming surface and verify its identity; an unverified cached preview is not evidence of the new result.
+- **Cross-artifact consistency:** Reconcile product names and versions that are supposed to agree across visible artwork, headings, captions, release metadata and manifests. Read the rendered image text, including SVG text, rather than trusting filenames or source checks alone. Explain intentionally different version domains instead of forcing them to match.
+- **Composition in context:** Inspect image edges, captions, badges and adjacent metadata together. Check whitespace, grouping, hierarchy, crop, legibility and wrapping at their displayed size. Correct cramped or misleading relationships; there is no universal pixel gap that proves quality.
+- **Adaptive delivery:** Choose compact, medium and expanded checks according to the changed content, supported surfaces and actual content column. Desktop, tablet and phone labels or window width alone are insufficient. Verify which responsive asset is selected and how it scales inside the host; exercise relevant variant boundaries and every changed variant.
+
+Keep source/CI results, rendered visual findings and user approval separate. A passing build, valid SVG, working link or screenshot's existence does not establish design acceptance. Report visual acceptance only for the surfaces and revisions actually inspected. If the delivery surface is inaccessible, inspect the strongest available preview and leave delivery rendering explicitly unverified. This is evidence discipline, not an additional approval gate.
+
 ## Concept conformance
 
 Map each acceptance ID to evidence and `pass`, `fail`, `blocked` or `not-tested`. Keep unresolved failures visible. Compare fixed rules exactly and fluid behavior against its allowed range; do not demand identical pixels across different rendering environments.

@@ -83,7 +83,7 @@ Delegation can split independent surfaces or specialist passes. Give each worker
 - Check visual craft and task performance separately. A polished screen can still be confusing; a usable screen can still need typographic and compositional refinement.
 - Accessibility needs semantic implementation and manual checks as well as automated scans. Client-side permission visibility does not establish server-side authorization.
 - Label statements as standards, vendor guidance, research/heuristics, product decisions, or hypotheses when the distinction affects a recommendation. “Latest” and “best for this user” are different claims.
-- Inspect rendered results when a browser or renderer is available. If execution is unavailable, deliver a code-based review and state the limit. Never invent screenshots, tests, scores, usage data, or user approval.
+- Inspect visual changes on their actual delivery surface as described in [verification.md](references/verification.md), including surrounding content, visible name/version consistency, spacing and the selected responsive asset at the inspected revision. Size checks to the actual content column and affected variants. If that surface is unavailable, inspect the strongest available preview and state the limit; code/CI passes do not establish visual acceptance. Never invent screenshots, tests, scores, usage data, or user approval.
 - Keep user data and secrets out of evidence artifacts. Use safe test fixtures for destructive or externally consequential journeys.
 
 ## Deliver the result

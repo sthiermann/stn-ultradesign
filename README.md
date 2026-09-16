@@ -1,12 +1,11 @@
 # STN Ultradesign
 
+<p>
 <picture>
-  <source media="(max-width: 1000px)" srcset="assets/brand/hero-compact.svg">
-  <img src="assets/brand/hero.svg" alt="STN Ultradesign. Design the whole experience. Product-specific design across desktop, tablet and phone." width="1280">
+  <source media="(max-width: 1000px)" srcset="assets/brand/hero-compact-96e85ec366.svg">
+  <img src="assets/brand/hero-7bfa565052.svg" alt="STN Ultradesign. Design the whole experience. Product-specific design across desktop, tablet and phone." width="1280">
 </picture>
-
-[![Validate package](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml/badge.svg)](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml)
-**v0.2.0 · MIT · Codex + Claude Code**
+</p>
 
 **A design skill for the entire product: visual craft, complete workflows, and implementation you can verify.**
 
@@ -16,12 +15,18 @@ Built for desktop, tablet, and phone. Grounded in primary design sources. Organi
 
 [**Get started →**](docs/installation.md) · [Read the skill](skills/stn-ultradesign/SKILL.md) · [Research](docs/research/overview.md) · [Evaluation](docs/quality/evaluation.md) · [Privacy](PRIVACY.md)
 
+Release **v0.2.0** · [MIT license](LICENSE) · Codex + Claude Code
+
+[![Package checks](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml/badge.svg)](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml)
+
 ## From evidence to a coherent experience
 
+<p>
 <picture>
-  <source media="(max-width: 1000px)" srcset="assets/brand/method-compact.svg">
-  <img src="assets/brand/method.svg" alt="Audit → Concept → Approve → Implement → Verify. Evidence informs the concept; review and refine it before approval. Implement the reviewed version and verify behavior, accessibility, and visual fidelity." width="1280">
+  <source media="(max-width: 1000px)" srcset="assets/brand/method-compact-0447f25be4.svg">
+  <img src="assets/brand/method-dc2582ad3a.svg" alt="Audit → Concept → Approve → Implement → Verify. Evidence informs the concept; review and refine it before approval. Implement the reviewed version and verify behavior, accessibility, and visual fidelity." width="1280">
 </picture>
+</p>
 
 For substantial design work, the default is **concept → refinement → your approval → implementation**. Approval applies to specific views, states, and decisions. Existing approval remains valid for that scope; an explicit request to implement directly takes precedence. Audit-only work produces findings without silently authorizing a redesign.
 
