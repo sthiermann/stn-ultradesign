@@ -130,7 +130,62 @@ For each animation, state the information it conveys: where an inspector came fr
 
 Apple's motion guidance treats system motion as responsive to platform context and input. Its reduced-motion evaluation specifically addresses movement such as zooming, spinning, parallax, and animated blur. Supply calmer feedback where needed while retaining state communication; simply deleting every animation can remove useful feedback. [Apple motion](https://developer.apple.com/design/human-interface-guidelines/motion), [Reduced Motion evaluation](https://developer.apple.com/help/app-store-connect/manage-app-accessibility/reduced-motion-evaluation-criteria)
 
-## 8. Evidence required for review
+## 8. Translate control behavior without imposing a brand
+
+Read this section when the user chooses an Apple-informed material direction or when auditing controls inspired by it. It is an optional reference, not this skill's default appearance. Record inheritance separately for color, shapes, materials, typography, icons, layout, and motion in [brand-discovery.md](brand-discovery.md). A preference for Liquid Glass does not authorize replacing the product's navigation, removing controls, or copying Apple assets.
+
+### Keep material, color, and state separate
+
+Distinguish four decisions: the material's role and variant; a control's semantic accent; the user's appearance/accessibility preference; and its current interaction state. Apple's HIG describes restrained color emphasis on glass, including prominent actions and selected navigation. This is not a rule to tint every surface with the brand color. [Apple color](https://developer.apple.com/design/human-interface-guidelines/color)
+
+For a custom control, specify the surface fill or tint, foreground, edge, shadow, shape, focus indicator, and transition independently. Keep measurements reviewable in the project's tokens; do not present invented opacity, blur, radius, or animation values as Apple's specification. Inspect the material in its actual content relationship, including scroll and overlapping panels.
+
+| State | What must be distinguishable | Review failure to catch |
+|---|---|---|
+| Resting | Purpose, available action, current value | A control looks like a decorative badge or content label |
+| Hover | Pointer target and optional preview | Hover changes persistent selection or exposes the only usable action |
+| Keyboard focus | Where the next keyboard action applies | A faint highlight vanishes on a selected, tinted, or invalid control |
+| Pressed | Input was received, before its result | A bounce substitutes for action feedback, or alters the hit area |
+| Selected / checked / mixed | A persistent choice and, where relevant, partial group selection | Color alone carries the value; mixed is rendered as off |
+| Expanded | An associated surface is open | The trigger looks closed or its menu loses context after repositioning |
+| Pending | Work has started and its result is not yet known | Repeated activation creates duplicate work or the label becomes ambiguous |
+| Unavailable | The action cannot currently run, with context when needed | Dimming makes a relevant setting impossible to discover or understand |
+| Invalid / failed | Which value or action needs attention and how to recover | The error disappears when focus or hover changes |
+
+Specify simultaneous states as well: selected plus focus, invalid plus focus, expanded plus hover, and pending after activation. These are independent facts, not mutually exclusive CSS classes. Native focus and pointing systems vary by platform; their visual effects are not interchangeable with DOM focus. [Apple focus and selection](https://developer.apple.com/design/human-interface-guidelines/focus-and-selection/)
+
+Apple's iPad pointing guidance considers highlight, lift, and hover effects and warns against scaling elements that crowd adjacent content, such as table rows. For custom web UI, retain the ordinary pointer and a stable hit region unless a supported task requires otherwise. Never make pointer effects a prerequisite for touch or keyboard access. [Apple pointing devices](https://developer.apple.com/design/human-interface-guidelines/pointing-devices)
+
+### Choose the component before its finish
+
+| Component | Preserve when changing its visual treatment |
+|---|---|
+| Action button | A clear verb, priority, press response, pending result, and destructive meaning where applicable |
+| Toggle button or switch | The controlled subject, persistent on/off state, and when the change takes effect |
+| Checkbox | Independent choices, label activation, hierarchy, and genuine mixed state where supported |
+| Radio group | Mutually exclusive choices and a stable group label; selected is not the same as focused |
+| Value selector | The current value and a predictable set of choices; searchable selection when the task warrants it |
+| Command menu | Context, ordering, unavailable items, submenus, dismissal, and focus return |
+| Status badge | Named meaning, freshness, and distinction between passive status and an actionable filter |
+| Inline information | The relevant subject and useful explanation without unnecessary interruption |
+| Alert | The actual consequence, available recovery or cancellation, and appropriate interruption |
+| Icon control | A consistent visual language, accessible name, identifiable meaning, and all interaction states |
+
+Apple distinguishes action buttons, binary controls, mutually exclusive selections, and menus. Its macOS guidance retains a role for checkboxes and radio buttons; turning every choice into a switch is not modernization. Its pop-up and pull-down terminology also distinguishes choosing a value from issuing a command. Preserve these semantic differences when selecting HTML controls or established accessible components. [Buttons](https://developer.apple.com/design/human-interface-guidelines/buttons), [Toggles](https://developer.apple.com/design/human-interface-guidelines/toggles), [Pop-up buttons](https://developer.apple.com/design/human-interface-guidelines/pop-up-buttons), [Pull-down buttons](https://developer.apple.com/design/human-interface-guidelines/pull-down-buttons)
+
+Use selection marks separately from the temporary active menu row. For each menu group, decide whether icons improve recognition; avoid ornamental glyphs that compete with labels. A menu's material must preserve readable labels over its complete allowed backdrop. [Apple menus, updated 2026-06-08](https://developer.apple.com/design/human-interface-guidelines/menus)
+
+An information message does not become an interrupting alert because its container looks polished. Likewise, app-icon notification badging is a platform-specific mechanism, not a universal rule for every in-product status chip. Define the product's count, severity, acknowledgement, and freshness semantics independently. [Apple alerts](https://developer.apple.com/design/human-interface-guidelines/alerts), [Apple notifications](https://developer.apple.com/design/human-interface-guidelines/notifications/)
+
+### Implement the web contract, not a native screenshot
+
+Start from usable semantic controls. A custom menu requires its complete keyboard, focus, selection, and dismissal behavior; a visually similar collection of links does not automatically need ARIA menu semantics. Use the relevant [WAI-ARIA Authoring Practices pattern](https://www.w3.org/WAI/ARIA/apg/patterns/) when a custom composite widget is necessary, and verify actual assistive-technology behavior. APG is implementation guidance; its examples are not certification or ready-made product code.
+
+Treat `backdrop-filter` as a rendering enhancement over a readable surface. Its backdrop boundary and ancestor effects influence what is filtered. Native Liquid Glass additionally coordinates input response, optical effects, system appearance, and window state. CSS blur alone cannot substantiate a claim of native-equivalent behavior. [MDN backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/backdrop-filter), [Apple custom Liquid Glass views](https://developer.apple.com/documentation/SwiftUI/Applying-Liquid-Glass-to-custom-views)
+
+Before approving this direction, render a compact control specimen in its real layout: buttons, independent and exclusive choices, open menu, selected row, badge, inline message, and alert when the product has them. Include light/dark, dense/comfortable arrangements where supported, keyboard focus, pending/error states, and a nontransparent/reduced-motion variant. Then test the interactions in consuming screens; the specimen supplements the full usage audit rather than replacing it. The detailed source distinctions and a proposed experiment protocol are documented in [Liquid Glass controls research](../../../docs/research/liquid-glass-controls.md).
+
+## 9. Evidence required for review
 
 For concepts, render the proposed hierarchy at compact, intermediate, and wide sizes with realistic content; include an open detail or settings group, not just the landing screen. Compare a structural alternative before polishing materials. Review both themes and the relevant density choices. Record what improved and what remains unresolved; visual taste still requires the user's review.
 

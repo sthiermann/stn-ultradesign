@@ -176,7 +176,6 @@ Research snapshot and access date: **2026-09-16**. This is a reference index, no
 | [SC 1.4.1](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html) | W3C explanatory / implementation guidance | D | [accessibility](accessibility.md) |
 | [Selecting evaluation tools](https://www.w3.org/WAI/test-evaluate/tools/selecting/) | W3C explanatory / implementation guidance | D | [accessibility](accessibility.md) |
 | [WAI tutorial](https://www.w3.org/WAI/tutorials/images/complex/) | W3C explanatory / implementation guidance | D | [data-visualization](data-visualization.md) |
-
 | [Apple, Platforms State of the Union, WWDC26](https://developer.apple.com/videos/play/wwdc2026/102/) | First-party guidance / implementation reference | D | [navigation-and-materials](navigation-and-materials.md) |
 | [Microsoft navigation basics](https://learn.microsoft.com/en-us/windows/apps/design/basics/navigation-basics) | First-party guidance / implementation reference | D | [navigation-and-materials](navigation-and-materials.md) |
 | [NavigationView](https://learn.microsoft.com/en-us/windows/apps/design/controls/navigationview) | First-party guidance / implementation reference | D | [navigation-and-materials](navigation-and-materials.md) |
@@ -202,8 +201,75 @@ Research snapshot and access date: **2026-09-16**. This is a reference index, no
 | [W3C's document guide](https://www.w3.org/WAI/standards-guidelines/wcag/docs/) | W3C explanatory guidance | D | [discovery-and-preferences](discovery-and-preferences.md) |
 | [APG introduction](https://www.w3.org/WAI/ARIA/apg/about/introduction/) | W3C explanatory guidance | D | [discovery-and-preferences](discovery-and-preferences.md) |
 
-This register contains **184 distinct source URLs** used by the operational references. Counts describe the bibliography, not design quality or exhaustive coverage of the field.
+The initial register above contains **184 distinct source URLs**. Later research additions are listed separately below. Bibliography size does not establish design quality or exhaustive coverage of the field.
 
 ## Further provenance
 
 Apple index-only materials, the historical scope of Mobile First, the limited HEART-paper access, platform-specific credential behavior and the dated OpenAPI reference are called out in the relevant modules. Native framework guarantees are not automatically web guarantees. Brand names identify sources, not endorsements.
+
+## Component-state and material research additions
+
+Accessed 2026-09-16. Read alongside the [research limitations](../../../docs/research/liquid-glass-controls.md) and the [component state method](component-states.md). Native documentation does not establish cross-browser visual equivalence.
+
+| Source | Kind | Access | Used in |
+| --- | --- | --- | --- |
+| [iPhone display settings](https://support.apple.com/en-mt/guide/iphone/-iphd6804774e/ios) | First-party / implementation documentation | D | [navigation-and-materials](navigation-and-materials.md) |
+| [Reduce Transparency environment value](https://developer.apple.com/documentation/swiftui/environmentvalues/accessibilityreducetransparency) | First-party / implementation documentation | D | [navigation-and-materials](navigation-and-materials.md) |
+| [Focus and selection](https://developer.apple.com/design/human-interface-guidelines/focus-and-selection/) | First-party / implementation documentation | I | [navigation-and-materials](navigation-and-materials.md) |
+| [Pointing devices](https://developer.apple.com/design/human-interface-guidelines/pointing-devices) | First-party / implementation documentation | I | [navigation-and-materials](navigation-and-materials.md) |
+| [Buttons](https://developer.apple.com/design/human-interface-guidelines/buttons) | First-party / implementation documentation | I | [navigation-and-materials](navigation-and-materials.md) |
+| [Toggles](https://developer.apple.com/design/human-interface-guidelines/toggles) | First-party / implementation documentation | I | [navigation-and-materials](navigation-and-materials.md) |
+| [Pop-up buttons](https://developer.apple.com/design/human-interface-guidelines/pop-up-buttons) | First-party / implementation documentation | I | [navigation-and-materials](navigation-and-materials.md) |
+| [Pull-down buttons](https://developer.apple.com/design/human-interface-guidelines/pull-down-buttons) | First-party / implementation documentation | I | [navigation-and-materials](navigation-and-materials.md) |
+| [Menus](https://developer.apple.com/design/human-interface-guidelines/menus) | First-party / implementation documentation | I | [navigation-and-materials](navigation-and-materials.md) |
+| [Alerts](https://developer.apple.com/design/human-interface-guidelines/alerts) | First-party / implementation documentation | I | [navigation-and-materials](navigation-and-materials.md) |
+| [Notifications](https://developer.apple.com/design/human-interface-guidelines/notifications/) | First-party / implementation documentation | I | [navigation-and-materials](navigation-and-materials.md) |
+| [SF Symbols guidance](https://developer.apple.com/design/human-interface-guidelines/sf-symbols) | First-party / implementation documentation | I | [navigation-and-materials](navigation-and-materials.md) |
+| [App icons](https://developer.apple.com/design/human-interface-guidelines/app-icons) | First-party / implementation documentation | I | [navigation-and-materials](navigation-and-materials.md) |
+| [Applying Liquid Glass to custom views](https://developer.apple.com/documentation/SwiftUI/Applying-Liquid-Glass-to-custom-views) | First-party / implementation documentation | D | [navigation-and-materials](navigation-and-materials.md) |
+| [Menu button](https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/) | W3C implementation guidance | D | [navigation-and-materials](navigation-and-materials.md) |
+| [Menu and menubar](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/) | W3C implementation guidance | D | [navigation-and-materials](navigation-and-materials.md) |
+| [Checkbox](https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/) | W3C implementation guidance | D | [navigation-and-materials](navigation-and-materials.md) |
+| [Radio group](https://www.w3.org/WAI/ARIA/apg/patterns/radio/) | W3C implementation guidance | D | [navigation-and-materials](navigation-and-materials.md) |
+| [Fluent dropdown](https://fluent2.microsoft.design/components/web/react/core/dropdown/usage) | First-party / implementation documentation | D | [component-states](component-states.md) |
+| [Fluent combobox](https://fluent2.microsoft.design/components/web/react/core/combobox/usage) | First-party / implementation documentation | D | [component-states](component-states.md) |
+| [listbox](https://www.w3.org/WAI/ARIA/apg/patterns/listbox/) | W3C implementation guidance | D | [component-states](component-states.md) |
+| [combobox](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/) | W3C implementation guidance | D | [component-states](component-states.md) |
+| [Compose interactions](https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions) | First-party / implementation documentation | D | [component-states](component-states.md) |
+| [Spectrum 2 Button](https://react-spectrum.adobe.com/Button) | First-party / implementation documentation | D | [component-states](component-states.md) |
+| [Checkbox](https://react-spectrum.adobe.com/Checkbox) | First-party / implementation documentation | D | [component-states](component-states.md) |
+| [RadioGroup](https://react-spectrum.adobe.com/RadioGroup) | First-party / implementation documentation | D | [component-states](component-states.md) |
+| [Fluent Button](https://fluent2.microsoft.design/components/web/react/core/button/usage) | First-party / implementation documentation | D | [component-states](component-states.md) |
+| [Material Web buttons](https://material-web.dev/components/button/) | First-party / implementation documentation | D | [component-states](component-states.md) |
+| [SwiftUI Group Lab, 7:21](https://developer.apple.com/videos/play/wwdc2026/8120/) | First-party / implementation documentation | D | [component-states](component-states.md) |
+| [Badge](https://atlassian.design/components/badge) | First-party / implementation documentation | I | [component-states](component-states.md) |
+| [Lozenge](https://atlassian.design/components/lozenge) | First-party / implementation documentation | I | [component-states](component-states.md) |
+| [Atlassian message guidance](https://atlassian.design/foundations/content/designing-messages) | First-party / implementation documentation | I | [component-states](component-states.md) |
+
+## Analytical meaning and exploration additions
+
+Accessed 2026-09-16. See the [research record](../../../docs/research/analytical-experiences.md) for source scope and limits. Vendor behavior is evidence of a pattern, not a requirement to add that feature to every product.
+
+| Source | Kind | Access | Used in |
+| --- | --- | --- | --- |
+| [Microsoft: star schema guidance](https://learn.microsoft.com/en-us/power-bi/guidance/star-schema) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
+| [Tableau: aggregation](https://help.tableau.com/current/pro/desktop/en-us/calculations_aggregation.htm) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
+| [Microsoft: relationships and higher-grain facts](https://learn.microsoft.com/en-us/power-bi/guidance/relationships-many-to-many) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
+| [Tableau: order of operations](https://help.tableau.com/current/pro/desktop/en-us/order_of_operations.htm) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
+| [ASA statement announcement, 2016](https://www.amstat.org/docs/default-source/amstat-documents/p-valuestatement.pdf) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
+| [Tableau: how Explain Data works](https://help.tableau.com/current/pro/desktop/en-us/explain_data_explained.htm) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
+| [Microsoft: KPI visual](https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-kpi) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
+| [Qlik: creating KPIs](https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Visualizations/KPI/create-kpis.htm) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
+| [Carbon: status indicators](https://carbondesignsystem.com/patterns/status-indicator-pattern/) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
+| [Microsoft: data refresh](https://learn.microsoft.com/en-us/power-bi/connect-data/refresh-data) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
+| [Qlik: associative selection model](https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Selections/associative-selection-model.htm) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
+| [Power BI drillthrough](https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-drillthrough) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
+| [Tableau filter actions](https://help.tableau.com/current/pro/desktop/en-us/actions_filter.htm) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
+| [Carbon data table](https://carbondesignsystem.com/components/data-table/usage/) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
+| [Selection scope](https://www.ag-grid.com/javascript-data-grid/row-selection-multi-row/) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
+| [CSV export](https://www.ag-grid.com/javascript-data-grid/csv-export/) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
+| [Pagination and child rows](https://www.ag-grid.com/javascript-data-grid/row-pagination/) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
+| [Filters and highlighting](https://learn.microsoft.com/en-us/power-bi/create-reports/power-bi-reports-filters-and-highlighting) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
+| [Visual interactions](https://learn.microsoft.com/en-us/power-bi/create-reports/service-reports-visual-interactions) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
+| [Assigning colors to measure values](https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Colors/assigning-colors-to-measure-values.htm) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |
+| [Chart anatomy](https://carbondesignsystem.com/data-visualization/chart-anatomy/) | Primary documentation / research; applicability qualified in module | D | [analytical-meaning](analytical-meaning.md), [data-visualization](data-visualization.md) |

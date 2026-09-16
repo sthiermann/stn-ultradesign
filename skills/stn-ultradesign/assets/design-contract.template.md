@@ -40,6 +40,8 @@ Complete only sections relevant to this project. Remove unused sections with an 
 - Theme-specific semantic tokens and accessible alternatives:
 - Asset provenance, documented use conditions and unresolved dependencies:
 - Component/surface exceptions and associated acceptance IDs:
+- Reference observations: source/version, device, surface/state, inspected visuals or motion, and access limits:
+- Reference qualities translated into rendered acceptance conditions; intentional departures and superseded preferences:
 
 An approved visual reference does not authorize copying its assets. Preserving corporate typography or colors does not automatically preserve a legacy layout. Record those choices separately and retain the real authorization scope.
 
@@ -60,6 +62,15 @@ Include tokens, typography, icon family, layout regions, hierarchy, density, spa
 
 | Flow/state ID | Actor and entry | Action and transition | Validation / side effect | Back, cancel, failure and recovery |
 | --- | --- | --- | --- | --- |
+
+## Control and material states
+
+For affected families, use [component-states.md](../references/component-states.md). Bind the user's brand choices to concrete state treatments, not adjectives alone. Include native-control exceptions and the reason for changing a control pattern; retain its existing values, meaning and effects.
+
+| Family / usage | State or relevant combination | Geometry / surface / edge / foreground / focus / motion | Brand decision | Keyboard / touch / form behavior | Theme / reduced-effect alternative | Evidence / unresolved checks |
+| --- | --- | --- | --- | --- | --- | --- |
+
+Inspect the open selector as well as its trigger, invalid fields with focus, selected controls without focus, and messages beside the content they concern. A rendered specimen helps compare states; it does not replace verification in each affected task.
 
 ## Feature preservation and supported variants
 

@@ -1,6 +1,6 @@
 # Discovery and individual design preferences
 
-Use this module before a substantial new concept or redesign. Its purpose is to learn the product and the owner's intentions before committing to a visual direction. The minimum of twenty tailored questions is this skill owner's chosen working method, not a research-backed optimum or an international standard. It is a floor, not a ceiling: ask additional relevant questions when the scope exposes important unknowns, without inventing a quota of hundreds. For an isolated fix, ask only the few questions the fix actually needs.
+Use this module throughout an audit and before a substantial new concept or redesign. Its purpose is to learn the product and the owner's intentions before committing to a recommendation or visual direction. The minimum of twenty tailored questions for a substantial concept is this skill owner's chosen working method, not a research-backed optimum or an international standard. It is a floor, not a ceiling: ask additional relevant questions when the scope exposes important unknowns, without inventing a quota of hundreds. Audits and isolated fixes have no arbitrary twenty-question minimum or maximum; ask as many meaningful questions as the work needs.
 
 ## Understand the mission before choosing the composition
 
@@ -31,6 +31,20 @@ Discover the actual dataset sizes, available refresh modes, supported media stre
 
 For company or product identity, use [brand-discovery.md](brand-discovery.md). Discover the supplied brand sources and their authority, then ask which dimensions to preserve, evolve, reinterpret or explore. Typography, color and shape inheritance do not imply that layout or navigation must remain unchanged. Carry this selective inheritance matrix into the brief and concept contract.
 
+## Keep an adaptive interview open during the audit
+
+Revisit material unknowns during each semantic, visual and workflow pass, and when comparing linked surfaces. The initial interview does not finish discovery. First inspect available evidence and existing answers; ask when the remaining uncertainty can change the interpretation, recommendation, scope or acceptance criterion. Do not ask the user to identify a control or value that can be inspected directly.
+
+Ground each question in a concrete finding. Explain the affected task, what is known, what remains uncertain and which decision the answer changes. Offer a small set of meaningful options, with a recommendation and its tradeoff where the evidence supports one. Explain whether the rationale is an applicable standard, platform practice, research or heuristic, product requirement, or taste. An established pattern can inform an option without becoming a universal mandate. Allow the user to combine options, qualify them or delegate the choice.
+
+For example, after discovering an existing comparison chart, ask which business question its comparison should answer if that purpose remains unclear; do not ask whether the chart exists. Show how an equal-length prior-period comparison and a comparison against an approved target would answer different questions. Preserve the product's known units and definitions, label missing data or backend dependencies, and do not invent a target or alert threshold. For a visual choice, compare the same content and state rather than asking whether the user wants something “more modern.”
+
+Keep a decision queue in the brief: affected entity/pass, evidence and unknown, question, options and rationale, answer or explicit delegation, status, source and dependent work. Reuse confirmed answers across pages within their scope. New evidence can justify revisiting a decision, but explain what changed and ask only about that change. Quantity of questions is not a completion metric; resolved material uncertainty and honest remaining gaps are what matter.
+
+Make conflicting preferences concrete. If a newly supplied reference uses rounded silhouettes while an earlier instruction requires small technical radii, distinguish inheriting the material from inheriting the shape. Show those alternatives and their consequences. If the new instruction does not clearly resolve the conflict, ask which dimension should change; do not silently discard the earlier preference or restart the entire interview.
+
+Continue independent, authorized read-only inspection while answers are pending. Mark dependent conclusions as open rather than passing them using an assumed domain meaning. Optional stylistic choices can remain clearly labeled, reversible recommendations after a reasonable opportunity to answer. Actual dependencies concerning scope, feature removal, access policy or consequential behavior remain unresolved until evidence or an authorized decision resolves them. Record the scope of explicit delegation; silence is not delegation. An audit discussion guides recommendations without independently authorizing implementation.
+
 ## Cover at least twenty tailored questions early
 
 Before developing the substantial visual direction, create at least **twenty distinct, relevant preference questions** in the [design brief](../assets/design-brief.template.md). Ground each in the observed product and a decision it can change. Carry forward already confirmed answers as covered questions with their source; ask only the unanswered questions. Do not count twenty paraphrases of one decision, questions about discoverable facts, or a yes/no request to accept accessibility as meaningful coverage.
@@ -43,7 +57,7 @@ The question floor governs discovery, not a requirement to obtain twenty approva
 
 ## Build the interview from the actual product
 
-The prompts below are an original question bank, not a script to send unchanged. Replace bracketed terms with observed tasks, screens and alternatives. Select and adapt at least twenty meaningful questions; substitute an irrelevant topic with another product-specific decision. Existing answers count without re-asking them.
+The prompts below are an original question bank, not a script to send unchanged. Replace bracketed terms with observed tasks, screens and alternatives. For a substantial concept, select and adapt at least twenty meaningful questions; substitute an irrelevant topic with another product-specific decision. For an audit or focused fix, use the relevant questions and add those revealed by the work without imposing that count. Existing answers count without re-asking them.
 
 | ID | Tailored decision prompt | Design consequence |
 | --- | --- | --- |
@@ -96,6 +110,6 @@ For example: “The keyboard interaction needs correction to meet the agreed acc
 
 ## Complete discovery without inventing certainty
 
-The brief should contain the mission/task/evidence summary, the twenty-or-more question records or a documented explicit delegation, known preferences, product constraints, open dependencies, meaningful alternatives and evidence classes. Link the feature map and the planned concept scope. Explain which optional decisions are proposals. Then use [concept-to-code.md](concept-to-code.md) to render and refine the direction, and carry accepted decisions into the contract. A completed interview does not approve a design or authorize feature removal.
+The brief should contain the mission/task/evidence summary, the applicable question and decision records, known preferences, product constraints, open dependencies, meaningful alternatives and evidence classes. A substantial concept includes the twenty-or-more question records or a documented explicit delegation; an audit instead continues its adaptive interview wherever material uncertainty appears. Link the feature map and the agreed work scope. Explain which optional decisions are proposals and which dependent conclusions remain open. When concept work is authorized, use [concept-to-code.md](concept-to-code.md) to render and refine the direction, and carry accepted decisions into the contract. A completed interview does not approve a design or authorize feature removal.
 
 Primary-source distinctions rechecked on 2026-09-16. All question structures and decision procedures in this module are independently authored skill policy.

@@ -1,6 +1,6 @@
 # Design brief and preference record
 
-Use [discovery and preferences](../references/discovery-and-preferences.md). Replace prompts with this product's tasks and evidence. This document records discovery; it does not create approval.
+Use [discovery and preferences](../references/discovery-and-preferences.md) throughout an audit and before concept work. Replace prompts with this product's tasks and evidence. Carry forward existing answers within their scope. This document records discovery; it does not create approval.
 
 ## Scope and baseline
 
@@ -56,7 +56,7 @@ Use [brand discovery](../references/brand-discovery.md). Existing instructions a
 
 ## Early preference questions
 
-For a substantial concept, cover at least twenty distinct tailored preference questions. Carry forward confirmed answers with their source instead of re-asking them. Ask the remaining questions early in digestible batches. A narrow fix does not require this count. Record an explicit user delegation if the remaining interview is waived.
+For a substantial concept, cover at least twenty distinct tailored preference questions. Carry forward confirmed answers with their source instead of re-asking them. Ask the remaining questions early in digestible batches. An audit or narrow fix has no arbitrary twenty-question minimum or maximum: ask as many material questions as needed throughout the work. Record an explicit user delegation if decisions are delegated. Question counts track the substantial-concept procedure; they do not establish understanding or completion.
 
 - Interview applies / narrow-scope reason:
 - Distinct tailored questions covered:
@@ -87,7 +87,21 @@ For a substantial concept, cover at least twenty distinct tailored preference qu
 | Q19 | | | | | | |
 | Q20 | | | | | | |
 
-Use `confirmed`, `pending`, `delegated` or `hypothesis`; a suggested answer is not a confirmed answer. Add rows when useful. Do not pad the count with duplicates or discoverable feature-existence questions. Unanswered optional preferences may remain labeled proposals; feature removal and real access-policy changes require their own actual decisions.
+Use `confirmed`, `pending`, `delegated` or `hypothesis`; a suggested answer is not a confirmed answer. Remove unused starter rows for a focused audit and add rows whenever useful. Do not pad the count with duplicates or discoverable feature-existence questions. Unanswered optional preferences may remain labeled proposals; feature removal and real access-policy changes require their own actual decisions.
+
+## Adaptive audit decision queue
+
+Revisit this queue during semantic, visual, workflow and cross-surface checks. Discover facts first, then ask about material unknowns. Offer specific options with a recommendation, basis and tradeoff; reuse earlier answers rather than restarting discovery. An unresolved dependent conclusion remains open while independent read-only work continues.
+
+| Decision ID / related question | Entity, pass and affected task | Known evidence / material unknown | Options, recommendation and rationale class | Answer or explicit delegation / source / scope | Status | Dependent conclusion or work / independent work continuing |
+| --- | --- | --- | --- | --- | --- | --- |
+
+- Conflicting instructions or references: exact dimensions in conflict, prior decision, new evidence and concrete tradeoff:
+- Which earlier decisions remain valid, and which specific decision needs clarification:
+- Material uncertainties still open; optional reversible proposals distinguished from required decisions:
+- Next question batch and the findings or new evidence that triggered it:
+
+Do not infer authority from a fashionable reference or call a preference a universal standard. A new reference's material treatment and geometry can be inherited separately. Do not invent missing business definitions, comparison targets or thresholds. An answered audit question does not by itself approve feature removal or implementation.
 
 ## Recommendation authority and tradeoffs
 

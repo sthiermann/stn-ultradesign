@@ -41,6 +41,14 @@ For substantial design work, the default is **concept → refinement → your ap
 
 A monitoring grid needs useful image coverage and fast exception detection. An editor needs room to work. An administrative change needs understandable consequences and recovery. The skill establishes the primary task, meaningful unit of work, operating conditions, and observable success criteria before allocating screen space. Every persistent region must justify the attention and space it consumes.
 
+## Understand the numbers. Make the next step clear.
+
+A dashboard is useful only when people understand what its numbers mean and what they can do next. The skill examines the definition, unit, population, timeframe, aggregation, comparison, and freshness behind each relevant metric, table, chart, and widget. A missing value must not masquerade as zero; a red status needs a defensible business rule.
+
+Three connected passes examine **meaning → exploration and action → consistency across views**. Follow a headline into its chart, filtered records, linked detail, and return path. Identify useful missing filters, comparisons, explanations, or drilldowns, while preserving what already works. Recommendations explain their evidence, dependencies, and tradeoffs; a familiar industry pattern is not automatically right for every application.
+
+The audit asks you focused questions whenever domain meaning or direction remains uncertain, with no fixed question ceiling. Previously confirmed answers carry forward. See the [analytical meaning method](skills/stn-ultradesign/references/analytical-meaning.md), [surface record](skills/stn-ultradesign/assets/analytical-surface.template.md), and [research](docs/research/analytical-experiences.md).
+
 ## Craft is part of the method
 
 An attractive component does not make a coherent product. STN Ultradesign asks what deserves attention, which relationships should be visible, and how composition supports the next decision.
@@ -52,6 +60,12 @@ An attractive component does not make a coherent product. STN Ultradesign asks w
 - **Keep two judgments separate.** Functional checks establish behavior. Visual review and user feedback establish whether the design meets the intended standard. Rejected concepts stay open.
 
 Existing brand and platform conventions are inputs to a deliberate design decision. Recommendations explain whether they follow an applicable standard, an established usability practice, a product constraint, or a matter of taste.
+
+## Every control deserves a complete design
+
+A field is more than its resting outline. The skill defines the anatomy and meaningful states of buttons, selectors, checkboxes, radios, switches, menus, badges, messages, and icons. Hover, keyboard focus, press, selection, pending work, and errors each need a distinct, coherent treatment — including the combinations that occur in real tasks.
+
+Your brand guides that treatment. Prominent translucent materials, precise technical surfaces, or a quieter visual language become explicit component decisions. Apple Liquid Glass is one researched reference, alongside Material, Fluent, Spectrum, and Atlassian; it is never imposed as the default aesthetic. See the [component state method](skills/stn-ultradesign/references/component-states.md) and [Liquid Glass research](docs/research/liquid-glass-controls.md).
 
 ## Your preferences before the first concept
 

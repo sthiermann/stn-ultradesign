@@ -85,6 +85,16 @@ Use shape, spacing and material treatments consistently while preserving usable 
 
 Specify motion by trigger, purpose, state transition and reduced-motion behavior. Test translucent or textured surfaces over representative content, not only an ideal background. Preserve critical status, legibility and a usable fallback. Treat any unverified rendering cost as a hypothesis to measure, not evidence that a visual treatment is performant.
 
+## Reference fidelity: inspect, translate and compare
+
+When a user names a visual reference, inspect the actual relevant interface or first-party imagery as well as its written guidance. Record the source, date/version, device family, surface and state observed. If motion matters, inspect an available demonstration or video; distinguish observed frames, observed transitions and transcript-only findings. State any access limitation instead of claiming to have watched a video or verified a behavior. Marketing imagery establishes visible qualities in that example, not runtime accessibility, performance or a universal layout rule.
+
+Identify what the user wants from the reference: geometry, content continuity, navigation, depth, material, color behavior, typography, density or motion. Resolve material conflicts with prior preferences; retain the earlier answer as superseded rather than silently applying both. One product can deliberately use different expressions across desktop, tablet and phone. Do not collapse that into a single generic theme.
+
+Translate each relevant quality into an observable acceptance condition on the actual product task. Compare the rendered concept with the inspected reference under the applicable device, theme and state. A style name, a blur declaration, a token checklist or a passing syntax check does not prove visual fidelity. Show the concrete relationship and intentional departures, preserve usability, and record the user's assessment separately from technical verification. If the user rejects the result, keep that finding open until a revised artifact is reviewed and the rejection is explicitly resolved; adding documentation alone does not resolve it.
+
+Use original implementation and authorized assets. Inspiration is a source of principles, not permission to copy artwork, proprietary code or another skill. These checks refine the existing scope and approval process; they do not introduce an additional permission gate.
+
 ## 5. Keep asset provenance separate from visual inspiration
 
 Maintain an asset register for reused logos, fonts, icons, photos and illustrations. Record the exact asset, its source, version, intended use, available license or permission evidence, and any known restrictions. Distinguish supplied assets, existing authorized project assets, original work and external references.

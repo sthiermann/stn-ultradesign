@@ -169,6 +169,8 @@ Use shape and material to differentiate roles. A persistent work surface, editab
 
 ## 9. Compose components and widgets deliberately
 
+For control anatomy, selectors, checkbox/radio behavior, complete interaction states, badges, messages and icon finish, read [component-states.md](component-states.md). Bind each applicable component state to the confirmed user brand contract; neither native defaults nor fashionable glass treatment automatically satisfy that contract.
+
 For each repeated component, create a compact specification: purpose, inputs, variants, states, action scope, content rules, keyboard behavior, responsive behavior, and failure cases. Share behavior and meaning before forcing unlike tasks into one visual component.
 
 Choose a list when items mainly need scanning, a table when aligned attributes support comparison, and cards when distinct content or media benefits from independent grouping. Treat this as a task hypothesis. Review nested cards, repeated badges, unlabeled icons, decorative charts, and redundant separators for whether they add information or merely compete for attention.

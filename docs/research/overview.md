@@ -52,6 +52,8 @@ Our synthesis is:
 
 The skill therefore prescribes no universal font family, single grid, global corner radius or blanket ban on particular colors. It requires a justified direction and checks its execution.
 
+The [control and material research](liquid-glass-controls.md) examines current Apple guidance in more detail. The [component state method](../../skills/stn-ultradesign/references/component-states.md) adds original cross-system acceptance criteria for everyday controls and their interaction states.
+
 ## 5. Account, organization, role and developer-interface UX
 
 This is a dedicated area of the research. Business products often contain overlapping scopes: personal account, organization, project, resource, environment and sometimes customer or tenant. The product determines which actually exist; a small single-user tool does not need artificial enterprise administration.
@@ -138,3 +140,5 @@ The skill supports auditing, concept development, implementing approved concepts
 A useful first application is a full audit of a clearly bounded product with authorized test roles and fixtures. Findings can inform a concrete concept, discussion and implementation. Then repeat the same tasks and acceptance checks. This produces project-specific evidence of improvement.
 
 The published version is a developed and tested starting package with a transparent [quality status](../quality/evaluation.md). Actual failures should lead to targeted corrections. Additional rules are not an end in themselves; their value depends on whether the next application produces better, verifiable results.
+
+See [Analytical experiences](analytical-experiences.md) for metric meaning, aggregation, comparison, freshness, thresholds and contextual exploration. These sources inform the analytical method; they do not establish a universal dashboard layout.

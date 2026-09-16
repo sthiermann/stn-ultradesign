@@ -32,6 +32,8 @@ Read project instructions, the existing design system and component library, sup
 
 For a substantial concept, cover at least **twenty distinct, product-specific preference questions early**, and more whenever an unresolved decision materially affects the result, before committing to a visual direction. Carry forward already confirmed answers without re-asking them; ask the remaining questions in digestible batches. Record explicit delegation if the user waives the remaining interview. Do not pad the count with discoverable facts, apply it to a narrow fix, or turn unanswered optional preferences into an approval gate. Use the [design brief](assets/design-brief.template.md) and distinguish confirmed answers, pending preferences and hypotheses.
 
+During audits as well as concept work, ask as many focused questions as necessary to resolve material uncertainty about meaning, work practices and direction. Offer reasoned choices that distinguish applicable requirements, established vendor patterns and taste. Reuse confirmed answers; keep a decision queue and continue independent inspection while dependent conclusions remain provisional. An audit has no arbitrary question quota or ceiling. Follow [discovery-and-preferences.md](references/discovery-and-preferences.md).
+
 Establish the company/product brand and the authority of supplied guidelines or assets. Ask how much to inherit separately for typography, colors, shapes, icons, imagery, voice, layout/navigation, motion and materials. Record preserve/evolve/reinterpret/explore decisions with concrete limits in the [brand inheritance matrix](references/brand-discovery.md); do not infer that keeping brand colors also freezes the old layout. Reuse existing answers and authorization.
 
 Discover existing role/admin visibility, supported languages, light/dark/system choices, density preferences, graphs and operational thresholds relevant to the requested scope. For design or implementation, maintain an [old-to-new feature map](assets/feature-map.template.md) covering that scope plus all transitively affected shared usages and dependencies. A full-product redesign maps every discovered capability, including those outside its current prototype. A focused fix maps its affected capabilities without turning unrelated areas into a product-wide design task. Preserve behavior and supported variants unless specifically changed. A general aesthetic approval does not authorize feature loss; retirement requires an actual user decision identifying the affected capability and consequences. Audit-only work records the current baseline and coverage; it does not require proposed destinations or a redesign map.
@@ -53,6 +55,7 @@ Read only the branches relevant to the current work. For a whole-product audit, 
 | Concept, alternatives, refinement, approval, exact implementation | [concept-to-code.md](references/concept-to-code.md) |
 | User goals, information architecture, usability evidence | [product-thinking.md](references/product-thinking.md) |
 | Layout, hierarchy, color, type, shapes, iconography, motion, tokens | [visual-systems.md](references/visual-systems.md) |
+| Component anatomy, hover/focus/press/selection, selectors, messages, icons and material states | [component-states.md](references/component-states.md) |
 | Navigation hierarchy, overloaded settings, panels, glass/materials, shape and motion | [navigation-and-materials.md](references/navigation-and-materials.md) |
 | Desktop/tablet/phone, input modes, navigation and adaptation | [platform-adaptation.md](references/platform-adaptation.md) |
 | Forms, wizards, settings, search, editing, asynchronous flows | [workflows.md](references/workflows.md) |
@@ -60,6 +63,7 @@ Read only the branches relevant to the current work. For a whole-product audit, 
 | Personal/org/project settings, invitations, roles, billing and governance | [business-administration.md](references/business-administration.md) |
 | API credentials, service accounts, webhooks and OpenAPI documentation | [developer-platforms.md](references/developer-platforms.md) |
 | Keyboard, screen reader, zoom, touch, contrast, WCAG distinctions | [accessibility.md](references/accessibility.md) |
+| Business meaning, KPI definitions, decision support, missing context and analytical drill paths | [analytical-meaning.md](references/analytical-meaning.md) |
 | Charts, dashboards, widgets, tables, network graphs | [data-visualization.md](references/data-visualization.md) |
 | HTML/CSS/React, state, performance, component engineering | [web-engineering.md](references/web-engineering.md) |
 | Behavioral, visual, accessibility and concept-conformance checks | [verification.md](references/verification.md) |
@@ -80,6 +84,7 @@ Delegation can split independent surfaces or specialist passes. Give each worker
 
 - Treat loading, empty, error, success, offline, denied, partial, stale, and interrupted states as conditional product behavior, not decorative variations. Cover the ones the feature can reach.
 - Adapt to usable space, content, input capability, and user preferences. “Mobile” is not simply a scaled-down desktop screenshot.
+- For every decision-bearing metric, table, chart, widget and drill path in scope, verify meaning, useful exploration/action and cross-surface consistency in distinct passes. Unknown domain definitions remain gaps; proposed filters, comparisons or actions need a stated user benefit and data/permission dependencies. Established patterns are candidates, not mandatory features for every product.
 - Check visual craft and task performance separately. A polished screen can still be confusing; a usable screen can still need typographic and compositional refinement.
 - Accessibility needs semantic implementation and manual checks as well as automated scans. Client-side permission visibility does not establish server-side authorization.
 - Label statements as standards, vendor guidance, research/heuristics, product decisions, or hypotheses when the distinction affects a recommendation. “Latest” and “best for this user” are different claims.

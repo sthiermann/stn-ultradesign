@@ -95,7 +95,7 @@ These are abbreviated record fragments, not a complete audit. Expand them for ev
 }
 ```
 
-Place entities, contexts, evidence, results and findings in their named top-level arrays; obligations belong to `plan.obligations`. A source-only scoped review requires source obligations for every planned entity/context. A runtime review requires rendered evidence for surfaces, states, usages and widgets, interaction evidence for workflows/transitions, and API observations for API-backed transitions. These are minimum consistency gates, **not** a sufficient list of questions: add applicable visual, content, keyboard, screen-reader, responsiveness, permission, resilience and specialist obligations. A single broad question must not replace independently verifiable behaviors.
+Place entities, contexts, evidence, results and findings in their named top-level arrays; obligations belong to `plan.obligations`. A source-only scoped review requires source obligations for every planned entity/context. A runtime review requires rendered evidence for surfaces, states, usages and widgets, interaction evidence for workflows/transitions, and API observations for API-backed transitions. These are minimum consistency gates, **not** a sufficient list of questions: add applicable visual, content, keyboard, screen-reader, responsiveness, permission, resilience, analytical meaning, exploration/action and cross-surface consistency obligations. A single broad question must not replace independently verifiable behaviors.
 
 An intentionally excluded discovered entity retains its record with `exclusion: {"reason": "…", "approval_ref": "…"}`. It has no active context plan; exclusions remain visible in output. Full mode permits no excluded entity. Keep a reduced scope's limitations visible even if its own planned checks are all investigated.
 
@@ -104,6 +104,18 @@ Run `python3 scripts/audit_coverage.py PATH --require-complete`. Exit 0 means va
 When migrating version 1, retain evidence and findings as candidate material, explicitly rebuild usages/transition relationships, context classes and planned obligations, classify evidence methods, then reconcile. Do not change only the schema number or reuse an old “100 %” conclusion.
 
 ## Inspect in connected passes
+
+### Understand meaning, exploration and consistency
+
+For every in-scope page and independently meaningful metric, table, widget, chart or graph, connect three distinct passes. Trace each drilldown and return path as well. A full audit covers every discovered usage; a focused change retains its bounded scope and affected dependencies.
+
+1. **Meaning and decision.** Establish the user's question and the represented entity, population, unit, calculation, aggregation, timeframe, timezone, comparison, freshness and missing-data meaning where applicable. Identify the decision this information supports. Unknown definitions or thresholds are discovery gaps; do not invent them from color or appearance.
+2. **Exploration and action.** Examine existing filters, search, sorting, comparisons, drilldown, linked detail and actions against that question. Test their actual scopes, discoverability, context transfer, empty/error cases, role-dependent availability and return path. Identify helpful missing capabilities as proposals with expected benefit, dependencies and tradeoffs; do not fabricate existing transitions for proposed features.
+3. **Consistency across views.** Reconcile the same fact from headline through filtered chart, table, record and export when present. Check population, aggregation, unit, time and role scope; make intentional differences understandable. A correct individual chart does not establish a coherent analytical journey.
+
+Repeat the affected pass after a discovery, contradiction, domain answer or design change, and record fresh evidence. This means different lines of inquiry and targeted reassessment, not three identical checklist runs. Preserve successful existing patterns alongside findings. Use [analytical-meaning.md](analytical-meaning.md), [data-visualization.md](data-visualization.md) and the [surface record](../assets/analytical-surface.template.md).
+
+Plan independently verifiable obligations per entity/context using the existing ledger. A passed render or keyboard check cannot close an unexamined meaning or decision question. Ask focused domain questions throughout the audit using [discovery-and-preferences.md](discovery-and-preferences.md); continue independent inspection while dependent recommendations remain provisional.
 
 ### Task and structure
 
@@ -137,7 +149,7 @@ Use authorized fixtures to compare the UI with actual responses and subsequent s
 
 ### Data and performance
 
-Verify chart semantics, units, range, missingness, source, freshness and interactions. Test actual task response on representative data/device conditions. Separate lab performance measurements from production field metrics.
+Apply the meaning, exploration and consistency passes above to every relevant data surface. Verify chart semantics, units, range, missingness, source, freshness and interactions. Test actual task response on representative data/device conditions. Separate lab performance measurements from production field metrics.
 
 ## Report an actionable finding
 

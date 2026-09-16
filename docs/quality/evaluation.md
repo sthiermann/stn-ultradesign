@@ -7,6 +7,7 @@ As of September 16, 2026. This version has been checked for package consistency,
 | Check | Result | What it establishes |
 | --- | --- | --- |
 | Repository-specific validator | Passed after the English documentation update, including local Markdown references | File destinations and package consistency; no online link validation or content certification |
+| 10 release/artwork consistency regression tests | Passed locally | Current README release vs. manifests, referenced image existence and labelled SVG version text; no visual spacing test |
 | 24 behavioral tests for `audit_coverage.py` | Passed | Handling of ledger records, not the behavior of an actual application |
 | Skill validator supplied with Codex | Passed | Frontmatter, name and format; no measurement of recommendation quality |
 | Plugin validator supplied with Codex | Passed | Package manifest and skill metadata; no installation test |
@@ -30,7 +31,7 @@ The independently authored repository artwork was also rendered with librsvg and
 
 A subsequent owner review identified contradictory release labelling in the displayed artwork and insufficient space between the hero and release metadata. The earlier visual pass did not adequately verify the complete published composition; successful package checks did not catch this defect.
 
-The hero artwork is now version-free. README images use content-specific filenames for both wide and compact sources, and each picture has its own paragraph. The introduction and entry links precede release metadata; the package-check badge is a separate paragraph. The reusable verification method now requires inspection of the actual delivery surface, matching visible release information, adjacent spacing, the usable content width and the loaded asset revision. These corrections still require direct verification on GitHub; changing instructions alone does not establish design acceptance.
+The hero artwork is now version-free. README images use content-specific filenames for both wide and compact sources, and each picture has its own paragraph. The introduction and entry links precede release metadata; the package-check badge is a separate paragraph. The reusable verification method now requires inspection of the actual delivery surface, matching visible release information, adjacent spacing, the usable content width and the loaded asset revision. The published correction at `0af3e4f` was inspected on GitHub at 1280, 768 and 390 CSS pixels. Content columns measured 838, 406 and 324 pixels. The selected hero and method artwork loaded at each width; the wide hero displayed no version label, compact sources selected at the two smaller widths, and no document-level horizontal overflow was observed. Image-to-following-paragraph gaps measured 22 CSS pixels; release metadata now follows the introduction and entry links. This describes the inspected result, not a universal spacing rule or owner acceptance.
 
 ## Independent synthetic audit run
 
@@ -67,6 +68,10 @@ The later discovery/preferences and feature-parity additions require tailored ea
 The skill, parity reference, feature-map template and README now distinguish full-product redesigns from bounded changes. A full-product redesign still maps every discovered capability; a focused change maps its requested scope plus transitively affected shared usages and dependencies. Audit-only work records the current baseline without requiring invented destinations. The corrected wording was reread and the repository validator passed. These are instruction and package checks, not a new independent application run. The new rules still require that practical evaluation; adding modules does not increase the count of successfully evaluated workflows.
 
 The purpose-first, navigation/materials and web implementation references were expanded using current primary documentation, including Apple WWDC26 transcripts. The brand-discovery module received an independent read-only review for selective inheritance, source authority, existing user decisions, asset provenance, accessible variants and approval scope. No material contradiction was found in that review. These are research and instruction checks; they do not establish successful application of every new rule to a complete product.
+
+The component-state module and deeper Apple material research extend the method with state composition, control-pattern selection and brand-bound materials. These additions were source-reviewed and linked into the skill and design contract. They have not yet completed an independent application evaluation across all component families.
+
+The analytical-meaning method, analytical surface template and adaptive audit interview received an independent read-only consistency review across the specialist modules, audit method, product-thinking rules, skill routing, README and discovery reference. It found no material scope or approval contradiction. The rules preserve authorized populations, require threshold authority, distinguish vendor patterns from standards and apply to each in-scope usage and relevant drill/return path. This was a document review, not an independent application run or fresh validation of every external source. The reference-fidelity extension likewise requires rendered comparison and honest owner feedback; it is not itself evidence of successful visual fidelity.
 
 ## Not yet demonstrated
 

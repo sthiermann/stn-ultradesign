@@ -63,6 +63,8 @@ Separate novice discoverability from expert throughput. The same product may nee
 
 Inventory the objects people manipulate and the relationships between them. Distinguish product-wide navigation, location within the current object, and actions on that object. Use labels that describe those distinctions. Validate competing grouping options with representative tasks, not a preference poll about menu appearance.
 
+For each decision-bearing region, establish **user question → data meaning → interpretation → next action**. A KPI, chart or record is not understood merely because its title is readable. Verify its population, units, aggregation, time and comparison where relevant; ask the domain owner when the contract is unknown. Preserve strengths, identify missing context or useful exploration as evidence-backed proposals, and never invent thresholds or business meaning. Follow [analytical-meaning.md](analytical-meaning.md).
+
 For a navigation proposal, test whether a participant can predict where to begin without following a tutorial. For a detail page, test whether the object's identity, current state and available next action remain clear after entering from a deep link. For a workflow, check that information needed for a decision remains available at that decision point.
 
 Use progressive disclosure for information that is genuinely conditional, with a discoverable route back. Frequent, consequential information deserves visibility. A shorter page that hides important dependencies can increase effort. Conversely, an exhaustive page that forces everyone to inspect irrelevant options can also increase effort. Choose using task frequency, consequence and research.

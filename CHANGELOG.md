@@ -2,10 +2,15 @@
 
 ## 0.2.0 — 2026-09-16
 
+- Add a reference-fidelity method: inspect actual device-specific visuals and relevant motion, translate qualities into acceptance conditions, and retain user rejection as an unresolved finding.
+
 - Publish the complete repository documentation in English with original responsive SVG presentation assets.
 - Correct README image spacing and release hierarchy; verify delivered asset identity and visible version consistency separately from package checks.
 - Add a company/product brand brief and selective inheritance matrix for visual identity, layout, materials, and motion.
 - Add product-purpose discovery, at least twenty tailored preference questions, and traceable preservation of existing features and variants.
+- Add semantic business-interface audits connecting metric definitions, exploration, drilldowns and cross-view consistency, plus adaptive questions throughout audit work.
+- Add brand-bound component anatomy and interaction-state contracts, with deeper Apple material research and cross-system control guidance.
+- Add regression checks for release metadata, labelled SVG versions and README image dependencies.
 - Add adaptive navigation, material, shape, elevation, and motion guidance informed by current primary sources, including Apple WWDC26.
 - Expand web implementation guidance for translucent surfaces, navigation state, animation, fallbacks, and performance verification.
 - Clarify account and access work as UX inspection, with explicit boundaries against credential collection.

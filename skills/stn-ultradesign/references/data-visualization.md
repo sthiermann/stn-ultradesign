@@ -4,6 +4,8 @@ Load for analytical screens, numerical widgets, maps, relationship diagrams, dat
 
 ## 1. Write the analytical contract
 
+Use [analytical-meaning.md](analytical-meaning.md) to establish business meaning before choosing an encoding or interaction. Record each actual widget, chart, table and detail usage with the [analytical surface template](../assets/analytical-surface.template.md), linking its surface/usage and transition IDs to the audit inventory. Reusing the same chart component does not prove that two datasets, aggregation levels or role contexts have the same meaning. A full audit follows every discovered analytical surface and defined detail transition; the template does not reduce that obligation to a sample.
+
 For every visualization, record the question, intended decision, audience, data source, observation unit, dimensions, measures, units, aggregation, time range, timezone, refresh behavior and meaningful comparison. Identify sampling, uncertainty, missingness and access restrictions. Define the correct answer to a representative question using the underlying data before selecting the visual.
 
 Specify whether the surface explains a known result, supports open exploration, monitors changing conditions or edits a model. Those purposes demand different amounts of interaction and context. A chart that looks convincing but answers the wrong question fails the contract.
@@ -67,6 +69,8 @@ Assign semantic colors separately from categorical series colors. The same entit
 
 Support distinctions with labels, position, line style, symbols or patterns where needed. Check text and essential graphical contrast against the actual background in each theme. WCAG non-text contrast concerns graphical parts required to understand content and applicable component states; it does not mean every decorative gridline must meet the same test. [W3C explanation of SC 1.4.11](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html)
 
+Keep status, trend and selection separate. A rising value is not automatically good, and a neutral brand accent is not a threshold. Bind any qualitative band to a named rule, owner/source, unit, effective period and boundary behavior. Check equality at the boundary, missing observations and stale values before assigning an alert color. If no justified threshold exists, show a neutral value or comparison and label a proposed interpretation as a hypothesis; do not invent red/amber/green cutoffs to fill a design.
+
 Prefer direct series labels when feasible. Place units where a reader needs them, use locally appropriate number formatting and sensible precision, and keep labels readable at supported sizes. Write a descriptive title for exploration; a takeaway title is appropriate only when supported by the data. Put methodological qualifications near the claim they qualify. Remove ornament that competes with interpretation while retaining useful reference lines and explanatory annotations.
 
 Edward Tufte's sparklines put compact trends beside related words and values. Use them with enough context to interpret the measure and period; removing all scale context is not a general mandate. [Tufte's original discussion](https://www.edwardtufte.com/notebook/sparkline-theory-and-practice-edward-tufte/)
@@ -83,7 +87,7 @@ Provide a non-hover way to inspect details. Dismissible overlays must not obstru
 
 Test the chosen library's actual behavior. Labels on SVG marks do not by themselves provide a complete keyboard model or useful screen-reader sequence. Observable Plot exposes ARIA labeling options, illustrating that authors still supply meaningful descriptions. [Plot accessibility](https://observablehq.github.io/plot/features/accessibility)
 
-**Done when:** representative analytical tasks can be completed with keyboard, touch and the supported assistive technologies; record any gap rather than declaring accessibility from markup alone.
+**Done when:** planned analytical tasks for every audited usage in the declared scope can be completed with keyboard, touch and the supported assistive technologies; record any gap rather than declaring accessibility from markup alone.
 
 ## 7. Compose dashboards and widgets around decisions
 
@@ -97,17 +101,43 @@ Give filters visible scope, current values and a reset path. Coordinated widgets
 
 **Done when:** each widget has a decision purpose, the overview exposes priority conditions, and cross-widget comparisons are semantically valid.
 
+### Trace selection, drill and return as separate transitions
+
+Distinguish expanding a row, moving through a hierarchy, navigating to a filtered detail page, filtering sibling widgets and highlighting a subset without excluding others. Name the interaction and its scope visibly. A decorative hover effect must not be the only clue or route to detail. Power BI explicitly separates drillthrough to another filtered page from drill mode inside a visual. [Power BI drillthrough](https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-drillthrough)
+
+For each transition specify source mark/row identity, active tenant and role, filters, time range, target grain, inherited versus replaced constraints, loading/failure behavior and the return destination. Show the selected entity and effective context on the target. Preserve relevant search, sort, page/cursor, expanded groups, chart range, selection and scroll on Back; restore focus to the invoking control or a documented successor if it disappeared. Breadcrumbs describe location; they do not replace browser-history behavior or prove context preservation. Test direct entry into a detail link as well as arrival from the parent.
+
+For coordinated views, record source fields, target fields, affected widgets and what clearing the selection does. Tableau exposes explicit source/target field mapping and different clearing policies; this is a reason to decide the contract, not to choose a policy by accident. [Tableau filter actions](https://help.tableau.com/current/pro/desktop/en-us/actions_filter.htm) Make the effect discoverable with active context and reset controls, and provide keyboard/touch alternatives to hover or right-click. Test multiple selections, independent local filters, a target with no data and a late response to an older selection.
+
+Reconcile summary, detail and export against the same authorized fixture and data revision. Explain legitimate differences in grain, time, denominator or aggregation instead of forcing a total to equal the visible page's arithmetic sum. A row expansion can be deferred and fail independently of the parent. Carbon recommends a separate destination or panel when expanded detail becomes cramped; that is a task-based alternative, not permission to remove the detail. [Carbon data table](https://carbondesignsystem.com/components/data-table/usage/)
+
 ## 8. Choose tables and grids consciously
 
-Use semantic HTML tables for tabular reading. Use an interactive grid when spreadsheet-like navigation or editing warrants the additional interaction model. WAI-ARIA APG distinguishes grids from static tables and describes the focus management they require. Adding a grid role without implementing the expected behavior is insufficient. [APG grid pattern](https://www.w3.org/WAI/ARIA/apg/patterns/grid/)
+Use semantic HTML tables for tabular reading. Use an interactive grid when spreadsheet-like navigation or editing warrants its additional interaction model. Adding a grid role without the expected focus and keyboard behavior is insufficient. [APG grid pattern](https://www.w3.org/WAI/ARIA/apg/patterns/grid/)
 
-Keep column names, units and row identity available while inspecting relevant values. Align comparable numbers and precision consistently. Support sorting and filtering with visible current state, stable results and clear reset. Distinguish selection of the current page from selection of all matching records; explain batch-action scope before consequential actions.
+Select capabilities from the actual task and existing feature contract. The following is a decision/check matrix, not a demand to add search, pagination or export to every table.
 
-For editing, define start, commit, cancel, validation, pending save, conflict and recovery behavior. Preserve a recoverable draft through an error. For large data, evaluate pagination or virtualization against keyboard movement, assistive technology, find-in-page, copy and export. Make the dataset scope explicit when the browser contains only a subset.
+| Capability | Contract to establish | Counterexample to exercise |
+| --- | --- | --- |
+| Row and column identity | Observation grain, stable key, label, unit, precision and grouping level | Duplicate names, reformatted identifiers, group rows mistaken for records |
+| Sort | Actual value/type, direction, multi-sort priority, tie rule and null order; client versus server scope | Numeric-looking text, equivalent values, missing values, next page after sorting |
+| Search | Searched fields, matching rules, selected dataset and search versus column-filter scope | Hidden field matches, no results, accents/case, a response to an older query |
+| Filter | Applied versus draft values, combination rules, time basis, active indicators and reset | Empty intersection, timezone boundary, locked role filter, changed denominator |
+| Pagination or incremental loading | What a page counts, known/unknown total, cursor stability and loaded versus complete scope | Expanded child at a boundary, changed page size, deletion of the last row, stale cursor |
+| Selection and batch action | Current page, loaded rows or all matching authorized records; exclusions and reset/persistence | Filter or refresh after selecting, ineligible row, mixed permissions, partial failure |
+| Totals and summaries | Population, aggregation and whether filters/grouping/paging affect the result | Visible rows differ from the total, nonadditive measure, restricted detail |
+| Expand/detail | Distinct expansion, selection and navigation targets; loading and return contract | Nested detail failure, long content, row moved or removed while open |
+| Export/copy | Chosen rows/columns, filter/sort scope, raw versus displayed values, time/unit metadata and permissions | Hidden columns, collapsed groups, unloaded rows, stale export and missing values |
 
-On narrow screens, choose between essential columns with disclosure, a labeled scrollable region, task-specific cards or a separate comparison view. Preserve column relationships when comparing rows is the task. Do not assume that converting every row to a card preserves the table's utility.
+AG Grid documents different select-all scopes and separate export options for selected versus filtered/sorted rows. Its defaults are library configuration, not proof of the application's intended dataset. [Selection scope](https://www.ag-grid.com/javascript-data-grid/row-selection-multi-row/), [CSV export](https://www.ag-grid.com/javascript-data-grid/csv-export/) Inspect the installed row model and actual application configuration. Do not describe a loaded subset as “all results,” or imply that a selected count equals the batch action's eligible count.
 
-**Done when:** users can locate, compare and act on the intended records with clear scope, including at supported narrow widths.
+Keep column names, units and row identity available while inspecting values. Align comparable numbers and precision. Expose current sort/filter state and recovery from a query yielding no rows without conflating it with a fetch failure. If updates move the inspected row, maintain intelligible focus and identity; avoid silently applying an action to the new occupant of an old visual position.
+
+For editing, define start, commit, cancel, validation, pending save, conflict and recovery. Preserve recoverable drafts. For large datasets, evaluate pagination or virtualization against keyboard movement, assistive technology, browser find, copy and export. AG Grid's child-row pagination options illustrate how expanding a parent can place its children on another page; test the actual chosen behavior rather than assuming expansion reveals visible detail. [Pagination and child rows](https://www.ag-grid.com/javascript-data-grid/row-pagination/)
+
+On narrow screens, choose essential columns with disclosure, a labeled scrollable region, task-specific cards or a separate comparison view. Preserve relationships when comparison is the task. All retained capabilities need an equivalent reachable path; converting every row to a card is not evidence of parity. Identify the expanded state programmatically, expose sorting/selection appropriately and keep row actions usable without hover; see [component-states.md](component-states.md).
+
+**Done when:** users can locate, compare, inspect and act on the intended authorized records with truthful scope; applicable sorting, filtering, selection, pagination, detail and export outcomes have evidence at supported sizes.
 
 ## 9. Treat relationship graphs as a distinct problem
 
@@ -117,7 +147,7 @@ For dense networks, compare an adjacency matrix, search-plus-neighbor list, filt
 
 An editor needs explicit creation and deletion semantics, validation, undo, zoom controls and non-drag alternatives for moving or connecting objects. Preserve the user's position after opening a properties panel. Provide a textual relationship or dependency view that can answer equivalent questions.
 
-**Done when:** a representative path, dependency or neighbor task succeeds, and the view does not imply unencoded meaning through incidental geometry.
+**Done when:** the planned path, dependency or neighbor tasks across audited usages succeed, and the view does not imply unencoded meaning through incidental geometry.
 
 ## 10. Verify the whole visualization
 
@@ -127,6 +157,12 @@ Mike Bostock describes configurable reusable charts; current Plot documentation 
 
 Verify with fixtures containing all-zero, one-point, constant, negative, extreme, missing, duplicate, dense and long-label data. Test resize, zoom, theme, loading, failure, refresh and filter races. Check that export retains units, filters, date range and relevant caveats. Validate permissions independently; hiding a series is not authorization.
 
+Run a reconciled path from widget/aggregate to contributing rows, a nested detail and an export where those capabilities exist. Keep a safe fixture with expected values and identities, including a restricted role/tenant case; verify displayed totals, counts and destinations against that authorized scope. Do not attempt unauthorized access to obtain a comparison. UI inspection identifies an enforcement dependency, not a security certification. Record source/API evidence separately from observed rendered/interactive results.
+
+For each surface preserve what already works, identify observed missing context or misleading behavior, and separately propose opportunities. A proposed benchmark, new breakdown, filter or drill path is a hypothesis requiring a data source, useful user question and validation method. Do not manufacture unavailable data or remove existing capabilities to make a cleaner screenshot.
+
 Ask a representative person to answer the contract's question and explain their conclusion. Record correctness, time where meaningful, confidence and misinterpretations. Report task validity, numerical correctness, accessibility and rendering performance separately. A smooth animation or screenshot cannot substitute for those outcomes.
 
 **Done when:** data correctness, comprehension, equivalent interaction and performance have explicit evidence, with remaining limits identified.
+
+**Research boundary:** the linked Power BI, Tableau, Carbon and AG Grid pages were readable primary documentation checked on 2026-09-16. Their configurable patterns inform the checks above; they do not require those products or establish the behavior of another application. No vendor demo or production dataset was executed in this research pass. Verify installed versions, row models and server/API contracts before adopting implementation-specific behavior.

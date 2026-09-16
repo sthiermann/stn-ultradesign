@@ -8,6 +8,8 @@ client manifest validators, install the plugin, inspect an app, or grade UX.
 import json
 import re
 import sys
+import xml.etree.ElementTree as ET
+from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
@@ -23,6 +25,113 @@ REQUIRED = (
     f"skills/{NAME}/agents/openai.yaml", f"skills/{NAME}/references/sources.md",
     f"skills/{NAME}/scripts/audit_coverage.py",
 )
+
+
+def srcset_urls(value):
+    """Read candidate URLs without splitting commas inside data URLs.
+
+    This only discovers dependencies; it does not validate image descriptors.
+    """
+    position = 0
+    while position < len(value):
+        while position < len(value) and value[position] in " \t\n\r\f,":
+            position += 1
+        start = position
+        while position < len(value) and value[position] not in " \t\n\r\f":
+            position += 1
+        url = value[start:position]
+        if not url:
+            break
+        yield url.rstrip(",")
+        if not url.endswith(","):
+            # Ordinary width/density descriptors end at the candidate separator.
+            while position < len(value) and value[position] != ",":
+                position += 1
+
+
+class ReadmeImages(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.targets = []
+
+    def handle_starttag(self, tag, attrs):
+        attributes = dict(attrs)
+        if tag == "img" and attributes.get("src"):
+            self.targets.append(("img[src]", attributes["src"]))
+        if tag in {"img", "source"} and attributes.get("srcset"):
+            self.targets.extend((f"{tag}[srcset]", url)
+                                for url in srcset_urls(attributes["srcset"]))
+
+
+def validate_readme(root, versions):
+    """Check current release metadata and README image dependencies, locally.
+
+    Historical prose is not release metadata. Only explicitly version-labelled
+    text in README-referenced SVGs is compared; version-free artwork is valid.
+    This does not render images, measure spacing, or check remote dependencies.
+    """
+    readme = root / "README.md"
+    if not readme.is_file():
+        return [], 0  # The required-file check reports this separately.
+    errors = []
+    prose = re.sub(r"(?ms)^```[^\n]*\n.*?^```\s*$", "",
+                   readme.read_text(encoding="utf-8"))
+    releases = re.findall(r"(?m)^Release\s+\*\*v(\d+\.\d+\.\d+)\*\*(?=\s|$)", prose)
+    release = releases[0] if len(releases) == 1 else None
+    if release is None:
+        errors.append("README.md: expected one current-release declaration: Release **vMAJOR.MINOR.PATCH**")
+    else:
+        for label, version in versions.items():
+            if release != version:
+                errors.append(f"README.md: current release {release} differs from {label} plugin {version}")
+
+    parser = ReadmeImages()
+    parser.feed(prose)
+    # Include Markdown images in the same SVG check; general links stay below.
+    targets = parser.targets + [
+        ("Markdown image", target.strip("<>"))
+        for target in re.findall(r"!\[[^\]]*\]\((<[^>]+>|[^\s)]+)(?:\s+\"[^\"]*\")?\)", prose)
+    ]
+    checked_assets = 0
+    svg_paths = set()
+    for origin, target in targets:
+        try:
+            parsed = urlsplit(target)
+        except ValueError as exc:
+            errors.append(f"README.md: invalid {origin} URL {target!r}: {exc}")
+            continue
+        if parsed.scheme or parsed.netloc or not parsed.path:
+            continue
+        destination = (root / unquote(parsed.path)).resolve()
+        checked_assets += 1
+        if not destination.is_relative_to(root):
+            errors.append(f"README.md: {origin} escapes package: {target}")
+        elif not destination.is_file():
+            errors.append(f"README.md: missing local image for {origin}: {target}")
+        elif destination.suffix.lower() == ".svg":
+            svg_paths.add(destination)
+
+    # Match version labels and this package's original 'DESIGN SKILL / 0.1' label.
+    # XML attributes, coordinates, comments and unlabelled numbers are excluded.
+    labelled_version = re.compile(
+        r"\b(?:(?:version|release|v)\s*[:/]?\s*|"
+        r"(?:design\s+skill|stn\s+ultradesign)\s*/\s*)"
+        r"v?(\d+\.\d+(?:\.\d+)?)(?![\w.])", re.IGNORECASE)
+    for path in sorted(svg_paths):
+        relative = path.relative_to(root)
+        try:
+            svg = ET.parse(path)
+        except (OSError, ET.ParseError) as exc:
+            errors.append(f"{relative}: cannot parse README SVG: {exc}")
+            continue
+        for element in svg.iter():
+            if element.tag.rsplit("}", 1)[-1] != "text":
+                continue
+            for version in labelled_version.findall("".join(element.itertext())):
+                normalized = version + ".0" if version.count(".") == 1 else version
+                if release is not None and normalized != release:
+                    errors.append(f"{relative}: labelled SVG version {version} differs from README release {release}")
+    return errors, checked_assets
 
 
 def main():
@@ -62,6 +171,9 @@ def main():
     require(isinstance(entries, list) and len(entries) == 1 and
             isinstance(entries[0], dict) and entries[0].get("name") == NAME and
             entries[0].get("source") == "./", "Expected one plugin at marketplace root")
+    readme_errors, checked_assets = validate_readme(
+        ROOT, {"Codex": codex.get("version"), "Claude": claude.get("version")})
+    errors.extend(readme_errors)
 
     skill_path = SKILL / "SKILL.md"
     if skill_path.is_file():
@@ -123,7 +235,8 @@ def main():
             print(f"ERROR: {error}", file=sys.stderr)
         print(f"Repository validation failed ({len(errors)} issues).", file=sys.stderr)
         return 1
-    print(f"Repository validation passed; {checked_links} local Markdown links checked.")
+    print(f"Repository validation passed; {checked_links} local Markdown links and "
+          f"{checked_assets} local README image references checked.")
     print("This checks package consistency, not client installation or design quality.")
     return 0
 
