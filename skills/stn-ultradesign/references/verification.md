@@ -63,6 +63,14 @@ Map each acceptance ID to evidence and `pass`, `fail`, `blocked` or `not-tested`
 
 A discrepancy can be a bug, an intentional approved deviation, a rendering difference, or a specification gap. Classify it before acting. Approval of a deviation records scope and replaces the specific affected decision; it does not invalidate unrelated requirements.
 
+### Verify component families after integration
+
+After integrating a module, changing a shared primitive or receiving feedback about inconsistent behavior, reconcile all affected usages against the current family contract. Inspect newly introduced local implementations and wrappers as well as existing shared components. A successful isolated specimen or one page cannot close the cross-page check.
+
+Open each affected usage through its real entry at the integrated revision. Compare placement, geometry, header/actions, motion and relevant interaction states; for editing surfaces, exercise validation, save/cancel, dirty dismissal, focus entry and focus return using safe fixtures. Verify the planned responsive transformations and reduced-motion behavior where affected. Still images can establish position, not the transition or focus sequence. Repeat the original failing path after correction and recheck consuming usages whose shared behavior changed; reopen coverage when another module adds an occurrence.
+
+Record family ID, usage IDs, integrated revision, context, evidence and exception status. Keep source inspection, rendered state and interaction results distinct. A usage remains unresolved when its code appears shared but its actual path has not been checked. These checks follow the requested change boundary and affected dependencies, not an unsolicited whole-product audit.
+
 ## Stop and report accurately
 
 Run the repository's required checks and tests proportional to the change. Repeat checks when code or evidence changes, not just to inflate confidence. If a check is unavailable, explain the missing capability and perform the strongest available alternative without claiming equivalence.

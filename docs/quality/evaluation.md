@@ -1,8 +1,12 @@
 # Evaluation record
 
+## Version 0.3.1 — 2026-09-16
+
+The consistency correction passed the repository validator, all 35 existing tests, the skill-format validator and the whitespace/error check. The method now records user-selected component-family behavior, includes local and newly integrated implementations, and requires fresh verification of affected opening paths after integration. A new evaluation scenario exercises a later module that conflicts with an existing family contract; it is a proposed regression scenario, not a completed independent run. No fixed drawer side or dialog placement is imposed across projects. These instruction and package checks do not establish rendered application consistency.
+
 ## Version 0.3.0 — 2026-09-16
 
-The current working release passed the repository validator, all 35 behavioral/package tests, the skill-format validator and a whitespace/error check. The additional regression checks that the current changelog agrees with release metadata and rejects duplicate or missing release headings. These are package checks, not an installation test, rendered README review or a design-quality measurement.
+The 0.3.0 working release passed the repository validator, all 35 behavioral/package tests, the skill-format validator and a whitespace/error check. The additional regression checks that the current changelog agrees with release metadata and rejects duplicate or missing release headings. These are package checks, not an installation test, rendered README review or a design-quality measurement.
 
 An independent reviewer applied the action-level preservation and messaging instructions to a short industrial-workspace scenario. It derived 15 concrete review obligations and found one consequential omission: an editor who sees only part of a shared collection could silently remove hidden members by saving the visible subset. The feature-preservation method now requires an explicit merge/replacement contract, preservation without disclosure, and restricted-role save/cancel checks. The reviewer reread that correction and found no further blocking instruction gap in its bounded scope.
 

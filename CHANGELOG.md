@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.1 — 2026-09-16
+
+- Keep user-selected component-family behavior consistent across existing and newly integrated modules.
+- Record editing-surface placement, modality, header/actions, motion, saving, dismissal and focus as one scoped contract.
+- Reconcile local implementations and library wrappers; retain explicit approved exceptions instead of accepting silent deviations.
+- Recheck actual opening paths and affected usages after integration and corrections; keep placement choices project-specific.
+
 ## 0.3.0 — 2026-09-16
 
 - Reconcile existing features down to actions, hidden controls, independent display preferences and coupled panel states.

@@ -1,6 +1,6 @@
 # Component anatomy, states and visual finish
 
-Use when inspecting or refining buttons, fields, selectors, checkboxes, radios, switches, menus, badges, messages and icons. This module connects their visual details to behavior and the user's brand contract. It supplements [visual systems](visual-systems.md), [accessibility](accessibility.md), [workflows](workflows.md) and [web engineering](web-engineering.md); it does not replace their requirements. Procedures and decision tables below are original synthesis. Research the requested design language and applicable implementation before applying its treatment. Vendor examples explain particular behaviors, not a default appearance or universal standard.
+Use when inspecting or refining buttons, fields, selectors, checkboxes, radios, switches, menus, badges, messages, icons and dialog or drawer families. This module connects their visual details to behavior and the user's brand contract. It supplements [visual systems](visual-systems.md), [accessibility](accessibility.md), [workflows](workflows.md) and [web engineering](web-engineering.md); it does not replace their requirements. Procedures and decision tables below are original working methods. Research the requested design language and applicable implementation before applying its treatment; no appearance or surface placement is universal.
 
 ## Bind the brand to the control
 
@@ -20,6 +20,14 @@ Translate confirmed brand preferences into a component contract before polishing
 Names such as `control.primary.pressed.surface` are a possible vocabulary, not required tokens. Resolve them to actual project values and rendered examples. “Modern,” “subtle” or “glassy” alone cannot close a contract row. Distinguish a control's visible shape from its hit area; enlarge the latter without overlapping neighboring actions.
 
 Apply the user's chosen material, shape and motion language to the agreed families and states, including justified exceptions and accessible alternatives. No glass, flat treatment, spring motion, capsule shape or palette is a default. See [navigation and materials](navigation-and-materials.md) for the surface contract.
+
+### One agreed contract across the component family
+
+When the user chooses a shared interaction pattern, persist its exact family and scope before changing individual usages. For an editing surface, define placement and attachment, modal or nonmodal behavior, width and responsive transformation, header and close placement, action order, save/cancel and dirty-state behavior, opening/closing motion, reduced-motion alternative, initial focus and focus return. A drawer, centered dialog or inline editor can each be appropriate; the user's agreed choice governs the affected product, not future unrelated projects.
+
+Enumerate every affected opening path, including local implementations, newly added modules, portals and conditional role/state branches. Follow the actual rendered path: two buttons named “Edit” may open different implementations. Include the selected family contract in delegated work and use one shared primitive or a deliberate adapter where practical. Multiple libraries or local wrappers must not silently create competing behavior. If separate implementations are necessary, verify each against the same observable contract.
+
+Record exceptions with their task reason, affected usages and decision status. Apply already approved exceptions without asking again. An exception that changes an approved family rule remains a proposal until the relevant user decision is obtained; routine corrections that fulfill the rule need no new approval. Keep unfinished usages as gaps rather than treating their old behavior as an implicit exception. Use the [design contract](../assets/design-contract.template.md) and repeat the [integration verification](verification.md#verify-component-families-after-integration) after affected modules change.
 
 ## Choose behavior before styling its shell
 

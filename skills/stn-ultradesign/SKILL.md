@@ -60,7 +60,7 @@ Read only the branches relevant to the current work. For a whole-product audit, 
 | User goals, information architecture, usability evidence | [product-thinking.md](references/product-thinking.md) |
 | Hidden work, confusing navigation, incomplete primary tasks, live investigation and return | [task-flow-design.md](references/task-flow-design.md) |
 | Layout, hierarchy, color, type, shapes, iconography, motion, tokens | [visual-systems.md](references/visual-systems.md) |
-| Component anatomy, hover/focus/press/selection, selectors, messages, icons and material states | [component-states.md](references/component-states.md) |
+| Component anatomy, interaction states, selectors, messages, icons and consistent dialog/drawer families | [component-states.md](references/component-states.md) |
 | Navigation hierarchy, overloaded settings, panels, selected materials, shape and motion | [navigation-and-materials.md](references/navigation-and-materials.md) |
 | Desktop/tablet/phone, input modes, navigation and adaptation | [platform-adaptation.md](references/platform-adaptation.md) |
 | Forms, wizards, settings, search, editing, asynchronous flows | [workflows.md](references/workflows.md) |

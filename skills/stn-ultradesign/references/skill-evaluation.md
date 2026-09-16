@@ -19,6 +19,7 @@ Use a varied set:
 9. A supplied company identity with selective inheritance (for example, keep type and colors but reconsider layout), to detect unrequested vendor styling.
 10. A named historical design reference, to distinguish the requested generation from the latest release and from another project's preferences.
 11. An existing workspace with hidden actions, independently controlled overlays, simultaneous panels and restricted collection membership, to test granular preservation and safe editing.
+12. A project with an already agreed editing-surface family and a later module using a different local dialog implementation. Provide the raw components, existing decision and new entry path; evaluate whether the agent discovers the mismatch, preserves approved exceptions and verifies every affected integrated usage without turning that project's placement into a universal rule.
 
 These are proposed test scenarios, not completed evaluations. For design-language cases, judge source relevance, faithful translation, actual rendered evidence and user-directed scope; the presence or absence of a vendor name is not itself a pass condition.
 

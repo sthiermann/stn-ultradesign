@@ -82,6 +82,13 @@ Link the [task-flow record](task-flow.template.md) for critical tasks. Record vi
 
 ## Control and material states
 
+### Shared family behavior
+
+| Family contract ID / decision | Applicable task family and all usage IDs | Placement / adaptation / modality | Header, actions, save and dismissal | Motion / reduced motion / focus entry and return | Shared primitive or adapter / local implementations | Approved exception or unresolved proposal | Integrated revision / per-usage evidence |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+Apply the user's actual choice; no drawer side or dialog placement is a package default. Reconcile newly added modules and opening paths before presenting the integrated revision. An untested local implementation or library default is a gap, not an approved exception.
+
 - Action-level baseline and retrieval walkthrough:
 - Supported independent overlays, concurrent panels and persistence contract:
 - Unfinished child actions, with exact concept/implementation coverage limits:
