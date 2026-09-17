@@ -15,7 +15,7 @@ Bring your brand. Set the direction. Review the experience before it ships. Use 
 
 [**Explore the interactive website →**](https://sthiermann.github.io/stn-ultradesign-website/) · [Install the skill](docs/installation.md) · [Start a redesign](#put-it-to-work) · [Explore the workflow](#a-complete-path-from-requirements-to-delivery) · [Read the skill](skills/stn-ultradesign/SKILL.md)
 
-Release **v0.6.0** · [MIT license](LICENSE) · Codex + Claude Code
+Release **v0.6.1** · [MIT license](LICENSE) · Codex + Claude Code
 
 [![Package checks](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml/badge.svg)](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml)
 
