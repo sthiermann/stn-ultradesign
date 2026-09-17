@@ -2,8 +2,8 @@
 
 <p>
 <picture>
-  <source media="(max-width: 1000px)" srcset="assets/brand/hero-compact-96e85ec366.svg">
-  <img src="assets/brand/hero-7bfa565052.svg" alt="STN Ultradesign. Design the whole experience. Product-specific design across desktop, tablet and phone." width="1280">
+  <source media="(max-width: 1000px)" srcset="assets/brand/hero-compact-a0752e694d.svg">
+  <img src="assets/brand/hero-14faef40a2.svg" alt="STN Ultradesign. Design the whole experience. Product-specific design across desktop, tablet and phone." width="1280">
 </picture>
 </p>
 
@@ -13,9 +13,9 @@ Turn an application into a coherent product experience. STN Ultradesign gives yo
 
 Bring your brand. Set the direction. Review the experience before it ships. Use it to redesign existing software, shape a new product or improve one focused workflow across desktop, tablet and mobile.
 
-[**Install the skill →**](docs/installation.md) · [Start a redesign](#put-it-to-work) · [Explore the workflow](#a-complete-path-from-requirements-to-delivery) · [Read the skill](skills/stn-ultradesign/SKILL.md)
+[**Explore the interactive website →**](https://sthiermann.github.io/stn-ultradesign-website/) · [Install the skill](docs/installation.md) · [Start a redesign](#put-it-to-work) · [Explore the workflow](#a-complete-path-from-requirements-to-delivery) · [Read the skill](skills/stn-ultradesign/SKILL.md)
 
-Release **v0.5.2** · [MIT license](LICENSE) · Codex + Claude Code
+Release **v0.6.0** · [MIT license](LICENSE) · Codex + Claude Code
 
 [![Package checks](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml/badge.svg)](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml)
 
@@ -59,8 +59,8 @@ Starting fresh? Follow the [new design review instructions](docs/installation.md
 
 <p>
 <picture>
-  <source media="(max-width: 1000px)" srcset="assets/brand/method-compact-7a9eedb6d7.svg">
-  <img src="assets/brand/method-b15836b8d1.svg" alt="Requirements → Creative direction → System and components → Complete concept → Independent review → Human acceptance → Implementation → Verification. Review and refine before scoped acceptance; verify the implemented result." width="1280">
+  <source media="(max-width: 1000px)" srcset="assets/brand/method-compact-65eb6420ab.svg">
+  <img src="assets/brand/method-11693d013f.svg" alt="Requirements → Creative direction → System and components → Complete concept → Independent review → Human acceptance → Implementation → Verification. Review and refine before scoped acceptance; verify the implemented result." width="1280">
 </picture>
 </p>
 
@@ -111,7 +111,7 @@ Explore [requirements and conformance](skills/stn-ultradesign/references/require
 
 A coherent experience needs more than attractive isolated screens. The skill connects composition, hierarchy, rhythm and density to the user's next decision. Where a structural decision remains open, alternatives use the same task and content so their consequences are visible.
 
-Buttons, fields, selectors, switches, menus, badges, messages and icons receive a consistent anatomy and the states their tasks require. Focus, hover, selection, pending work, errors and state combinations must remain understandable. Shared rules connect surfaces without forcing a dense workspace, a permissions editor and an API reference into the same layout.
+Buttons, fields, selectors, switches, menus, badges, messages and icons receive a consistent anatomy and the states their tasks require. Focus, hover, selection, pending work, errors and state combinations must remain understandable. Interaction checks compare the whole visible action surface with what actually responds, including labels, icons, padding and edges. Spatial review includes resting, expanded and transitioning states. Shared rules connect surfaces without forcing a dense workspace, a permissions editor and an API reference into the same layout.
 
 Rendered concepts are inspected at relevant sizes with difficult content. Visual criticism and revision remain part of the work; an automated check does not establish aesthetic acceptance. See [visual systems](skills/stn-ultradesign/references/visual-systems.md) and [component states](skills/stn-ultradesign/references/component-states.md).
 
@@ -139,7 +139,7 @@ Independent review challenges the current artifact against the requirements and 
 
 ## Package and privacy
 
-The package contains the skill, its reusable references and templates, local validators, automated checks and installation metadata. It configures no hooks, telemetry, MCP servers or external services. Original instructions and SVG artwork are covered by the [MIT License](LICENSE).
+The package contains the skill, its reusable references and templates, local validators, automated checks and installation metadata. It configures no hooks, telemetry, MCP servers or external services. The skill instructions, templates and code are covered by the [MIT License](LICENSE). The ST monogram and branded presentation assets have a separate [brand rights notice](assets/brand/LICENSE).
 
 Account, access, messaging and administrative reviews examine interfaces and user journeys. Use an already authenticated session, user-completed sign-in or authorized test data. An audit does not authorize collecting secrets, changing real permissions or sending messages. Project-specific evidence stays with the user's project. See [privacy and audit scope](PRIVACY.md).
 

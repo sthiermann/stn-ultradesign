@@ -1,6 +1,6 @@
 # Installation
 
-As of September 16, 2026. Install either the individual skill or the plugin in your client. Installing the same skill twice is unnecessary.
+As of September 17, 2026. Install either the individual skill or the plugin in your client. Installing the same skill twice is unnecessary.
 
 ## Codex: individual skill
 

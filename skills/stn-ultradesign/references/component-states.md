@@ -90,6 +90,8 @@ Test selected+focused, invalid+focused, selected+disabled, pending after activat
 
 Model press, release, cancellation, hover, focus, selected, mixed and pending states explicitly when relevant. Pending is not automatically disabled: preserve focus and give meaningful progress feedback without allowing duplicate work.
 
+Match action affordance to activation. When an enabled row, card or disclosure is presented as one action, its visible control surface and internal padding must activate that action. Otherwise, confine action feedback to the actual controls and distinguish separate actions. Preserve native semantics, required text interaction and independent child controls; avoid nested buttons/links or enlarged targets that intercept secondary actions. Decorative shadows and glows do not define a larger target. Use the [interaction probes](verification.md#minimum-useful-interaction-pass) to verify the apparent boundary.
+
 ## Make the small visual decisions deliberate
 
 **Buttons.** Establish hierarchy within each action group: emphasis follows task importance, not the number of colors. Set label weight, icon balance, surface, boundary and press response together. Keep the footprint stable during progress and long translations. Distinguish ordinary, toggle, menu and split-button behavior; destructive intent needs explicit meaning rather than a recolored primary button.

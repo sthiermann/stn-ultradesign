@@ -1,11 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
   <title id="title">STN Ultradesign — Design the whole experience</title>
   <desc id="desc">An original editorial illustration in dark slate and signal gold. A bold product statement sits beside an abstract composition of desktop, tablet and phone frames. It represents coherent structure across different surfaces, not a screenshot or a measured product outcome.</desc>
-  <!-- Original artwork. Copyright 2026 Sven Thiermann. MIT License. -->
+  <!-- Copyright 2026 Sven Thiermann. Brand artwork: see LICENSE in this directory. -->
   <rect width="1280" height="640" fill="#101820"/>
   <path d="M0 639.5H1280" stroke="#36434d"/>
   <g font-family="Arial, Helvetica, sans-serif">
-    <path d="M57 43H76V49H63V62H57ZM79 68H98V49H92V62H79Z" fill="#dfbd62"/>
+    <svg x="56" y="33" width="43" height="43" viewBox="16 16 128 128" fill="none">  <g stroke="#dfbd62" stroke-width="14" stroke-linecap="butt" stroke-linejoin="round">
+    <path d="M130 34H42C35.372583 34 30 39.372583 30 46V68C30 74.627417 35.372583 80 42 80H66M80 34V66"/>
+    <path d="M130 34H42C35.372583 34 30 39.372583 30 46V68C30 74.627417 35.372583 80 42 80H66M80 34V66" transform="rotate(180 80 80)"/>
+  </g></svg>
     <text x="116" y="64" fill="#f4f3ee" font-size="20" font-weight="700" letter-spacing="2.4">STN ULTRADESIGN</text>
     <text x="1224" y="62" text-anchor="end" fill="#a9b5bd" font-size="14" letter-spacing="2">DESIGN SKILL</text>
     <path d="M56 96H1224" stroke="#34424d"/>

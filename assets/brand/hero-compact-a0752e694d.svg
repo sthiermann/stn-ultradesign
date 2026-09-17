@@ -1,10 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="660" viewBox="0 0 640 660" role="img" aria-labelledby="title desc">
   <title id="title">STN Ultradesign — Design the whole experience</title>
   <desc id="desc">Compact editorial artwork. Product-specific design, from the first screen to the final state. Three abstract device outlines connect the idea across desktop, tablet and phone.</desc>
-  <!-- Original artwork. Copyright 2026 Sven Thiermann. MIT License. -->
+  <!-- Copyright 2026 Sven Thiermann. Brand artwork: see LICENSE in this directory. -->
   <rect width="640" height="660" fill="#101820"/>
   <g font-family="Arial, Helvetica, sans-serif">
-    <path d="M36 36H54V42H42V54H36ZM57 60H75V42H69V54H57Z" fill="#dfbd62"/>
+    <svg x="36" y="26" width="42" height="42" viewBox="16 16 128 128" fill="none">  <g stroke="#dfbd62" stroke-width="14" stroke-linecap="butt" stroke-linejoin="round">
+    <path d="M130 34H42C35.372583 34 30 39.372583 30 46V68C30 74.627417 35.372583 80 42 80H66M80 34V66"/>
+    <path d="M130 34H42C35.372583 34 30 39.372583 30 46V68C30 74.627417 35.372583 80 42 80H66M80 34V66" transform="rotate(180 80 80)"/>
+  </g></svg>
     <text x="96" y="57" fill="#f4f3ee" font-size="20" font-weight="700" letter-spacing="2">STN ULTRADESIGN</text>
     <path d="M36 86H604" stroke="#34424d"/>
     <g fill="#f4f3ee" font-size="67" font-weight="700" letter-spacing="-2.7">

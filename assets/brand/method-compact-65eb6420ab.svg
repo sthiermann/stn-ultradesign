@@ -1,9 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="1408" viewBox="0 0 640 1408" role="img" aria-labelledby="title desc">
 <title id="title">The STN Ultradesign delivery workflow</title>
 <desc id="desc">Requirements, creative direction, system and components, complete concept, independent review, human acceptance, implementation, verification. Review findings inform revision. Acceptance covers a specific revision and scope; verification checks the implemented result.</desc>
-<!-- Original artwork. Copyright 2026 Sven Thiermann. MIT License. -->
+<!-- Copyright 2026 Sven Thiermann. Brand artwork: see LICENSE in this directory. -->
 <rect width="640" height="1408" fill="#101820"/>
 <g font-family="Arial, Helvetica, sans-serif">
+<svg x="562" y="24" width="40" height="40" viewBox="16 16 128 128" fill="none">  <g stroke="#dfbd62" stroke-width="14" stroke-linecap="butt" stroke-linejoin="round">
+    <path d="M130 34H42C35.372583 34 30 39.372583 30 46V68C30 74.627417 35.372583 80 42 80H66M80 34V66"/>
+    <path d="M130 34H42C35.372583 34 30 39.372583 30 46V68C30 74.627417 35.372583 80 42 80H66M80 34V66" transform="rotate(180 80 80)"/>
+  </g></svg>
 <text x="36" y="49" fill="#dfbd62" font-size="18" font-weight="700" letter-spacing="2">THE METHOD</text>
 <text x="36" y="103" fill="#f4f3ee" font-size="35" font-weight="700" letter-spacing="-.7">From requirements</text>
 <text x="36" y="147" fill="#f4f3ee" font-size="35" font-weight="700" letter-spacing="-.7">to a verified experience.</text>

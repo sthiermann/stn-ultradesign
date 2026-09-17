@@ -43,8 +43,9 @@ The reviewer challenges the current evidence independently of the author's prefe
 - Verify permission and session changes where they affect the task, using safe test environments.
 - Reconcile baseline actions against proposed controls in both directions; identify additions separately and keep missing child actions unresolved.
 - Check independent overlays, panels and preferences in the supported combinations that alter behavior, including closing, reopening, resize, return and reload persistence.
+- Inspect a control from its resting state without a cue naming the target. For a surface presented as one action, activate its label, icon, internal padding and points just inside its visible edges independently, resetting the safe fixture between probes. Verify the intended outcome occurs once, secondary controls retain their own action and points outside the declared target do not activate it. Exercise the applicable pointer, touch and semantic keyboard behavior; record the actual input/device conditions and leave unavailable checks open.
 
-Test selectors should describe user-visible roles and names where reliable. Use stable test identifiers for ambiguous structures, not brittle coordinates or incidental CSS class names. A test asserting that a new class exists does not prove the requested user outcome.
+Test selectors should describe user-visible roles and names where reliable. Use stable test identifiers for ambiguous structures, not brittle coordinates or incidental CSS class names. For geometry probes, derive positions from the currently rendered target, identify the hit receiver, then activate and verify the outcome. A named-control click or class assertion cannot establish the rest of the apparent surface.
 
 ## Visual craft review
 
@@ -55,6 +56,8 @@ Compare with the concept at the same viewport, fixture and theme. Side-by-side i
 For adaptive behavior, test compact, medium and expanded spaces appropriate to the app, intermediate widths around each content breakpoint, and short heights. Include text enlargement/reflow and a real on-screen keyboard check when possible. Typical fixture sizes can aid repeatability, but are not universal design breakpoints.
 
 Check forced colors, light/dark theme where supported, reduced motion and long/RTL content where applicable. Preserve scroll and focus on transitions. Test touch access to functions that otherwise appear on hover.
+
+Inspect the painted extents of changing illustrations and controls at rest, expanded and during transitions, including any wider intermediate pose and focus rings. At affected container sizes, verify that labels, targets and focus remain clear of neighboring content and controls, and that visual layers do not intercept activation. Include reversal and reduced-motion behavior where supported. Layout-box measurements alone cannot establish visible clearance.
 
 ## Inspect the delivery surface
 

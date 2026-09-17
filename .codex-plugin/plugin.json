@@ -1,12 +1,12 @@
 {
   "name": "stn-ultradesign",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "AI UI/UX design skill for application audits, distinctive design systems, interactive concepts and implementation guided by your requirements.",
   "author": {
     "name": "Sven Thiermann",
     "url": "https://github.com/sthiermann"
   },
-  "homepage": "https://github.com/sthiermann/stn-ultradesign",
+  "homepage": "https://sthiermann.github.io/stn-ultradesign-website/",
   "repository": "https://github.com/sthiermann/stn-ultradesign",
   "license": "MIT",
   "keywords": [
@@ -26,7 +26,7 @@
     "developerName": "Sven Thiermann",
     "category": "Productivity",
     "capabilities": [],
-    "websiteURL": "https://github.com/sthiermann/stn-ultradesign",
+    "websiteURL": "https://sthiermann.github.io/stn-ultradesign-website/",
     "defaultPrompt": [
       "Audit the entire frontend of this existing application using its current source code and running interface. Ask me about my requirements and design preferences, preserve existing capabilities, and develop a complete interactive design concept. Clarify which earlier design decisions still apply. Independently review and refine the concept with me. Implement production changes only after my approval.",
       "Audit the entire frontend and document findings, evidence, and coverage.",

@@ -1,54 +1,58 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="740" viewBox="0 0 1280 740" role="img" aria-labelledby="title desc">
 <title id="title">The STN Ultradesign delivery workflow</title>
 <desc id="desc">Requirements, creative direction, system and components, complete concept, independent review, human acceptance, implementation, verification. Review findings inform revision. Acceptance covers a specific revision and scope; verification checks the implemented result.</desc>
-<!-- Original artwork. Copyright 2026 Sven Thiermann. MIT License. -->
+<!-- Copyright 2026 Sven Thiermann. Brand artwork: see LICENSE in this directory. -->
 <rect width="1280" height="740" fill="#101820"/>
 <g font-family="Arial, Helvetica, sans-serif">
+<svg x="1188" y="26" width="40" height="40" viewBox="16 16 128 128" fill="none">  <g stroke="#dfbd62" stroke-width="14" stroke-linecap="butt" stroke-linejoin="round">
+    <path d="M130 34H42C35.372583 34 30 39.372583 30 46V68C30 74.627417 35.372583 80 42 80H66M80 34V66"/>
+    <path d="M130 34H42C35.372583 34 30 39.372583 30 46V68C30 74.627417 35.372583 80 42 80H66M80 34V66" transform="rotate(180 80 80)"/>
+  </g></svg>
 <text x="48" y="51" fill="#dfbd62" font-size="20" font-weight="700" letter-spacing="2">THE METHOD</text>
 <text x="48" y="102" fill="#f4f3ee" font-size="34" font-weight="700" letter-spacing="-.7">Give every decision a clear path to delivery.</text>
 <path d="M48 137H1232" stroke="#34424d"/>
-<rect x="48" y="180" width="278" height="208" rx="14" fill="#17222b" stroke="#34424d"/>
+<rect x="48" y="180" width="278" height="208" rx="12" fill="#17222b" stroke="#34424d"/>
 <text x="70" y="219" fill="#8da1ab" font-size="19" font-weight="700" letter-spacing="1">01</text>
 <text x="70" y="268" fill="#f4f3ee" font-size="22" font-weight="700" letter-spacing="-.4">Requirements</text>
 <text x="70" y="310" fill="#b8c6ce" font-size="20">Tasks + capabilities</text>
 <text x="70" y="341" fill="#b8c6ce" font-size="20">Preferences + criteria</text>
 <path d="M332 286h12m-5-5 5 5-5 5" fill="none" stroke="#718690" stroke-width="1.5"/>
-<rect x="350" y="180" width="278" height="208" rx="14" fill="#17222b" stroke="#34424d"/>
+<rect x="350" y="180" width="278" height="208" rx="12" fill="#17222b" stroke="#34424d"/>
 <text x="372" y="219" fill="#8da1ab" font-size="19" font-weight="700" letter-spacing="1">02</text>
 <text x="372" y="268" fill="#f4f3ee" font-size="22" font-weight="700" letter-spacing="-.4">Creative direction</text>
 <text x="372" y="310" fill="#b8c6ce" font-size="20">Visual thesis</text>
 <text x="372" y="341" fill="#b8c6ce" font-size="20">Structural alternatives</text>
 <path d="M634 286h12m-5-5 5 5-5 5" fill="none" stroke="#718690" stroke-width="1.5"/>
-<rect x="652" y="180" width="278" height="208" rx="14" fill="#17222b" stroke="#34424d"/>
+<rect x="652" y="180" width="278" height="208" rx="12" fill="#17222b" stroke="#34424d"/>
 <text x="674" y="219" fill="#8da1ab" font-size="19" font-weight="700" letter-spacing="1">03</text>
 <text x="674" y="268" fill="#f4f3ee" font-size="22" font-weight="700" letter-spacing="-.4">System + components</text>
 <text x="674" y="310" fill="#b8c6ce" font-size="20">Shared rules + anatomy</text>
 <text x="674" y="341" fill="#b8c6ce" font-size="20">States + variants</text>
 <path d="M936 286h12m-5-5 5 5-5 5" fill="none" stroke="#718690" stroke-width="1.5"/>
-<rect x="954" y="180" width="278" height="208" rx="14" fill="#17222b" stroke="#34424d"/>
+<rect x="954" y="180" width="278" height="208" rx="12" fill="#17222b" stroke="#34424d"/>
 <text x="976" y="219" fill="#8da1ab" font-size="19" font-weight="700" letter-spacing="1">04</text>
 <text x="976" y="268" fill="#f4f3ee" font-size="22" font-weight="700" letter-spacing="-.4">Complete concept</text>
 <text x="976" y="310" fill="#b8c6ce" font-size="20">Rendered target views</text>
 <text x="976" y="341" fill="#b8c6ce" font-size="20">Journeys + recovery</text>
-<rect x="48" y="422" width="278" height="208" rx="14" fill="#17222b" stroke="#34424d"/>
+<rect x="48" y="422" width="278" height="208" rx="12" fill="#17222b" stroke="#34424d"/>
 <text x="70" y="461" fill="#8da1ab" font-size="19" font-weight="700" letter-spacing="1">05</text>
 <text x="70" y="510" fill="#f4f3ee" font-size="22" font-weight="700" letter-spacing="-.4">Independent review</text>
 <text x="70" y="552" fill="#b8c6ce" font-size="20">Critique + evidence</text>
 <text x="70" y="583" fill="#b8c6ce" font-size="20">Revise the current work</text>
 <path d="M332 528h12m-5-5 5 5-5 5" fill="none" stroke="#718690" stroke-width="1.5"/>
-<rect x="350" y="422" width="278" height="208" rx="14" fill="#17222b" stroke="#dfbd62"/>
+<rect x="350" y="422" width="278" height="208" rx="12" fill="#17222b" stroke="#dfbd62"/>
 <text x="372" y="461" fill="#dfbd62" font-size="19" font-weight="700" letter-spacing="1">06</text>
 <text x="372" y="510" fill="#dfbd62" font-size="22" font-weight="700" letter-spacing="-.4">Human acceptance</text>
 <text x="372" y="552" fill="#b8c6ce" font-size="20">Specific revision + scope</text>
 <text x="372" y="583" fill="#b8c6ce" font-size="20">Recorded design contract</text>
 <path d="M634 528h12m-5-5 5 5-5 5" fill="none" stroke="#718690" stroke-width="1.5"/>
-<rect x="652" y="422" width="278" height="208" rx="14" fill="#17222b" stroke="#34424d"/>
+<rect x="652" y="422" width="278" height="208" rx="12" fill="#17222b" stroke="#34424d"/>
 <text x="674" y="461" fill="#8da1ab" font-size="19" font-weight="700" letter-spacing="1">07</text>
 <text x="674" y="510" fill="#f4f3ee" font-size="22" font-weight="700" letter-spacing="-.4">Implementation</text>
 <text x="674" y="552" fill="#b8c6ce" font-size="20">Accepted decisions</text>
 <text x="674" y="583" fill="#b8c6ce" font-size="20">Complete working flows</text>
 <path d="M936 528h12m-5-5 5 5-5 5" fill="none" stroke="#718690" stroke-width="1.5"/>
-<rect x="954" y="422" width="278" height="208" rx="14" fill="#17222b" stroke="#34424d"/>
+<rect x="954" y="422" width="278" height="208" rx="12" fill="#17222b" stroke="#34424d"/>
 <text x="976" y="461" fill="#8da1ab" font-size="19" font-weight="700" letter-spacing="1">08</text>
 <text x="976" y="510" fill="#f4f3ee" font-size="22" font-weight="700" letter-spacing="-.4">Verification</text>
 <text x="976" y="552" fill="#b8c6ce" font-size="20">Behavior + accessibility</text>
