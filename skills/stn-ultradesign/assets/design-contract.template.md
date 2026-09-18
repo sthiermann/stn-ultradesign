@@ -133,7 +133,9 @@ Link the [requirement register](requirements.template.md) and its acceptance obl
 | Obligation ID / requirement revision | Observable expectation / allowed variation | Decision or reference-rule ID | Usage / planned context | Stage and required evidence kind | Result / artifact revision / actual evidence or gap |
 | --- | --- | --- | --- | --- | --- | --- |
 
-For screenshot comparisons record browser, CSS viewport size, zoom, data fixture, fonts, locale, theme, expected scroll position and justified tolerance.
+For rendered-layout obligations, record the [layout integrity](../references/layout-integrity.md) plan: affected usages and owning containers, normal/stressed fixtures, relevant breakpoint and short-height cases, permitted wrap/scroll/overlay behavior, and separate visual/hit-testing results. Link required zoom, text-spacing, keyboard and device checks; retain unavailable checks as gaps. For analytical surfaces, link separate purpose/duplication and actual filter-result obligations from the [analytical surface record](analytical-surface.template.md).
+
+For screenshot comparisons record browser, CSS viewport and container size, zoom, data fixture, fonts, locale, theme, density, expected scroll position and justified tolerance.
 
 Report visual/craft assessment separately from behavioral, accessibility and syntax results. A technical pass does not satisfy an unapproved or rejected visual direction.
 

@@ -25,6 +25,14 @@ Judge dependencies by the exact required behavior, composition API, maintenance,
 
 Unstyled primitives separate much of the behavior from presentation; they do not supply an authored visual system or eliminate accessibility work. Own one designed wrapper per shared family. Preserve the primitive's required props, event composition, references and semantics when changing its rendered parts. Reuse its state signals for styling where supported instead of inventing a second focus, selection or open-state model. Verify functional styles such as overlay coverage, hit area, scrolling and placement as carefully as color.
 
+### Reconcile duplicate implementations
+
+Trace repeated widgets and controls to their actual component, wrapper, data transformation and state ownership. Compare the contracts before consolidating: equivalent purpose, inputs, interactions and state transitions support a shared family; similar markup alone does not. Record existing family/usage IDs, the common contract, intentional variants and local exceptions in the existing component record.
+
+Prefer one maintained implementation with explicit variants or composition when the behavior is equivalent. Separate instance-owned identity, filters, permissions and saved preferences from deliberately shared state. Verify that only declared coordination propagates a change; sharing a component must not alter an unrelated instance. Consolidating code need not remove useful repeated placements. Conversely, several consumers of one component can still duplicate information needlessly; review that question through [the widget purpose check](data-visualization.md#review-purpose-and-duplication-separately).
+
+After consolidation, exercise every affected usage and relevant variant under the scoped audit plan, including simultaneous instances and a state change in only one instance. Verify retained actions, rendering, focus and actual data scope. A reduced file count or matching source import is not evidence of preserved behavior.
+
 ### Develop the designed component once
 
 Use the existing component preview or a lightweight local harness; a new documentation tool is optional. Render the production component with deterministic fixtures, real typography and its theme/context providers. Include the states that challenge the design, especially open, selected-and-focused, loading/error and long content. Keep the specimen's controls outside the product component.

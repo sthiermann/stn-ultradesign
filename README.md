@@ -15,7 +15,7 @@ Bring your brand. Set the direction. Review the experience before it ships. Use 
 
 [**Explore the interactive website →**](https://sthiermann.github.io/stn-ultradesign-website/) · [Install the skill](docs/installation.md) · [Start a redesign](#put-it-to-work) · [Explore the workflow](#a-complete-path-from-requirements-to-delivery) · [Read the skill](skills/stn-ultradesign/SKILL.md)
 
-Release **v0.6.1** · [MIT license](LICENSE) · Codex + Claude Code
+Release **v0.6.2** · [MIT license](LICENSE) · Codex + Claude Code
 
 [![Package checks](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml/badge.svg)](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml)
 
@@ -113,7 +113,7 @@ A coherent experience needs more than attractive isolated screens. The skill con
 
 Buttons, fields, selectors, switches, menus, badges, messages and icons receive a consistent anatomy and the states their tasks require. Focus, hover, selection, pending work, errors and state combinations must remain understandable. Interaction checks compare the whole visible action surface with what actually responds, including labels, icons, padding and edges. Spatial review includes resting, expanded and transitioning states. Shared rules connect surfaces without forcing a dense workspace, a permissions editor and an API reference into the same layout.
 
-Rendered concepts are inspected at relevant sizes with difficult content. Visual criticism and revision remain part of the work; an automated check does not establish aesthetic acceptance. See [visual systems](skills/stn-ultradesign/references/visual-systems.md) and [component states](skills/stn-ultradesign/references/component-states.md).
+Rendered concepts undergo [layout stress checks](skills/stn-ultradesign/references/layout-integrity.md): long text, wrapping buttons, constrained containers, open overlays, zoom and changing content. Checks distinguish intentional scrolling or layering from clipped content and blocked actions. Results stay tied to the actual usage, conditions and revision. Visual criticism and revision remain part of the work; an automated check does not establish aesthetic acceptance. See [visual systems](skills/stn-ultradesign/references/visual-systems.md) and [component states](skills/stn-ultradesign/references/component-states.md).
 
 ## Complete tasks, preserve capabilities
 
@@ -127,7 +127,7 @@ Existing themes, supported languages, density options, charts and graph types re
 
 For dashboards, tables, charts and widgets, the skill examines what each value means: definition, unit, population, timeframe, aggregation, comparison and freshness. Missing data must remain distinguishable from zero. Status colors need an explainable rule.
 
-Review follows the connection from a headline to its chart, filtered records, linked detail and return path. Filters, comparisons, explanations and drilldowns should help people make the actual decision. Uncertain domain meaning stays explicit and becomes a focused question. See [analytical meaning](skills/stn-ultradesign/references/analytical-meaning.md).
+Review checks whether widgets serve a distinct purpose, repeat information usefully or should share an implementation. Drilldowns are followed from the clicked record through effective filters to actual included and excluded data, visible scope and return. A correct filter label alone is not a passing result. Filters, comparisons, explanations and drilldowns should help people make the actual decision. Uncertain domain meaning stays explicit and becomes a focused question. See [analytical meaning](skills/stn-ultradesign/references/analytical-meaning.md).
 
 ## Evidence you can follow
 
