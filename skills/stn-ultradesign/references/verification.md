@@ -35,6 +35,8 @@ The reviewer challenges the current evidence independently of the author's prefe
 
 ## Minimum useful interaction pass
 
+Apply [interaction-comprehension.md](interaction-comprehension.md) to ambiguous or consequential controls and decision-bearing surfaces. Record the visible promise before activation, then verify scope, result, feedback and return. Loading, background refresh, empty results, failure and success need observed state transitions where reachable; a finished screenshot cannot establish them.
+
 - Reach the task through normal navigation and a deep link if supported.
 - Complete it with the main input method and keyboard.
 - Exercise validation and at least the meaningful error/retry transition.
@@ -89,6 +91,10 @@ First verify semantic fit: compare each action's task, owning workspace, selecte
 Open each affected usage through its real entry at the integrated revision. Compare placement, geometry, header/actions, motion and relevant interaction states; for editing surfaces, exercise validation, save/cancel, dirty dismissal, focus entry and focus return using safe fixtures. Verify the planned responsive transformations and reduced-motion behavior where affected. Still images can establish position, not the transition or focus sequence. Repeat the original failing path after correction and recheck consuming usages whose shared behavior changed; reopen coverage when another module adds an occurrence.
 
 Record family ID, usage IDs, integrated revision, context, evidence and exception status. Keep source inspection, rendered state and interaction results distinct. A usage remains unresolved when its code appears shared but its actual path has not been checked. These checks follow the requested change boundary and affected dependencies, not an unsolicited whole-product audit.
+
+## Reconcile bindings and evidence files
+
+When the delivery binding record is in use, run the [delivery checker](delivery-ledger.md) against the current decisions, artifacts and results with the available private evidence root. Inspect both declared readiness and integrity gaps. Keep the existing audit validator authoritative for full-audit coverage. Missing local captures, changed files or outdated execution bindings remain unresolved; updating a hash is not a recheck. The checker does not launch tests or establish authenticity.
 
 ## Stop and report accurately
 

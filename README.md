@@ -15,7 +15,7 @@ Bring your brand. Set the direction. Review the experience before it ships. Use 
 
 [**Explore the interactive website →**](https://sthiermann.github.io/stn-ultradesign-website/) · [Install the skill](docs/installation.md) · [Start a redesign](#put-it-to-work) · [Explore the workflow](#a-complete-path-from-requirements-to-delivery) · [Read the skill](skills/stn-ultradesign/SKILL.md)
 
-Release **v0.6.2** · [MIT license](LICENSE) · Codex + Claude Code
+Release **v0.7.0** · [MIT license](LICENSE) · Codex + Claude Code
 
 [![Package checks](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml/badge.svg)](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml)
 
@@ -133,7 +133,9 @@ Review checks whether widgets serve a distinct purpose, repeat information usefu
 
 A full audit covers every discovered page, component usage, widget, dialog, drilldown and defined relevant workflow, state and transition in scope. Large products are covered in resumable batches. Inaccessible areas stay visible as gaps; sampling requires an agreed scope change.
 
-The package includes templates for requirements, briefs, reference translation, feature maps, task flows, design contracts and audit evidence. Its local Python coverage validator checks the consistency of a declared audit inventory, obligations and evidence. It does not evaluate the requirement register, inspect the application or certify discovery completeness, design quality or security.
+The package includes templates for requirements, briefs, reference translation, feature maps, task flows, design contracts and audit evidence. Its local Python coverage validator checks the consistency of a declared audit inventory, obligations and evidence. A separate [delivery checker](skills/stn-ultradesign/references/delivery-ledger.md) connects requirements, decisions, stage obligations, artifacts and observed runs. It detects stale bindings and can verify explicitly listed local evidence files. Both check the supplied records; neither inspects the application automatically or certifies observation truth, discovery completeness, design quality or security.
+
+Comprehension review compares what a widget or control communicates before activation with its actual scope, result and recovery. Loading, background refresh, failure and success are checked as behavior. Geometric and motion review includes alignment, optical balance and complete transition cycles where relevant.
 
 Independent review challenges the current artifact against the requirements and design intent. It uses a separate reviewer when the host supports one; otherwise, self-review is identified as such and the limitation remains explicit. Human acceptance records the revision and scope that may proceed. Verification then checks the implementation itself. See [verification](skills/stn-ultradesign/references/verification.md).
 

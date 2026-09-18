@@ -25,6 +25,18 @@ Repeat for every meaningful branch within this task. Include direct entry, empty
 | Decision / permitted action | | | | | | |
 | Return / later resume | | | | | | |
 
+## Comprehension and feedback
+
+Apply [interaction-comprehension.md](../references/interaction-comprehension.md) within this record. Link existing transition and obligation IDs.
+
+- Visible promise before action; observed result, destination and scope afterward:
+- Audience/domain meaning confirmed, unresolved or inferred:
+- Initial versus background/incremental loading and retained context:
+- Empty/no-match/denied/failure distinctions and safe recovery:
+- Authoritative success milestone, partial completion and unknown outcome:
+- Changed selection, older response/error and repeated-activation checks:
+- Expert hypotheses versus observed participant understanding:
+
 ## Navigation and disclosure
 
 - Global destination, collection, object, local view or command:

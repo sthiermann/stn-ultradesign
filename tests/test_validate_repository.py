@@ -128,7 +128,7 @@ Release **v0.1.0** is a historical metadata example.
     def test_cli_integration_preserves_scope_disclaimer(self):
         for relative in MODULE.REQUIRED:
             if relative != "README.md":
-                self.write(relative, "")
+                self.write(relative, "{}" if relative.endswith(".json") else "")
         manifest = {"name": MODULE.NAME, "version": "0.2.0", "license": "MIT"}
         self.write(".codex-plugin/plugin.json", json.dumps(dict(manifest, skills="./skills/")))
         self.write(".claude-plugin/plugin.json", json.dumps(manifest))

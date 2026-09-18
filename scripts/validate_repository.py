@@ -25,6 +25,9 @@ REQUIRED = (
     f"skills/{NAME}/agents/openai.yaml", f"skills/{NAME}/references/project-research.md",
     f"skills/{NAME}/references/delivery-workflow.md",
     f"skills/{NAME}/scripts/audit_coverage.py",
+    f"skills/{NAME}/scripts/delivery_check.py",
+    f"skills/{NAME}/references/delivery-ledger.md",
+    f"skills/{NAME}/assets/delivery.template.json",
 )
 
 

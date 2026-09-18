@@ -45,6 +45,10 @@ Use existing acceptance or audit obligation IDs where they already express the c
 
 Plan contexts from behavior: state, role and resource scope, input, content, size, theme, locale or supported preference can create materially different cases. Name only applicable dimensions, boundaries and combinations, and justify equivalence. Repeated data instances using the same behavior may share a class; a new local implementation, role rule or responsive replacement needs its own consideration. Retain relevant checks for every distinct affected usage: equivalence groups repeated instances or context classes, not uninspected consuming surfaces. Shared-component correctness does not establish correctness in every consuming usage. Use [audit-method.md](audit-method.md) for the ledger's finite context plan when one exists; otherwise keep a small affected-usage/context plan in the register. Avoid a global Cartesian product and retain inaccessible required contexts as gaps.
 
+### Mechanically reconcile substantial delivery
+
+For substantial work with changing requirements or contributor handoffs, use [delivery-ledger.md](delivery-ledger.md) and its binding record alongside the authoritative requirements. Reuse IDs and existing audit obligations. Bind current content and revisions before execution; validate required stages, current decisions and actual linked files before a readiness claim. The helper detects structural gaps and changed bytes, not missing real-world requirements or truthful observation. Keep review of meaning and actual acceptance separate.
+
 ## 3. Keep concept, implementation and verification separate
 
 Link every obligation to its actual artifact and revision. Record these independently:
