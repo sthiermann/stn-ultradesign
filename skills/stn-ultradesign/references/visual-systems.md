@@ -83,6 +83,12 @@ Check repeated vertical and horizontal anchors across real content. Distinguish 
 
 Give the composition a clear distribution of emphasis. A dominant working region can be balanced by a narrow context rail, an aligned comparison band, a quiet index or a focused inspection surface when the task justifies it. Vary region size by importance and information, not to manufacture asymmetry. Resolve repeated container framing: if every section has the same card, padding, title and icon treatment, inspect whether the design has flattened different levels of meaning. Sometimes the correct repair is shared alignment and direct adjacency rather than another wrapper.
 
+### Inspect geometry and optical balance
+
+For a geometry-sensitive component, illustration or identity treatment, mark the intended axes, bounding edges, baseline, insets, repeated gaps and stroke weights in a development specimen. Measure the relationships named by the contract, then inspect at actual display size and in the surrounding interface. The mathematical center of a view box may differ from the visible shape’s center; text baselines and perceived weight may justify a deliberate optical adjustment. Record that adjustment instead of silently contradicting an exact symmetry requirement.
+
+Symmetry is appropriate when the agreed identity or interaction requires it; balance can also come from intentional asymmetry. Compare negative space as well as filled shapes, including narrow sizes and contrasting appearances. A golden-ratio construction or equal numerical radius does not by itself establish clarity or quality. Preserve the authorized artwork, content and task while correcting geometry.
+
 ## 4. Make spacing and density intentional
 
 Use the existing spacing system where coherent. Otherwise propose a small named scale, map its uses, and test dense and sparse views. A four-unit or eight-unit grid is a system choice, not a universal law.
@@ -208,6 +214,8 @@ Give motion a role in the direction: feedback, continuity, explanation, atmosphe
 For an ambitious effect, record the intended benefit, interaction, supported devices, asset/rendering budget and reduced or unavailable-effect version before investing in final polish. Build a short working sample in the real composition and compare it with that simpler version. Keep the effect when it expresses the chosen direction or improves the intended exploration and meets the task contract; simplify it when it obscures information or consumes the interaction budget. A 3D scene earns its place through this decision, not through a presumption that advanced graphics are modern.
 
 Test interruption, reversal, repeated input, asynchronous completion and reduced motion. State, focus and the next action remain correct independently of animation completion. Give people control over sustained motion and retain the visible outcome when effects are reduced. Define the fallback's composition deliberately; blank space or a disabled primary task is not a finished alternative. Use [the rendering guidance](web-engineering.md#build-expressive-rendering-as-a-bounded-component) when the chosen direction requires canvas, 3D or substantial animation.
+
+For repeating or transforming graphics, inspect a complete cycle and its intermediate poses. Check the actual transform origin against the intended visible center, paired travel distances and timing where symmetry is required, stroke thickness, negative space, clipping, junction continuity, endpoint identity and the transition across the loop boundary. Matching duration alone does not establish equal apparent speed on paths of different length. Exercise pause, interruption, restart and the reduced-motion/final static state where supported. A still frame cannot establish a smooth loop; report what was actually observed.
 
 ## 11. Finish with evidence, not a style score
 

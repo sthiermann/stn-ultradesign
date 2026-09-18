@@ -14,6 +14,8 @@ Use purposeful, consistent wording. Repetition is a problem when it adds reading
 
 Load when auditing or designing navigation, forms, onboarding, wizards, settings, dialogs, search, uploads, notifications, checkout, collaboration or AI-assisted tasks. The decision rules, contracts and test scenarios are original working methods. Evaluate familiar patterns in context; a common convention is not a universal law.
 
+Use [interaction-comprehension.md](interaction-comprehension.md) to turn clarity and expected behavior into observable review questions, including what a surface promises before activation and what feedback its actual lifecycle provides.
+
 ## 1. Start with a workflow inventory
 
 Create one record per meaningful user outcome, not per screen. Cover the primary actor, occasional actor, support/admin actor and any collaborator who receives the result. Establish where users enter from: navigation, search, notification, invitation, saved link, browser history, another device or an external identity provider.

@@ -21,6 +21,8 @@ python3 -m unittest discover -s tests -v
 
 For operational changes, exercise a representative task and a meaningful counterexample. Keep detailed development evidence outside the public package and report only checks actually performed. For validator changes, cover valid and inconsistent ledgers. For visual changes, inspect the rendered result at normal and compact widths.
 
+For behavior changes, compare frozen candidate and previous skill snapshots against fixed tasks in separate fresh contexts when the host supports them. Keep participant inputs separate from reviewer rubrics and prior results, pin the task and skill fingerprints before execution, and retain failing or unavailable runs. Review observable outcomes and false-positive controls, not exact wording. Disclose prompting, isolation, tool and environment limits; source reasoning is not runtime evidence. Keep this development suite and detailed results outside the public package. Full application trials and human visual/task assessment remain separate from bounded case results.
+
 Package checks establish internal consistency. Application behavior, visual quality, successful client installation and human acceptance need their own evidence.
 
 ## Release metadata

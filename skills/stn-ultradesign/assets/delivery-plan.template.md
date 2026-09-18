@@ -12,6 +12,8 @@ Use for substantial design work with multiple stages, surfaces or contributors. 
 - Existing implementation authorization / exact approved scope:
 - Open dependencies and independent work that can continue:
 - Current artifact revision and preview:
+- Machine-readable [delivery bindings](../references/delivery-ledger.md), when applicable; planned stage obligations and pre-execution fingerprints:
+- Latest conformance check, requested evidence integrity and unresolved gaps:
 
 ## Responsibility and capability
 

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "scope": {
+    "boundary": "Replace with the actual requested delivery boundary",
+    "stage": "concept",
+    "contract_revision": "unreconciled",
+    "reconciled": false,
+    "open_questions": ["Identify the current authoritative requirements, decisions, artifacts and acceptance obligations"],
+    "audit_gate": "none"
+  },
+  "requirements": [],
+  "decisions": [],
+  "artifacts": [],
+  "obligations": [],
+  "runs": [],
+  "checks": []
+}
