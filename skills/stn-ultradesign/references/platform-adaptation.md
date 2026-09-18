@@ -67,6 +67,8 @@ Use relative and intrinsic sizing where suitable, wrap text, and cap reading wid
 
 ## 6. Test boundaries, not just device presets
 
+Execute [layout-integrity.md](layout-integrity.md) for the affected usages, including text growth, wrapping controls, intentional scroll regions and floating layers. Use its evidence fields in the existing obligation record.
+
 Use the product's supported range and representative hardware. Example CSS viewport probes such as 360, 768, 1024, and 1440 pixels are starting fixtures, not universal device definitions or conformance criteria. Add widths immediately below and above every actual breakpoint, a short landscape window, and an embedded narrow container.
 
 | Probe | Required observation |

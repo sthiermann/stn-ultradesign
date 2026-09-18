@@ -26,6 +26,16 @@ Read [analytical meaning](../references/analytical-meaning.md) for interpretatio
 - What representation and interactions exist now? What is confirmed, inferred or not observed?
 - Which information must be immediately visible, and which can be disclosed without interrupting the task?
 
+## Purpose, duplication and shared implementation
+
+Link existing family/usage records and the feature map when redesign is in scope; this section adds no second inventory. Compare related usages by question, population, time, role and available actions before deciding that they duplicate one another.
+
+| Related usage/family IDs | Additional value or overlap | Shared implementation, independent copy or meaningful difference | Keep / share implementation / propose merge or retirement, with basis | Preserved capabilities, state and authorization | Verification obligation/evidence |
+| --- | --- | --- | --- | --- | --- |
+| | | | | | |
+
+For reusable widgets, record which state belongs to each instance and verify that changing one does not alter an unrelated instance. A proposal to merge presentation is not approval to remove capabilities.
+
 ## Metric/data meaning — repeat per materially different measure
 
 For each entry, distinguish the verified definition from an assumption. State where essential meaning is visible or discoverable by keyboard, touch and assistive technology. A technical identifier alone is not a user-facing explanation.
@@ -90,6 +100,14 @@ Add a row for each transition and meaningful branch, including nested drilldowns
 | | | | | | |
 
 Context to retain or intentionally change: tenant/role, selected identity, search, filters, time range/timezone, hierarchy level, sort, page/cursor, expanded groups, selection, chart zoom and scroll. Record a logical focus successor if the original row/mark disappears. Explain breadcrumbs separately from browser Back.
+
+For a transition that changes data scope, capture the chain below in its existing obligation/evidence record. A visible filter indicator and correct-looking route do not establish the data outcome.
+
+| Transition/obligation ID | Stable source identity and starting scope | Inherited / intersected / replaced / omitted constraints and target field mapping | Effective request/response or local filtering result | Expected included and excluded identities, relevant counts/totals | Actual data, visible target scope and reset/return result | Evidence target and status |
+| --- | --- | --- | --- | --- | --- | --- |
+| | | | | | | Application / prototype / mock; pass / fail / blocked / not tested |
+
+Determine expected results independently from the safe fixture. Record relevant empty intersections, duplicate labels, late responses and paging boundaries. Keep application evidence separate from simulated results; missing access remains a verification gap.
 
 Reconcile aggregate → contributing records → detail → export where supported:
 

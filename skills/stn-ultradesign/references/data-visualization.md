@@ -99,7 +99,18 @@ Separate at-a-glance monitoring from analytical exploration. Use that distinctio
 
 Give filters visible scope, current values and a reset path. Coordinated widgets must use compatible time ranges or show exceptions. Preserve relevant state on drill-down and return. Customization needs a recoverable default, clear persistence and a non-drag reordering method. Test realistic alert volume; perpetual red states and decorative green deltas undermine interpretation.
 
-**Done when:** each widget has a decision purpose, the overview exposes priority conditions, and cross-widget comparisons are semantically valid.
+### Review purpose and duplication separately
+
+For every in-scope widget, identify the question it answers and what would be lost if it were combined with another usage. Compare purpose, measure, population, time, role, actions and placement. Classify apparent duplication before proposing a change:
+
+- **Repeated information without additional value:** propose a clearer authoritative presentation while preserving existing task access and needed context.
+- **Same behavior implemented independently:** investigate shared composition through [web engineering](web-engineering.md#reconcile-duplicate-implementations); retaining two useful placements need not require two implementations.
+- **Useful repetition:** retain distinct comparison, monitoring, standalone or recovery contexts, with consistent definitions.
+- **Similar appearance, different meaning:** retain the meaningful distinction; a shared card shape does not make unlike data or actions interchangeable.
+
+Record the decision in existing surface/family records and, for redesign, the feature map, linking affected usages. Merge or remove an existing capability only within the actual authorization; preserve roles, configuration, selection, detail paths and supported states. An unresolved purpose is a question for the user or domain owner, not automatic permission to delete a widget.
+
+**Done when:** each widget has a decision purpose, apparent duplication has a reasoned disposition, the overview exposes priority conditions, and cross-widget comparisons are semantically valid.
 
 ### Trace selection, drill and return as separate transitions
 
@@ -110,6 +121,16 @@ For each transition specify source mark/row identity, active tenant and role, fi
 For coordinated views, specify source fields, target fields, affected widgets and clearing behavior. Expose active context and reset controls with keyboard and touch access. Test multiple selections, independent local filters, empty targets and late responses to older selections.
 
 Reconcile summary, detail and export against the same authorized fixture and data revision. Explain legitimate differences in grain, time, denominator or aggregation. A deferred row expansion may fail independently; preserve it in a separate panel or destination if inline detail becomes cramped.
+
+For every supported transition that changes the data scope, verify this complete chain with an authorized fixture:
+
+1. Capture the stable source identity and current constraints; a display label or row position alone is insufficient.
+2. Define which constraints the destination inherits, intersects, replaces or intentionally leaves behind. Resolve target field/grain mappings and locked scope explicitly.
+3. Observe the effective request and response for remote data, or the executed filtering result for local data. Compare actual destination identities and relevant counts/totals with an independently determined expected set. Include a record that must match and one that must be excluded; exercise an empty intersection where meaningful.
+4. Check that destination controls, selected entity, heading and any dependent widgets describe that effective scope. Identify deliberate exceptions. A filter chip, changed URL or successful response status alone cannot establish filtering.
+5. Exercise applicable reset, Back/Forward and direct-entry behavior, then repeat with a changed selection. A late response must not replace the current scope or leave its label attached to old data.
+
+Use distinct existing ledger obligations for visible context and actual data outcomes. For example, a destination labelled for entity A that still includes excluded entity B fails the data outcome even when its layout is correct. Inspect supported paging, grouping and export against their declared populations; the visible page is not automatically the complete filtered result. Mocks demonstrate only simulated behavior. Keep unavailable application/API checks blocked or untested, and preserve their evidence gap before claiming integration is verified.
 
 ## 8. Choose tables and grids consciously
 

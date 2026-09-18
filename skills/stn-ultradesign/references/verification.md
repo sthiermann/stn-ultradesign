@@ -47,13 +47,19 @@ The reviewer challenges the current evidence independently of the author's prefe
 
 Test selectors should describe user-visible roles and names where reliable. Use stable test identifiers for ambiguous structures, not brittle coordinates or incidental CSS class names. For geometry probes, derive positions from the currently rendered target, identify the hit receiver, then activate and verify the outcome. A named-control click or class assertion cannot establish the rest of the apparent surface.
 
+## Layout and analytical integrity
+
+Before closing affected visual obligations, execute [layout-integrity.md](layout-integrity.md) in the actual owning surfaces. Record normal and stressed content, boundary dimensions, open/transient states and intended overflow exceptions. A source declaration or clean screenshot at one width is not a responsive pass.
+
+For widgets and data journeys, apply the [purpose and duplication review](data-visualization.md#review-purpose-and-duplication-separately) and [drilldown data chain](data-visualization.md#trace-selection-drill-and-return-as-separate-transitions). Verify visible scope and actual included/excluded records independently, with known fixture expectations. Keep usefulness, shared implementation, layout and data-outcome obligations separate so one successful check cannot hide another failure.
+
 ## Visual craft review
 
 Render and inspect the actual result. First assess information hierarchy and task clarity at screen scale. Then inspect alignment, spacing relationships, typography, icon weight, border/radius consistency, contrast, crop, truncation, focus, disabled states and overlay stacking.
 
 Compare with the concept at the same viewport, fixture and theme. Side-by-side images support judgment; overlay/difference images help locate drift. Investigate mismatches before changing a baseline. Legitimate font rasterization variation is different from a changed typeface or line break caused by a wrong width.
 
-For adaptive behavior, test compact, medium and expanded spaces appropriate to the app, intermediate widths around each content breakpoint, and short heights. Include text enlargement/reflow and a real on-screen keyboard check when possible. Typical fixture sizes can aid repeatability, but are not universal design breakpoints.
+Use the planned layout-integrity contexts for adaptive review; device presets alone do not establish boundary or content resilience.
 
 Check forced colors, light/dark theme where supported, reduced motion and long/RTL content where applicable. Preserve scroll and focus on transitions. Test touch access to functions that otherwise appear on hover.
 
