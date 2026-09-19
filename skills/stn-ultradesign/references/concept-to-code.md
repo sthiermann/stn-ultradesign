@@ -10,8 +10,6 @@ Start a substantial concept with a **visual thesis tied to the product's work**:
 
 Before polishing a substantial new direction, sketch materially different structural options where the existing composition is in question. Compare the location of the work, information relationships, navigation model, density and movement from overview to detail under the same real task and content. A new accent color on the same sidebar/card grid is not a structural alternative. Select and explain the strongest direction; present alternatives when the remaining choice needs the user's judgment. Keep familiar controls where they help, while giving the overall composition a reason to belong to this product.
 
-Deliver a coherent recommended direction. Offer a small number of alternatives only when there is a meaningful unresolved strategic choice: for example, a compact analyst workspace versus an approachable guided workflow. Changing only colors is not a useful alternative concept.
-
 Make the concept concrete enough that the user can judge it before application code is changed:
 
 | Artifact | What the user should be able to judge |
@@ -62,7 +60,7 @@ First complete the [critical-task walkthrough](task-flow-design.md) for the scop
 
 Then reconcile the scoped [capability walkthrough](../assets/capability-walkthrough.template.md): demonstrate where each existing action moved, what it produces and how the user returns. Exercise independent toggles and supported panel combinations instead of showing only the opening screen. A feature group cannot be called concept-complete while required child actions remain absent. Keep unfinished actions visible in the external review record and make the exact reviewable scope clear.
 
-For a multi-device concept, inspect actual renders for every target class: desktop, tablet and phone when all three are in scope, plus widths around structural changes. Record the real rendering environment, loaded fonts, content fixture and viewport; preserve reviewable evidence. Check a meaningful dense or difficult state as well as the ideal opening state. A desktop render with CSS breakpoints declared in source is not responsive proof. If rendering is unavailable, deliver a labeled draft with that limitation; do not call the visual concept finished or its craft verified.
+For a multi-device concept, inspect actual renders for each target class and widths around structural changes. Include a meaningful dense or difficult state and retain the [reproducible reference](#preserve-a-reproducible-reference). Declared breakpoints do not prove responsive behavior. Unavailable rendering leaves a labeled draft and the corresponding craft checks open.
 
 Evaluate visual quality separately from functional checks. Syntax validity, semantic HTML, a passed accessibility scan or working save action cannot establish aesthetic excellence. Examine the rendered composition at page scale, then its details:
 
@@ -101,6 +99,18 @@ Approval can be scoped: “Use variant B for the dashboard; keep exploring setti
 
 Material open questions are resolved or explicitly excluded before dependent implementation: navigation structure, destructive workflows, permission scope, critical content, and identity flows. Small details can have agreed discretion, such as optical icon alignment within the established component specification.
 
+## Preserve a reproducible reference
+
+Bind the approved scope to a restorable artifact in the [design contract](../assets/design-contract.template.md#reproducible-reference). Preserve the approved version when implementation advances. A mutable preview URL, latest build or screenshot filename alone is insufficient identification.
+
+For executable concepts, record the source/build identity, relevant uncommitted changes or snapshot fingerprint, dependency lock/build and launch recipe, token/component sources and safe fixture version. For static artifacts, retain their original files and revision with the depicted states and interaction limits. Name the applicable browser/OS, CSS viewport and owning-container dimensions, zoom, loaded font files/weights, assets, theme, locale, density and input conditions used for comparison. Freeze clocks, generated IDs or live feeds only where their variation would obscure a meaningful comparison; document the chosen fixture behavior.
+
+For each acceptance state, retain a short restoration recipe: reset/seed, route, actor and resource scope, selection and filters, scroll/focus, then actions needed to reach the state. Include meaningful open states such as an editor with unsaved values or a selector with a highlighted option. State what must survive cancel, save, failure and return. Reference existing task/obligation IDs rather than writing a second behavior contract.
+
+Retain reviewable captures or a reproducible preview; where timing or spatial continuity was approved, retain a recording or reproducible interaction and its motion/reduced-motion conditions. Reopen executable references from their recipes before handoff and compare them with retained review evidence. Record any unavailable dependency or unrecoverable state as a gap; a reconstruction is a candidate reference, not retroactive evidence of what the user approved.
+
+Use existing approval or direct-implementation authority. Restore enough evidence for the affected change without demanding a new concept approval for an already authorized repair. Design approval does not itself authorize backend security changes, production data mutations or deployment; carry those dependencies under their actual task authorization.
+
 ## What “exactly as agreed” means
 
 Agree on rules and observable outcomes in addition to pictures. A single screenshot cannot define every viewport, text length, browser, font rendering environment, or state.
@@ -115,7 +125,7 @@ Agree on rules and observable outcomes in addition to pictures. A single screens
 | Accessibility | Focus path, labels, announcements, reduced motion | Keyboard/AT and relevant automation |
 | Data visualization | Encodings, domains, units, filters, empty/missing cases | Fixture-based data and interaction checks |
 
-Define agreed freedom: fluid spacing ranges, text wrapping rules, permitted density variants and component substitutions. State fixed acceptance environments (browser, viewport in CSS pixels, zoom, fonts, data fixture, theme, locale) for screenshot comparison. Use local visual-diff tolerances justified by rendering noise; a universal pixel-difference percentage cannot establish equivalence.
+Define agreed freedom: fluid spacing ranges, text wrapping rules, permitted density variants and component substitutions. Compare in the recorded reference conditions. Use local visual-diff tolerances justified by rendering noise; a universal pixel-difference percentage cannot establish equivalence.
 
 Changes to technical internals are within implementation discretion when the observable contract is preserved. Changes to approved information order, navigation, color meanings, wording, interactions, or component behavior are design changes and require the relevant concept revision. Do not silently substitute fonts or icons because they were inconvenient to obtain.
 
@@ -123,11 +133,11 @@ If a font lacks a suitable license, a control cannot support the required access
 
 ## Implement from the contract
 
-1. Reconcile the active requirements, approved contract and applicable reference profile; link acceptance IDs to affected usages and verification methods. Close neither an untested requirement nor a declared exclusion as a pass.
-2. Implement shared tokens and primitives, then a real vertical slice of a critical journey.
-3. Render the slice with the agreed fixture and compare it with the approved artifact.
-4. Resolve deviations before expanding the pattern across the application.
-5. Complete remaining agreed surfaces and states, keeping the traceability table current.
+1. Restore the approved reference and reconcile its active requirements, affected usages and acceptance methods. Keep unavailable reference states explicit.
+2. Choose reuse or necessary translation using [web-engineering.md](web-engineering.md#reuse-the-concept-in-the-application). Identify the actual shared tokens, components and data/state boundaries; implement one critical journey against real application state within the authorized test environment.
+3. Restore matched concept and implementation states. Compare appearance and applicable save, cancel, failure and return outcomes against their separate expectations. Verify committed state or the authoritative result where applicable; a simulated success is insufficient.
+4. Resolve the slice's required discrepancies before propagating its pattern. Keep rendering noise, implementation defects, specification gaps and authorized departures distinct. Regenerating the reference does not resolve a changed layout or outcome.
+5. Extend the proven components/adapters to the remaining agreed usages and states. Run the family checks after integration and keep each acceptance result tied to the current artifact revision.
 
 Reference images are comparison evidence, not a reason to hardcode all coordinates. Use resilient web layout that follows the agreed constraints. Preserve semantics and usable order when adapting the visual design.
 

@@ -14,6 +14,25 @@ Complete only sections relevant to this project. Remove unused sections with an 
 - Authoritative requirement register path/revision (or inline equivalent):
 - Selected reference profile path/revision and applicable rule IDs, if any:
 
+## Reproducible reference
+
+Use [concept-to-code.md](../references/concept-to-code.md#preserve-a-reproducible-reference). Link existing build, fixture and task records; fill only conditions that affect this scope. Keep the approved reference distinct from the evolving implementation.
+
+- Approved source/build identity, relevant changes or snapshot fingerprint, and retained artifact location:
+- Dependency lock, build/launch recipe and safe fixture identity/reset procedure:
+- Token/component source paths and revisions; font files, loaded weights and asset identities:
+- Browser/OS, CSS viewport and container sizes, zoom, theme, locale, density and input conditions:
+- Relevant deterministic clock/feed behavior, motion and reduced-motion settings:
+- Restore check: date, restored artifact identity, capture comparison and unavailable dependencies:
+- Implementation reuse or translation: component/token equivalents, adapter/state-owner paths, constraint and comparison evidence:
+- First real journey and acceptance IDs; matched appearance/behavior evidence; discrepancies resolved before expansion:
+- Existing concept/direct-implementation authority and separately authorized backend, production or deployment work:
+
+| Reference state / existing obligation IDs | Reset, route, actor/scope and steps to restore | Selection, filters, draft, scroll/focus and open surface | Capture or interaction evidence / artifact identity |
+| --- | --- | --- | --- |
+
+Include meaningful open states and link their save, cancel, failure and return expectations. Preserve motion evidence when timing is part of approval. A reconstructed state remains unverified against the approval until supported; updating the baseline cannot close a discrepancy.
+
 ## Discovery and preference basis
 
 - Design brief path and version:
@@ -93,10 +112,15 @@ Classify affected actions before assigning shared primitives. Include direct com
 
 ### Shared family behavior
 
-| Family contract ID / decision | Applicable task family and all usage IDs | Placement / adaptation / modality | Header, actions, save and dismissal | Motion / reduced motion / focus entry and return | Shared primitive or adapter / local implementations | Approved exception or unresolved proposal | Integrated revision / per-usage evidence |
-| --- | --- | --- | --- | --- | --- | --- | --- |
+| Family contract ID / decision | Applicable task family | Placement / adaptation / modality | Header, actions, save and dismissal | Motion / reduced motion / focus entry and return | Justified variant or exception / authority |
+| --- | --- | --- | --- | --- | --- |
 
-Apply the user's actual choice; no drawer side or dialog placement is a package default. Reconcile newly added modules and opening paths before presenting the integrated revision. An untested local implementation or library default is a gap, not an approved exception.
+Map each affected consumer to the family above using actual project paths, including wrappers, local copies and responsive replacements. Link an existing equivalent usage inventory rather than duplicating it.
+
+| Family / usage ID and runtime entry | Component / wrapper / call-site paths | Adapter / state-owner paths and variant reason | Integrated revision / acceptance IDs / per-usage evidence or gap |
+| --- | --- | --- | --- |
+
+Apply the user's actual choice; no drawer side or dialog placement is a package default. Reconcile newly added modules before presenting the integrated revision. Preserve specialized content, keyboard behavior and draft state through consolidation. An untested local implementation is a gap; a valid intentional variant keeps its reason and authority.
 
 - Action-level baseline and retrieval walkthrough:
 - Supported independent overlays, concurrent panels and persistence contract:
@@ -119,6 +143,7 @@ Inspect the open selector as well as its trigger, invalid fields with focus, sel
 - Existing chart types, graph interactions and thresholds retained or specifically redesigned:
 - Widget anatomy and event lifecycle comparison, including series, values, icons, units, status meaning, placement and concurrent items:
 - Actual role records, permission keys and role-management actions mapped without substituting presentation categories:
+- State-model, default-resolution and save-path references; expected-versus-observed cases for unset values, partial edits, role combinations and domain interactions:
 - Added capabilities and backend dependencies, separately identified:
 
 | Feature / variant ID | Current actor, capability and resource scope | Approved destination and behavior | Locale / theme / density rules and preference persistence | Allowed variation | Acceptance IDs |
@@ -135,7 +160,7 @@ Link the [requirement register](requirements.template.md) and its acceptance obl
 
 For rendered-layout obligations, record the [layout integrity](../references/layout-integrity.md) plan: affected usages and owning containers, normal/stressed fixtures, relevant breakpoint and short-height cases, permitted wrap/scroll/overlay behavior, and separate visual/hit-testing results. Link required zoom, text-spacing, keyboard and device checks; retain unavailable checks as gaps. For analytical surfaces, link separate purpose/duplication and actual filter-result obligations from the [analytical surface record](analytical-surface.template.md).
 
-For screenshot comparisons record browser, CSS viewport and container size, zoom, data fixture, fonts, locale, theme, density, expected scroll position and justified tolerance.
+Link screenshot comparisons to the reproducible reference state above. For a known geometry defect, name the exact visible relationship, affected consumers, applicable dimensions, allowed tolerance/exception and fresh comparison evidence in its acceptance obligation.
 
 Report visual/craft assessment separately from behavioral, accessibility and syntax results. A technical pass does not satisfy an unapproved or rejected visual direction.
 

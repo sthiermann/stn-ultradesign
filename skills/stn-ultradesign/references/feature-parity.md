@@ -8,9 +8,25 @@ For audit-only work, record the current baseline and gaps using `audit-method.md
 
 ## Establish the baseline
 
-Record the source revision, working-tree changes relevant to the UI, runtime environment and date. Reconcile source routes, navigation, dialogs, drilldowns, conditional components, documentation and observed behavior. Identify the available actors and access scopes. If only a normal user's session is available, keep administrative surfaces discovered in source as explicit runtime gaps. Never label them absent merely because that user cannot reach them.
+Begin with the [UI-led task inspection](verification.md#minimum-useful-interaction-pass), then reconcile source routes, navigation, dialogs, drilldowns, conditional components and documentation with observed behavior. Record source revision, relevant working-tree changes, runtime environment and date. Identify available actors and access scopes. Keep administrative surfaces discovered in source as runtime gaps when the available user cannot reach them; they are not absent.
 
 Create a feature map using [the template](../assets/feature-map.template.md). Give each capability a stable ID and link it to the audit's surface, usage, workflow and transition IDs where applicable. A feature is a meaningful user outcome or control with a behavior contract, not just a menu item. Split a row when actors, side effects, state behavior or preservation decisions differ. For example, viewing a chart, editing its threshold and exporting its underlying data can require separate rows even when they share one widget.
+
+### Preserve state semantics before replacing the UI
+
+For affected domain behavior, trace the existing state model, data adapters, default resolution, validation, permission rules and save path before choosing reuse, adaptation or simulation. Record their actual source paths and baseline revision in the feature's detailed record. Compare observed behavior with documented intent; a baseline defect remains a finding, not an automatic preservation requirement.
+
+Turn each consequential invariant into a safe fixture and independently stated expected outcome before implementing its replacement. Use the existing acceptance/task records for these cases:
+
+| Behavior boundary | Expectation to establish from the product |
+| --- | --- |
+| Defaults and unset values | Meaning of omitted, inherited, explicit, null, empty, zero and false values where distinct; fallback source and what editing or saving materializes |
+| Partial edits and collections | Patch/merge versus replacement, fields and entries that must remain unchanged, validation and concurrent-update behavior |
+| Role/resource combinations | Effective grants and restrictions for relevant combinations, including secondary entry points; separate visibility from action authority |
+| Draft and committed state | What changes immediately, what waits for save, and what survives cancel, failure, switching context and reopening |
+| Domain interactions | Selection, navigation, live/pause and recovery semantics; for a graph, meaningful node/edge relationships as well as its appearance |
+
+Record starting state, action, expected result and preserved state, then observed result, method, artifact revision and evidence or gap. Run the same case through the baseline and proposed implementation where feasible; label concept simulations separately. Inspect the authoritative saved state when the claim concerns persistence. Field presence alone cannot prove these outcomes, and expected results copied from the new implementation cannot detect a changed contract. Resolve unknown business meaning from available evidence or a focused question; keep that case open meanwhile.
 
 ### Reconcile controls, states and simultaneous work
 
@@ -72,7 +88,7 @@ Keep personal account settings distinct from installation, organization or proje
 
 UI inspection establishes presentation behavior, not server-side authorization. Preserve known API contracts and identify backend dependencies. Use the access and privacy boundary in `SKILL.md`; feature discovery is not permission to obtain secrets or alter real roles.
 
-When editing a partially visible collection or configuration, establish whether saving merges changes or replaces the whole collection. Hidden or unauthorized entries must not become implicit deletions merely because they are absent from the editor. Preserve those entries without revealing their contents, or clearly limit editing when the backend cannot safely retain them. Verify save, cancel and concurrent updates under the relevant restricted role with safe fixtures. This applies to saved views, shared lists, group membership and other scoped collections that actually exist in the product.
+Apply the state-semantics cases to partially visible collections: hidden or unauthorized entries must survive an allowed edit without disclosure. If the backend cannot safely retain them, make that limitation explicit and resolve the affected editing contract. Verify restricted-role save, cancel and concurrent updates using safe fixtures.
 
 ## Treat supported preferences as product capabilities
 

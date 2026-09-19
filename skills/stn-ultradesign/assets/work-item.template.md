@@ -22,6 +22,7 @@ For a focused fix, requirement and result links may point to sections in this sa
 - For construction: agreed behavior and specification links; meaningful unresolved inputs:
 - For verification: integrated artifact/revision and acceptance obligations to exercise:
 - Ready to start because / blocked by / independent work that may continue:
+- Concrete closure condition for this increment; parent outcomes that stay open:
 
 ## Acceptance and execution
 
@@ -29,7 +30,7 @@ Link the precise acceptance definitions rather than inventing a second specifica
 
 - Acceptance IDs due for this item and where their definitions/results live:
 - Work performed and resulting decision or artifact revision:
-- Integration and affected consumer checks:
+- Integration and affected consumer checks, including actual component paths and justified variants where relevant:
 - Existing evidence/result record, with expected versus observed outcomes, context and discrepancies:
 
 If no verification record exists, use the following small table here; otherwise link the existing one.
@@ -42,6 +43,6 @@ If no verification record exists, use the following small table here; otherwise 
 - Every due acceptance ID accounted for; unresolved, failed or stale checks:
 - Decision authority or owner acceptance where actually required:
 - Current result: decision resolved / concept demonstrated / implemented / verified, with exact scope:
-- Remaining parent obligations, affected dependent items and next action:
+- Remaining parent obligations, affected dependent items and next action; authoritative index updated:
 
 Close only the evidenced scope. A worker's completion message, a written requirement or an unchanged old screenshot is not verification. Changed requirements or artifacts reopen the affected checks.

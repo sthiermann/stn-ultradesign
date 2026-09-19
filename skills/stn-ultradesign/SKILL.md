@@ -1,6 +1,8 @@
 ---
 name: stn-ultradesign
 description: Audit application UI/UX, discover individual design preferences, preserve existing features through traceable redesigns, and implement approved concepts faithfully across desktop, tablet, and mobile. Use for substantial frontend reviews, workflow redesigns, design-system work, and concept-to-code projects; a small unrelated code fix does not trigger a whole-product audit.
+metadata:
+  version: "0.9.0"
 ---
 
 # STN Ultradesign
@@ -17,6 +19,14 @@ Turn observed user needs into coherent interfaces and complete workflows. Produc
 Do not turn a scoped request into a full audit. **A requested full audit must inspect every discovered page, component usage, widget, dialog, drilldown level and defined workflow transition in scope.** Representative screens are insufficient. Test each item's relevant states, roles, input and responsive configurations. Shared-component review must be accompanied by checks in every usage context. Reconcile static routes with runtime navigation, overlays, lazy content and permission-dependent surfaces. Track inaccessible or untested items as gaps; do not claim full completion until resolved. A reduced sample is a scope change requiring the user's agreement.
 
 For full audits, maintain the schema-2 inventory and planned obligations from `audit-method.md` before recording results. Link usages to their surfaces/families and transitions to endpoints/workflows. Plan finite, justified behavior classes per entity; do not multiply every global dimension onto every screen. Newly discovered entities, contexts or branches reopen reconciliation. Source inspection cannot close runtime obligations; missing access is blocked, not inapplicable. An approved sample can finish its agreed scope but never completes the original full-audit coverage claim.
+
+## Start or resume with an executable next step
+
+Before substantial work continues, read [delivery-workflow.md](references/delivery-workflow.md#start-at-the-actual-state-of-the-project) and recover the current work index, source/build, decisions, unresolved feedback and actual approval boundary. Identify this installed skill's path and `metadata.version`; record a revision or content hash when reproducibility matters. A website version or an earlier message does not establish which instructions are loaded. On an upgrade, reconcile existing records and read the changed branches needed for the next item; preserve answered questions, valid approvals and unrelated evidence.
+
+Select one ready outcome from that index, read its relevant references and carry it through **artifact → integration → actual checks → expected-versus-observed result**. Independent work can run in parallel within clear ownership boundaries. Bind evidence to each independently testable obligation; split an unclosable bundle while retaining its full parent scope. A list of planned or `not-tested` checks is a plan, not delivery progress. After a change, recheck affected consumers and update the authoritative current state before expanding dependent work.
+
+For concept-to-code work, freeze a reproducible [approved reference and state recipe](references/concept-to-code.md), preserve business behavior as well as visible features, and prove one real journey in the target stack before propagating its components. At presentation or handoff, name the exact artifact, evidenced scope, remaining obligations and next action. Never infer approval or passing evidence from an agent's completion message.
 
 ## Keep account and access reviews about the experience
 

@@ -27,6 +27,6 @@ Package checks establish internal consistency. Application behavior, visual qual
 
 ## Release metadata
 
-Keep the version in both plugin manifests and the README current-release declaration synchronized. Use patch releases for compatible corrections and minor releases for new capabilities. Before 1.0, incompatible artifact or schema changes require a minor release and user-facing migration guidance; after 1.0, use a major release. Run the relevant checks before publishing.
+Keep the version in both plugin manifests, the installed skill's `metadata.version` and the README current-release declaration synchronized. Use patch releases for compatible corrections and minor releases for new capabilities. Before 1.0, incompatible artifact or schema changes require a minor release and user-facing migration guidance; after 1.0, use a major release. Run the relevant checks before publishing.
 
 Keep installation instructions aligned with supported client behavior. Adding hooks, external integrations or dependencies requires a justified change to the package's intended scope.

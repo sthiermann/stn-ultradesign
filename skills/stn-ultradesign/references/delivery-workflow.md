@@ -6,7 +6,15 @@ Use this operating workflow for substantial concepts, redesigns and design-syste
 
 Establish the requested outcome, current scope and authorization. Continue from an already approved concept without reopening settled choices. For a focused repair, use only the affected requirements, implementation and review steps. Audit-only work uses [audit-method.md](audit-method.md) and stops at findings unless design work is requested. These are working stages, not eight mandatory approval meetings.
 
-Read the existing framework, components, domain behavior and owner's answers first. Carry a current contract revision through each stage. When new evidence contradicts a decision, reopen only the affected part and its consuming surfaces. A preference cannot be satisfied merely by writing it into a brief: it needs an observable consequence in the artifact.
+At the beginning, after a restart or skill update, and before integrating substantial feedback, reconcile these inputs in the existing work index:
+
+1. **Instructions actually used:** read the installed entrypoint and the branches needed for the next item. Record the path and `metadata.version`, plus a content hash or revision for repeatable evaluations. If the installation differs from the recorded version, identify the procedural changes affecting this stage. Never infer a running task's version from the latest public release.
+2. **Actual product and concept:** identify source revision and local changes, running entrypoint/build, current concept and its state recipe. Resolve stale launch instructions and revision labels before relying on a preview. Do not discard earlier work or revert product changes to start this reconciliation.
+3. **Authority and decisions:** recover the owner's original requests, answered and pending questions, unresolved feedback and scoped approvals. Reconcile recent conversation with the register; a register can lag behind the conversation. Reopen only affected decisions. Do not repeat a settled interview or invent acceptance of a changed design.
+4. **Current execution:** find the authoritative index, tickets, obligations and actual results. If only historical reports exist, add a compact current-state index linking them. Preserve historical evidence; mark obsolete entrypoints and decisions as superseded. Keep detailed requirements in one place.
+5. **Next bounded outcome:** choose a ready item with an owner, dependent references, observable checks and a closure condition. Name what can continue independently of a pending question. Then execute that item; reconciliation is preparation, not the deliverable.
+
+Carry the resulting contract revision through each stage. A skill upgrade changes the operating instructions, not the product requirements or approval authority. Preserve valid evidence within the ledger's binding rules; do not relabel stale results as current to finish migration. A preference needs an observable consequence in the artifact, not merely an entry in the brief.
 
 ## Assign responsibilities, not fictional staff
 
@@ -48,7 +56,15 @@ Before assigning work, reconcile current state and dependencies, claim one owner
 
 At closure, link the decision or changed artifact, executed checks and current evidence. Integrate changes and inspect affected consumers before marking an implementation item done; a verification item cannot pass on the author's summary. Record a narrower verified increment without closing the remaining parent scope. New feedback updates affected items, dependencies and acceptance checks, reopening stale results while preserving completed unrelated work. Rejected or superseded proposals retain their disposition; outstanding product capabilities remain in scope unless the user actually changes that scope.
 
-Compare each due acceptance obligation with the actual result, one by one, using the original requirement and latest decision rather than the implementer's paraphrase alone. Record expected behavior, observed behavior, revision/context, evidence and any discrepancy. A missing, failed, stale or unexecuted required check prevents closure of that scope. Correct discrepancies and recheck affected usages; an explicit scope change records what remains outside the claim instead of turning a failed criterion into a pass. Close the parent only after its active in-scope obligations are reconciled. This requires traceability for every known requirement; it does not justify a promise of perfect discovery or error-free execution.
+Close each increment through this sequence:
+
+1. Compare due acceptance obligations with the original requirement and current decision, before executing their checks. Split independently observable results when a bundle cannot distinguish a completed part from an untested part; preserve all parent outcomes and links.
+2. Produce the agreed artifact, integrate it and exercise the relevant consuming surfaces. Capture actual observations, including failures, against the bound revision and context. An isolated worker result is not the integrated product.
+3. Link expected versus observed outcomes, method, evidence and discrepancies to the acceptance IDs. Use current local evidence integrity when configured. A planned checklist, archived report without result bindings or `not-tested` entry cannot close an obligation.
+4. Correct discrepancies and recheck affected usages. Preserve failed runs as history. Close only items whose own due conditions are evidenced; keep missing, failed, stale, blocked and unexecuted parent obligations open.
+5. Update the authoritative index with the result revision and next concrete action. Verify that the preview and review instructions point to the same revision. Expand dependent work only from that checked increment.
+
+Use the [delivery checker](delivery-ledger.md) for per-obligation diagnostics where a ledger exists. A detail filter helps choose work; it never narrows the declared scope or makes global readiness pass. Explicit scope changes retain their authority and exclusions. Traceability for known requirements does not establish perfect discovery or error-free execution.
 
 Report progress by outcomes and names, such as “Notification editor: implemented, visual review pending.” Ticket counts measure the planned work only; they do not prove exhaustive discovery, design quality or user acceptance.
 
@@ -111,9 +127,7 @@ Review [verification.md](verification.md) and its relevant browser/task checks. 
 
 ## Keep autonomous work grounded and resumable
 
-At each handoff or resumption, recover the current brief, active decisions, artifact revision, completed checks and open dependencies before continuing. Compare the actual files and running state with that record. Carry forward approved preferences and authorizations; reopen only affected decisions. Resolve ordinary implementation details within the agreed direction, and ask focused questions when domain meaning, a consequential tradeoff or authority is missing. An unanswered optional preference remains a proposal, not an approval.
-
-Keep the skill path/version, active stage, unanswered question IDs, unresolved owner feedback and next due checks in the existing delivery record. At a restart, integration or substantial feedback change, recover this state and read the affected skill branch. Re-reading the entrypoint alone is not evidence that its checks ran. Give one lead ownership of the user-facing interview; contributors return suggested questions to that lead instead of starting competing interviews.
+Use the [resumption sequence](#start-at-the-actual-state-of-the-project) instead of conversational memory. Resolve ordinary implementation details within the agreed direction; ask only when domain meaning, a consequential tradeoff or authority is missing. An unanswered optional preference remains a proposal. Re-reading the entrypoint is not evidence that its checks ran. One lead owns the user-facing interview; contributors return suggested questions to that lead instead of starting competing interviews.
 
 Separate observed facts, source-declared behavior, authoritative requirements, design judgments and untested hypotheses. Check applicable current guidance when a recommendation depends on a standard, platform generation or API. Do not convert a plausible convention into a worldwide requirement or invent a business threshold to make a widget look complete. Tie consequential choices and claims to inspectable evidence or a clearly stated limit.
 
