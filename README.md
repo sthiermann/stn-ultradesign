@@ -15,13 +15,14 @@ Bring your brand. Set the direction. Review the experience before it ships. Use 
 
 [**Explore the interactive website →**](https://sthiermann.github.io/stn-ultradesign-website/) · [Install the skill](docs/installation.md) · [Start a redesign](#put-it-to-work) · [Explore the workflow](#a-complete-path-from-requirements-to-delivery) · [Read the skill](skills/stn-ultradesign/SKILL.md)
 
-Release **v0.7.0** · [MIT license](LICENSE) · Codex + Claude Code
+Release **v0.8.0** · [MIT license](LICENSE) · Codex + Claude Code
 
 [![Package checks](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml/badge.svg)](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml)
 
 ## What your redesign gains
 
 - **A direction that belongs to your product.** Your brand, preferences and chosen references become shared rules for layout, typography, color, components and motion.
+- **Guided decisions, at your pace.** Questions include a reasoned recommendation and its tradeoff. One active question or agreed small batch keeps your answers connected to the work.
 - **A clear place for existing capabilities.** A feature map connects current actions, role-specific controls and workflows to their proposed destinations. Unresolved coverage stays visible.
 - **An experience you can review.** Interactive concepts expose navigation, editing, menus, data, drilldowns and recovery paths across relevant devices and states.
 - **A design that carries into the code.** Accepted decisions guide frontend implementation; separate review and verification check the result against those decisions.
@@ -93,7 +94,7 @@ The [delivery workflow](skills/stn-ultradesign/references/delivery-workflow.md) 
 
 A monitoring workspace needs useful image coverage and fast exception detection. An editor needs room to work. An administrative change needs clear consequences and recovery. The skill establishes the main task, meaningful unit of work and operating conditions before allocating screen space.
 
-Substantial concept work begins with **at least 20 meaningful preference questions** tailored to the product. Confirmed answers carry forward; ask more when an unresolved decision materially affects the outcome. The brief covers character, density, hierarchy, typography, color, shape, motion and device behavior. It distinguishes user preference from product constraints and applicable standards.
+Substantial concept work covers **at least 20 meaningful preference questions** tailored to the product, including answers you have already given. Questions arrive one at a time or in an agreed small batch, with a recommendation, its basis and its tradeoff. Further questions address material unknowns as they emerge. The brief covers character, density, hierarchy, typography, color, shape, motion and device behavior. It distinguishes your preferences from product constraints and applicable standards.
 
 Existing identity becomes a deliberate input. Decide what to preserve, evolve or replace across typography, palette, shapes, icons, imagery, voice, layout, motion and materials. Those boundaries carry into the component system and design contract. See [discovery and preferences](skills/stn-ultradesign/references/discovery-and-preferences.md) and [brand discovery](skills/stn-ultradesign/references/brand-discovery.md).
 
@@ -106,6 +107,8 @@ When you choose a design language, the skill investigates its relevant platform 
 Changing a decision reopens the checks that depend on it. Existing answers remain valid elsewhere. Missing evidence, untested behavior and proposed exceptions stay visible; a broad approval or a successful code check cannot silently close them. Concrete reference research stays with your project, outside this reusable package.
 
 Explore [requirements and conformance](skills/stn-ultradesign/references/requirements-conformance.md) and [reference research](skills/stn-ultradesign/references/project-research.md).
+
+For work spanning sessions or contributors, [bounded work items](skills/stn-ultradesign/references/delivery-workflow.md#execute-bounded-work-items) connect decisions, concept or implementation tasks, and verification. Each has an outcome, dependencies, an owner and precise acceptance criteria checked against actual results. Completed decisions stay distinct from completed features; unresolved work remains visible when the design changes. Local Markdown is the default, with existing design records or an explicitly required tracker reused. No tracking-service setup is required.
 
 ## Visual craft belongs in the system
 

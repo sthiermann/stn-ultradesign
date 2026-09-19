@@ -23,6 +23,35 @@ These are responsibilities. The delivery lead can also perform a design or engin
 
 Use only tools and agent capabilities available in the current host. This skill does not install an autonomous team, start background workers or grant permissions. If independent review is unavailable, perform separate self-review passes, identify them honestly and retain that verification limit. Renaming a single agent's perspective does not create independent review.
 
+## Execute bounded work items
+
+For a redesign spanning sessions, multiple contributors or substantial feedback cycles, turn the existing requirements into executable work items. Default to local Markdown, without asking the user to configure a tracking system. Reuse the current design effort's records and location; honor an explicitly required tracker or repository convention. Otherwise create `.ultradesign/<effort>/` in the target project and briefly tell the user where the records live and how work will proceed. Ask only if ownership, location or conflicting instructions materially change the work. Creating remote issues, publishing private evidence or sending notifications needs the relevant authorization; local records are not automatically publication-ready.
+
+Use `plan.md` from the [delivery record](../assets/delivery-plan.template.md) as the index, `requirements.md` from the [requirement register](../assets/requirements.template.md) as the source of acceptance obligations, `tickets/UD-001-short-title.md` from the [work-item template](../assets/work-item.template.md) for each nontrivial item, and `evidence/` for actual review artifacts. These are defaults, not parallel copies of existing records. Create only what the task needs; a focused repair can use one compact record. Tickets link requirements and evidence rather than restating their changing details.
+
+Distinguish work that **resolves an open decision**, work that **builds a concept or approved implementation**, and work that **verifies an integrated result**. Link them through stable requirement and acceptance IDs. An answered decision does not finish its implementation, and a worker's completed artifact does not finish its review. Record ordinary delegated choices inside their affected item instead of making the owner approve every component detail.
+
+Each item needs a meaningful title, the user outcome/problem, source requirement IDs, current decision revision, preserved capabilities and roles, bounded deliverable/files, dependencies, accountable owner, observable acceptance checks and the evidence needed to close it. Add the scope-specific skill references. A decision item states the uncertainty, supported recommendation and tradeoffs; a construction item states the agreed behavior; a review item states the artifact/revision and checks to exercise. Specify independent outcomes rather than a ticket for every file or visual knob.
+
+Work through items with explicit state:
+
+| State | Meaning and next action |
+| --- | --- |
+| Queued | Relevant work is recorded, but inputs, ownership or scope are not ready. Keep the uncertainty visible. |
+| Ready | The bounded outcome, inputs, authority and acceptance checks are sufficient to start; required dependencies are resolved. |
+| In progress | One owner has claimed the item and is producing the decision, artifact or evidence. |
+| In review | The result and its revision are linked; the required verification or owner judgment remains open. |
+| Done | The item's own acceptance conditions have evidence and any required decision has its actual authority. Name whether this completes a decision, a concept increment, implementation or verification. |
+| Blocked | A named missing input or failed dependency prevents progress. Record the next resolving action; independent items can continue. |
+
+Before assigning work, reconcile current state and dependencies, claim one owner per output boundary and select ready items. Default to completing one coherent workflow increment through integration and review before expanding it. Parallelize independent inspection or review; parallel construction is appropriate only when outputs and shared component contracts are settled. Serialize shared navigation/component decisions and the human interview. A waiting owner question does not block unrelated inspection. A worker receiving a stale contract must reconcile affected work before integration. On resumption, read the item and linked current decisions instead of relying on conversational memory.
+
+At closure, link the decision or changed artifact, executed checks and current evidence. Integrate changes and inspect affected consumers before marking an implementation item done; a verification item cannot pass on the author's summary. Record a narrower verified increment without closing the remaining parent scope. New feedback updates affected items, dependencies and acceptance checks, reopening stale results while preserving completed unrelated work. Rejected or superseded proposals retain their disposition; outstanding product capabilities remain in scope unless the user actually changes that scope.
+
+Compare each due acceptance obligation with the actual result, one by one, using the original requirement and latest decision rather than the implementer's paraphrase alone. Record expected behavior, observed behavior, revision/context, evidence and any discrepancy. A missing, failed, stale or unexecuted required check prevents closure of that scope. Correct discrepancies and recheck affected usages; an explicit scope change records what remains outside the claim instead of turning a failed criterion into a pass. Close the parent only after its active in-scope obligations are reconciled. This requires traceability for every known requirement; it does not justify a promise of perfect discovery or error-free execution.
+
+Report progress by outcomes and names, such as “Notification editor: implemented, visual review pending.” Ticket counts measure the planned work only; they do not prove exhaustive discovery, design quality or user acceptance.
+
 ## Run the stages with observable exits
 
 | Stage | Work and visible result | Exit condition |
@@ -43,6 +72,8 @@ Work may loop between stages: a component experiment can reveal a better composi
 Follow [discovery-and-preferences.md](discovery-and-preferences.md) and [brand-discovery.md](brand-discovery.md). A substantial concept covers at least twenty relevant preference questions early, including previously answered ones, then adds questions when the product exposes material uncertainty. Ask only what cannot be responsibly established from available evidence or prior decisions. Respect explicit delegation and distinguish optional taste from an unresolved dependency.
 
 Use [requirements-conformance.md](requirements-conformance.md) for the authoritative request-to-result chain, decision states, acceptance obligations and change handling. Link existing brief, feature-map and contract IDs rather than copying competing records into each worker's notes. For example, keeping a comparison visible affects panel geometry, narrow-layout return, focus and modality; “use a modern panel” does not define those outcomes. Confirm a material interpretation through a concrete example or focused question; proceed within already delegated choices.
+
+Before a critical journey determines the composition, distinguish its existing behavior from the proposed change: entry, object, opening surface, context that stays visible, role-dependent information, outcome and return. Resolve material ambiguity in words such as “beside,” “details” or “fullscreen” through that concrete walkthrough. An overlay and a pane that resizes the workspace are different decisions. A chosen default does not remove an existing user-selectable mode. Carry these outcomes into the shared interaction contract before parallel page construction.
 
 ### Creative direction is a real work product
 
@@ -82,6 +113,8 @@ Review [verification.md](verification.md) and its relevant browser/task checks. 
 
 At each handoff or resumption, recover the current brief, active decisions, artifact revision, completed checks and open dependencies before continuing. Compare the actual files and running state with that record. Carry forward approved preferences and authorizations; reopen only affected decisions. Resolve ordinary implementation details within the agreed direction, and ask focused questions when domain meaning, a consequential tradeoff or authority is missing. An unanswered optional preference remains a proposal, not an approval.
 
+Keep the skill path/version, active stage, unanswered question IDs, unresolved owner feedback and next due checks in the existing delivery record. At a restart, integration or substantial feedback change, recover this state and read the affected skill branch. Re-reading the entrypoint alone is not evidence that its checks ran. Give one lead ownership of the user-facing interview; contributors return suggested questions to that lead instead of starting competing interviews.
+
 Separate observed facts, source-declared behavior, authoritative requirements, design judgments and untested hypotheses. Check applicable current guidance when a recommendation depends on a standard, platform generation or API. Do not convert a plausible convention into a worldwide requirement or invent a business threshold to make a widget look complete. Tie consequential choices and claims to inspectable evidence or a clearly stated limit.
 
 Use distinct review passes: the author checks the task and artifact; a separate reviewer, where available, challenges original requirements, interpretation, failure paths and visual craft; the integrated correction is then rechecked at its new revision. Give reviewers raw inputs and acceptance conditions without the author’s desired verdict. Include a valid counterexample so a rule does not reject useful variation. Repeating the same opinion is not another test. If a defect survives a correction, investigate its cause and dependencies rather than accumulating cosmetic overrides.
@@ -93,6 +126,18 @@ Continue authorized work through corrections and affected-usage regression check
 For each worker provide the task, required skill branch, current requirement/contract/profile revisions, original request and decision references, baseline and input artifacts, exact allowed outputs/files, complete affected requirement/rule/capability IDs, deferred or blocked obligations, tools available and completion evidence. Reviewers receive the original inputs as well as the author's summary. Require workers to return the revisions they used; stale decisions reopen the affected result before integration. The [delivery record](../assets/delivery-plan.template.md) contains the minimal handoff fields. Preserve existing authorization; do not give a worker broader production or external-action permission than the project has.
 
 Parallelize independent discovery, reference investigation or review. Settle shared navigation, tokens and component contracts before parallel page construction. Assign one owner per shared file or use an explicit integration boundary. Workers return artifacts and concise findings; the lead inspects their actual result and reconciles contradictions. A worker's “done” message is not an integration check.
+
+## Check the actual review package before presenting it
+
+Use the existing delivery record for a short checkpoint, scaled to the next claim. Early direction previews remain useful; they need checks of their depicted tasks, not evidence for every unfinished page. A complete concept needs its full due-stage coverage.
+
+1. **Loaded artifact:** identify the actual preview entrypoint/build and revision. Make the review frame, linked brief, capability summary and launch instructions describe that same artifact; archive or clearly supersede stale entrypoints.
+2. **Review scope:** name what the user can exercise now and retain outstanding capabilities by ID, current/proposed location and next work. When replacing a broad concept with a smaller direction study, retain the former artifact as a comparison and give an accessible scope map outside the product canvas. A general promise that other features remain is insufficient.
+3. **Requirements and feedback:** trace the relevant original answers and unresolved criticisms to the candidate, including qualifiers and role-dependent behavior. Check the integrated usages, not just shared primitives. Aesthetic rejection is distinct from a technical failure and remains a design outcome to resolve.
+4. **Executed checks:** inspect the depicted critical paths and changed component families with demanding content, open controls and applicable device/input contexts. Connect actual results to existing obligation IDs and current evidence; update the delivery bindings when used. Archived test notes with no current result mapping do not complete this step. Keep rendering, source review, interaction checks and owner acceptance distinct.
+5. **Next decision:** state the demonstrated scope, remaining gaps and the specific judgment sought. Freeze the compared artifact while that question is active; perform unrelated work separately. If a necessary fix changes what the user is judging, identify the new revision and affected comparison explicitly.
+
+If a due check is unavailable or fails, deliver a bounded draft or report the blocker instead of upgrading the claim. A validator checks the records; it cannot establish that the interface was observed or that its design is good.
 
 ## Report the next real decision
 

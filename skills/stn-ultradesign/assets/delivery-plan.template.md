@@ -5,15 +5,20 @@ Use for substantial design work with multiple stages, surfaces or contributors. 
 ## Current work
 
 - Requested outcome and original scope:
+- Local record location / existing records reused / explicitly required tracker, if any:
 - Current stage and reviewable increment:
+- Skill path/version and affected references used for this increment:
 - Product/source baseline and observed runtime:
 - Current brief, preference record and design contract:
 - Authoritative [requirement register](requirements.template.md) and selected reference profile revisions:
 - Existing implementation authorization / exact approved scope:
 - Open dependencies and independent work that can continue:
+- Active interview question/batch IDs and unresolved owner-feedback IDs (link their authoritative records):
 - Current artifact revision and preview:
+- Actual loaded entrypoint/build; matching review frame, instructions and capability-summary revision:
 - Machine-readable [delivery bindings](../references/delivery-ledger.md), when applicable; planned stage obligations and pre-execution fingerprints:
 - Latest conformance check, requested evidence integrity and unresolved gaps:
+- Next due checks and the specific user judgment this revision is ready to support:
 
 ## Responsibility and capability
 
@@ -49,6 +54,15 @@ Link the authoritative requirement/obligation records rather than duplicating th
 | Verification | | | |
 
 Use planned, in progress, ready-for-review, approved-with-scope, complete-for-scope or blocked, with a concrete reason. Skip a stage only when the request or existing evidence makes it unnecessary; name that reason. An approved increment does not close the original whole-product request.
+
+## Work items
+
+For multi-session, multi-contributor or substantial iterative work, follow [bounded work items](../references/delivery-workflow.md#execute-bounded-work-items). Default to local Markdown using this index and the [work-item template](work-item.template.md); reuse existing effort records or an explicitly required tracker. Keep each decision and requirement authoritative in one place.
+
+| Item / meaningful title | Decision / concept / implementation / verification | Requirement and acceptance IDs | Depends on | Owner / output boundary | Status | Result revision / evidence / next action |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+Link each nontrivial item's detail file from its title. The index tracks work order, ownership and status; detailed requirements and test results remain at their authoritative linked locations. Complete the current workflow increment through integration and review before expanding dependent work. Record which independent items may proceed in parallel.
 
 ## Worker handoff
 

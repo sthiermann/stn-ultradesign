@@ -19,6 +19,20 @@ Use stable IDs. Preserve source IDs for requests, answers and discovered constra
 
 Decision states: `confirmed`, `delegated`, `proposed`, `unresolved`, `superseded`. Record proposed/rejected disposition where relevant. Preserve the source's important qualifiers, current interpretation and any delegated choice's rationale. Decision state is separate from delivery progress.
 
+## Requirement detail where interpretation matters
+
+For consequential workflows, expand or link each requirement whose meaning would otherwise be ambiguous. Keep this detail authoritative here or at an existing specification; tickets link it instead of maintaining another copy. Use only applicable fields.
+
+- Requirement ID, original wording/source and current decision revision:
+- Actor, real role/resource scope, purpose and observable user outcome:
+- Starting state, trigger and expected transition/result:
+- Existing capabilities, data, selection, filters or context that must be preserved:
+- Applicable cancellation, failure, retry and recovery behavior:
+- Relevant content/input/device/theme/locale conditions and shared design-rule links:
+- Normal example and meaningful boundary/failure example:
+- Open assumptions or missing definitions, affected dependent work and resolving action:
+- Acceptance obligation IDs, each with starting condition, action, expected result and evidence method:
+
 ## Applicable contexts and obligations
 
 When an audit ledger already holds these records, link its existing entity, context and obligation IDs here. Keep their definitions and results there. Otherwise use the following small tables for the affected scope.
@@ -26,7 +40,7 @@ When an audit ledger already holds these records, link its existing entity, cont
 | Context ID / affected usage IDs | Relevant conditions and reachable combinations | Behavior-class or boundary rationale / evidence for equivalence | Inapplicability basis or unresolved gap |
 | --- | --- | --- | --- |
 
-| Obligation ID / requirement and decision IDs | Capability/usage IDs and applicable context IDs | Observable result / counterexample that would fail | Due stage and required evidence methods |
+| Obligation ID / requirement and decision IDs | Capability/usage IDs and applicable context IDs | Starting condition and action → observable result / counterexample that would fail | Due stage and required evidence methods |
 | --- | --- | --- | --- |
 
 ## Stage evidence

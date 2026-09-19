@@ -57,17 +57,20 @@ Use [brand discovery](../references/brand-discovery.md). Existing instructions a
 - Brand/task/accessibility conflicts and concrete alternatives:
 - Supplied references and the specific qualities to learn from, without copying:
 
-## Early preference questions
+## Interview and decision queue
 
-For a substantial concept, cover at least twenty distinct tailored preference questions. Carry forward confirmed answers with their source instead of re-asking them. Ask the remaining questions early in digestible batches. An audit or narrow fix has no arbitrary twenty-question minimum or maximum: ask as many material questions as needed throughout the work. Record an explicit user delegation if decisions are delegated. Question counts track the substantial-concept procedure; they do not establish understanding or completion.
+For substantial concept work, cover at least twenty distinct tailored preference questions; existing sourced answers count without re-asking. An audit or narrow fix has no arbitrary question minimum or maximum. Follow [discovery and preferences](../references/discovery-and-preferences.md): one active question by default, up to three closely related questions only when suitable, and no competing batch while replies remain active. Keep this queue as the presentation record; link the authoritative requirement register rather than copying its decision or delivery statuses.
 
 - Interview applies / narrow-scope reason:
-- Distinct tailored questions covered:
-- Already confirmed / asked and pending / delegated counts:
-- Explicit delegation message and scope, if any:
-- Batch plan and independent work continuing while replies are pending:
+- Requested response channel and actual tool availability; document-based answering only if requested:
+- Question presentation/wait/end behavior verified for this host; recovery if a card disappears:
+- Distinct tailored questions covered, with confirmed answer sources or explicit delegation:
+- Active batch and question IDs; related presentation IDs and unresolved replies:
+- Independent work that can continue; next batch stays queued until reconciliation:
 
-| ID | Product-specific question | Observed context and decision it affects | Answer / proposed assumption | Status | Source or date asked | Dependency or optional preference |
+For each material decision, the **as-presented question** must include the preferred option or next step, reason, main tradeoff and basis/applicability: normative requirement, established guidance/practice, product preference or hypothesis. Record the visible wording, not just an internal recommendation. For facts, explain why the value is needed and how to obtain it; recommend gathering evidence when uncertain, never an invented value.
+
+| Question ID | As-presented question, options and visible recommendation / reason / tradeoff / basis | Observed task, evidence and material unknown | Original answer / interpreted dimensions / linked requirement IDs | Presentation state | Channel, batch / presentation IDs, answer source | Dependency, next action or independent work |
 | --- | --- | --- | --- | --- | --- | --- |
 | Q01 | | | | | | |
 | Q02 | | | | | | |
@@ -90,26 +93,16 @@ For a substantial concept, cover at least twenty distinct tailored preference qu
 | Q19 | | | | | | |
 | Q20 | | | | | | |
 
-Use `confirmed`, `pending`, `delegated` or `hypothesis`; a suggested answer is not a confirmed answer. Remove unused starter rows for a focused audit and add rows whenever useful. Do not pad the count with duplicates or discoverable feature-existence questions. Unanswered optional preferences may remain labeled proposals; feature removal and real access-policy changes require their own actual decisions.
+Presentation states: `queued`, `presented`, `answered`, `needs-clarification`, `deferred`, `delegated`. A missing card or reply remains unresolved. A `deferred` presentation follows the interview protocol above; its answer remains unconfirmed and its actual dependencies remain open. Link delayed or partial replies by question and presentation ID; retain answered items and retry only unresolved presentations still expecting a reply. Remove unused starter rows for focused work; add newly discovered questions here rather than opening a second queue.
 
-## Adaptive audit decision queue
+- Compound answers reconciled: default / available choices, trigger location / opening surface, overlay / reflow, roles, responsive behavior and persistence; material ambiguity still needing clarification:
+- Critical task interpretation: observed entry → object → opening surface → retained context → return; preserved behavior versus proposed departure:
+- Conflicting decisions: exact dimensions, prior source, new evidence, affected requirement IDs and what remains unchanged:
+- Explicit delegation: source and scope; unanswered optional proposals remain distinct from required decisions:
+- Presentation deferral: protocol basis, question/presentation IDs, unanswered meaning, dependencies and next action:
+- Reconciliation before the next batch: which IDs are answered, delegated or presentation-deferred; unresolved presentation/reply still expected to restore:
 
-Revisit this queue during semantic, visual, workflow and cross-surface checks. Discover facts first, then ask about material unknowns. Offer specific options with a recommendation, basis and tradeoff; reuse earlier answers rather than restarting discovery. An unresolved dependent conclusion remains open while independent read-only work continues.
-
-| Decision ID / related question | Entity, pass and affected task | Known evidence / material unknown | Options, recommendation and rationale class | Answer or explicit delegation / source / scope | Status | Dependent conclusion or work / independent work continuing |
-| --- | --- | --- | --- | --- | --- | --- |
-
-- Conflicting instructions or references: exact dimensions in conflict, prior decision, new evidence and concrete tradeoff:
-- Which earlier decisions remain valid, and which specific decision needs clarification:
-- Material uncertainties still open; optional reversible proposals distinguished from required decisions:
-- Next question batch and the findings or new evidence that triggered it:
-
-Do not infer authority from a fashionable reference or call a preference a universal standard. A new reference's material treatment and geometry can be inherited separately. Do not invent missing business definitions, comparison targets or thresholds. An answered audit question does not by itself approve feature removal or implementation.
-
-## Recommendation authority and tradeoffs
-
-| Decision ID | Recommendation | Class: normative / platform or implementation guidance / research or heuristic / product choice / hypothesis | Source and applicability | Alternative and consequence | Current decision |
-| --- | --- | --- | --- | --- | --- |
+A recommended choice remains a proposal until confirmed or explicitly delegated. A general preference answer does not approve feature removal or production implementation; retain any explicit authorization for its actual scope. Keep detailed external evidence at its existing project location and link it from the relevant question or requirement; do not duplicate another recommendation or decision ledger here.
 
 ## Direction to develop
 
