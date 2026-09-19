@@ -10,6 +10,12 @@ Bind the chosen implementation to the current [requirements](requirements-confor
 
 Map the design contract into four layers: tokens, primitives, composed patterns and product journeys. Keep visual variants separate from business permissions and data loading. Shared components need explicit behavior contracts, not only a screenshot gallery.
 
+### Reuse the concept in the application
+
+For an executable concept, inspect its implementation before recreating the appearance. Reuse compatible token definitions, assets and designed components; connect fixture-backed props through the application's data adapters and state ownership. Retain domain parsing, defaults, permission decisions, validation and persistence at their established boundaries. Inspect the [preserved behavior cases](feature-parity.md#preserve-state-semantics-before-replacing-the-ui) before choosing an adapter or simulation.
+
+When direct reuse is impractical, record the concrete constraint and map concept tokens, anatomy, state transitions and interactions to their implementation equivalents in the design contract. A framework difference may justify translation; convenience alone does not justify changed behavior or appearance. Test the demanding states of one translated component in a real journey and compare against the [restored reference](concept-to-code.md#preserve-a-reproducible-reference) before expanding. Use an equivalent tested implementation when it satisfies the contract; no particular library is mandatory.
+
 ### Choose the component foundation
 
 Make this decision for each consequential component family, using the actual installed implementation. Preserve useful infrastructure while making the approved visual direction achievable.
@@ -27,11 +33,11 @@ Unstyled primitives separate much of the behavior from presentation; they do not
 
 ### Reconcile duplicate implementations
 
-Trace repeated widgets and controls to their actual component, wrapper, data transformation and state ownership. Compare the contracts before consolidating: equivalent purpose, inputs, interactions and state transitions support a shared family; similar markup alone does not. Record existing family/usage IDs, the common contract, intentional variants and local exceptions in the existing component record.
+Build the [consumer map](../assets/design-contract.template.md#shared-family-behavior) from actual component, wrapper, call-site, adapter and state-owner paths, linked to family/usage IDs and runtime entry points. Include local copies, portal content and responsive replacements. Compare task, inputs, option content, keyboard/placement rules and state transitions before consolidating. Similar markup alone does not establish a common family. Name intentional variants and why their different behavior is needed; leave valid differences intact.
 
 Prefer one maintained implementation with explicit variants or composition when the behavior is equivalent. Separate instance-owned identity, filters, permissions and saved preferences from deliberately shared state. Verify that only declared coordination propagates a change; sharing a component must not alter an unrelated instance. Consolidating code need not remove useful repeated placements. Conversely, several consumers of one component can still duplicate information needlessly; review that question through [the widget purpose check](data-visualization.md#review-purpose-and-duplication-separately).
 
-After consolidation, exercise every affected usage and relevant variant under the scoped audit plan, including simultaneous instances and a state change in only one instance. Verify retained actions, rendering, focus and actual data scope. A reduced file count or matching source import is not evidence of preserved behavior.
+After consolidation, run [family verification](verification.md#verify-component-families-after-integration) from the consumer map, including simultaneous instances and a change in only one instance. Preserve specialized option content, draft retention and domain actions as well as shared interaction. Include a legitimately different variant when present as a counterexample to over-consolidation; matching imports or fewer files are not parity evidence.
 
 ### Develop the designed component once
 

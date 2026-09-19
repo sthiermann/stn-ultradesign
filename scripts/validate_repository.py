@@ -138,6 +138,30 @@ def validate_readme(root, versions):
     return errors, checked_assets
 
 
+def validate_skill_release(frontmatter, versions):
+    """Check this package's block metadata version without a YAML dependency.
+
+    Intentionally accepts only a block metadata mapping and a scalar version.
+    Full YAML/client validation is separate; do not guess from body text.
+    """
+    declarations = re.findall(r"(?m)^(?:metadata|\"metadata\"|'metadata')[ \t]*:", frontmatter)
+    blocks = re.findall(r"(?m)^metadata:[ \t]*\n((?:[ \t]+[^\n]*(?:\n|$))*)",
+                        frontmatter)
+    if len(declarations) != 1 or len(blocks) != 1:
+        return ["SKILL.md: expected one block metadata mapping with a version"]
+    version_keys = re.findall(r"(?m)^[ \t]+(?:version|\"version\"|'version')[ \t]*:", blocks[0])
+    values = re.findall(r"(?m)^  version:[ \t]*(.*?)[ \t]*$", blocks[0])
+    if len(version_keys) != 1 or len(values) != 1:
+        return ["SKILL.md: expected one metadata.version"]
+    value = values[0]
+    if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
+        value = value[1:-1]
+    if not re.fullmatch(r"\d+\.\d+\.\d+", value):
+        return ["SKILL.md: metadata.version must be major.minor.patch"]
+    return [f"SKILL.md: installed version {value} differs from {label} plugin {version}"
+            for label, version in versions.items() if value != version]
+
+
 def main():
     errors = []
 
@@ -188,6 +212,8 @@ def main():
             fields = dict(re.findall(r"^([a-z-]+):\s*(.+)$", header.group(1), re.MULTILINE))
             require(fields.get("name") == NAME, "Skill name differs from directory")
             require(bool(fields.get("description", "").strip()), "Skill description is empty")
+            errors.extend(validate_skill_release(
+                header.group(1), {"Codex": codex.get("version"), "Claude": claude.get("version")}))
         require("[TODO:" not in text, "SKILL.md: unfinished scaffold placeholder")
 
     metadata = SKILL / "agents/openai.yaml"

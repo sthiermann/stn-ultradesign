@@ -78,7 +78,101 @@ def linked_record():
     return data, audit
 
 
+def mixed_record():
+    """Independent current outcomes, plus one changed obligation and one absent check."""
+    data = record()
+    for status in ("fail", "blocked", "not-tested", "stale", "missing"):
+        oid = f"save-{status}"
+        data["obligations"].append(dict(data["obligations"][0], id=oid))
+        if status == "missing":
+            continue
+        executed = status in ("fail", "stale")
+        rid = f"run-{status}"
+        if executed:
+            run = copy.deepcopy(data["runs"][0])
+            run.update(id=rid, obligation_bindings={})
+            data["runs"].append(run)
+        data["checks"].append(dict(data["checks"][0], id=f"check-{status}", obligation_id=oid,
+                                   status="pass" if status == "stale" else status,
+                                   observed=f"Synthetic {status} observation", run_ids=[rid] if executed else []))
+    bind(data)
+    data["obligations"][-2]["expected"] = "A newly changed acceptance outcome"
+    return data
+
+
 class DeliveryTests(unittest.TestCase):
+    def test_obligation_progress_preserves_distinct_outcomes_and_next_actions(self):
+        data = mixed_record()
+        before = copy.deepcopy(data)
+        result = MODULE.validate_and_summarize(data)
+        self.assertEqual(data, before, "Reporting must not rewrite checks or create execution records")
+        self.assertTrue(result["valid"], result["errors"])
+        self.assertFalse(result["ready"])
+        rows = {row["id"]: row for row in result["obligation_results"]}
+        for oid, state, action in (("save-keyboard", "pass", None),
+                                    ("save-fail", "fail", "correct-outcome"),
+                                    ("save-blocked", "blocked", "resolve-blocker"),
+                                    ("save-not-tested", "not-tested", "execute"),
+                                    ("save-stale", "stale", "renew-evidence"),
+                                    ("save-missing", "missing", "execute")):
+            with self.subTest(oid=oid):
+                row = rows[oid]
+                self.assertEqual(row["effective_state"], state)
+                self.assertTrue(row["due"])
+                self.assertTrue(row["current_stage"])
+                self.assertEqual(row["next_action"]["kind"] if action else row["next_action"], action)
+                self.assertEqual(result["progress"]["due"]["states"][state], 1)
+        self.assertEqual(result["progress"]["due"]["total"], 6)
+        self.assertEqual(rows["save-stale"]["recorded_state"], "pass")
+        self.assertIsNone(rows["save-missing"]["recorded_state"])
+        self.assertIsNone(rows["save-missing"]["observed"])
+        self.assertEqual(rows["save-missing"]["methods"]["missing"], ["interaction"])
+        self.assertEqual(rows["save-keyboard"]["expected"], data["obligations"][0]["expected"])
+        self.assertEqual(rows["save-keyboard"]["observed"], data["checks"][0]["observed"])
+        self.assertEqual(rows["save-keyboard"]["artifact"], data["artifacts"][0])
+        self.assertEqual(rows["save-keyboard"]["context"], data["obligations"][0]["context"])
+        self.assertEqual(rows["save-keyboard"]["evidence"][0]["reference"], data["runs"][0]["reference"])
+
+    def test_missing_method_does_not_become_an_effective_pass(self):
+        data = record()
+        data["obligations"][0]["required_methods"].append("rendered")
+        bind(data)
+        result = MODULE.validate_and_summarize(data)
+        row = result["obligation_results"][0]
+        self.assertTrue(result["valid"], result["errors"])
+        self.assertEqual(row["recorded_state"], "pass")
+        self.assertEqual(row["effective_state"], "blocked")
+        self.assertEqual(row["methods"], {"required": ["interaction", "rendered"],
+                                         "matched": ["interaction"], "missing": ["rendered"]})
+        self.assertIn(row["next_action"]["gap"], result["readiness_gaps"])
+
+    def test_shared_run_keeps_stale_bindings_specific_to_the_changed_obligation(self):
+        data = record()
+        data["obligations"].append(dict(data["obligations"][0], id="save-second"))
+        data["checks"].append(dict(data["checks"][0], id="check-second", obligation_id="save-second"))
+        bind(data)
+        data["obligations"][1]["expected"] = "A changed second outcome"
+        result = MODULE.validate_and_summarize(data)
+        rows = {row["id"]: row for row in result["obligation_results"]}
+        self.assertFalse(result["ready"])
+        self.assertEqual(rows["save-keyboard"]["effective_state"], "pass")
+        self.assertEqual(rows["save-keyboard"]["evidence_gaps"], [])
+        self.assertEqual(rows["save-second"]["effective_state"], "stale")
+
+    def test_invalid_evidence_fails_closed_in_progress(self):
+        for mutation in (lambda d: d["runs"][0].update(method="imagined"),
+                         lambda d: d["runs"][0].update(files=[{"path": "../unsafe", "sha256": "0" * 64}]),
+                         lambda d: d["checks"][0].update(run_ids=["absent"])):
+            data = record()
+            mutation(data)
+            result = MODULE.validate_and_summarize(data)
+            self.assertFalse(result["valid"])
+            row = result["obligation_results"][0]
+            self.assertEqual(row["recorded_state"], "pass")
+            self.assertEqual(row["effective_state"], "invalid")
+            self.assertEqual(row["next_action"]["kind"], "repair-record")
+            self.assertEqual(result["progress"]["due"]["states"]["pass"], 0)
+
     def test_complete_declared_record_is_ready_with_unavailable_files_disclosed(self):
         result = MODULE.validate_and_summarize(record())
         self.assertTrue(result["valid"], result["errors"])
@@ -139,6 +233,13 @@ class DeliveryTests(unittest.TestCase):
         bind(data)
         result = MODULE.validate_and_summarize(data)
         self.assertTrue(result["ready"], result)
+        rows = {row["id"]: row for row in result["obligation_results"]}
+        self.assertEqual(rows["save-keyboard"]["effective_state"], "missing")
+        self.assertFalse(rows["save-keyboard"]["due"])
+        self.assertEqual(rows["save-keyboard"]["next_action"]["timing"], "not-due")
+        self.assertEqual(result["progress"]["all"]["total"], 2)
+        self.assertEqual(result["progress"]["due"]["total"], 1)
+        self.assertEqual(result["progress"]["due"]["states"]["pass"], 1)
         data["scope"]["stage"] = "verification"
         result = MODULE.validate_and_summarize(data)
         self.assertFalse(result["ready"])
@@ -269,16 +370,25 @@ class DeliveryTests(unittest.TestCase):
             checked = MODULE.validate_and_summarize(data, evidence_root=root)
             self.assertTrue(checked["ready"], checked)
             self.assertEqual(checked["file_integrity"]["checked"], ["run-1:result.txt"])
+            self.assertEqual(unchecked["obligation_results"][0]["effective_state"], "pass")
+            self.assertEqual(checked["obligation_results"][0]["effective_state"], "pass")
             evidence.write_text("changed", encoding="utf-8")
-            self.assertFalse(MODULE.validate_and_summarize(data, evidence_root=root)["ready"])
+            changed = MODULE.validate_and_summarize(data, evidence_root=root)
+            self.assertFalse(changed["ready"])
+            self.assertEqual(changed["obligation_results"][0]["effective_state"], "blocked")
+            self.assertIn("SHA-256 mismatch", changed["obligation_results"][0]["next_action"]["gap"])
             evidence.unlink()
-            self.assertFalse(MODULE.validate_and_summarize(data, evidence_root=root)["ready"])
+            missing = MODULE.validate_and_summarize(data, evidence_root=root)
+            self.assertFalse(missing["ready"])
+            self.assertEqual(missing["obligation_results"][0]["effective_state"], "blocked")
+            self.assertIn("unavailable or unsafe", missing["obligation_results"][0]["next_action"]["gap"])
 
     def test_requested_integrity_requires_files_for_used_runs(self):
         with tempfile.TemporaryDirectory() as directory:
             result = MODULE.validate_and_summarize(record(), evidence_root=directory)
             self.assertTrue(result["valid"])
             self.assertFalse(result["ready"])
+            self.assertEqual(result["obligation_results"][0]["effective_state"], "blocked")
 
     def test_zero_byte_evidence_cannot_satisfy_requested_capture_integrity(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -291,6 +401,7 @@ class DeliveryTests(unittest.TestCase):
             self.assertFalse(result["ready"])
             self.assertEqual(result["file_integrity"]["checked"], [])
             self.assertTrue(any("empty" in gap for gap in result["readiness_gaps"]))
+            self.assertEqual(result["obligation_results"][0]["effective_state"], "blocked")
 
     def test_unsafe_paths_rejected_and_symlink_escape_never_read(self):
         for path in ("../secret", "/absolute", "a/../../b", "a\\b", "C:/file", "https://site/a", "a//b", "./a", "*.log"):
@@ -318,6 +429,80 @@ class DeliveryTests(unittest.TestCase):
         self.assertFalse(MODULE.validate_and_summarize(data)["ready"])
         data["runs"][0]["audit_evidence_ids"] = ["ev.interaction"]
         self.assertFalse(MODULE.validate_and_summarize(data, audit=audit)["valid"])
+
+    def test_obligation_progress_retains_audit_binding_and_result_gaps(self):
+        data, audit = linked_record()
+        row = MODULE.validate_and_summarize(data, audit=audit)["obligation_results"][0]
+        self.assertEqual(row["audit_obligation_id"], "settings.member-desktop")
+        self.assertEqual(row["effective_state"], "pass")
+        absent = MODULE.validate_and_summarize(data)["obligation_results"][0]
+        self.assertEqual(absent["effective_state"], "blocked")
+        self.assertIn("--audit", absent["next_action"]["gap"])
+        audit["checks"][0]["status"] = "not-tested"
+        mismatched = MODULE.validate_and_summarize(data, audit=audit)["obligation_results"][0]
+        self.assertEqual(mismatched["effective_state"], "blocked")
+        self.assertIn("disagrees", mismatched["next_action"]["gap"])
+        audit["checks"][0]["status"] = "pass"
+        audit["evidence"][1]["reference"] = "another-report.md"
+        stale = MODULE.validate_and_summarize(data, audit=audit)["obligation_results"][0]
+        self.assertEqual(stale["effective_state"], "stale")
+
+    def test_selected_details_cannot_narrow_readiness_counts_gaps_or_fingerprints(self):
+        data = mixed_record()
+        full = MODULE.validate_and_summarize(data)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "delivery.json"
+            path.write_text(json.dumps(data), encoding="utf-8")
+            with redirect_stdout(io.StringIO()) as output:
+                code = MODULE.main([str(path), "--obligation", "save-keyboard", "--require-ready"])
+            selected = json.loads(output.getvalue())
+            self.assertEqual(code, 2)
+            self.assertEqual([row["id"] for row in selected["obligation_results"]], ["save-keyboard"])
+            self.assertEqual(selected["obligation_results"][0]["effective_state"], "pass")
+            for key in ("valid", "ready", "progress", "errors", "readiness_gaps", "due_obligations",
+                        "current_stage_obligations", "binding_fingerprints", "file_integrity", "audit"):
+                self.assertEqual(selected[key], full[key], key)
+            with redirect_stdout(io.StringIO()) as output:
+                code = MODULE.main([str(path), "--obligation", "save-keyboard", "--obligation", "save-fail",
+                                    "--obligation", "save-keyboard"])
+            self.assertEqual(code, 0)
+            self.assertEqual(len(json.loads(output.getvalue())["obligation_results"]), 2)
+
+    def test_unknown_selection_fails_even_in_fingerprint_mode(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "delivery.json"
+            path.write_text(json.dumps(record()), encoding="utf-8")
+            for flags in ([], ["--require-ready"], ["--fingerprints"]):
+                with redirect_stdout(io.StringIO()) as output:
+                    code = MODULE.main([str(path), "--obligation", "absent", *flags])
+                result = json.loads(output.getvalue())
+                self.assertEqual(code, 1)
+                self.assertFalse(result["valid"])
+                self.assertIn("Unknown obligation id(s): absent", result["errors"][-1])
+
+    def test_selection_still_checks_unselected_evidence_file_integrity(self):
+        data = record()
+        data["obligations"].append(dict(data["obligations"][0], id="save-second"))
+        data["runs"].append(dict(data["runs"][0], id="run-second", obligation_bindings={}))
+        data["checks"].append(dict(data["checks"][0], id="check-second", obligation_id="save-second",
+                                   run_ids=["run-second"]))
+        bind(data)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            original = b"Captured observation"
+            for index, name in enumerate(("first.txt", "second.txt")):
+                (root / name).write_bytes(original)
+                data["runs"][index]["files"] = [{"path": name, "sha256": hashlib.sha256(original).hexdigest()}]
+            (root / "second.txt").write_text("Changed after capture", encoding="utf-8")
+            path = root / "delivery.json"
+            path.write_text(json.dumps(data), encoding="utf-8")
+            with redirect_stdout(io.StringIO()) as output:
+                code = MODULE.main([str(path), "--evidence-root", str(root), "--obligation", "save-keyboard", "--require-ready"])
+            result = json.loads(output.getvalue())
+            self.assertEqual(code, 2)
+            self.assertEqual(result["obligation_results"][0]["effective_state"], "pass")
+            self.assertEqual(result["progress"]["due"]["states"]["blocked"], 1)
+            self.assertTrue(any("run-second:second.txt has changed" in gap for gap in result["readiness_gaps"]))
 
     def test_audit_meaning_and_evidence_edits_invalidate_bindings_without_revision_bump(self):
         mutations = (

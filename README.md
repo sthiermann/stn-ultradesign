@@ -15,7 +15,7 @@ Bring your brand. Set the direction. Review the experience before it ships. Use 
 
 [**Explore the interactive website →**](https://sthiermann.github.io/stn-ultradesign-website/) · [Install the skill](docs/installation.md) · [Start a redesign](#put-it-to-work) · [Explore the workflow](#a-complete-path-from-requirements-to-delivery) · [Read the skill](skills/stn-ultradesign/SKILL.md)
 
-Release **v0.8.0** · [MIT license](LICENSE) · Codex + Claude Code
+Release **v0.9.0** · [MIT license](LICENSE) · Codex + Claude Code
 
 [![Package checks](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml/badge.svg)](https://github.com/sthiermann/stn-ultradesign/actions/workflows/validate.yml)
 
@@ -25,7 +25,8 @@ Release **v0.8.0** · [MIT license](LICENSE) · Codex + Claude Code
 - **Guided decisions, at your pace.** Questions include a reasoned recommendation and its tradeoff. One active question or agreed small batch keeps your answers connected to the work.
 - **A clear place for existing capabilities.** A feature map connects current actions, role-specific controls and workflows to their proposed destinations. Unresolved coverage stays visible.
 - **An experience you can review.** Interactive concepts expose navigation, editing, menus, data, drilldowns and recovery paths across relevant devices and states.
-- **A design that carries into the code.** Accepted decisions guide frontend implementation; separate review and verification check the result against those decisions.
+- **A design that carries into the code.** A reproducible accepted concept, shared components and state-by-state comparisons connect the design to its implementation.
+- **Work that survives a handoff.** A current work index preserves decisions and open feedback. Bounded tickets close against observed results, with gaps and next actions visible.
 
 Built for the complexity of business applications: dashboards, settings, tables, charts, permissions, account flows and more. Apply the workflow to HTML, CSS, React and other frontend stacks while working with the project's existing architecture. The skill follows the language of your request.
 
@@ -38,7 +39,7 @@ Built for the complexity of business applications: dashboards, settings, tables,
 In Claude Code, replace `$stn-ultradesign` with `/stn-ultradesign:stn-ultradesign` after plugin installation, or `/stn-ultradesign` for an individual skill installation.
 
 <details>
-<summary>More starting points: audit only, concept, or implementation</summary>
+<summary>More starting points: audit, concept, implementation, or resume</summary>
 
 **Audit only**
 
@@ -51,6 +52,10 @@ In Claude Code, replace `$stn-ultradesign` with `/stn-ultradesign:stn-ultradesig
 **Implement an accepted design**
 
 > $stn-ultradesign Implement the accepted concept. Trace the changes to its design decisions and verify behavior, accessibility and visual fidelity.
+
+**Resume an existing design effort**
+
+> $stn-ultradesign Resume this design effort using the installed skill version. Reconcile the existing requirements, feedback, concept, work items and actual checks. Preserve settled answers and approvals. Resolve outstanding defects, establish a reproducible concept baseline, and continue through verified implementation within the approved scope.
 
 </details>
 
@@ -108,7 +113,7 @@ Changing a decision reopens the checks that depend on it. Existing answers remai
 
 Explore [requirements and conformance](skills/stn-ultradesign/references/requirements-conformance.md) and [reference research](skills/stn-ultradesign/references/project-research.md).
 
-For work spanning sessions or contributors, [bounded work items](skills/stn-ultradesign/references/delivery-workflow.md#execute-bounded-work-items) connect decisions, concept or implementation tasks, and verification. Each has an outcome, dependencies, an owner and precise acceptance criteria checked against actual results. Completed decisions stay distinct from completed features; unresolved work remains visible when the design changes. Local Markdown is the default, with existing design records or an explicitly required tracker reused. No tracking-service setup is required.
+For work spanning sessions or contributors, [bounded work items](skills/stn-ultradesign/references/delivery-workflow.md#execute-bounded-work-items) connect decisions, concept or implementation tasks, and verification. Each has an outcome, dependencies, an owner and precise acceptance criteria checked against actual results. Completed decisions stay distinct from completed features; unresolved work remains visible when the design changes. Local Markdown is the default, with existing design records or an explicitly required tracker reused. No tracking-service setup is required. On resumption or an upgrade, the agent identifies the installed skill version, reconciles the actual preview and current records, and selects the next ready outcome. Historical reports remain evidence; they do not replace the current work state.
 
 ## Visual craft belongs in the system
 
@@ -122,7 +127,7 @@ Rendered concepts undergo [layout stress checks](skills/stn-ultradesign/referenc
 
 Every critical task needs a discoverable path from entry to useful action, object and context, outcome and return. Opening a detail should preserve enough context to resume the work. Navigation, local views, commands and independent overlays have different jobs and receive appropriate interactions.
 
-A redesign maintains an **old → new feature map**. It accounts for affected capabilities, role access, behavior, states and destinations, including toolbar overflow, object menus, edit modes, saved preferences and simultaneous panels. Moving a capability requires a usable new home; dropping one requires an agreed scope change.
+A redesign maintains an **old → new feature map**. It accounts for affected capabilities, role access, behavior, states and destinations, including toolbar overflow, object menus, edit modes, saved preferences and simultaneous panels. Moving a capability requires a usable new home; dropping one requires an agreed scope change. Preservation includes defaults, unset values, saved preferences, merge behavior and role-dependent outcomes—not just the presence of a button.
 
 Existing themes, supported languages, density options, charts and graph types remain part of that mapping. A full-product redesign covers every discovered capability. A focused change covers its requested scope plus affected shared usages and dependencies. See [task-flow design](skills/stn-ultradesign/references/task-flow-design.md) and [feature preservation](skills/stn-ultradesign/references/feature-parity.md).
 
@@ -136,11 +141,11 @@ Review checks whether widgets serve a distinct purpose, repeat information usefu
 
 A full audit covers every discovered page, component usage, widget, dialog, drilldown and defined relevant workflow, state and transition in scope. Large products are covered in resumable batches. Inaccessible areas stay visible as gaps; sampling requires an agreed scope change.
 
-The package includes templates for requirements, briefs, reference translation, feature maps, task flows, design contracts and audit evidence. Its local Python coverage validator checks the consistency of a declared audit inventory, obligations and evidence. A separate [delivery checker](skills/stn-ultradesign/references/delivery-ledger.md) connects requirements, decisions, stage obligations, artifacts and observed runs. It detects stale bindings and can verify explicitly listed local evidence files. Both check the supplied records; neither inspects the application automatically or certifies observation truth, discovery completeness, design quality or security.
+The package includes templates for requirements, briefs, reference translation, feature maps, task flows, design contracts and audit evidence. Its local Python coverage validator checks the consistency of a declared audit inventory, obligations and evidence. A separate [delivery checker](skills/stn-ultradesign/references/delivery-ledger.md) connects requirements, decisions, stage obligations, artifacts and observed runs. It detects stale bindings, reports individual obligation status and next actions, and can verify explicitly listed local evidence files. Selecting an obligation narrows the diagnostic view, never the readiness claim. Both check the supplied records; neither inspects the application automatically or certifies observation truth, discovery completeness, design quality or security.
 
 Comprehension review compares what a widget or control communicates before activation with its actual scope, result and recovery. Loading, background refresh, failure and success are checked as behavior. Geometric and motion review includes alignment, optical balance and complete transition cycles where relevant.
 
-Independent review challenges the current artifact against the requirements and design intent. It uses a separate reviewer when the host supports one; otherwise, self-review is identified as such and the limitation remains explicit. Human acceptance records the revision and scope that may proceed. Verification then checks the implementation itself. See [verification](skills/stn-ultradesign/references/verification.md).
+Independent review challenges the current artifact against the requirements and design intent. It uses a separate reviewer when the host supports one; otherwise, self-review is identified as such and the limitation remains explicit. Human acceptance records the revision and scope that may proceed. Verification then compares the implementation with the reproducible accepted concept under the same content, theme, density, locale and meaningful interaction state. Shared component families are traced through their actual code paths and consuming surfaces; justified variants stay explicit. See [verification](skills/stn-ultradesign/references/verification.md).
 
 ## Package and privacy
 

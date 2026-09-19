@@ -17,6 +17,7 @@ from pathlib import Path, PurePosixPath
 STAGES = ("concept", "implementation", "verification")
 METHODS = {"source", "rendered", "interaction", "assistive-technology", "api-observation"}
 STATUSES = {"pass", "fail", "blocked", "not-tested"}
+RESULT_STATES = ("pass", "fail", "blocked", "not-tested", "stale", "missing", "invalid")
 TARGETS = {"concept", "prototype", "application"}
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
 
@@ -53,6 +54,21 @@ def _audit_validator(data):
 def validate_and_summarize(data, *, evidence_root=None, audit=None):
     """Validate a declared model. Files are read only beneath an explicit root."""
     errors, gaps, checked, unchecked = [], [], [], []
+    obligation_gaps, run_gaps = {}, {}
+    stale_obligations, stale_runs = set(), set()
+    matched_methods = {}
+
+    def evidence_gap(message, *, obligation_id=None, run_id=None, stale=False):
+        """Retain the same readiness fact for the global and obligation reports."""
+        gaps.append(message)
+        if obligation_id is not None:
+            obligation_gaps.setdefault(obligation_id, []).append(message)
+            if stale:
+                stale_obligations.add(obligation_id)
+        if run_id is not None:
+            run_gaps.setdefault(run_id, []).append(message)
+            if stale:
+                stale_runs.add(run_id)
 
     def obj(value, label):
         if isinstance(value, dict):
@@ -227,7 +243,7 @@ def validate_and_summarize(data, *, evidence_root=None, audit=None):
             if not text(audit_id) or audit_id != identifier:
                 errors.append(f"{label} must reuse its audit obligation id without renaming it.")
             elif audit is None:
-                gaps.append(f"{label} needs its existing audit record via --audit.")
+                evidence_gap(f"{label} needs its existing audit record via --audit.", obligation_id=identifier)
             elif audit_id not in audit_obligations:
                 errors.append(f"{label} references an unknown audit obligation.")
             else:
@@ -263,7 +279,7 @@ def validate_and_summarize(data, *, evidence_root=None, audit=None):
         artifact = ref(run, "artifact_id", artifacts, label)
         if artifact and (run.get("artifact_revision") != artifact.get("revision")
                          or run.get("environment") != artifact.get("environment")):
-            gaps.append(f"{label} is stale for its artifact revision/environment.")
+            evidence_gap(f"{label} is stale for its artifact revision/environment.", run_id=identifier, stale=True)
         bindings = obj(run.get("obligation_bindings"), f"{label}.obligation_bindings")
         if not bindings:
             errors.append(f"{label} must bind at least one existing obligation before execution.")
@@ -273,7 +289,8 @@ def validate_and_summarize(data, *, evidence_root=None, audit=None):
             elif not isinstance(binding, str) or not SHA256.fullmatch(binding):
                 errors.append(f"{label} binding for {oid} must be a lowercase SHA-256 digest.")
             elif binding != fingerprints.get(oid):
-                gaps.append(f"{label} has a stale execution binding for {oid}.")
+                evidence_gap(f"{label} has a stale execution binding for {oid}.",
+                             obligation_id=oid, stale=oid in fingerprints)
         run_files = run.get("files")
         if not isinstance(run_files, list):
             errors.append(f"{label}.files must be a list, including [] when unavailable.")
@@ -308,17 +325,17 @@ def validate_and_summarize(data, *, evidence_root=None, audit=None):
                         actual.update(block)
                         size += len(block)
                 if size == 0:
-                    gaps.append(f"Evidence {file_id} is empty and cannot establish a captured observation.")
+                    evidence_gap(f"Evidence {file_id} is empty and cannot establish a captured observation.", run_id=identifier)
                 elif actual.hexdigest() != expected_hash:
-                    gaps.append(f"Evidence {file_id} has changed (SHA-256 mismatch).")
+                    evidence_gap(f"Evidence {file_id} has changed (SHA-256 mismatch).", run_id=identifier)
                 else:
                     checked.append(file_id)
             except (OSError, ValueError, RuntimeError) as exc:
-                gaps.append(f"Evidence {file_id} unavailable or unsafe: {exc}.")
+                evidence_gap(f"Evidence {file_id} unavailable or unsafe: {exc}.", run_id=identifier)
         if "audit_evidence_ids" in run:
             evidence_ids = strings(run["audit_evidence_ids"], f"{label}.audit_evidence_ids")
             if audit is None:
-                gaps.append(f"{label} needs its existing audit record via --audit.")
+                evidence_gap(f"{label} needs its existing audit record via --audit.", run_id=identifier)
             else:
                 for eid in evidence_ids:
                     evidence = audit_evidence.get(eid)
@@ -348,7 +365,8 @@ def validate_and_summarize(data, *, evidence_root=None, audit=None):
         if not isinstance(check.get("binding_sha256"), str) or not SHA256.fullmatch(check["binding_sha256"]):
             errors.append(f"{label}.binding_sha256 must be a lowercase SHA-256 digest.")
         elif check["binding_sha256"] != fingerprints.get(oid):
-            gaps.append(f"{label} is stale: requirement, decision, obligation, contract or artifact changed.")
+            evidence_gap(f"{label} is stale: requirement, decision, obligation, contract or artifact changed.",
+                         obligation_id=oid, stale=oid in fingerprints)
         provided = set()
         audit_ids = set()
         for rid in run_ids:
@@ -361,14 +379,16 @@ def validate_and_summarize(data, *, evidence_root=None, audit=None):
                     or not artifact or run.get("artifact_revision") != artifact.get("revision")
                     or run.get("environment") != artifact.get("environment")
                     or run.get("context") != obligation.get("context")):
-                gaps.append(f"{label} run {rid} does not cover its exact current artifact/context.")
+                evidence_gap(f"{label} run {rid} does not cover its exact current artifact/context.",
+                             obligation_id=oid, stale=True)
                 continue
             bindings = run.get("obligation_bindings")
             if not isinstance(bindings, dict) or bindings.get(oid) != fingerprints.get(oid):
-                gaps.append(f"{label} run {rid} was not bound to this current obligation before execution.")
+                evidence_gap(f"{label} run {rid} was not bound to this current obligation before execution.",
+                             obligation_id=oid, stale=oid in fingerprints)
                 continue
             if evidence_root is not None and not run.get("files"):
-                gaps.append(f"{label} run {rid} has no local files for the requested integrity check.")
+                evidence_gap(f"{label} run {rid} has no local files for the requested integrity check.", obligation_id=oid)
             if choice(run.get("method"), METHODS):
                 provided.add(run["method"])
             values = run.get("audit_evidence_ids", [])
@@ -377,14 +397,15 @@ def validate_and_summarize(data, *, evidence_root=None, audit=None):
         if status in ("pass", "fail"):
             required = obligation.get("required_methods")
             if isinstance(required, list) and all(text(v) for v in required) and not set(required).issubset(provided):
-                gaps.append(f"{label} lacks its required evidence methods for this artifact/context.")
+                evidence_gap(f"{label} lacks its required evidence methods for this artifact/context.", obligation_id=oid)
             audit_id = obligation.get("audit_obligation_id")
             if text(audit_id) and audit_id in audit_obligations:
                 existing_check = audit_checks.get(audit_id)
                 if not existing_check or existing_check.get("status") != status:
-                    gaps.append(f"{label} disagrees with its existing audit result.")
+                    evidence_gap(f"{label} disagrees with its existing audit result.", obligation_id=oid)
                 elif not set(existing_check.get("evidence_ids", [])).issubset(audit_ids):
-                    gaps.append(f"{label} does not bind the existing audit check's evidence ids.")
+                    evidence_gap(f"{label} does not bind the existing audit check's evidence ids.", obligation_id=oid)
+        matched_methods[oid] = provided
 
     due, current = [], []
     for identifier, obligation in obligations.items():
@@ -403,10 +424,88 @@ def validate_and_summarize(data, *, evidence_root=None, audit=None):
         gaps.append("No active obligations are due at this stage; this is not a delivery readiness result.")
     elif not current:
         gaps.append("No active obligations support the claimed current stage; earlier-stage evidence cannot establish it.")
+
+    obligation_results = []
+    for identifier, obligation in obligations.items():
+        check = by_obligation.get(identifier)
+        requirement_id, artifact_id = obligation.get("requirement_id"), obligation.get("artifact_id")
+        requirement = requirements.get(requirement_id) if text(requirement_id) else None
+        artifact = artifacts.get(artifact_id) if text(artifact_id) else None
+        run_ids = check.get("run_ids", []) if check else []
+        if not isinstance(run_ids, list) or not all(text(rid) for rid in run_ids):
+            run_ids = []
+        required = obligation.get("required_methods", [])
+        if not isinstance(required, list) or not all(text(method) for method in required):
+            required = []
+        matched = matched_methods.get(identifier, set())
+        missing_methods = sorted(set(required) - matched)
+        evidence_gaps = list(obligation_gaps.get(identifier, []))
+        for rid in run_ids:
+            evidence_gaps.extend(run_gaps.get(rid, []))
+        evidence_gaps = list(dict.fromkeys(evidence_gaps))
+        recorded = check.get("status") if check else None
+        retired = bool(requirement and requirement.get("status") == "retired")
+        if errors:
+            effective = "invalid"
+        elif identifier in stale_obligations or any(rid in stale_runs for rid in run_ids):
+            effective = "stale"
+        elif check is None:
+            effective = "missing"
+        elif recorded in ("pass", "fail") and evidence_gaps:
+            effective = "blocked"
+        else:
+            effective = recorded
+
+        if effective == "invalid":
+            next_action = {"kind": "repair-record", "instruction": "Resolve the record's validation errors before relying on this result."}
+        elif retired:
+            next_action = None
+        elif effective == "stale":
+            next_action = {"kind": "renew-evidence", "instruction": "Review the changed binding or context, then bind and execute this obligation against its current artifact; retain old evidence as history."}
+        elif evidence_gaps:
+            next_action = {"kind": "resolve-evidence-gap", "instruction": "Resolve this evidence gap before relying on the recorded result.",
+                           "gap": evidence_gaps[0]}
+        elif effective == "blocked":
+            next_action = {"kind": "resolve-blocker", "instruction": "Resolve the recorded blocker, then bind and execute this obligation.",
+                           "blocker": check.get("observed")}
+        elif effective == "fail":
+            next_action = {"kind": "correct-outcome", "instruction": "Correct the observed failure against the expected outcome, then bind and rerun this obligation."}
+        elif effective in ("missing", "not-tested"):
+            next_action = {"kind": "execute", "instruction": "Record current bindings before executing this obligation with its required methods, then record the actual observation and check."}
+        else:
+            next_action = None
+        if next_action is not None:
+            next_action["timing"] = "due" if identifier in due else "not-due"
+
+        obligation_results.append({
+            "id": identifier, "requirement_id": requirement_id,
+            "requirement_status": requirement.get("status") if requirement else None,
+            "stage": obligation.get("stage"), "due": identifier in due,
+            "current_stage": identifier in current,
+            "recorded_state": recorded, "effective_state": effective,
+            "check_id": check.get("id") if check else None,
+            "expected": obligation.get("expected"), "observed": check.get("observed") if check else None,
+            "artifact": artifact, "context": obligation.get("context"),
+            "audit_obligation_id": obligation.get("audit_obligation_id"),
+            "methods": {"required": required, "matched": sorted(matched), "missing": missing_methods},
+            "evidence": [{"run_id": rid, "method": runs[rid].get("method"),
+                          "observed": runs[rid].get("observed"), "reference": runs[rid].get("reference")}
+                         for rid in run_ids if rid in runs],
+            "evidence_gaps": evidence_gaps, "next_action": next_action,
+        })
+
+    def progress(rows):
+        return {"total": len(rows), "states": {state: sum(row["effective_state"] == state for row in rows)
+                                               for state in RESULT_STATES}}
+
     return {
         "valid": not errors, "ready": not errors and not gaps,
         "stage": scope.get("stage"), "errors": errors, "readiness_gaps": gaps,
         "due_obligations": due, "current_stage_obligations": current,
+        "obligation_results": obligation_results,
+        "progress": {"all": progress(obligation_results),
+                     "due": progress([row for row in obligation_results if row["due"]]),
+                     "current_stage": progress([row for row in obligation_results if row["current_stage"]])},
         "binding_fingerprints": fingerprints,
         "file_integrity": {"requested": evidence_root is not None,
                            "checked": checked, "unchecked": unchecked,
@@ -439,11 +538,21 @@ def main(argv=None):
     parser.add_argument("--evidence-root", type=Path, help="Read only explicitly listed evidence files beneath this directory.")
     parser.add_argument("--require-ready", action="store_true", help="Exit 2 for a valid record with unresolved readiness gaps.")
     parser.add_argument("--fingerprints", action="store_true", help="Print current binding digests; this does not create check results.")
+    parser.add_argument("--obligation", action="append", default=[], metavar="ID",
+                        help="Show details only for this obligation (repeatable); readiness and counts still cover the entire record.")
     args = parser.parse_args(argv)
     try:
         data = load_json(args.record)
         audit = load_json(args.audit) if args.audit else None
         result = validate_and_summarize(data, evidence_root=args.evidence_root, audit=audit)
+        if args.obligation:
+            selected = set(args.obligation)
+            known = {row["id"] for row in result["obligation_results"]}
+            unknown = sorted(selected - known)
+            if unknown:
+                result["valid"] = result["ready"] = False
+                result["errors"].append(f"Unknown obligation id(s): {', '.join(unknown)}.")
+            result["obligation_results"] = [row for row in result["obligation_results"] if row["id"] in selected]
     except (OSError, ValueError, TypeError, KeyError, AttributeError, RecursionError, RuntimeError) as exc:
         result = {"valid": False, "ready": False, "errors": [f"Input could not be validated: {exc}"],
                   "binding_fingerprints": {}}

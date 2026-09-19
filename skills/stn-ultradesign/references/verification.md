@@ -4,7 +4,7 @@ These are project procedures, not a certification scheme. Choose checks that can
 
 ## Establish a reproducible baseline
 
-Record app revision, test accounts/roles, data fixtures, fonts/assets, locale, theme, viewport in CSS pixels, browser/OS and zoom. Capture the approved concept version and before-state when relevant. Baselines containing real personal data must be sanitized before sharing.
+Use the [reproducible reference recipe](concept-to-code.md#preserve-a-reproducible-reference) for concept comparison; bind the implementation revision separately. For a focused change, record only its affected before-state, restoration steps, fixture and relevant rendering/input conditions. Baselines containing personal data must be sanitized before sharing. Restore the state before comparing; a current URL does not establish which build or approved state is running.
 
 For new UI, use representative content and at least one stressed example per significant component. For modifications, include the changed journey and shared usages likely to be affected. A whole-product audit additionally needs the inventory and coverage process in `audit-method.md`.
 
@@ -35,7 +35,7 @@ The reviewer challenges the current evidence independently of the author's prefe
 
 ## Minimum useful interaction pass
 
-Apply [interaction-comprehension.md](interaction-comprehension.md) to ambiguous or consequential controls and decision-bearing surfaces. Record the visible promise before activation, then verify scope, result, feedback and return. Loading, background refresh, empty results, failure and success need observed state transitions where reachable; a finished screenshot cannot establish them.
+Begin with the task and rendered interface, before reading handlers or receiving a route/control hint from the author. Apply [interaction-comprehension.md](interaction-comprehension.md): predict the target, scope and result from visible evidence, then find the entry, act, observe the outcome and return. Keep a missing entry, unclear domain meaning, unexpected behavior, visual defect and optional preference distinct. If implementation knowledge is already unavoidable, disclose that limit or use a fresh reviewer for this pass. Expert predictions are not observed user comprehension.
 
 - Reach the task through normal navigation and a deep link if supported.
 - Complete it with the main input method and keyboard.
@@ -43,6 +43,7 @@ Apply [interaction-comprehension.md](interaction-comprehension.md) to ambiguous 
 - Check Back/cancel and persistence of entered work.
 - Verify success reflects actual completed work.
 - Verify permission and session changes where they affect the task, using safe test environments.
+- Execute the affected [state-semantics cases](feature-parity.md#preserve-state-semantics-before-replacing-the-ui), comparing expected and observed results, including state that must remain unchanged. Retain separate results for defaults, merge behavior and relevant role combinations; matching fields cannot close them.
 - Reconcile baseline actions against proposed controls in both directions; identify additions separately and keep missing child actions unresolved.
 - Check independent overlays, panels and preferences in the supported combinations that alter behavior, including closing, reopening, resize, return and reload persistence.
 - Inspect a control from its resting state without a cue naming the target. For a surface presented as one action, activate its label, icon, internal padding and points just inside its visible edges independently, resetting the safe fixture between probes. Verify the intended outcome occurs once, secondary controls retain their own action and points outside the declared target do not activate it. Exercise the applicable pointer, touch and semantic keyboard behavior; record the actual input/device conditions and leave unavailable checks open.
@@ -61,7 +62,9 @@ Render and inspect the actual result. First assess information hierarchy and tas
 
 Compare with the concept at the same viewport, fixture and theme. Side-by-side images support judgment; overlay/difference images help locate drift. Investigate mismatches before changing a baseline. Legitimate font rasterization variation is different from a changed typeface or line break caused by a wrong width.
 
-Use the planned layout-integrity contexts for adaptive review; device presets alone do not establish boundary or content resilience.
+Convert known geometry failures and consequential visual feedback into targeted regression cases in the existing acceptance record. Name the exact relationship, affected usages and restored state: for example, the painted mark relative to its control, the image edge relative to the text column, or the crop relative to its container. Compare the current render at relevant widths and open states; use measurements or overlays where they can expose the discrepancy. CSS declarations and layout boxes alone may miss optical bounds, clipping or an intermediate animation pose.
+
+Keep the agreed tolerance or allowed variation beside that case. Preserve intentional asymmetry, meaningful repetition, approved crops and useful local scrolling; similarity is not a reason to remove them. Use the planned layout-integrity contexts for adaptive review, including justified exceptions. Device presets alone do not establish boundary or content resilience.
 
 Check forced colors, light/dark theme where supported, reduced motion and long/RTL content where applicable. Preserve scroll and focus on transitions. Test touch access to functions that otherwise appear on hover.
 
@@ -86,9 +89,9 @@ A discrepancy can be a bug, an intentional approved deviation, a rendering diffe
 
 ### Verify component families after integration
 
-First verify semantic fit: compare each action's task, owning workspace, selected surface and steps to outcome with its action-to-surface record. Reject a visually consistent implementation that introduces unnecessary intermediate panels or assigns unrelated tasks to one shell. Then, after integrating a module, changing a shared primitive or receiving feedback about inconsistent behavior, reconcile all affected usages against the current family contract. Inspect newly introduced local implementations and wrappers as well as existing shared components. A successful isolated specimen or one page cannot close the cross-page check.
+First verify semantic fit against the action-to-surface record: task, owning workspace, selected surface and steps to outcome. Then, after integration or a shared correction, reconcile the [consumer map](../assets/design-contract.template.md#shared-family-behavior) against actual imports, wrappers, local implementations and runtime entries. Add discovered consumers and their relevant contexts before closing the family. A specimen or one successful page cannot close the other usages.
 
-Open each affected usage through its real entry at the integrated revision. Compare placement, geometry, header/actions, motion and relevant interaction states; for editing surfaces, exercise validation, save/cancel, dirty dismissal, focus entry and focus return using safe fixtures. Verify the planned responsive transformations and reduced-motion behavior where affected. Still images can establish position, not the transition or focus sequence. Repeat the original failing path after correction and recheck consuming usages whose shared behavior changed; reopen coverage when another module adds an occurrence.
+Open each affected usage through its real entry at the integrated revision. Compare placement, geometry, header/actions, motion and relevant interaction states; for editors, exercise validation, save/cancel, dirty dismissal, focus entry and return using safe fixtures. For selectors, also check keyboard selection, popup placement, option details and retained draft values. Verify affected responsive transformations and reduced motion. Repeat the original failing path and the consuming usages; where a justified variant differs, check that its specialized behavior survived. Still images establish position, not transition or focus sequence.
 
 Record family ID, usage IDs, integrated revision, context, evidence and exception status. Keep source inspection, rendered state and interaction results distinct. A usage remains unresolved when its code appears shared but its actual path has not been checked. These checks follow the requested change boundary and affected dependencies, not an unsolicited whole-product audit.
 

@@ -14,6 +14,27 @@ The output distinguishes valid structure from declared stage readiness. Exit `0`
 
 `ready` concerns the declared stage and reconciled model. It does not establish complete discovery, user acceptance, permission, authentic execution or good design. Revision strings and observations are self-reported; the helper cannot prove which build was running. A file hash proves unchanged bytes relative to its recorded hash, not the truth or provenance of their contents. Report those limits with readiness; inspect the evidence itself and conduct the independent review.
 
+## Read bounded progress without narrowing readiness
+
+Use `obligation_results` to choose the next bounded work item. Each row carries its requirement ID/status, stage, whether it is `due` and belongs to the `current_stage`, the expected and recorded observed outcome, artifact/context, check ID, linked audit ID, required/matched/missing methods, referenced run observations, evidence gaps and `next_action`. The helper derives these from the same validation pass; it creates no runs, observations or decisions.
+
+`recorded_state` preserves the check's status, or `null` when no current check exists. `effective_state` explains whether that record can support obligation-level progress:
+
+| Effective state | Meaning |
+| --- | --- |
+| `pass` / `fail` | The corresponding current check has no detected obligation-level evidence gap under the requested integrity mode. A failure remains open work. |
+| `blocked` | The check records a blocker, or a recorded pass/fail lacks usable required evidence, file integrity or agreement with its linked audit. Inspect `evidence_gaps` and the recorded observation. |
+| `not-tested` | A current check explicitly records that execution has not occurred. |
+| `stale` | An existing run/check no longer binds the current obligation or exact artifact/context. Review the change and obtain current evidence. An unavailable audit alone is not proof that its binding changed. |
+| `missing` | No current check exists. A future-stage missing result is planned work, not an earlier-stage execution requirement. |
+| `invalid` | The record has validation errors. All rows fail closed to this state until those errors are resolved; their recorded states remain visible. |
+
+Validation errors take precedence, then detected stale evidence, then a missing check. An otherwise current pass/fail with evidence gaps becomes `blocked`. `methods.matched` means the run matched the current binding and artifact/context; inspect the accompanying gaps and file-integrity report before relying on it. Without `--evidence-root`, `pass` remains record-based and listed files remain unchecked. Global scope, decision and audit gates can keep `ready` false even when individual rows pass.
+
+`progress` counts effective states for `all`, `due` and `current_stage` obligations across the complete record. Retired requirements remain visible in `all` but are excluded from due/current-stage counts. These counts describe the declared model, not discovery coverage or user acceptance. A `next_action` supplies a bounded action and `due`/`not-due` timing, using the recorded blocker or first evidence gap where available. It is `null` for a current pass or a retired requirement after validation; inspect remaining global gaps separately. Use the action to continue the real work, then update the actual observation and rerun the helper.
+
+For a focused handoff, run `python3 <skill>/scripts/delivery_check.py delivery.json --obligation OBL-1 --obligation OBL-2 --require-ready`, adding the same `--audit` and `--evidence-root` inputs needed by the complete record. The repeatable filter affects only `obligation_results`. Readiness, due/current-stage IDs, counts, diagnostics, fingerprints, integrity checks and audit coverage still include the entire record. Selecting a passed row cannot make unfinished delivery ready or change the `--require-ready` exit from `2` to `0`. Unknown selected IDs are input errors (exit `1`), including with `--fingerprints`; that mode still prints all current bindings and validation errors only. The filter grants no scope reduction or execution authority.
+
 ## Schema 1
 
 All IDs and named revision/reference fields are nonempty strings; IDs are unique within each collection. Records are JSON objects, collections are arrays, and ID lists contain unique nonempty strings. Keep only current runs/checks here; preserve historical results outside the current record.

@@ -1,6 +1,6 @@
 # Installation
 
-As of September 17, 2026. Install either the individual skill or the plugin in your client. Installing the same skill twice is unnecessary.
+Install either the individual skill or the plugin in your client. Installing the same skill twice is unnecessary.
 
 ## Codex: individual skill
 
@@ -65,7 +65,17 @@ Open a new task and explicitly invoke the skill. Start with a bounded audit. Che
 
 With a linked installation, skill files follow the checked-out repository revision. With a copied installation, copy the skill directory again after updating. Review changes before adopting them. Update Claude plugins through the client's plugin manager.
 
+The installed `SKILL.md` declares its release in `metadata.version`. Verify that file at the path the agent actually loads; the repository README or website version alone does not verify your installation. Keep references, templates and scripts from the same release together. Avoid a stale project-level copy alongside a newer personal installation.
+
+For a pinned release, check out its published tag in the downloaded repository before installing the complete skill folder. The [current release](../README.md) identifies the available version. Keep a copy of the prior installation if you need to roll back; do not mix old and new files.
+
 Manifest validation checks the package format. It establishes neither successful installation in every client version nor the quality of a particular audit. When reporting problems, include the client version, installation method and checks actually performed.
+
+## Resume after updating
+
+Continue an existing design effort with the [resume prompt](../README.md#put-it-to-work). Have the agent read the newly installed entrypoint and relevant branches, identify its path and version, and reconcile the current work index, latest feedback, concept and evidence. Preserve settled answers and scoped approvals; identify procedural changes without restarting the design interview. A recorded version is not proof that checks were executed.
+
+Use a fresh task only when you want a fresh evaluation. In a continuing task, tell the agent to reread the updated files instead of relying on earlier loaded instructions. Updating the skill does not modify your application's production code or authorize a different design.
 
 ## Start a new design review
 

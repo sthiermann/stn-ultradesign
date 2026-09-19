@@ -136,7 +136,7 @@ Release **v0.1.0** is a historical metadata example.
             "name": MODULE.NAME, "plugins": [{"name": MODULE.NAME, "source": "./"}]}))
         skill = self.root / "skills" / MODULE.NAME
         self.write(f"skills/{MODULE.NAME}/SKILL.md",
-                   f"---\nname: {MODULE.NAME}\ndescription: Synthetic test skill\n---\n")
+                   f'---\nname: {MODULE.NAME}\ndescription: Synthetic test skill\nmetadata:\n  version: "0.2.0"\n---\n')
         self.write(f"skills/{MODULE.NAME}/agents/openai.yaml", f"prompt: ${MODULE.NAME}\n")
         for current, expected in (("0.2.0", 0), ("0.1.0", 1)):
             with self.subTest(current=current):
@@ -173,6 +173,35 @@ Release **v0.1.0** is a historical metadata example.
                         redirect_stdout(output), redirect_stderr(errors):
                     self.assertEqual(MODULE.main(), 1, errors.getvalue())
                 self.assertIn(message, errors.getvalue())
+
+
+class InstalledReleaseTests(unittest.TestCase):
+    def test_installed_metadata_matches_both_distributions(self):
+        for value in ('"0.9.0"', "'0.9.0'", "0.9.0"):
+            with self.subTest(value=value):
+                self.assertEqual(MODULE.validate_skill_release(
+                    'name: synthetic\nmetadata:\n  version: ' + value,
+                    {"Codex": "0.9.0", "Claude": "0.9.0"}), [])
+
+    def test_old_install_cannot_report_current_release(self):
+        errors = MODULE.validate_skill_release('metadata:\n  version: "0.8.0"',
+                                               {"Codex": "0.9.0", "Claude": "0.9.0"})
+        self.assertEqual(len(errors), 2)
+        self.assertTrue(all("installed version 0.8.0 differs" in e for e in errors))
+
+    def test_missing_duplicate_or_ambiguous_version_is_not_guessed(self):
+        for text in ('name: synthetic', 'metadata:\n  author: example',
+                     'metadata:\n  version: "0.9.0"\n  version: "0.8.0"',
+                     'metadata:\n  version: latest',
+                     'metadata:\n  version: 0.9.0\nmetadata:\n  version: 0.9.0',
+                     'metadata:\n  version: 0.9.0\nmetadata: {version: "0.8.0"}',
+                     'metadata:\n  version: 0.9.0\nmetadata: null',
+                     'metadata:\n  version: 0.9.0\n"metadata": {version: "0.8.0"}',
+                     'metadata:\n  version: 0.9.0\n  "version": "0.8.0"',
+                     "metadata:\n  version: 0.9.0\n  'version': '0.8.0'",
+                     'metadata: {version: "0.9.0"}'):
+            with self.subTest(text=text):
+                self.assertTrue(MODULE.validate_skill_release(text, {"Codex": "0.9.0"}))
 
 
 if __name__ == "__main__":
