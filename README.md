@@ -108,7 +108,7 @@ Changing a decision reopens the checks that depend on it. Existing answers remai
 
 Explore [requirements and conformance](skills/stn-ultradesign/references/requirements-conformance.md) and [reference research](skills/stn-ultradesign/references/project-research.md).
 
-For work spanning sessions or contributors, [bounded work items](skills/stn-ultradesign/references/delivery-workflow.md#execute-bounded-work-items) connect decisions, concept or implementation tasks, and verification. Each has an outcome, dependencies, an owner and acceptance evidence. Completed decisions stay distinct from completed features; unresolved work remains visible when the design changes. Use your existing project tracker or local records, without requiring another service.
+For work spanning sessions or contributors, [bounded work items](skills/stn-ultradesign/references/delivery-workflow.md#execute-bounded-work-items) connect decisions, concept or implementation tasks, and verification. Each has an outcome, dependencies, an owner and precise acceptance criteria checked against actual results. Completed decisions stay distinct from completed features; unresolved work remains visible when the design changes. Local Markdown is the default, with existing design records or an explicitly required tracker reused. No tracking-service setup is required.
 
 ## Visual craft belongs in the system
 

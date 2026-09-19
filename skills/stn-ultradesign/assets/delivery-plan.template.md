@@ -5,6 +5,7 @@ Use for substantial design work with multiple stages, surfaces or contributors. 
 ## Current work
 
 - Requested outcome and original scope:
+- Local record location / existing records reused / explicitly required tracker, if any:
 - Current stage and reviewable increment:
 - Skill path/version and affected references used for this increment:
 - Product/source baseline and observed runtime:
@@ -56,20 +57,12 @@ Use planned, in progress, ready-for-review, approved-with-scope, complete-for-sc
 
 ## Work items
 
-For multi-session, multi-contributor or substantial iterative work, follow [bounded work items](../references/delivery-workflow.md#execute-bounded-work-items). Link the project's existing tracker when available; otherwise use this table and item details locally. Keep each decision and requirement authoritative in one place.
+For multi-session, multi-contributor or substantial iterative work, follow [bounded work items](../references/delivery-workflow.md#execute-bounded-work-items). Default to local Markdown using this index and the [work-item template](work-item.template.md); reuse existing effort records or an explicitly required tracker. Keep each decision and requirement authoritative in one place.
 
 | Item / meaningful title | Decision / concept / implementation / verification | Requirement and acceptance IDs | Depends on | Owner / output boundary | Status | Result revision / evidence / next action |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
-For each nontrivial item, record or link:
-
-- User outcome/problem, original request and current decision revision:
-- Existing capabilities, role constraints and affected usages to preserve:
-- Deliverable and allowed files; required skill branches:
-- Open decision: recommendation, basis and tradeoff; or agreed behavior to deliver:
-- Observable acceptance checks, applicable contexts and evidence method:
-- Dependencies, owner and status; missing input when blocked:
-- Closure: actual decision authority or integrated artifact, executed review evidence and remaining parent scope:
+Link each nontrivial item's detail file from its title. The index tracks work order, ownership and status; detailed requirements and test results remain at their authoritative linked locations. Complete the current workflow increment through integration and review before expanding dependent work. Record which independent items may proceed in parallel.
 
 ## Worker handoff
 
