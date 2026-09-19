@@ -93,13 +93,14 @@ For each material decision, the **as-presented question** must include the prefe
 | Q19 | | | | | | |
 | Q20 | | | | | | |
 
-Presentation states: `queued`, `presented`, `answered`, `needs-clarification`, `deferred`, `delegated`. A missing card or reply remains unresolved. Link delayed or partial replies by question and presentation ID; retain answered items and re-present only unresolved ones. Remove unused starter rows for focused work; add newly discovered questions here rather than opening a second queue.
+Presentation states: `queued`, `presented`, `answered`, `needs-clarification`, `deferred`, `delegated`. A missing card or reply remains unresolved. A `deferred` presentation follows the interview protocol above; its answer remains unconfirmed and its actual dependencies remain open. Link delayed or partial replies by question and presentation ID; retain answered items and retry only unresolved presentations still expecting a reply. Remove unused starter rows for focused work; add newly discovered questions here rather than opening a second queue.
 
 - Compound answers reconciled: default / available choices, trigger location / opening surface, overlay / reflow, roles, responsive behavior and persistence; material ambiguity still needing clarification:
 - Critical task interpretation: observed entry → object → opening surface → retained context → return; preserved behavior versus proposed departure:
 - Conflicting decisions: exact dimensions, prior source, new evidence, affected requirement IDs and what remains unchanged:
-- Explicit delegation or deferral: source and scope; unanswered optional proposals remain distinct from required decisions:
-- Reconciliation before the next batch: which IDs are answered, delegated or explicitly deferred; unresolved presentation/reply to restore:
+- Explicit delegation: source and scope; unanswered optional proposals remain distinct from required decisions:
+- Presentation deferral: protocol basis, question/presentation IDs, unanswered meaning, dependencies and next action:
+- Reconciliation before the next batch: which IDs are answered, delegated or presentation-deferred; unresolved presentation/reply still expected to restore:
 
 A recommended choice remains a proposal until confirmed or explicitly delegated. A general preference answer does not approve feature removal or production implementation; retain any explicit authorization for its actual scope. Keep detailed external evidence at its existing project location and link it from the relevant question or requirement; do not duplicate another recommendation or decision ledger here.
 
