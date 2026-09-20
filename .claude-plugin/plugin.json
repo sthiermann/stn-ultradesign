@@ -1,7 +1,7 @@
 {
   "name": "stn-ultradesign",
-  "version": "0.9.0",
-  "description": "AI UI/UX design skill for application audits, distinctive design systems, interactive concepts and implementation guided by your requirements.",
+  "version": "0.9.1",
+  "description": "AI UI/UX design skill for website and application audits, distinctive design systems, interactive concepts and implementation guided by your requirements.",
   "author": {
     "name": "Sven Thiermann",
     "url": "https://github.com/sthiermann"

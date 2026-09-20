@@ -19,6 +19,8 @@ METHODS = {"source", "rendered", "interaction", "assistive-technology", "api-obs
 STATUSES = {"pass", "fail", "blocked", "not-tested"}
 RESULT_STATES = ("pass", "fail", "blocked", "not-tested", "stale", "missing", "invalid")
 TARGETS = {"concept", "prototype", "application"}
+UNRESOLVED_KINDS = {"decision": "Open decision", "access-blocker": "Access blocker",
+                    "verification-gap": "Verification gap"}
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
 
 
@@ -137,6 +139,9 @@ def validate_and_summarize(data, *, evidence_root=None, audit=None):
     obligations = records(data.get("obligations"), "obligations")
     runs = records(data.get("runs"), "runs")
     checks = records(data.get("checks"), "checks")
+    unresolved_items = records(scope.get("unresolved_items", []), "scope.unresolved_items")
+    item_obligations = {}
+    item_closure_gaps = {}
     if not requirements:
         gaps.append("An empty requirement register cannot establish readiness.")
 
@@ -144,6 +149,31 @@ def validate_and_summarize(data, *, evidence_root=None, audit=None):
         label = f"Decision {identifier}"
         fields(decision, ("revision", "source_ref", "interpretation"), label)
         enum(decision, "state", {"confirmed", "delegated", "proposed", "unresolved", "superseded"}, label)
+
+    for identifier, item in unresolved_items.items():
+        label = f"Unresolved item {identifier}"
+        fields(item, ("detail",), label)
+        enum(item, "kind", UNRESOLVED_KINDS, label)
+        enum(item, "status", {"pending", "resolved"}, label)
+        kind, status = item.get("kind"), item.get("status")
+        if "resolution_ref" in item or status == "resolved":
+            fields(item, ("resolution_ref",), label)
+        if kind == "decision":
+            decision = ref(item, "decision_id", decisions, label)
+            if "obligation_ids" in item:
+                errors.append(f"{label}: decision items use decision_id, not obligation_ids.")
+            if status == "resolved" and decision and decision.get("state") not in ("confirmed", "delegated"):
+                item_closure_gaps[identifier] = ["The linked decision is not confirmed or delegated."]
+        elif choice(kind, {"access-blocker", "verification-gap"}):
+            ids = strings(item.get("obligation_ids"), f"{label}.obligation_ids")
+            item_obligations[identifier] = ids
+            for oid in ids:
+                if oid not in obligations:
+                    errors.append(f"{label}.obligation_ids references unknown obligation {oid}.")
+            if "decision_id" in item:
+                errors.append(f"{label}: access and verification items use obligation_ids, not decision_id.")
+        if status == "pending" and choice(kind, UNRESOLVED_KINDS):
+            gaps.append(f"{UNRESOLVED_KINDS[kind]} {identifier}: {item.get('detail')}")
 
     for identifier, requirement in requirements.items():
         label = f"Requirement {identifier}"
@@ -494,6 +524,25 @@ def validate_and_summarize(data, *, evidence_root=None, audit=None):
             "evidence_gaps": evidence_gaps, "next_action": next_action,
         })
 
+    unresolved_item_results = []
+    results_by_id = {row["id"]: row for row in obligation_results}
+    for identifier, item in unresolved_items.items():
+        closure_gaps = list(item_closure_gaps.get(identifier, []))
+        if item.get("kind") == "verification-gap" and item.get("status") == "resolved":
+            for oid in item_obligations.get(identifier, []):
+                row = results_by_id.get(oid)
+                if row and row["effective_state"] != "pass":
+                    closure_gaps.append(f"Obligation {oid} is {row['effective_state']}; current passing evidence is required.")
+        gaps.extend(f"Unresolved item {identifier}: {gap}" for gap in closure_gaps)
+        effective = "invalid" if errors else "pending" if closure_gaps else item.get("status")
+        unresolved_item_results.append({
+            "id": identifier, "kind": item.get("kind"), "detail": item.get("detail"),
+            "recorded_status": item.get("status"), "effective_status": effective,
+            "decision_id": item.get("decision_id"),
+            "obligation_ids": item_obligations.get(identifier, []),
+            "resolution_ref": item.get("resolution_ref"), "closure_gaps": closure_gaps,
+        })
+
     def progress(rows):
         return {"total": len(rows), "states": {state: sum(row["effective_state"] == state for row in rows)
                                                for state in RESULT_STATES}}
@@ -503,6 +552,7 @@ def validate_and_summarize(data, *, evidence_root=None, audit=None):
         "stage": scope.get("stage"), "errors": errors, "readiness_gaps": gaps,
         "due_obligations": due, "current_stage_obligations": current,
         "obligation_results": obligation_results,
+        "unresolved_item_results": unresolved_item_results,
         "progress": {"all": progress(obligation_results),
                      "due": progress([row for row in obligation_results if row["due"]]),
                      "current_stage": progress([row for row in obligation_results if row["current_stage"]])},

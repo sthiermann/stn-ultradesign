@@ -37,9 +37,11 @@ The reviewer challenges the current evidence independently of the author's prefe
 
 Begin with the task and rendered interface, before reading handlers or receiving a route/control hint from the author. Apply [interaction-comprehension.md](interaction-comprehension.md): predict the target, scope and result from visible evidence, then find the entry, act, observe the outcome and return. Keep a missing entry, unclear domain meaning, unexpected behavior, visual defect and optional preference distinct. If implementation knowledge is already unavoidable, disclose that limit or use a fresh reviewer for this pass. Expert predictions are not observed user comprehension.
 
-- Reach the task through normal navigation and a deep link if supported.
+Apply only the steps the actual website or application supports; a content journey need not have a form or administrative action.
+
+- Reach the task through normal navigation and a deep link if supported. Include reachable first-use, empty or unselected starts using [the critical-task walkthrough](task-flow-design.md#7-expose-missing-primary-workflows-before-presentation); record entry discoverability separately from handler correctness.
 - Complete it with the main input method and keyboard.
-- Exercise validation and at least the meaningful error/retry transition.
+- Exercise validation and meaningful error/retry transitions where the task supports them.
 - Check Back/cancel and persistence of entered work.
 - Verify success reflects actual completed work.
 - Verify permission and session changes where they affect the task, using safe test environments.
@@ -49,6 +51,8 @@ Begin with the task and rendered interface, before reading handlers or receiving
 - Inspect a control from its resting state without a cue naming the target. For a surface presented as one action, activate its label, icon, internal padding and points just inside its visible edges independently, resetting the safe fixture between probes. Verify the intended outcome occurs once, secondary controls retain their own action and points outside the declared target do not activate it. Exercise the applicable pointer, touch and semantic keyboard behavior; record the actual input/device conditions and leave unavailable checks open.
 
 Test selectors should describe user-visible roles and names where reliable. Use stable test identifiers for ambiguous structures, not brittle coordinates or incidental CSS class names. For geometry probes, derive positions from the currently rendered target, identify the hit receiver, then activate and verify the outcome. A named-control click or class assertion cannot establish the rest of the apparent surface.
+
+For a defect crossing navigation, overlays or lifecycle, choose a focused integration check that retains the actual router, applicable guards, overlay implementation and mount/unmount behavior. Reproduce the relevant pointer-down, focus, pointer-up and click sequence, then check competing dismissal/navigation handlers, draft retention and focus return. Direct handler calls can miss this ordering. Declare replaced boundaries and mocks; a mocked guard or close callback does not prove the real boundary, even when the surrounding component passes.
 
 ## Layout and analytical integrity
 
@@ -74,10 +78,12 @@ Inspect the painted extents of changing illustrations and controls at rest, expa
 
 For visual changes, inspect the affected artifacts where people will actually consume them, within the authorized delivery workflow. A standalone image render cannot establish its integration into a page. For a GitHub README, inspect GitHub's rendered README at the intended revision, including surrounding text; a local Markdown preview is only a fallback. Apply the same distinction to an app shell, embedded widget, exported document or other host surface.
 
-- **Identity and freshness:** Record the inspected revision, delivery URL or file, viewport, usable content-column width, and selected responsive asset or variant. Confirm that the displayed asset is the expected version, using its resolved source and a hash or visible revision marker where available. After an asset change, refresh or reopen the consuming surface and verify its identity; an unverified cached preview is not evidence of the new result.
+- **Identity and freshness:** Distinguish the source revision, delivered build and revision actually running in the inspected user tab. Record the delivery URL or file, viewport, usable content-column width, and selected responsive asset or variant. Confirm that the displayed asset is the expected version, using its resolved source and a hash or visible revision marker where available. After an asset change, refresh or reopen the consuming surface and verify its identity; an unverified cached preview is not evidence of the new result.
 - **Cross-artifact consistency:** Reconcile product names and versions that are supposed to agree across visible artwork, headings, captions, release metadata and manifests. Read the rendered image text, including SVG text, rather than trusting filenames or source checks alone. Explain intentionally different version domains instead of forcing them to match.
 - **Composition in context:** Inspect image edges, captions, badges and adjacent metadata together. Check whitespace, grouping, hierarchy, crop, legibility and wrapping at their displayed size. Correct cramped or misleading relationships; there is no universal pixel gap that proves quality.
 - **Adaptive delivery:** Choose compact, medium and expanded checks according to the changed content, supported surfaces and actual content column. Desktop, tablet and phone labels or window width alone are insufficient. Verify which responsive asset is selected and how it scales inside the host; exercise relevant variant boundaries and every changed variant.
+
+When release compatibility is in scope for an updateable website with lazy-loaded routes or assets, keep a tab on the previous build across a representative deployment, then open a previously unvisited route whose assets were not already loaded. Verify successful loading or the defined stale-asset recovery, retained recoverable work and the absence of reload loops; a fresh tab alone cannot establish this transition. Use an authorized release simulation when needed and label it. Record preview-host restrictions that prevent the check and leave the actual deployment transition unverified.
 
 Keep source/CI results, rendered visual findings and user approval separate. A passing build, valid SVG, working link or screenshot's existence does not establish design acceptance. Report visual acceptance only for the surfaces and revisions actually inspected. If the delivery surface is inaccessible, inspect the strongest available preview and leave delivery rendering explicitly unverified. This is evidence discipline, not an additional approval gate.
 

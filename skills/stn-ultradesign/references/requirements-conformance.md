@@ -4,6 +4,8 @@ Use this method when discovering requirements, translating answers into a concep
 
 Maintain one authoritative requirement register in the target project using [requirements.template.md](../assets/requirements.template.md), or an equivalent section of an existing project record. For a focused fix, a few rows are sufficient. Link the brief, design contract, feature map and evidence through stable IDs. Keep detailed decisions in their existing authoritative records; the register owns their requirement-to-result trace. Reuse an existing audit ledger's entities, contexts, obligations and evidence instead of creating a second inventory or copying its results.
 
+If records diverge, follow [current-work recovery](delivery-workflow.md#recover-a-usable-current-work-queue) before adding another checklist. Preserve aliases and the parent scope when reconciling existing acceptance IDs.
+
 For a focused fix, one Markdown ticket may contain the authoritative requirement, acceptance criteria and results. Distinct meanings do not require separate files. Expand the record only when the task's scope, handoffs or dependencies need it.
 
 ## 1. Preserve the source and its authority

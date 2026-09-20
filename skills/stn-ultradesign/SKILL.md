@@ -1,8 +1,8 @@
 ---
 name: stn-ultradesign
-description: Audit application UI/UX, discover individual design preferences, preserve existing features through traceable redesigns, and implement approved concepts faithfully across desktop, tablet, and mobile. Use for substantial frontend reviews, workflow redesigns, design-system work, and concept-to-code projects; a small unrelated code fix does not trigger a whole-product audit.
+description: Audit website and application UI/UX, discover individual design preferences, preserve existing features through traceable redesigns, and implement approved concepts faithfully across desktop, tablet, and mobile. Use for substantial frontend reviews, workflow redesigns, design-system work, and concept-to-code projects; a small unrelated code fix does not trigger a whole-product audit.
 metadata:
-  version: "0.9.0"
+  version: "0.9.1"
 ---
 
 # STN Ultradesign
@@ -10,6 +10,8 @@ metadata:
 Turn observed user needs into coherent interfaces and complete workflows. Produce evidence, a reviewable design, and verified behavior. Match the user's language in discussion and deliverables. The reference material is in English; that does not set the product's language.
 
 ## Select the work mode
+
+Start from the site's purpose and actual capabilities. Editorial sites, storefronts, campaign pages, tools and business applications need different journeys. Use only the relevant branches below; account administration, data dashboards or complex editors are not prerequisites for a design review. Preserve the user's chosen stack, brand and scope.
 
 - **Audit:** Inspect the requested scope, produce findings and coverage. An audit request alone does not authorize a redesign.
 - **Concept first:** For a new design or substantial redesign, discover individual preferences, map existing capabilities within the requested scope and its affected dependencies, present a concrete concept, refine it with the user, then implement the approved version. Use the [delivery workflow](references/delivery-workflow.md) to coordinate requirements, creative direction, component engineering, review and acceptance. Read [brand-discovery.md](references/brand-discovery.md), [discovery-and-preferences.md](references/discovery-and-preferences.md), [feature-parity.md](references/feature-parity.md) and [concept-to-code.md](references/concept-to-code.md) before developing the direction. Preparation, research, and isolated prototypes can proceed before approval; changes to the production implementation wait for concept approval. An explicit instruction to implement directly overrides this implementation boundary; existing features and confirmed preferences still apply.
@@ -24,7 +26,7 @@ For full audits, maintain the schema-2 inventory and planned obligations from `a
 
 Before substantial work continues, read [delivery-workflow.md](references/delivery-workflow.md#start-at-the-actual-state-of-the-project) and recover the current work index, source/build, decisions, unresolved feedback and actual approval boundary. Identify this installed skill's path and `metadata.version`; record a revision or content hash when reproducibility matters. A website version or an earlier message does not establish which instructions are loaded. On an upgrade, reconcile existing records and read the changed branches needed for the next item; preserve answered questions, valid approvals and unrelated evidence.
 
-Select one ready outcome from that index, read its relevant references and carry it through **artifact → integration → actual checks → expected-versus-observed result**. Independent work can run in parallel within clear ownership boundaries. Bind evidence to each independently testable obligation; split an unclosable bundle while retaining its full parent scope. A list of planned or `not-tested` checks is a plan, not delivery progress. After a change, recheck affected consumers and update the authoritative current state before expanding dependent work.
+Select one ready outcome from that index, read its relevant references and carry it through **artifact → integration → actual checks → expected-versus-observed result**. Independent work can run in parallel within clear ownership boundaries. Bind evidence to each independently testable obligation; split an unclosable bundle while retaining its full parent scope. A list of planned or `not-tested` checks is a plan, not delivery progress. When records conflict or grow beyond executable work, use the [record recovery procedure](references/delivery-workflow.md#recover-a-usable-current-work-queue). After a change, recheck affected consumers and update the authoritative current state before expanding dependent work.
 
 For concept-to-code work, freeze a reproducible [approved reference and state recipe](references/concept-to-code.md), preserve business behavior as well as visible features, and prove one real journey in the target stack before propagating its components. At presentation or handoff, name the exact artifact, evidenced scope, remaining obligations and next action. Never infer approval or passing evidence from an agent's completion message.
 
@@ -75,7 +77,7 @@ Read only the branches relevant to the current work. For a whole-product audit, 
 | Existing functions, old-to-new mapping, role/theme/locale/density and chart parity | [feature-parity.md](references/feature-parity.md) |
 | Concept, alternatives, refinement, approval, exact implementation | [concept-to-code.md](references/concept-to-code.md) |
 | User goals, information architecture, usability evidence | [product-thinking.md](references/product-thinking.md) |
-| Hidden work, confusing navigation, incomplete primary tasks, live investigation and return | [task-flow-design.md](references/task-flow-design.md) |
+| Unclear first steps, related pages, confusing navigation, incomplete tasks, live investigation and return | [task-flow-design.md](references/task-flow-design.md) |
 | Layout, hierarchy, color, type, shapes, iconography, motion, tokens | [visual-systems.md](references/visual-systems.md) |
 | Component anatomy, interaction states, selectors, messages, icons and consistent dialog/drawer families | [component-states.md](references/component-states.md) |
 | Navigation hierarchy, overloaded settings, panels, selected materials, shape and motion | [navigation-and-materials.md](references/navigation-and-materials.md) |
@@ -90,10 +92,10 @@ Read only the branches relevant to the current work. For a whole-product audit, 
 | Keyboard, screen reader, zoom, touch, contrast, WCAG distinctions | [accessibility.md](references/accessibility.md) |
 | Business meaning, KPI definitions, decision support, missing context and analytical drill paths | [analytical-meaning.md](references/analytical-meaning.md) |
 | Charts, dashboards, widgets, tables, network graphs | [data-visualization.md](references/data-visualization.md) |
-| HTML/CSS/React, state, performance, component engineering | [web-engineering.md](references/web-engineering.md) |
+| HTML/CSS/React, host-style conflicts, state, update recovery and component engineering | [web-engineering.md](references/web-engineering.md) |
 | Machine-checkable requirement/stage bindings, stale results and optional evidence-file integrity | [delivery-ledger.md](references/delivery-ledger.md) |
 | Text growth, wrapping, clipping, unintended overlaps, floating layers and responsive stress checks | [layout-integrity.md](references/layout-integrity.md) |
-| Behavioral, visual, accessibility and concept-conformance checks | [verification.md](references/verification.md) |
+| Behavioral, visual, accessibility, real-host integration and concept-conformance checks | [verification.md](references/verification.md) |
 | Substantial delivery, role handoffs, creative direction, independent review and acceptance | [delivery-workflow.md](references/delivery-workflow.md) |
 | Current project research, reference authority, freshness and private evidence | [project-research.md](references/project-research.md) |
 

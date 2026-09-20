@@ -16,6 +16,18 @@ At the beginning, after a restart or skill update, and before integrating substa
 
 Carry the resulting contract revision through each stage. A skill upgrade changes the operating instructions, not the product requirements or approval authority. Preserve valid evidence within the ledger's binding rules; do not relabel stale results as current to finish migration. A preference needs an observable consequence in the artifact, not merely an entry in the brief.
 
+### Recover a usable current work queue
+
+Use this when old reports compete with the current index, checks remain permanently stale, or a new checklist has replaced execution of the original obligations. Reuse the existing records; recovery does not require another tracker or document family.
+
+1. Put the current scope, authority, contract/source/runtime revision and next action at one named entrypoint. Mark mutable superseded indexes with a dated link to it. Preserve frozen evidence unchanged; distinguish its historical conditions from today's access and approval state.
+2. Reconcile inventories, tickets and later checklists by stable IDs. Map aliases to the authoritative obligation; split an unclosable bundle into independently observable children while retaining every parent clause. Distinguish a source-discovered capability from a planned check and an executed result. Missing mappings remain work, not discarded history.
+3. Review evidence by affected outcome. Carry forward only what still meets the applicable binding rules, with the impact rationale; reopen changed or unsupported results. A new filename, timestamp or hash is not a new check. Archive obsolete result rows according to [delivery-ledger.md](delivery-ledger.md), keeping their lineage.
+4. Separate pending decisions, access blockers and verification gaps; move resolved facts out of the question queue. Each open item names dependent work and the resolving action. The optional typed items in the delivery record support this distinction; they do not replace requirement or check results.
+5. Choose an executable obligation with a concrete expected result and closure evidence. Integrate, check and update its existing record before extending dependent work. Report the remaining parent scope beside the completed increment.
+
+This recovery preserves coverage without creating a global combination of every possible device, role and state. Use the applicable behavior classes in [requirements-conformance.md](requirements-conformance.md). An untested required condition stays open even when the record is now easier to navigate.
+
 ## Assign responsibilities, not fictional staff
 
 | Responsibility | Produces | Accountable check |
@@ -133,7 +145,7 @@ Separate observed facts, source-declared behavior, authoritative requirements, d
 
 Use distinct review passes: the author checks the task and artifact; a separate reviewer, where available, challenges original requirements, interpretation, failure paths and visual craft; the integrated correction is then rechecked at its new revision. Give reviewers raw inputs and acceptance conditions without the author’s desired verdict. Include a valid counterexample so a rule does not reject useful variation. Repeating the same opinion is not another test. If a defect survives a correction, investigate its cause and dependencies rather than accumulating cosmetic overrides.
 
-Continue authorized work through corrections and affected-usage regression checks until the declared stage exit is supported. Stop dependent work for a concrete missing decision, unavailable capability or authorization boundary, and report the exact unresolved obligation while continuing independent work. Never close a gap merely to finish a turn, meet a time budget or obtain a green score. Present the evidence and remaining choices concisely; keep internal evaluation mechanics out of product-facing copy.
+Continue authorized work through corrections and affected-usage regression checks until the declared stage exit is supported. Treat later detail feedback as an addition to the active scope unless the user changes that scope; after its correction, resume the remaining authorized work. Stop dependent work for a concrete missing decision, unavailable capability or authorization boundary, and report the exact unresolved obligation while continuing independent work. Never close a gap merely to finish a turn, meet a time budget or obtain a green score. Present the evidence and remaining choices concisely; keep internal evaluation mechanics out of product-facing copy.
 
 ## Delegate with a complete, bounded handoff
 
@@ -155,4 +167,4 @@ If a due check is unavailable or fails, deliver a bounded draft or report the bl
 
 ## Report the next real decision
 
-Distinguish a direction preview, a scoped concept ready for owner review, an approved concept, an implemented result and verified behavior. Name the current stage, demonstrated scope and remaining work. Keep the user's conversation concise; keep detailed traceability with the project artifacts. The method supports ambitious, original work, but awards, virality and superiority require external outcomes and cannot be declared by the skill.
+Distinguish a direction preview, a scoped concept ready for owner review, an approved concept, an implemented result and verified behavior. Lead a partial handoff with the part now available, its actual entrypoint, the remaining original scope and the next action or concrete dependency. A large test count does not turn a checked increment into completion of the whole request. Use progress verbs that match evidence: observed, reproduced, changed in source, checked, or confirmed in the delivered interface. Keep the user's conversation concise; keep detailed traceability with the project artifacts. The method supports ambitious, original work, but awards, virality and superiority require external outcomes and cannot be declared by the skill.
