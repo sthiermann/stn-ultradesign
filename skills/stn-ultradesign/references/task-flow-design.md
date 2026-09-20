@@ -4,9 +4,9 @@ Use when a product feels complicated, hides useful work, or presents an attracti
 
 ## 1. Name the work and its first useful step
 
-Describe each critical task as **actor → trigger → object → intended outcome**, without naming a proposed control. Connect it to existing capabilities and the user's confirmed priorities. Include normal repeated work and consequential exceptions, not only first use. Record what already works and must remain easy.
+Describe each critical task as **actor → trigger → object or content → intended outcome**, without naming a proposed control. Connect it to existing capabilities and the user's confirmed priorities. Include normal repeated work and consequential exceptions, not only first use. Record what already works and must remain easy.
 
-Trace **entry → first meaningful action → object context → evidence/detail → decision or action → return**. For monitoring, the first useful result may be recognizing a relevant change without clicking. For investigation, it may be selecting the affected object and period. Distinguish opening a menu from making progress.
+Trace **entry → first meaningful result → relevant context/detail → outcome → return**, using only the stages the task needs. The outcome may be understanding content, comparing an offer, completing a purchase or changing an object. For monitoring, the first useful result may be recognizing a relevant change without clicking. Distinguish opening a menu from making progress.
 
 For every step, identify what the user knows, what they need to recognize, the visible affordance, required data, authorized role, feedback and next destination. Mark missing content, inaccessible states and simulated behavior. An inventory entry named “statistics” does not establish a usable statistics workflow. Use the [task-flow record](../assets/task-flow.template.md), linked to existing surface, usage and transition IDs.
 
@@ -30,6 +30,8 @@ Favor recognition over remembering hidden commands, prior values or IDs. Shortcu
 ## 3. Keep a coherent hierarchy across sizes
 
 Separate product destinations, collections, individual objects, local views and commands. Do not place them at one visual level merely because tabs are convenient. Label the current object and scope near the work. Avoid unrelated global sections appearing inside an object's local tabs.
+
+Before polishing connected surfaces, trace which object owns each value or action, its scope and relationship cardinality: one item, several related items or a shared definition. Distinguish a derived view from an independent setting and useful repeated access from conflicting duplication. Record the consequences of changing, moving or removing either, including which other surfaces or objects change. Preserve valid differences in purpose, ownership and scope; this mapping does not itself authorize data-model changes.
 
 Choose persistent peers when frequent switching benefits from them; use hierarchy for real parent-child relationships. Measure avoidable travel and uncertainty rather than enforcing an arbitrary maximum click count.
 
@@ -82,9 +84,9 @@ Start with task space, intrinsic content, useful media aspect ratio, reading wid
 Before calling a concept ready for its declared scope:
 
 1. Reconcile each critical task with a visible entry, complete proposed path, required detail/evidence, result and return. List undisplayed capabilities separately. A screenshot or feature-map label cannot close a missing task.
-2. Walk each critical path in the rendered artifact without relying on the designer's explanation. Exercise meaningful failure and compact/input variants. Record prototype, application and untested evidence distinctly.
+2. Walk each critical path from its actual entry in the rendered artifact, including first-use, empty or unselected states when reachable. Give the reviewer the task without author cues naming the route or control. Record whether the entry was discoverable separately from whether its handler completed the task; direct activation can verify the latter while leaving the former failed. Exercise meaningful failure and compact/input variants. Record prototype, application and untested evidence distinctly.
 3. Show the resulting task matrix alongside the concept. A primary task with only a placeholder keeps that part unfinished. A partial concept may still be presented explicitly as partial; do not quietly shrink the agreed scope.
-4. Compare the revision with its baseline using the same safe task/fixture. Preserve strengths and explain changes in effort, clarity and available work. Author walkthroughs identify hypotheses; user observation is needed to claim demonstrated comprehension or faster performance.
+4. Compare the revision with its baseline using the same safe task/fixture. Preserve strengths and explain changes in effort, clarity and available work. Representative expert walkthroughs identify hypotheses; they are not user studies. User observation is needed to claim demonstrated comprehension or faster performance.
 5. Translate criticism into **observed failure → affected task → concrete change → acceptance condition → new evidence**. Re-render and repeat the affected journey. “More minimal” is not a completed correction. A user's rejection stays open until explicitly resolved.
 
 For a full audit, continue through every discovered in-scope usage and defined transition under [audit-method.md](audit-method.md); critical-task prioritization is an order of work, not sampling permission. Concept reviewability does not establish production readiness or authorize implementation. Follow the existing [concept approval contract](concept-to-code.md).

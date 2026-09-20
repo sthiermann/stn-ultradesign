@@ -64,6 +64,18 @@ def bind(data, audit=None):
             run["obligation_bindings"][oid] = hashes[oid]
 
 
+def unresolved_item(kind, status="pending"):
+    item = {"id": "ITEM-1", "kind": kind, "status": status,
+            "detail": "A synthetic dependency remains to be reconciled"}
+    if kind == "decision":
+        item["decision_id"] = "DEC-1"
+    else:
+        item["obligation_ids"] = ["save-keyboard"]
+    if status == "resolved":
+        item["resolution_ref"] = "synthetic-resolution:1"
+    return item
+
+
 def linked_record():
     audit = AUDIT_FIXTURE.ledger()
     data = record()
@@ -101,6 +113,164 @@ def mixed_record():
 
 
 class DeliveryTests(unittest.TestCase):
+    def test_optional_unresolved_items_preserve_legacy_results_and_bindings(self):
+        data = record()
+        legacy = MODULE.validate_and_summarize(data)
+        self.assertEqual(legacy["unresolved_item_results"], [])
+        data["scope"]["unresolved_items"] = []
+        self.assertEqual(MODULE.validate_and_summarize(data), legacy)
+        data["scope"]["open_questions"] = ["An unanswered question"]
+        data["scope"]["unresolved_items"] = [unresolved_item("decision", "resolved")]
+        result = MODULE.validate_and_summarize(data)
+        self.assertTrue(result["valid"], result["errors"])
+        self.assertFalse(result["ready"])
+        self.assertIn("Open decision: An unanswered question", result["readiness_gaps"])
+        self.assertEqual(result["binding_fingerprints"], legacy["binding_fingerprints"])
+
+    def test_pending_items_keep_their_kind_and_never_infer_resolution_from_prose(self):
+        for kind, prefix in (("decision", "Open decision"), ("access-blocker", "Access blocker"),
+                             ("verification-gap", "Verification gap")):
+            with self.subTest(kind=kind):
+                data = record()
+                item = unresolved_item(kind)
+                item["detail"] = "Already resolved, tested and confirmed"
+                data["scope"]["unresolved_items"] = [item]
+                before = copy.deepcopy(data)
+                result = MODULE.validate_and_summarize(data)
+                self.assertEqual(data, before)
+                self.assertTrue(result["valid"], result["errors"])
+                self.assertFalse(result["ready"])
+                self.assertEqual(result["readiness_gaps"], [f"{prefix} ITEM-1: {item['detail']}"])
+                self.assertEqual(result["unresolved_item_results"][0]["effective_status"], "pending")
+
+    def test_resolved_items_retain_facts_without_becoming_open_decisions(self):
+        for kind in ("decision", "access-blocker", "verification-gap"):
+            data = record()
+            data["scope"]["unresolved_items"] = [unresolved_item(kind, "resolved")]
+            result = MODULE.validate_and_summarize(data)
+            self.assertTrue(result["valid"], result["errors"])
+            self.assertTrue(result["ready"], result["readiness_gaps"])
+            row = result["unresolved_item_results"][0]
+            self.assertEqual(row["effective_status"], "resolved")
+            self.assertEqual(row["closure_gaps"], [])
+            self.assertEqual(row["resolution_ref"], "synthetic-resolution:1")
+
+    def test_resolved_decision_needs_current_confirmed_or_delegated_authority(self):
+        for state in ("proposed", "unresolved", "superseded", "delegated"):
+            data = record()
+            data["decisions"][0]["state"] = state
+            data["scope"]["unresolved_items"] = [unresolved_item("decision", "resolved")]
+            bind(data)
+            result = MODULE.validate_and_summarize(data)
+            self.assertTrue(result["valid"], result["errors"])
+            closed = state == "delegated"
+            self.assertEqual(result["ready"], closed)
+            self.assertEqual(result["unresolved_item_results"][0]["effective_status"],
+                             "resolved" if closed else "pending")
+
+    def test_access_restoration_cannot_close_due_verification(self):
+        data = record()
+        data["scope"]["unresolved_items"] = [unresolved_item("access-blocker", "resolved")]
+        data["checks"][0].update(status="not-tested", run_ids=[])
+        data["runs"] = []
+        result = MODULE.validate_and_summarize(data)
+        self.assertTrue(result["valid"], result["errors"])
+        self.assertFalse(result["ready"])
+        self.assertEqual(result["unresolved_item_results"][0]["effective_status"], "resolved")
+        self.assertEqual(result["obligation_results"][0]["effective_state"], "not-tested")
+
+    def test_verification_closure_requires_every_linked_current_passing_result(self):
+        data = mixed_record()
+        item = unresolved_item("verification-gap", "resolved")
+        item["obligation_ids"] = [obligation["id"] for obligation in data["obligations"]]
+        data["scope"]["unresolved_items"] = [item]
+        result = MODULE.validate_and_summarize(data)
+        self.assertTrue(result["valid"], result["errors"])
+        self.assertFalse(result["ready"])
+        row = result["unresolved_item_results"][0]
+        self.assertEqual(row["recorded_status"], "resolved")
+        self.assertEqual(row["effective_status"], "pending")
+        self.assertEqual(len(row["closure_gaps"]), 5)
+        for state in ("fail", "blocked", "not-tested", "stale", "missing"):
+            self.assertTrue(any(f"is {state};" in gap for gap in row["closure_gaps"]))
+
+    def test_verification_closure_respects_requested_file_and_audit_checks(self):
+        data, audit = linked_record()
+        item = unresolved_item("verification-gap", "resolved")
+        item["obligation_ids"] = [data["obligations"][0]["id"]]
+        data["scope"]["unresolved_items"] = [item]
+        result = MODULE.validate_and_summarize(data, audit=audit)
+        self.assertTrue(result["ready"], result)
+        without_audit = MODULE.validate_and_summarize(data)
+        self.assertEqual(without_audit["unresolved_item_results"][0]["effective_status"], "pending")
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            evidence = root / "capture.txt"
+            evidence.write_text("captured", encoding="utf-8")
+            data["runs"][0]["files"] = [{"path": "capture.txt", "sha256": hashlib.sha256(evidence.read_bytes()).hexdigest()}]
+            self.assertTrue(MODULE.validate_and_summarize(data, audit=audit, evidence_root=root)["ready"])
+            evidence.write_text("changed", encoding="utf-8")
+            changed = MODULE.validate_and_summarize(data, audit=audit, evidence_root=root)
+            self.assertTrue(changed["valid"], changed["errors"])
+            self.assertFalse(changed["ready"])
+            self.assertEqual(changed["unresolved_item_results"][0]["effective_status"], "pending")
+
+    def test_typed_item_types_ids_and_references_fail_closed(self):
+        for malformed in (None, {}, 7, "invalid", [None], [7]):
+            data = record()
+            data["scope"]["unresolved_items"] = malformed
+            self.assertFalse(MODULE.validate_and_summarize(data)["valid"])
+        mutations = (
+            lambda i: i.update(id=[]), lambda i: i.update(kind=[]),
+            lambda i: i.update(kind="status-fact"), lambda i: i.update(status="done"),
+            lambda i: i.update(status={}), lambda i: i.update(detail=" "),
+            lambda i: i.update(resolution_ref=[]), lambda i: i.pop("resolution_ref"),
+            lambda i: i.update(obligation_ids=[]), lambda i: i.update(obligation_ids=[[]]),
+            lambda i: i.update(obligation_ids=["missing"]),
+            lambda i: i.update(obligation_ids=["save-keyboard", "save-keyboard"]),
+            lambda i: i.update(decision_id="DEC-1"),
+        )
+        for mutation in mutations:
+            data = record()
+            item = unresolved_item("verification-gap", "resolved")
+            mutation(item)
+            data["scope"]["unresolved_items"] = [item]
+            result = MODULE.validate_and_summarize(data)
+            self.assertFalse(result["valid"], result)
+            self.assertFalse(result["ready"])
+            self.assertTrue(all(row["effective_state"] == "invalid" for row in result["obligation_results"]))
+        for field, value in (("decision_id", []), ("decision_id", "absent"),
+                             ("obligation_ids", ["save-keyboard"])):
+            data = record()
+            item = unresolved_item("decision", "resolved")
+            item[field] = value
+            data["scope"]["unresolved_items"] = [item]
+            self.assertFalse(MODULE.validate_and_summarize(data)["valid"])
+        data = record()
+        item = unresolved_item("access-blocker")
+        data["scope"]["unresolved_items"] = [item, copy.deepcopy(item)]
+        self.assertFalse(MODULE.validate_and_summarize(data)["valid"])
+
+    def test_typed_items_preserve_cli_readiness_and_selection_scope(self):
+        data = record()
+        data["scope"]["unresolved_items"] = [unresolved_item("verification-gap")]
+        full = MODULE.validate_and_summarize(data)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "delivery.json"
+            path.write_text(json.dumps(data), encoding="utf-8")
+            for flags, expected in (([], 0), (["--require-ready"], 2)):
+                with redirect_stdout(io.StringIO()) as output:
+                    code = MODULE.main([str(path), "--obligation", "save-keyboard", *flags])
+                self.assertEqual(code, expected)
+                result = json.loads(output.getvalue())
+                self.assertEqual(result["unresolved_item_results"], full["unresolved_item_results"])
+                self.assertEqual(result["readiness_gaps"], full["readiness_gaps"])
+                self.assertFalse(result["ready"])
+            with redirect_stdout(io.StringIO()) as output:
+                code = MODULE.main([str(path), "--fingerprints"])
+            self.assertEqual(code, 0)
+            self.assertEqual(set(json.loads(output.getvalue())), {"valid", "errors", "binding_fingerprints"})
+
     def test_obligation_progress_preserves_distinct_outcomes_and_next_actions(self):
         data = mixed_record()
         before = copy.deepcopy(data)

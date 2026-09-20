@@ -13,12 +13,14 @@ Use for substantial design work with multiple stages, surfaces or contributors. 
 - Current brief, preference record and design contract:
 - Authoritative [requirement register](requirements.template.md) and selected reference profile revisions:
 - Existing implementation authorization / exact approved scope:
-- Open dependencies and independent work that can continue:
+- Pending decisions / access blockers / verification gaps, with dependent items and resolving actions; independent work that can continue:
 - Active interview question/batch IDs and unresolved owner-feedback IDs (link their authoritative records):
 - Current artifact revision and preview:
 - Actual loaded entrypoint/build; matching review frame, instructions and capability-summary revision:
 - Machine-readable [delivery bindings](../references/delivery-ledger.md), when applicable; planned stage obligations and pre-execution fingerprints:
 - Latest conformance check, requested evidence integrity and unresolved gaps:
+- Current-state entrypoint; superseded indexes and historical reports linked with their dates:
+- Reconciled obligation aliases/children; evidence carried forward with rationale or reopened:
 - Next ready item / owner / exact observable closure condition / next due checks:
 - Specific user judgment this revision is ready to support, if a decision is needed:
 
@@ -91,3 +93,4 @@ Keep this current-state section concise and authoritative. Link historical repor
 - Deferred surfaces, conditions and agreed discretion:
 - Shared component/token mapping and critical journey:
 - Final verification evidence and remaining limitations:
+- Part available now / actual entrypoint / remaining original scope / next action or concrete dependency:

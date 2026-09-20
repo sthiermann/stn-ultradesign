@@ -45,7 +45,7 @@ Use the existing component preview or a lightweight local harness; a new documen
 
 Map primitive values to semantic roles, then to justified component variants. Keep the token source authoritative; if build tools generate CSS or theme objects, change the source and check the generated consumers. Test local theme scopes and portal-mounted content, which may leave the styled ancestor. Expose useful composition slots while keeping internal anatomy and behavior coherent; a growing list of arbitrary page overrides is a signal to revisit the variant or composition contract.
 
-Finish a meaningful interaction in isolation, place it in a real journey, then propagate that same component. Isolation makes craft and edge states easy to inspect; the host proves layering, focus, responsive space and data behavior. For a signature component, retain the approved interaction specimen as well as stills so later fixes preserve its feel and function.
+Finish a meaningful interaction in isolation, place it in a real journey, then propagate that same component. Inspect the actual host's cascade, inherited styles, competing selectors and stacking/clipping contexts, including portal roots. Check the painted layers, icons and media as well as layout boxes; shared markup can render differently under a host rule. Use the consumer map to identify and verify each affected usage and relevant context. The host also proves focus, responsive space and data behavior. For a signature component, retain the approved interaction specimen as well as stills so later fixes preserve its feel and function.
 
 ## Semantic HTML
 
@@ -107,13 +107,15 @@ Expose component state through appropriate semantics (`aria-expanded`, `aria-sel
 
 ## Async and data boundaries
 
-For each action specify pending behavior, duplicate-activation handling, success confirmation, failure recovery and draft preservation. Optimistic updates are suitable only when the visible state can be reconciled and the consequences allow it. Do not declare a payment, permission change or irreversible operation successful merely because a request started.
+For each action specify pending behavior, duplicate-activation handling, success confirmation, failure recovery and draft preservation. When navigation or an overlay can interrupt it, verify the real integration and event sequence under [the interaction pass](verification.md#minimum-useful-interaction-pass). Optimistic updates are suitable only when the visible state can be reconciled and the consequences allow it. Do not declare a payment, permission change or irreversible operation successful merely because a request started.
 
 Keep search/filter/sort/page state shareable in the URL when the task benefits from links and browser history. Keep sensitive data out of URLs. Announce relevant changes without moving focus unexpectedly. Restore list position and selection when returning from details where the task requires continuity.
 
 Virtualization can reduce rendering cost but changes what exists in the DOM. Test keyboard navigation, assistive technology, selected items, focus retention, print, browser find and export. Prefer pagination or simpler rendering if they satisfy both scale and usability.
 
 Use actual permission decisions from trusted application state to communicate availability. The server still enforces access. Clear or re-key tenant/user caches as needed to avoid showing another scope's data; coordinate the fix with the application's security architecture.
+
+For updateable sites with lazy-loaded code or assets, define recovery when an open tab requests files from an earlier build. Preserve recoverable drafts and context, bound any automatic reload attempt and provide a usable failure state if recovery fails. Choose the mechanism within the existing delivery architecture, then exercise [the old-tab deployment check](verification.md#inspect-the-delivery-surface).
 
 ## Performance is observable behavior
 

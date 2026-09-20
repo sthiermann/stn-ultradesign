@@ -4,4 +4,4 @@ interface:
   icon_small: "./assets/brand/mark.svg"
   icon_large: "./assets/brand/mark.svg"
   brand_color: "#DFBD62"
-  default_prompt: "$stn-ultradesign Audit the entire frontend of this existing application using its current source code and running interface. Ask me about my requirements and design preferences, preserve existing capabilities, and develop a complete interactive design concept. Clarify which earlier design decisions still apply. Independently review and refine the concept with me. Implement production changes only after my approval."
+  default_prompt: "$stn-ultradesign Audit the entire frontend of this website or application using its current source code and running interface. Ask me about my requirements and design preferences, preserve existing capabilities, and develop a complete interactive design concept. Clarify which earlier design decisions still apply. Independently review and refine the concept with me. Implement production changes only after my approval."

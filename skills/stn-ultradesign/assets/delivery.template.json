@@ -5,7 +5,8 @@
     "stage": "concept",
     "contract_revision": "unreconciled",
     "reconciled": false,
-    "open_questions": ["Identify the current authoritative requirements, decisions, artifacts and acceptance obligations"],
+    "open_questions": [],
+    "unresolved_items": [],
     "audit_gate": "none"
   },
   "requirements": [],
